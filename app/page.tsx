@@ -138,10 +138,10 @@ export default function Home() {
             <a href="/career-paths" className="transition hover:text-[#2f6f94]">
               Career paths
             </a>
-            <a href="#services" className="transition hover:text-[#2f6f94]">
+            <a href="/services" className="transition hover:text-[#2f6f94]">
               Forces
             </a>
-            <a href="/exams/nda" className="transition hover:text-[#2f6f94]">
+            <a href="/exams" className="transition hover:text-[#2f6f94]">
               Exams & entries
             </a>
             <a href="/eligibility" className="transition hover:text-[#2f6f94]">
@@ -162,9 +162,55 @@ export default function Home() {
               Find my path <ArrowRight size={15} />
             </a>
           </div>
-          <button className="p-2 lg:hidden" aria-label="Open menu">
-            <Menu />
-          </button>
+          <details className="relative lg:hidden">
+            <summary
+              className="grid h-11 w-11 cursor-pointer list-none place-items-center border border-[#cbd3ce]"
+              aria-label="Open navigation"
+            >
+              <Menu size={21} aria-hidden="true" />
+            </summary>
+            <nav
+              className="absolute right-0 top-[calc(100%+1rem)] z-50 grid min-w-64 border border-[#cbd3ce] bg-white p-2 shadow-xl"
+              aria-label="Mobile navigation"
+            >
+              <a
+                href="/career-paths"
+                className="flex min-h-11 items-center px-3 text-sm font-semibold"
+              >
+                Career paths
+              </a>
+              <a
+                href="/services"
+                className="flex min-h-11 items-center border-t border-[#edf0ee] px-3 text-sm font-semibold"
+              >
+                Forces
+              </a>
+              <a
+                href="/exams"
+                className="flex min-h-11 items-center border-t border-[#edf0ee] px-3 text-sm font-semibold"
+              >
+                Exams & entries
+              </a>
+              <a
+                href="/eligibility"
+                className="flex min-h-11 items-center border-t border-[#edf0ee] px-3 text-sm font-semibold"
+              >
+                Eligibility
+              </a>
+              <a
+                href="/selection/ssb"
+                className="flex min-h-11 items-center border-t border-[#edf0ee] px-3 text-sm font-semibold"
+              >
+                SSB
+              </a>
+              <a
+                href="/notifications"
+                className="flex min-h-11 items-center border-t border-[#edf0ee] px-3 text-sm font-semibold"
+              >
+                Notifications
+              </a>
+            </nav>
+          </details>
         </div>
         <div className="tri-service-rule" aria-hidden="true">
           <span />

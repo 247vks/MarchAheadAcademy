@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
-import { SiteHeader } from '@/components/authority-shell';
+import { SiteFooter, SiteHeader } from '@/components/authority-shell';
 import { ContactBand } from '@/components/contact-band';
 
 export const metadata: Metadata = {
@@ -83,6 +83,7 @@ export default function CareerPaths() {
         </div>
       </section>
       <ContactBand />
+      <SiteFooter />
     </main>
   );
 }

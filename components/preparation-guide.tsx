@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { ArrowRight, CheckCircle2, ShieldCheck } from 'lucide-react';
 import { ContactBand } from '@/components/contact-band';
-import { SiteHeader } from '@/components/authority-shell';
+import { SiteFooter, SiteHeader } from '@/components/authority-shell';
 import {
   preparationGuides,
   type PreparationGuideData,
@@ -27,7 +27,7 @@ export function PreparationGuide({ guide }: { guide: PreparationGuideData }) {
           </p>
           <div className="mt-7 inline-flex w-fit items-center gap-2 border border-white/20 px-4 py-2 text-xs text-slate-200">
             <ShieldCheck size={15} />
-            Original March Ahead preparation guide
+            <Link href="/about">Expert perspective · Cdr Sharma</Link>
           </div>
         </div>
         <div className="min-h-[360px]">
@@ -114,6 +114,7 @@ export function PreparationGuide({ guide }: { guide: PreparationGuideData }) {
         </aside>
       </div>
       <ContactBand />
+      <SiteFooter />
     </main>
   );
 }

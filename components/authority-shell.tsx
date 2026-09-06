@@ -5,6 +5,7 @@ import {
   ExternalLink,
   GraduationCap,
   Map,
+  Menu,
   Scale,
   ShieldCheck,
   Users,
@@ -17,8 +18,8 @@ type Source = { label: string; href: string };
 export function SiteHeader() {
   const navItems = [
     { label: 'Career paths', href: '/career-paths', icon: Map },
-    { label: 'Forces', href: '/services/army', icon: ShieldCheck },
-    { label: 'Exams', href: '/exams/nda', icon: GraduationCap },
+    { label: 'Forces', href: '/services', icon: ShieldCheck },
+    { label: 'Exams', href: '/exams', icon: GraduationCap },
     { label: 'Eligibility', href: '/eligibility', icon: Scale },
     { label: 'SSB', href: '/selection/ssb', icon: Users },
     { label: 'Notifications', href: '/notifications', icon: BellRing },
@@ -56,7 +57,7 @@ export function SiteHeader() {
               );
             })}
           </nav>
-          <div className="flex items-center gap-4">
+          <div className="hidden items-center gap-4 sm:flex">
             <Link
               href="/career-paths"
               className="bg-[#77b9da] px-4 py-3 text-xs font-bold text-[#071f3d] uppercase"
@@ -64,6 +65,42 @@ export function SiteHeader() {
               Find my path
             </Link>
           </div>
+          <details className="relative lg:hidden">
+            <summary
+              className="grid h-11 w-11 cursor-pointer list-none place-items-center border border-[#cbd3ce]"
+              aria-label="Open navigation"
+            >
+              <Menu size={21} aria-hidden="true" />
+            </summary>
+            <nav
+              className="absolute right-0 top-[calc(100%+1rem)] z-50 grid min-w-64 border border-[#cbd3ce] bg-white p-2 shadow-xl"
+              aria-label="Mobile navigation"
+            >
+              {navItems.map((item) => {
+                const NavIcon = item.icon;
+                return (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="flex min-h-11 items-center gap-3 border-b border-[#edf0ee] px-3 text-sm font-semibold last:border-0"
+                  >
+                    <NavIcon
+                      size={16}
+                      className="text-[#397fa8]"
+                      aria-hidden="true"
+                    />
+                    {item.label}
+                  </Link>
+                );
+              })}
+              <Link
+                href="/career-paths"
+                className="mt-2 bg-[#77b9da] px-4 py-3 text-center text-xs font-bold uppercase"
+              >
+                Find my path
+              </Link>
+            </nav>
+          </details>
         </div>
         <div className="tri-service-rule" aria-hidden="true">
           <span />
@@ -72,6 +109,29 @@ export function SiteHeader() {
         </div>
       </header>
     </>
+  );
+}
+
+export function SiteFooter() {
+  return (
+    <footer className="border-t-4 border-[#4b6228] bg-[#061a30] px-5 py-8 text-sm text-slate-300">
+      <div className="mx-auto flex max-w-5xl flex-col justify-between gap-5 sm:flex-row">
+        <div>
+          <Link href="/">March Ahead Academy</Link>
+          <p className="mt-2 text-xs text-slate-400">
+            Official notification and recruitment authority always control.
+          </p>
+        </div>
+        <nav
+          className="flex flex-wrap gap-x-5 gap-y-2"
+          aria-label="Trust and organisation"
+        >
+          <Link href="/about">About</Link>
+          <Link href="/editorial-standards">Editorial standards</Link>
+          <Link href="/notifications">Source tracker</Link>
+        </nav>
+      </div>
+    </footer>
   );
 }
 
@@ -120,6 +180,12 @@ export function AuthorityPage({
               <ShieldCheck size={15} />
               {status} · Last reviewed 6 September 2026
             </span>
+            <Link
+              href="/about"
+              className="inline-flex items-center border border-[#80a6bd]/50 px-4 py-2 transition hover:border-[#9bd1ea]"
+            >
+              Expert perspective · Cdr Sharma
+            </Link>
             <Link
               href="/editorial-standards"
               className="inline-flex items-center border border-[#80a6bd]/50 px-4 py-2 transition hover:border-[#9bd1ea]"
@@ -217,24 +283,7 @@ export function AuthorityPage({
         </aside>
       </div>
       <ContactBand />
-      <footer className="border-t-4 border-[#4b6228] bg-[#061a30] px-5 py-8 text-sm text-slate-300">
-        <div className="mx-auto flex max-w-5xl flex-col justify-between gap-5 sm:flex-row">
-          <div>
-            <Link href="/">March Ahead Academy</Link>
-            <p className="mt-2 text-xs text-slate-400">
-              Official notification and recruitment authority always control.
-            </p>
-          </div>
-          <nav
-            className="flex flex-wrap gap-x-5 gap-y-2"
-            aria-label="Trust and organisation"
-          >
-            <Link href="/about">About</Link>
-            <Link href="/editorial-standards">Editorial standards</Link>
-            <Link href="/notifications">Source tracker</Link>
-          </nav>
-        </div>
-      </footer>
+      <SiteFooter />
     </main>
   );
 }

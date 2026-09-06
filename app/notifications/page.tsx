@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ExternalLink, Radio, ShieldAlert } from 'lucide-react';
-import { SiteHeader } from '@/components/authority-shell';
+import { SiteFooter, SiteHeader } from '@/components/authority-shell';
 import { ContactBand } from '@/components/contact-band';
 export const metadata: Metadata = {
   title: 'Official Defence Notifications Tracker | March Ahead Academy',
@@ -114,6 +114,7 @@ export default function Page() {
         </div>
       </section>
       <ContactBand />
+      <SiteFooter />
     </main>
   );
 }
