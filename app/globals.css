@@ -29,18 +29,103 @@
   --pale-blue: #d9f0fb;
   --service-white: #f8fafb;
   --steel: #566978;
+  --surface: #f7f9f8;
+  --surface-blue: #f3f8fb;
+  --shadow-sm:
+    0 1px 2px rgba(7, 31, 61, 0.05), 0 8px 24px rgba(7, 31, 61, 0.04);
+  --shadow-md: 0 18px 46px rgba(7, 31, 61, 0.1);
 }
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { margin: 0; background: var(--background); color: var(--foreground); font-family: var(--font-body), Arial, sans-serif; }
-a { text-decoration: none; }
-button, a { outline-offset: 4px; }
-button:focus-visible, a:focus-visible { outline: 2px solid var(--air-force-accessible); outline-offset: 4px; }
-.font-heading { font-family: var(--font-display), Georgia, serif; }
-.section-kicker { color: var(--army); font-size: .72rem; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
-.command-blue { background: linear-gradient(135deg, #123b5d 0%, #0d304e 58%, #164b6d 100%); }
-.tri-service-rule { display: grid; grid-template-columns: repeat(3, 1fr); height: 3px; }
-.tri-service-rule span:nth-child(1) { background: var(--army); }
-.tri-service-rule span:nth-child(2) { background: var(--navy); }
-.tri-service-rule span:nth-child(3) { background: var(--air-force); }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: .01ms !important; } }
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), Arial, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button,
+a {
+  outline-offset: 4px;
+}
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--air-force-accessible);
+  outline-offset: 4px;
+}
+.font-heading {
+  font-family: var(--font-display), Georgia, serif;
+}
+.section-kicker {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--army);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+.section-kicker::before {
+  content: '';
+  width: 1.75rem;
+  height: 2px;
+  background: currentColor;
+}
+.command-blue {
+  background: linear-gradient(135deg, #123b5d 0%, #0d304e 58%, #164b6d 100%);
+}
+.tri-service-rule {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 3px;
+}
+.tri-service-rule span:nth-child(1) {
+  background: var(--army);
+}
+.tri-service-rule span:nth-child(2) {
+  background: var(--navy);
+}
+.tri-service-rule span:nth-child(3) {
+  background: var(--air-force);
+}
+.editorial-card {
+  border: 1px solid #dce3df;
+  background: #fff;
+  box-shadow: var(--shadow-sm);
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+.editorial-card:hover {
+  transform: translateY(-2px);
+  border-color: #b8c8c0;
+  box-shadow: var(--shadow-md);
+}
+.text-balance {
+  text-wrap: balance;
+}
+::selection {
+  background: #cde8f5;
+  color: #071f3d;
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}

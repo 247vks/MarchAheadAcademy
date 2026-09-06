@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   Anchor,
   ArrowRight,
@@ -128,7 +129,7 @@ export default function Home() {
               <span className="h-px w-10 bg-[#6fae3f]" /> Careers in
               India&apos;s Armed Forces
             </div>
-            <h1 className="max-w-3xl font-heading text-4xl leading-[1.05] tracking-[-0.035em] sm:text-6xl lg:text-7xl">
+            <h1 className="text-balance max-w-3xl font-heading text-4xl leading-[1.06] tracking-[-0.04em] sm:text-6xl lg:text-7xl">
               Your clearest path to a career in the Defence Forces.
             </h1>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-300">
@@ -280,7 +281,7 @@ export default function Home() {
                 <a
                   key={stage.label}
                   href={stage.href}
-                  className="group border-t-4 bg-white p-7 transition hover:bg-[#f8faf9] sm:p-8"
+                  className="editorial-card group border-t-4 p-7 sm:p-8"
                   style={{ borderTopColor: stageAccent }}
                 >
                   <div className="flex items-center justify-between">
@@ -343,7 +344,7 @@ export default function Home() {
               return (
                 <article
                   key={service.name}
-                  className="group relative min-h-72 overflow-hidden p-8 text-white"
+                  className="group relative min-h-72 overflow-hidden p-8 text-white shadow-[0_12px_32px_rgba(7,31,61,.12)] transition hover:-translate-y-1 hover:shadow-[0_20px_42px_rgba(7,31,61,.18)]"
                   style={{ backgroundColor: service.color }}
                 >
                   <span className="absolute right-6 top-4 font-heading text-7xl text-white/[.07]">
@@ -412,7 +413,7 @@ export default function Home() {
           return (
             <article
               key={title as string}
-              className="border border-[#dfe5e2] border-t-4 bg-white p-6 sm:p-7"
+              className="editorial-card border-t-4 p-6 sm:p-7"
               style={{ borderTopColor: accents[index] }}
             >
               <span
@@ -467,12 +468,13 @@ export default function Home() {
               <a
                 key={item.title}
                 href={item.href}
-                className="group relative aspect-[4/3] overflow-hidden bg-[#071f3d] sm:aspect-square"
+                className="group relative aspect-[4/3] overflow-hidden border border-[#dce3df] bg-[#071f3d] shadow-[0_8px_24px_rgba(7,31,61,.08)] sm:aspect-square"
               >
-                <img
+                <Image
                   src={item.image}
                   alt={`Indian defence aspirants: ${item.title.toLowerCase()}`}
-                  loading="lazy"
+                  fill
+                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                   className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.025]"
                   style={{ objectPosition: item.position }}
                 />

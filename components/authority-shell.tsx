@@ -35,13 +35,17 @@ export function SiteHeader() {
   ];
   return (
     <>
-      <div className="bg-[#061a30] px-5 py-2 text-center text-[10px] font-bold tracking-[.13em] text-[#d9e8f2] uppercase">
+      <div className="bg-[#061a30] px-5 py-2 text-center text-[10px] font-bold tracking-[.15em] text-[#d9e8f2] uppercase">
         Independent guidance · Official notification always controls
       </div>
-      <header className="border-b border-[#d6ddda] bg-white text-[#071f3d]">
-        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-8">
-          <Link href="/" className="border-l-2 border-[#397fa8] pl-3">
-            <span className="block font-heading tracking-[.07em] uppercase">
+      <header className="sticky top-0 z-40 border-b border-[#d6ddda] bg-white/95 text-[#071f3d] shadow-[0_1px_12px_rgba(7,31,61,.05)] backdrop-blur-md">
+        <div className="mx-auto flex h-[4.5rem] max-w-7xl items-center justify-between px-5 lg:px-8">
+          <Link
+            href="/"
+            className="group border-l-[3px] border-[#397fa8] pl-3"
+            aria-label="March Ahead Academy home"
+          >
+            <span className="block font-heading text-[15px] tracking-[.055em] uppercase transition group-hover:text-[#2f6f94]">
               March Ahead
             </span>
             <span className="block text-[9px] tracking-[.3em] text-[#397fa8] uppercase">
@@ -49,7 +53,7 @@ export function SiteHeader() {
             </span>
           </Link>
           <nav
-            className="hidden gap-5 text-sm text-[#33485b] lg:flex"
+            className="hidden items-center gap-1 text-[13px] font-semibold text-[#33485b] lg:flex"
             aria-label="Primary navigation"
           >
             {navItems.map((item) => {
@@ -58,7 +62,7 @@ export function SiteHeader() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="flex items-center gap-1.5 transition hover:text-[#2f6f94]"
+                  className="flex min-h-10 items-center gap-1.5 px-2.5 transition hover:bg-[#f3f8fb] hover:text-[#2f6f94]"
                 >
                   <NavIcon size={14} strokeWidth={1.7} aria-hidden="true" />
                   {item.label}
@@ -69,7 +73,7 @@ export function SiteHeader() {
           <div className="hidden items-center gap-4 lg:flex">
             <Link
               href="/career-paths"
-              className="bg-[#77b9da] px-4 py-3 text-xs font-bold text-[#071f3d] uppercase"
+              className="bg-[#77b9da] px-4 py-3 text-xs font-bold tracking-[.04em] text-[#071f3d] uppercase transition hover:bg-[#a6d7ed]"
             >
               Explore career paths
             </Link>
@@ -229,8 +233,9 @@ export function AuthorityPage({
         section={eyebrow}
       />
       <SiteHeader />
-      <section className="command-blue text-white">
-        <div className="mx-auto max-w-5xl px-5 py-12 sm:py-14 lg:px-8 lg:py-18">
+      <section className="command-blue relative overflow-hidden text-white">
+        <div className="absolute inset-0 opacity-20 [background-image:linear-gradient(rgba(255,255,255,.055)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.055)_1px,transparent_1px)] [background-size:48px_48px]" />
+        <div className="relative mx-auto max-w-5xl px-5 py-11 sm:py-14 lg:px-8 lg:py-16">
           <Breadcrumbs current={eyebrow} />
           <div
             className="flex items-center gap-3 text-xs font-bold tracking-[.17em] uppercase"
@@ -239,7 +244,7 @@ export function AuthorityPage({
             <span className="h-px w-8" style={{ backgroundColor: accent }} />
             {eyebrow}
           </div>
-          <h1 className="mt-6 max-w-4xl font-heading text-4xl leading-tight sm:text-6xl">
+          <h1 className="text-balance mt-5 max-w-4xl font-heading text-4xl leading-[1.12] tracking-[-.025em] sm:text-5xl lg:text-6xl">
             {title}
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">
@@ -268,7 +273,7 @@ export function AuthorityPage({
         </div>
       </section>
       {experience && <ExpectationPreview data={experience} />}
-      <div className="mx-auto grid max-w-5xl gap-8 px-5 py-12 lg:grid-cols-[1fr_260px] lg:gap-10 lg:px-8 lg:py-16">
+      <div className="mx-auto grid max-w-5xl gap-10 px-5 py-12 lg:grid-cols-[minmax(0,1fr)_250px] lg:gap-14 lg:px-8 lg:py-16">
         <article className="space-y-10 lg:space-y-12">
           {expertContext && <ExpertByline context={expertContext} />}
           {visual}
@@ -302,7 +307,7 @@ export function AuthorityPage({
               <div key={section.title} className="contents">
                 <section
                   id={`section-${index + 1}`}
-                  className="scroll-mt-6 border-l-2 pl-6"
+                  className="scroll-mt-28 border-l-2 pl-5 sm:pl-7"
                   style={{ borderLeftColor: sectionAccent }}
                 >
                   <p
@@ -311,7 +316,7 @@ export function AuthorityPage({
                   >
                     0{index + 1}
                   </p>
-                  <h2 className="mt-2 font-heading text-3xl">
+                  <h2 className="text-balance mt-2 font-heading text-2xl leading-tight sm:text-3xl">
                     {section.title}
                   </h2>
                   <p className="mt-4 leading-8 text-[#536371]">
@@ -340,7 +345,7 @@ export function AuthorityPage({
           })}
           <section
             id="official-sources"
-            className="scroll-mt-6 border-t border-[#cbd3ce] pt-8"
+            className="scroll-mt-28 border-t border-[#cbd3ce] pt-8"
           >
             <h2 className="font-heading text-2xl">Official sources</h2>
             <div className="mt-4 grid gap-3">
@@ -360,7 +365,7 @@ export function AuthorityPage({
           </section>
         </article>
         <aside>
-          <div className="sticky top-6 border-t-4 border-[#397fa8] bg-white p-5">
+          <div className="sticky top-28 border border-[#dce3df] border-t-4 border-t-[#397fa8] bg-white p-5 shadow-[0_8px_28px_rgba(7,31,61,.06)]">
             <p className="text-xs font-bold tracking-[.15em] text-[#397fa8] uppercase">
               Continue exploring
             </p>

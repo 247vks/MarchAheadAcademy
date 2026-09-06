@@ -6,7 +6,7 @@ export function ContextualGuidance({ topic }: { topic: string }) {
   );
   return (
     <aside
-      className="border border-[#cbd8d2] border-l-4 border-l-[#397fa8] bg-[#f4f9fb] p-6"
+      className="border border-[#cbd8d2] border-l-4 border-l-[#397fa8] bg-[#f4f9fb] p-6 shadow-[0_8px_24px_rgba(7,31,61,.04)]"
       aria-label={`Guidance about ${topic}`}
     >
       <div className="flex items-start gap-4">

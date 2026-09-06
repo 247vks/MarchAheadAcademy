@@ -28,7 +28,7 @@ export function ContactBand() {
       aria-labelledby="contact-heading"
     >
       <div
-        className="relative mx-auto max-w-7xl overflow-hidden bg-[#30471f] bg-cover bg-center"
+        className="relative mx-auto max-w-7xl overflow-hidden border border-[#3f5a2b] bg-[#30471f] bg-cover bg-center shadow-[0_18px_50px_rgba(7,31,61,.12)]"
         style={{
           backgroundImage:
             "linear-gradient(90deg, rgba(40,63,26,.98), rgba(40,63,26,.9)), url('/aspirant-guidance-banner.png')",
@@ -60,7 +60,7 @@ export function ContactBand() {
                   href={contact.href}
                   target={external ? '_blank' : undefined}
                   rel={external ? 'noreferrer' : undefined}
-                  className="group flex min-h-36 flex-col justify-between bg-[#30471f]/95 p-5 transition hover:bg-[#3b5727] sm:p-6"
+                  className="group flex min-h-32 flex-col justify-between bg-[#30471f]/95 p-5 transition hover:bg-[#3b5727] focus-visible:outline-white sm:p-6"
                 >
                   <Icon size={22} strokeWidth={1.6} aria-hidden="true" />
                   <span className="mt-4 block text-[10px] font-bold tracking-[.15em] text-[#b9d68f] uppercase">
