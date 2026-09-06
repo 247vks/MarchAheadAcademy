@@ -304,15 +304,22 @@ export function AuthorityPage({
               <div key={section.title} className="contents">
                 <section
                   id={`section-${index + 1}`}
-                  className="scroll-mt-28 border-l-2 pl-5 sm:pl-7"
-                  style={{ borderLeftColor: sectionAccent }}
+                  className="scroll-mt-28 border-t-2 pt-7"
+                  style={{ borderTopColor: sectionAccent }}
                 >
-                  <p
-                    className="text-xs font-bold tracking-[.16em] uppercase"
-                    style={{ color: sectionAccent }}
-                  >
-                    0{index + 1}
-                  </p>
+                  <div className="flex items-center gap-3">
+                    <p
+                      className="text-xs font-bold tracking-[.16em] uppercase"
+                      style={{ color: sectionAccent }}
+                    >
+                      0{index + 1}
+                    </p>
+                    <span
+                      className="h-px w-10 opacity-45"
+                      style={{ backgroundColor: sectionAccent }}
+                      aria-hidden="true"
+                    />
+                  </div>
                   <h2 className="text-balance mt-2 font-heading text-2xl leading-tight sm:text-3xl">
                     {section.title}
                   </h2>
