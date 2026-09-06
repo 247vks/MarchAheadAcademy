@@ -1,4 +1,4 @@
-import { Anchor, ArrowRight, BookOpen, ChevronRight, Compass, GraduationCap, Menu, Mountain, Route, ShieldCheck, UserCheck, Wind } from 'lucide-react';
+import { Anchor, ArrowRight, BookOpen, ChevronRight, GraduationCap, Menu, Mountain, Route, ShieldCheck, UserCheck, Wind } from 'lucide-react';
 
 const stages = [
   { label: 'Class 10', detail: 'Build the right academic and fitness foundation', icon: BookOpen },
@@ -21,9 +21,8 @@ export default function Home() {
       </div>
       <header className="command-blue relative z-20 border-b border-[#2e6386] text-white">
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-8">
-          <a href="#" className="flex items-center gap-3" aria-label="March Ahead Academy home">
-            <span className="grid h-11 w-11 place-items-center border border-[#8bc4e0] text-[#9bd1ea]"><Compass size={23} strokeWidth={1.5} /></span>
-            <span><span className="block font-heading text-lg leading-none tracking-[0.08em] uppercase">March Ahead</span><span className="mt-1 block text-[10px] tracking-[0.3em] text-[#9bd1ea] uppercase">Academy</span></span>
+          <a href="#" className="border-l-2 border-[#77b9da] pl-3" aria-label="March Ahead Academy home">
+            <span className="block font-heading text-lg leading-none tracking-[0.08em] uppercase">March Ahead</span><span className="mt-1 block text-[10px] tracking-[0.3em] text-[#9bd1ea] uppercase">Academy</span>
           </a>
           <nav className="hidden items-center gap-7 text-sm text-slate-200 lg:flex" aria-label="Primary navigation">
             <a href="/career-paths" className="transition hover:text-[#9bd1ea]">Career paths</a><a href="#services" className="transition hover:text-[#9bd1ea]">Forces</a><a href="/exams/nda" className="transition hover:text-[#9bd1ea]">Exams & entries</a><a href="/eligibility" className="transition hover:text-[#9bd1ea]">Eligibility</a><a href="/notifications" className="transition hover:text-[#9bd1ea]">Notifications</a>
