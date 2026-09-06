@@ -139,28 +139,41 @@ export function AuthorityPage({
               acting.
             </p>
           </div>
-          {sections.map((section, index) => (
-            <section key={section.title}>
-              <p className="text-xs font-bold tracking-[.16em] text-[#397fa8] uppercase">
-                0{index + 1}
-              </p>
-              <h2 className="mt-2 font-heading text-3xl">{section.title}</h2>
-              <p className="mt-4 leading-8 text-[#536371]">{section.body}</p>
-              {section.points && (
-                <ul className="mt-5 grid gap-3">
-                  {section.points.map((point) => (
-                    <li
-                      key={point}
-                      className="flex gap-3 border border-[#e0e5e2] bg-white p-4 text-sm leading-6"
-                    >
-                      <span className="mt-2 h-2 w-2 shrink-0 bg-[#4b6228]" />
-                      {point}
-                    </li>
-                  ))}
-                </ul>
-              )}
-            </section>
-          ))}
+          {sections.map((section, index) => {
+            const sectionAccent = ['#4b6228', '#071f3d', '#397fa8'][index % 3];
+            return (
+              <section
+                key={section.title}
+                className="border-l-2 pl-6"
+                style={{ borderLeftColor: sectionAccent }}
+              >
+                <p
+                  className="text-xs font-bold tracking-[.16em] uppercase"
+                  style={{ color: sectionAccent }}
+                >
+                  0{index + 1}
+                </p>
+                <h2 className="mt-2 font-heading text-3xl">{section.title}</h2>
+                <p className="mt-4 leading-8 text-[#536371]">{section.body}</p>
+                {section.points && (
+                  <ul className="mt-5 grid gap-3">
+                    {section.points.map((point) => (
+                      <li
+                        key={point}
+                        className="flex gap-3 border border-[#e0e5e2] bg-[#fafcfb] p-4 text-sm leading-6"
+                      >
+                        <span
+                          className="mt-2 h-2 w-2 shrink-0"
+                          style={{ backgroundColor: sectionAccent }}
+                        />
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </section>
+            );
+          })}
           <section className="border-t border-[#cbd3ce] pt-8">
             <h2 className="font-heading text-2xl">Official sources</h2>
             <div className="mt-4 grid gap-3">
@@ -170,10 +183,10 @@ export function AuthorityPage({
                   href={source.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center justify-between border border-[#cbd3ce] bg-white px-4 py-3 text-sm font-semibold hover:border-[#397fa8]"
+                  className="flex items-center justify-between border border-[#cbd3ce] border-l-4 border-l-[#397fa8] bg-[#f9fbfc] px-4 py-3 text-sm font-semibold transition hover:bg-[#eef6fa]"
                 >
                   {source.label}
-                  <ExternalLink size={15} />
+                  <ExternalLink size={15} className="text-[#397fa8]" />
                 </a>
               ))}
             </div>

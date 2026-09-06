@@ -314,6 +314,9 @@ export default function Home() {
           <div className="grid gap-px overflow-hidden border border-[#cbd3ce] bg-[#cbd3ce] sm:grid-cols-2">
             {stages.map((stage, index) => {
               const StageIcon = stage.icon;
+              const stageAccent = ['#4b6228', '#397fa8', '#071f3d', '#4b6228'][
+                index
+              ];
               return (
                 <a
                   key={stage.label}
@@ -322,10 +325,18 @@ export default function Home() {
                       ? '/career-paths/after-12th'
                       : '/career-paths/after-graduation'
                   }
-                  className="group bg-white p-7 transition hover:bg-[#f8faf9] sm:p-8"
+                  className="group border-t-4 bg-white p-7 transition hover:bg-[#f8faf9] sm:p-8"
+                  style={{ borderTopColor: stageAccent }}
                 >
                   <div className="flex items-center justify-between">
-                    <span className="grid h-10 w-10 place-items-center border border-[#b8c7ba] text-[#4b6228]">
+                    <span
+                      className="grid h-11 w-11 place-items-center border"
+                      style={{
+                        borderColor: `${stageAccent}55`,
+                        backgroundColor: `${stageAccent}12`,
+                        color: stageAccent,
+                      }}
+                    >
                       <StageIcon
                         size={20}
                         strokeWidth={1.6}
@@ -337,7 +348,10 @@ export default function Home() {
                       className="text-[#397fa8] transition group-hover:translate-x-1"
                     />
                   </div>
-                  <span className="mt-7 block text-xs font-bold tracking-widest text-[#4b6228] uppercase">
+                  <span
+                    className="mt-7 block text-xs font-bold tracking-widest uppercase"
+                    style={{ color: stageAccent }}
+                  >
                     Stage 0{index + 1}
                   </span>
                   <h3 className="mt-2 font-heading text-2xl">{stage.label}</h3>
@@ -503,19 +517,25 @@ export default function Home() {
           return (
             <article
               key={title as string}
-              className="border-t-4 bg-white p-8 shadow-sm"
+              className="border border-[#dfe5e2] border-t-4 bg-white p-8"
               style={{ borderTopColor: accents[index] }}
             >
               <span
                 className="grid h-12 w-12 place-items-center border"
                 style={{
                   borderColor: `${accents[index]}55`,
+                  backgroundColor: `${accents[index]}12`,
                   color: accents[index],
                 }}
               >
                 <FeatureIcon aria-hidden="true" />
               </span>
-              <h3 className="mt-8 font-heading text-2xl">{title as string}</h3>
+              <h3
+                className="mt-8 font-heading text-2xl"
+                style={{ color: accents[index] }}
+              >
+                {title as string}
+              </h3>
               <p className="mt-3 leading-7 text-[#64717c]">{copy as string}</p>
               <a
                 href={href as string}
