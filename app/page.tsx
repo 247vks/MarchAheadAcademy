@@ -30,6 +30,7 @@ export default function Home() {
           <a href="/career-paths" className="hidden items-center gap-2 bg-[#77b9da] px-5 py-3 text-xs font-bold tracking-wide text-[#071f3d] uppercase transition hover:bg-[#a6d7ed] sm:flex">Find my path <ArrowRight size={15} /></a>
           <button className="p-2 lg:hidden" aria-label="Open menu"><Menu /></button>
         </div>
+        <div className="tri-service-rule" aria-hidden="true"><span /><span /><span /></div>
       </header>
 
       <section className="command-blue relative text-white">

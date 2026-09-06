@@ -19,7 +19,7 @@ export function SiteHeader() {
       <Link href="/" className="border-l-2 border-[#77b9da] pl-3"><span className="block font-heading tracking-[.07em] uppercase">March Ahead</span><span className="block text-[9px] tracking-[.3em] text-[#9bd1ea] uppercase">Academy</span></Link>
       <nav className="hidden gap-5 text-sm text-slate-200 lg:flex" aria-label="Primary navigation">{navItems.map(item => { const NavIcon = item.icon; return <Link key={item.href} href={item.href} className="flex items-center gap-1.5 transition hover:text-[#9bd1ea]"><NavIcon size={14} strokeWidth={1.7} aria-hidden="true" />{item.label}</Link>; })}</nav>
       <Link href="/career-paths" className="bg-[#77b9da] px-4 py-3 text-xs font-bold text-[#071f3d] uppercase">Find my path</Link>
-    </div></header>
+    </div><div className="tri-service-rule" aria-hidden="true"><span /><span /><span /></div></header>
   </>;
 }
 

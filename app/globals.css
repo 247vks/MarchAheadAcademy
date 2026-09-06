@@ -38,4 +38,8 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--air-force-acces
 .font-heading { font-family: var(--font-display), Georgia, serif; }
 .section-kicker { color: var(--army); font-size: .72rem; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
 .command-blue { background: linear-gradient(135deg, #123b5d 0%, #0d304e 58%, #164b6d 100%); }
+.tri-service-rule { display: grid; grid-template-columns: repeat(3, 1fr); height: 3px; }
+.tri-service-rule span:nth-child(1) { background: var(--army); }
+.tri-service-rule span:nth-child(2) { background: var(--navy); }
+.tri-service-rule span:nth-child(3) { background: var(--air-force); }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: .01ms !important; } }
