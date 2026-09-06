@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, BookOpenCheck, ShieldCheck, Users } from 'lucide-react';
 import { SiteHeader } from '@/components/authority-shell';
+import { ContactBand } from '@/components/contact-band';
 
 export const metadata: Metadata = {
   title: 'About March Ahead Academy',
@@ -169,6 +170,7 @@ export default function Page() {
           </Link>
         </div>
       </section>
+      <ContactBand />
     </main>
   );
 }

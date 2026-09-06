@@ -5,11 +5,11 @@ import {
   ExternalLink,
   GraduationCap,
   Map,
-  Phone,
   Scale,
   ShieldCheck,
   Users,
 } from 'lucide-react';
+import { ContactBand } from '@/components/contact-band';
 
 type Section = { title: string; body: string; points?: string[] };
 type Source = { label: string; href: string };
@@ -57,21 +57,6 @@ export function SiteHeader() {
             })}
           </nav>
           <div className="flex items-center gap-4">
-            <a
-              href="tel:+919820096800"
-              className="hidden items-center gap-2 border-l border-[#d6ddda] pl-4 xl:flex"
-              aria-label="Call March Ahead Academy on plus 91 98200 96800"
-            >
-              <Phone size={16} className="text-[#397fa8]" aria-hidden="true" />
-              <span>
-                <span className="block text-[9px] font-bold tracking-[.13em] text-[#637282] uppercase">
-                  Speak with us
-                </span>
-                <span className="mt-0.5 block text-sm font-bold">
-                  +91 98200 96800
-                </span>
-              </span>
-            </a>
             <Link
               href="/career-paths"
               className="bg-[#77b9da] px-4 py-3 text-xs font-bold text-[#071f3d] uppercase"
@@ -218,6 +203,7 @@ export function AuthorityPage({
           </div>
         </aside>
       </div>
+      <ContactBand />
       <footer className="border-t-4 border-[#4b6228] bg-[#061a30] px-5 py-8 text-sm text-slate-300">
         <div className="mx-auto flex max-w-5xl flex-col justify-between gap-5 sm:flex-row">
           <div>

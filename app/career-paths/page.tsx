@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { SiteHeader } from '@/components/authority-shell';
+import { ContactBand } from '@/components/contact-band';
 
 export const metadata: Metadata = {
   title: 'Defence Career Path Finder | March Ahead Academy',
@@ -74,13 +75,14 @@ export default function CareerPaths() {
             </Link>
           ))}
         </div>
-          <div className="mt-10 border border-[#dbe3df] border-l-4 border-l-[#4b6228] bg-[#f8faf9] p-6 text-sm leading-7">
+        <div className="mt-10 border border-[#dbe3df] border-l-4 border-l-[#4b6228] bg-[#f8faf9] p-6 text-sm leading-7">
           <strong>Before we call any candidate eligible:</strong> we need the
           exact date of birth, education details, current intake, and
           controlling notification. When information is incomplete, the correct
           result is “unable to determine.”
         </div>
       </section>
+      <ContactBand />
     </main>
   );
 }

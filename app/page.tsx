@@ -6,12 +6,12 @@ import {
   GraduationCap,
   Menu,
   Mountain,
-  Phone,
   Route,
   ShieldCheck,
   UserCheck,
   Wind,
 } from 'lucide-react';
+import { ContactBand } from '@/components/contact-band';
 
 const stages = [
   {
@@ -149,21 +149,6 @@ export default function Home() {
             </a>
           </nav>
           <div className="hidden items-center gap-5 sm:flex">
-            <a
-              href="tel:+919820096800"
-              className="hidden items-center gap-2 border-l border-[#d6ddda] pl-5 xl:flex"
-              aria-label="Call March Ahead Academy on plus 91 98200 96800"
-            >
-              <Phone size={17} className="text-[#397fa8]" aria-hidden="true" />
-              <span>
-                <span className="block text-[9px] font-bold tracking-[.14em] text-[#637282] uppercase">
-                  Speak with us
-                </span>
-                <span className="mt-0.5 block text-sm font-bold">
-                  +91 98200 96800
-                </span>
-              </span>
-            </a>
             <a
               href="/career-paths"
               className="inline-flex items-center gap-2 bg-[#77b9da] px-5 py-3 text-xs font-bold tracking-wide text-[#071f3d] uppercase transition hover:bg-[#a6d7ed]"
@@ -590,6 +575,7 @@ export default function Home() {
         </div>
       </section>
 
+      <ContactBand />
       <footer
         id="about"
         className="border-t-4 border-[#4b6228] bg-[#061a30] px-5 py-9 text-slate-300 lg:px-8"

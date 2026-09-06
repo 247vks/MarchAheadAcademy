@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ExternalLink, Radio, ShieldAlert } from 'lucide-react';
 import { SiteHeader } from '@/components/authority-shell';
+import { ContactBand } from '@/components/contact-band';
 export const metadata: Metadata = {
   title: 'Official Defence Notifications Tracker | March Ahead Academy',
   description:
@@ -74,7 +75,7 @@ export default function Page() {
           </p>
         </div>
         <div className="overflow-hidden border border-[#cbd3ce] bg-white">
-            <div className="hidden grid-cols-[1.1fr_1.6fr_.8fr_40px] gap-4 bg-[#f6f9f7] px-5 py-3 text-xs font-bold uppercase lg:grid">
+          <div className="hidden grid-cols-[1.1fr_1.6fr_.8fr_40px] gap-4 bg-[#f6f9f7] px-5 py-3 text-xs font-bold uppercase lg:grid">
             <span>Authority</span>
             <span>What it controls</span>
             <span>Review cadence</span>
@@ -112,6 +113,7 @@ export default function Page() {
           </Link>
         </div>
       </section>
+      <ContactBand />
     </main>
   );
 }
