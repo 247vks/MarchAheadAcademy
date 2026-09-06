@@ -11,6 +11,10 @@ import {
   Users,
 } from 'lucide-react';
 import { ContactBand } from '@/components/contact-band';
+import {
+  ExpectationPreview,
+  type ExpectationPreviewData,
+} from '@/components/expectation-preview';
 
 type Section = { title: string; body: string; points?: string[] };
 type Source = { label: string; href: string };
@@ -144,6 +148,7 @@ export function AuthorityPage({
   sections,
   sources,
   related,
+  experience,
 }: {
   eyebrow: string;
   title: string;
@@ -153,6 +158,7 @@ export function AuthorityPage({
   sections: Section[];
   sources: Source[];
   related: { label: string; href: string }[];
+  experience?: ExpectationPreviewData;
 }) {
   return (
     <main className="min-h-screen bg-white text-[#0a1e33]">
@@ -282,6 +288,7 @@ export function AuthorityPage({
           </div>
         </aside>
       </div>
+      {experience && <ExpectationPreview data={experience} />}
       <ContactBand />
       <SiteFooter />
     </main>
