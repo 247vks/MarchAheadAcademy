@@ -18,6 +18,7 @@ import {
   type ExpectationPreviewData,
 } from '@/components/expectation-preview';
 import { siteReviewedAt } from '@/lib/site';
+import { GuideStructuredData } from '@/components/guide-structured-data';
 import type { ReactNode } from 'react';
 
 type Section = { title: string; body: string; points?: string[] };
@@ -204,6 +205,7 @@ export function AuthorityPage({
   experience,
   expertContext,
   visual,
+  currentHref,
 }: {
   eyebrow: string;
   title: string;
@@ -216,9 +218,16 @@ export function AuthorityPage({
   experience?: ExpectationPreviewData;
   expertContext?: string;
   visual?: ReactNode;
+  currentHref: string;
 }) {
   return (
     <main className="min-h-screen bg-white text-[#0a1e33]">
+      <GuideStructuredData
+        path={currentHref}
+        title={title}
+        description={lede}
+        section={eyebrow}
+      />
       <SiteHeader />
       <section className="command-blue text-white">
         <div className="mx-auto max-w-5xl px-5 py-12 sm:py-14 lg:px-8 lg:py-18">

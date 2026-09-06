@@ -1,8 +1,53 @@
 import type { Metadata } from 'next';
 import { AuthorityPage } from '@/components/authority-shell';
-export const metadata: Metadata = { alternates: { canonical: '/services/army' }, title: 'Indian Army Careers | March Ahead Academy', description: 'Explore officer, technical and Agniveer pathways in the Indian Army.' };
-export default function Page() { return <AuthorityPage accent="#91a96a" eyebrow="Army careers" title="Careers in the Indian Army" lede="Understand the broad families of Army entries, how officer and other-rank careers differ, and where the current official notice must guide every decision." sections={[
-  { title: 'Officer pathways', body: 'Army officer routes include UPSC-administered examinations and service-notified direct entries. NDA, CDS, technical, NCC, JAG and other specialist routes each apply distinct education, age, gender, commission and shortlisting conditions.', points: ['UPSC routes: NDA and CDS as notified.', 'Direct routes may include TES, TGC, SSC Technical, NCC Special Entry and JAG.', 'Entry availability and vacancies can change by course.'] },
-  { title: 'Agniveer and other notified recruitment', body: 'Army recruitment categories, rally or examination process, physical tests and eligibility must be read from the current recruiting-year notice. We do not treat an older category list as permanent.' },
-  { title: 'Choose by role and commitment', body: 'A career decision should consider the nature of field and staff responsibilities, training, service terms, family expectations and long-term development—not only perceived prestige or an exam name.' },
-]} sources={[{label:'Join Indian Army',href:'https://www.joinindianarmy.nic.in/'},{label:'UPSC active examinations',href:'https://www.upsc.gov.in/examinations/active-exams'}]} related={[{label:'After Class 12',href:'/career-paths/after-12th'},{label:'After graduation',href:'/career-paths/after-graduation'},{label:'CDS guide',href:'/exams/cds'}]} />; }
+export const metadata: Metadata = {
+  alternates: { canonical: '/services/army' },
+  title: 'Indian Army Careers | March Ahead Academy',
+  description:
+    'Explore officer, technical and Agniveer pathways in the Indian Army.',
+};
+export default function Page() {
+  return (
+    <AuthorityPage
+      currentHref="/services/army"
+      accent="#91a96a"
+      eyebrow="Army careers"
+      title="Careers in the Indian Army"
+      lede="Understand the broad families of Army entries, how officer and other-rank careers differ, and where the current official notice must guide every decision."
+      sections={[
+        {
+          title: 'Officer pathways',
+          body: 'Army officer routes include UPSC-administered examinations and service-notified direct entries. NDA, CDS, technical, NCC, JAG and other specialist routes each apply distinct education, age, gender, commission and shortlisting conditions.',
+          points: [
+            'UPSC routes: NDA and CDS as notified.',
+            'Direct routes may include TES, TGC, SSC Technical, NCC Special Entry and JAG.',
+            'Entry availability and vacancies can change by course.',
+          ],
+        },
+        {
+          title: 'Agniveer and other notified recruitment',
+          body: 'Army recruitment categories, rally or examination process, physical tests and eligibility must be read from the current recruiting-year notice. We do not treat an older category list as permanent.',
+        },
+        {
+          title: 'Choose by role and commitment',
+          body: 'A career decision should consider the nature of field and staff responsibilities, training, service terms, family expectations and long-term development—not only perceived prestige or an exam name.',
+        },
+      ]}
+      sources={[
+        {
+          label: 'Join Indian Army',
+          href: 'https://www.joinindianarmy.nic.in/',
+        },
+        {
+          label: 'UPSC active examinations',
+          href: 'https://www.upsc.gov.in/examinations/active-exams',
+        },
+      ]}
+      related={[
+        { label: 'After Class 12', href: '/career-paths/after-12th' },
+        { label: 'After graduation', href: '/career-paths/after-graduation' },
+        { label: 'CDS guide', href: '/exams/cds' },
+      ]}
+    />
+  );
+}

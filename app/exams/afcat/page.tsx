@@ -9,6 +9,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <AuthorityPage
+      currentHref="/exams/afcat"
       eyebrow="Exam guide"
       title="Air Force Common Admission Test"
       lede="AFCAT opens notified officer pathways across Flying and Ground Duty branches, but branch-specific education, age, commission and medical conditions must be checked separately."

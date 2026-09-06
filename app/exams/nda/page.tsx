@@ -9,6 +9,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <AuthorityPage
+      currentHref="/exams/nda"
       eyebrow="Exam guide"
       title="NDA & Naval Academy examination"
       lede="Understand what the examination leads to, how the selection journey works and which details must always be checked in the current UPSC notification."

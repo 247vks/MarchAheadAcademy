@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 export default function FoundationPage() {
   return (
     <AuthorityPage
+      currentHref="/career-paths/foundation"
       eyebrow="Career foundation"
       title="Start preparing without choosing an entry too early."
       lede="After Class 10, the useful decision is often how to keep future routes open—not whether one examination is already the answer."

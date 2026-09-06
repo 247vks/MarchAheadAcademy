@@ -9,6 +9,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <AuthorityPage
+      currentHref="/exams/cds"
       eyebrow="Exam guide"
       title="Combined Defence Services examination"
       lede="CDS is not one uniform route. IMA, INA, AFA and OTA have distinct educational conditions, examination papers, service outcomes and notified availability."

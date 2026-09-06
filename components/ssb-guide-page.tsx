@@ -16,6 +16,7 @@ import {
 } from '@/components/authority-shell';
 import { siteReviewedAt } from '@/lib/site';
 import { SsbJourneyMap } from '@/components/decision-visuals';
+import { GuideStructuredData } from '@/components/guide-structured-data';
 
 export type SsbGuideData = {
   currentHref: string;
@@ -34,6 +35,13 @@ export type SsbGuideData = {
 export function SsbGuidePage({ guide }: { guide: SsbGuideData }) {
   return (
     <main className="min-h-screen bg-white text-[#0a1e33]">
+      <GuideStructuredData
+        path={guide.currentHref}
+        title={guide.title}
+        description={guide.lede}
+        section="SSB selection"
+        faqs={guide.faqs}
+      />
       <SiteHeader />
       <section className="command-blue text-white">
         <div className="mx-auto max-w-5xl px-5 py-12 sm:py-14 lg:px-8 lg:py-18">

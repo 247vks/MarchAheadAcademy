@@ -11,6 +11,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <AuthorityPage
+      currentHref="/eligibility"
       visual={<EligibilityChain />}
       eyebrow="Eligibility guide"
       title="Defence eligibility is a chain, not a checkbox"
