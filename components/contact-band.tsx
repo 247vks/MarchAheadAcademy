@@ -46,8 +46,8 @@ export function ContactBand() {
               Questions about the right defence career path?
             </h2>
             <p className="mt-4 max-w-4xl text-sm leading-7 text-white/80 sm:text-base">
-              Connect directly for guidance about career routes, preparation and
-              the next sensible step.
+              Contact us for guidance about career routes, preparation and the
+              next sensible step.
             </p>
           </div>
           <div className="mt-8 grid gap-px overflow-hidden border border-white/25 bg-white/25 sm:grid-cols-3">
