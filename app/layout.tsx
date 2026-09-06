@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Libre_Baskerville, Manrope } from 'next/font/google';
+import Script from 'next/script';
 import './globals.css';
 
 const bodyFont = Manrope({ variable: '--font-body', subsets: ['latin'] });
@@ -43,6 +44,16 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${bodyFont.variable} ${headingFont.variable}`}>
         {children}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-PP07C1HDNY"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-PP07C1HDNY');`}
+        </Script>
       </body>
     </html>
   );
