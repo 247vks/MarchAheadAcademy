@@ -167,27 +167,51 @@ export function SiteFooter() {
         </div>
         <nav className="grid content-start gap-2" aria-label="Career guidance">
           <strong className="text-white">Explore</strong>
-          <Link href="/career-paths">Career paths</Link>
-          <Link href="/services">Services</Link>
-          <Link href="/eligibility">Eligibility</Link>
+          <Link className="text-link dark-text-link" href="/career-paths">
+            Career paths
+          </Link>
+          <Link className="text-link dark-text-link" href="/services">
+            Services
+          </Link>
+          <Link className="text-link dark-text-link" href="/eligibility">
+            Eligibility
+          </Link>
         </nav>
         <nav
           className="grid content-start gap-2"
           aria-label="Selection guidance"
         >
           <strong className="text-white">Prepare</strong>
-          <Link href="/exams">Exams</Link>
-          <Link href="/selection/ssb">SSB</Link>
-          <Link href="/notifications">Official sources</Link>
+          <Link className="text-link dark-text-link" href="/exams">
+            Exams
+          </Link>
+          <Link className="text-link dark-text-link" href="/selection/ssb">
+            SSB
+          </Link>
+          <Link className="text-link dark-text-link" href="/notifications">
+            Official sources
+          </Link>
         </nav>
         <nav
           className="grid content-start gap-2"
           aria-label="Trust and organisation"
         >
           <strong className="text-white">March Ahead Academy</strong>
-          <Link href="/authors/cdr-sulakshan-kumar-sharma">Cdr Sharma</Link>
-          <Link href="/about">About</Link>
-          <Link href="/editorial-standards">Editorial standards</Link>
+          <Link
+            className="text-link dark-text-link"
+            href="/authors/cdr-sulakshan-kumar-sharma"
+          >
+            Cdr Sharma
+          </Link>
+          <Link className="text-link dark-text-link" href="/about">
+            About
+          </Link>
+          <Link
+            className="text-link dark-text-link"
+            href="/editorial-standards"
+          >
+            Editorial standards
+          </Link>
         </nav>
       </div>
     </footer>
@@ -283,11 +307,17 @@ export function AuthorityPage({
             </p>
             <div className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold">
               {sections.map((section, index) => (
-                <a key={section.title} href={`#section-${index + 1}`}>
+                <a
+                  className="text-link"
+                  key={section.title}
+                  href={`#section-${index + 1}`}
+                >
                   {section.title}
                 </a>
               ))}
-              <a href="#official-sources">Official sources</a>
+              <a className="text-link" href="#official-sources">
+                Official sources
+              </a>
             </div>
           </nav>
           <div className="border border-[#d9e3df] border-l-4 border-l-[#4b6228] bg-[#f8faf9] p-6">
@@ -359,7 +389,7 @@ export function AuthorityPage({
                   href={source.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-center justify-between border border-[#cbd3ce] border-l-4 border-l-[#397fa8] bg-[#f9fbfc] px-4 py-3 text-sm font-semibold transition hover:bg-[#eef6fa]"
+                  className="linked-panel flex items-center justify-between border border-[#cbd3ce] border-l-4 border-l-[#397fa8] bg-[#f9fbfc] px-4 py-3 text-sm font-semibold"
                 >
                   {source.label}
                   <ExternalLink size={15} className="text-[#397fa8]" />
@@ -378,7 +408,7 @@ export function AuthorityPage({
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="flex items-center justify-between border-b border-[#e2e7e4] py-3 text-sm font-semibold"
+                  className="linked-panel flex items-center justify-between border-b border-[#e2e7e4] px-2 py-3 text-sm font-semibold"
                 >
                   {item.label}
                   <ArrowRight size={14} />

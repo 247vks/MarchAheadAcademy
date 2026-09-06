@@ -52,6 +52,49 @@ body {
 a {
   text-decoration: none;
 }
+a[href] {
+  cursor: pointer;
+}
+.text-link {
+  text-decoration-line: underline;
+  text-decoration-color: #9bc9df;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  transition:
+    color 0.18s ease,
+    text-decoration-color 0.18s ease;
+}
+.text-link:hover {
+  color: #2f6f94;
+  text-decoration-color: currentColor;
+}
+.dark-text-link {
+  color: #d6e0e7;
+  text-decoration-color: #567087;
+}
+.dark-text-link:hover {
+  color: #ffffff;
+  text-decoration-color: #9bd1ea;
+}
+.linked-panel {
+  transition:
+    transform 0.18s ease,
+    border-color 0.18s ease,
+    background-color 0.18s ease,
+    box-shadow 0.18s ease;
+}
+.linked-panel:hover {
+  transform: translateY(-2px);
+  border-color: #9eb8c5;
+  background-color: #f3f8fb;
+  box-shadow: var(--shadow-sm);
+}
+.linked-panel svg {
+  transition: transform 0.18s ease;
+}
+.linked-panel:hover svg {
+  transform: translateX(3px);
+}
 button,
 a {
   outline-offset: 4px;

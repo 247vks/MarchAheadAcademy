@@ -102,11 +102,21 @@ export function SsbGuidePage({ guide }: { guide: SsbGuideData }) {
               On this page
             </p>
             <div className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold">
-              <a href="#guide-sections">Guide</a>
-              <a href="#practice">Practice</a>
-              <a href="#common-mistakes">Common mistakes</a>
-              <a href="#frequently-asked-questions">FAQs</a>
-              <a href="#official-sources">Official sources</a>
+              <a className="text-link" href="#guide-sections">
+                Guide
+              </a>
+              <a className="text-link" href="#practice">
+                Practice
+              </a>
+              <a className="text-link" href="#common-mistakes">
+                Common mistakes
+              </a>
+              <a className="text-link" href="#frequently-asked-questions">
+                FAQs
+              </a>
+              <a className="text-link" href="#official-sources">
+                Official sources
+              </a>
             </div>
           </nav>
           <section className="border-l-4 border-[#4b6228] bg-[#f8faf9] p-6">
@@ -235,7 +245,7 @@ export function SsbGuidePage({ guide }: { guide: SsbGuideData }) {
                   href={source.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="border border-[#cbd3ce] border-l-4 border-l-[#397fa8] bg-[#f9fbfc] p-4"
+                  className="linked-panel border border-[#cbd3ce] border-l-4 border-l-[#397fa8] bg-[#f9fbfc] p-4"
                 >
                   <span className="flex items-center justify-between text-sm font-bold">
                     {source.label}
@@ -262,7 +272,7 @@ export function SsbGuidePage({ guide }: { guide: SsbGuideData }) {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="flex items-center justify-between border-b border-[#dde3df] py-3 text-sm font-semibold"
+                    className="linked-panel flex items-center justify-between border-b border-[#dde3df] px-2 py-3 text-sm font-semibold"
                   >
                     {item.label}
                     <ArrowRight size={14} />
