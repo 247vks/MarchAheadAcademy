@@ -5,6 +5,7 @@ import {
   ExternalLink,
   GraduationCap,
   Map,
+  Phone,
   Scale,
   ShieldCheck,
   Users,
@@ -24,8 +25,11 @@ export function SiteHeader() {
   ];
   return (
     <>
-      <div className="bg-[#061a30] px-5 py-2 text-center text-[10px] font-bold tracking-[.15em] text-[#d9e8f2] uppercase">
-        Independent guidance · Official notification always controls
+      <div className="bg-[#061a30] px-5 py-2 text-[10px] font-bold text-[#d9e8f2]">
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-6 gap-y-1 sm:justify-between">
+          <span className="tracking-[.13em] uppercase">Independent guidance · Official notification always controls</span>
+          <a href="tel:+919820096800" className="inline-flex items-center gap-2 bg-[#77b9da] px-3 py-1 text-[#071f3d]" aria-label="Call March Ahead Academy on plus 91 98200 96800"><Phone size={13} aria-hidden="true" />Call +91 98200 96800</a>
+        </div>
       </div>
       <header className="border-b border-[#d6ddda] bg-white text-[#071f3d]">
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-8">
@@ -214,8 +218,9 @@ export function AuthorityPage({
           >
             <Link href="/about">About</Link>
             <Link href="/editorial-standards">Editorial standards</Link>
-            <Link href="/notifications">Source tracker</Link>
-          </nav>
+              <Link href="/notifications">Source tracker</Link>
+              <a href="tel:+919820096800" className="font-bold text-white">+91 98200 96800</a>
+            </nav>
         </div>
       </footer>
     </main>

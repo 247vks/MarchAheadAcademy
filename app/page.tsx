@@ -6,6 +6,7 @@ import {
   GraduationCap,
   Menu,
   Mountain,
+  Phone,
   Route,
   ShieldCheck,
   UserCheck,
@@ -68,9 +69,11 @@ const services = [
 export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden bg-white text-[#0a1e33]">
-      <div className="border-b border-white/10 bg-[#061a30] px-5 py-2 text-center text-[11px] font-medium tracking-[0.14em] text-[#d9e8f2] uppercase">
-        Independent career guidance · Always verify current official
-        notifications
+      <div className="border-b border-white/10 bg-[#061a30] px-5 py-2 text-[11px] font-medium text-[#d9e8f2]">
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-6 gap-y-1 sm:justify-between">
+          <span className="tracking-[0.12em] uppercase">Independent guidance · Official notification always controls</span>
+          <a href="tel:+919820096800" className="inline-flex items-center gap-2 bg-[#77b9da] px-3 py-1 font-extrabold tracking-[.06em] text-[#071f3d]" aria-label="Call March Ahead Academy on plus 91 98200 96800"><Phone size={13} aria-hidden="true" />Call +91 98200 96800</a>
+        </div>
       </div>
       <header className="relative z-20 border-b border-[#d6ddda] bg-white text-[#071f3d]">
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-8">
@@ -424,6 +427,7 @@ export default function Home() {
             <a href="/about">About</a>
             <a href="/editorial-standards">Editorial standards</a>
             <a href="/notifications">Source tracker</a>
+            <a href="tel:+919820096800" className="font-bold text-white">+91 98200 96800</a>
           </nav>
         </div>
       </footer>
