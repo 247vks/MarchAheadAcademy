@@ -1,15 +1,23 @@
 import Link from 'next/link';
-import { ArrowRight, Compass, ExternalLink, ShieldCheck } from 'lucide-react';
+import { ArrowRight, BellRing, Compass, ExternalLink, GraduationCap, Map, Scale, ShieldCheck, Users } from 'lucide-react';
 
 type Section = { title: string; body: string; points?: string[] };
 type Source = { label: string; href: string };
 
 export function SiteHeader() {
+  const navItems = [
+    { label: 'Career paths', href: '/career-paths', icon: Map },
+    { label: 'Forces', href: '/services/army', icon: ShieldCheck },
+    { label: 'Exams', href: '/exams/nda', icon: GraduationCap },
+    { label: 'Eligibility', href: '/eligibility', icon: Scale },
+    { label: 'SSB', href: '/selection/ssb', icon: Users },
+    { label: 'Notifications', href: '/notifications', icon: BellRing },
+  ];
   return <>
     <div className="bg-[#061a30] px-5 py-2 text-center text-[10px] font-bold tracking-[.15em] text-[#d9e8f2] uppercase">Independent guidance · Official notification always controls</div>
     <header className="command-blue border-b border-[#2e6386] text-white"><div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-8">
       <Link href="/" className="flex items-center gap-3"><span className="grid h-10 w-10 place-items-center border border-[#8bc4e0] text-[#9bd1ea]"><Compass size={21} /></span><span><span className="block font-heading tracking-[.07em] uppercase">March Ahead</span><span className="block text-[9px] tracking-[.3em] text-[#9bd1ea] uppercase">Academy</span></span></Link>
-      <nav className="hidden gap-6 text-sm text-slate-200 lg:flex"><Link href="/career-paths">Career paths</Link><Link href="/services/army">Forces</Link><Link href="/exams/nda">Exams</Link><Link href="/eligibility">Eligibility</Link><Link href="/selection/ssb">SSB</Link><Link href="/notifications">Notifications</Link></nav>
+      <nav className="hidden gap-5 text-sm text-slate-200 lg:flex" aria-label="Primary navigation">{navItems.map(item => { const NavIcon = item.icon; return <Link key={item.href} href={item.href} className="flex items-center gap-1.5 transition hover:text-[#9bd1ea]"><NavIcon size={14} strokeWidth={1.7} aria-hidden="true" />{item.label}</Link>; })}</nav>
       <Link href="/career-paths" className="bg-[#77b9da] px-4 py-3 text-xs font-bold text-[#071f3d] uppercase">Find my path</Link>
     </div></header>
   </>;
