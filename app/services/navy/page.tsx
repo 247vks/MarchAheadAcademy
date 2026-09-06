@@ -1,0 +1,8 @@
+import type { Metadata } from 'next';
+import { AuthorityPage } from '@/components/authority-shell';
+export const metadata: Metadata = { title: 'Indian Navy Careers | March Ahead Academy', description: 'Explore officer, technical and Agniveer careers in the Indian Navy.' };
+export default function Page() { return <AuthorityPage eyebrow="Service careers" title="Careers in the Indian Navy" lede="Explore sea-going, aviation, technical and specialist career families while keeping every qualification and intake condition tied to the current Navy advertisement." sections={[
+  { title: 'Officer pathways', body: 'Navy officer routes can include NDA and Naval Academy, 10+2 B.Tech, CDSE/NCC-linked routes and graduate or technical Short Service Commission entries when notified.', points: ['Education and subject requirements differ by branch.', 'Shortlisting method and SSB pathway depend on the entry notice.', 'Commission type and gender availability must be checked intake by intake.'] },
+  { title: 'Agniveer pathways', body: 'SSR, MR and any specialist intakes have their own education, date-of-birth, examination, physical-fitness and medical conditions. The named batch advertisement—not an evergreen summary—controls.' },
+  { title: 'Understand life at sea', body: 'A Navy decision should account for maritime service, technical learning, deployments, ship or shore environments and the responsibilities of the selected branch.' },
+]} sources={[{label:'Join Indian Navy',href:'https://www.joinindiannavy.gov.in/'},{label:'UPSC active examinations',href:'https://www.upsc.gov.in/examinations/active-exams'}]} related={[{label:'NDA guide',href:'/exams/nda'},{label:'After Class 12',href:'/career-paths/after-12th'},{label:'SSB guide',href:'/selection/ssb'}]} />; }

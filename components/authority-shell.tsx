@@ -9,7 +9,7 @@ export function SiteHeader() {
     <div className="relative bg-[#061a30] px-5 py-2 text-center text-[10px] font-bold tracking-[.15em] text-[#d9e8f2] uppercase"><span className="absolute inset-x-0 top-0 grid h-1 grid-cols-3"><span className="bg-[#4b6228]" /><span className="bg-white" /><span className="bg-[#5aa6cf]" /></span>Independent guidance · Official notification always controls</div>
     <header className="border-b border-[#214665] bg-[#071f3d] text-white"><div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-8">
       <Link href="/" className="flex items-center gap-3"><span className="grid h-10 w-10 place-items-center border border-[#8bc4e0] text-[#9bd1ea]"><Compass size={21} /></span><span><span className="block font-heading tracking-[.07em] uppercase">March Ahead</span><span className="block text-[9px] tracking-[.3em] text-[#9bd1ea] uppercase">Academy</span></span></Link>
-      <nav className="hidden gap-6 text-sm text-slate-200 lg:flex"><Link href="/career-paths">Career paths</Link><Link href="/exams/nda">NDA</Link><Link href="/exams/cds">CDS</Link><Link href="/selection/ssb">SSB</Link></nav>
+      <nav className="hidden gap-6 text-sm text-slate-200 lg:flex"><Link href="/career-paths">Career paths</Link><Link href="/services/army">Forces</Link><Link href="/exams/nda">Exams</Link><Link href="/eligibility">Eligibility</Link><Link href="/selection/ssb">SSB</Link><Link href="/notifications">Notifications</Link></nav>
       <Link href="/career-paths" className="bg-[#77b9da] px-4 py-3 text-xs font-bold text-[#071f3d] uppercase">Find my path</Link>
     </div></header>
   </>;
