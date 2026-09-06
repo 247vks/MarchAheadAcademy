@@ -326,6 +326,31 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="bg-[#4b6228] px-5 py-12 text-white lg:px-8" aria-label="Current authority foundation">
+        <div className="mx-auto grid max-w-7xl gap-px overflow-hidden border border-white/20 bg-white/20 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            [ShieldCheck, '3', 'Service career hubs'],
+            [BookOpen, '12', 'Foundation guides'],
+            [Route, '5', 'Official source channels'],
+            [UserCheck, '0', 'Unverified live dates published'],
+          ].map(([Icon, value, label]) => {
+            const EvidenceIcon = Icon as typeof ShieldCheck;
+            return <div key={label as string} className="bg-[#4b6228] p-6 sm:p-7"><EvidenceIcon size={25} strokeWidth={1.5} className="text-[#d9e8f2]" aria-hidden="true" /><p className="mt-5 font-heading text-4xl">{value as string}</p><p className="mt-1 text-xs font-bold tracking-[.12em] text-white/80 uppercase">{label as string}</p></div>;
+          })}
+        </div>
+      </section>
+
+      <section className="bg-white px-5 py-20 lg:px-8">
+        <div className="relative mx-auto min-h-[390px] max-w-7xl overflow-hidden bg-[#071f3d] bg-cover bg-center" style={{ backgroundImage: "linear-gradient(90deg, rgba(7,31,61,.97) 0%, rgba(7,31,61,.86) 38%, rgba(7,31,61,.16) 72%), url('/aspirant-guidance-banner.png')" }}>
+          <div className="relative flex min-h-[390px] max-w-2xl flex-col justify-center px-7 py-12 text-white sm:px-12 lg:px-16">
+            <p className="text-xs font-bold tracking-[.18em] text-[#9bd1ea] uppercase">Career decisions start with clarity</p>
+            <h2 className="mt-4 font-heading text-4xl leading-tight sm:text-5xl">Not sure which entry fits your stage?</h2>
+            <p className="mt-5 max-w-xl leading-7 text-slate-200">Use our pathway guides to compare routes before investing time in preparation. We show what to investigate—and what the current official notification must confirm.</p>
+            <a href="/career-paths" className="mt-7 inline-flex w-fit items-center gap-2 bg-white px-5 py-3 text-sm font-bold text-[#071f3d]">Find my path <ArrowRight size={16} /></a>
+          </div>
+        </div>
+      </section>
+
       <section
         id="entries"
         className="mx-auto grid max-w-7xl gap-6 px-5 py-20 lg:grid-cols-3 lg:px-8 lg:py-24"
