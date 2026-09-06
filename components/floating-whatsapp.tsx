@@ -9,16 +9,11 @@ export function FloatingWhatsApp() {
       href={whatsappUrl}
       target="_blank"
       rel="noreferrer"
-      className="fixed right-4 bottom-4 z-50 inline-flex min-h-14 items-center gap-3 rounded-full bg-[#167c3a] px-4 text-sm font-extrabold text-white shadow-[0_10px_30px_rgba(7,31,61,.28)] transition hover:-translate-y-0.5 hover:bg-[#126b32] focus-visible:outline-white sm:right-6 sm:bottom-6"
+      className="fixed right-4 bottom-4 z-50 grid h-14 w-14 place-items-center rounded-full border border-white/70 bg-[#167c3a] text-white shadow-[0_0_0_6px_rgba(22,124,58,.10),0_8px_24px_rgba(7,31,61,.22)] transition hover:-translate-y-0.5 hover:bg-[#126b32] hover:shadow-[0_0_0_8px_rgba(22,124,58,.14),0_10px_28px_rgba(7,31,61,.26)] focus-visible:outline-white sm:right-6 sm:bottom-6"
       aria-label="Connect with March Ahead Academy on WhatsApp"
+      title="Connect on WhatsApp"
     >
-      <span
-        className="grid h-9 w-9 place-items-center rounded-full bg-white/15"
-        aria-hidden="true"
-      >
-        <MessageCircle size={23} strokeWidth={2} />
-      </span>
-      <span className="hidden pr-1 sm:block">WhatsApp us</span>
+      <MessageCircle size={25} strokeWidth={1.9} aria-hidden="true" />
     </a>
   );
 }
