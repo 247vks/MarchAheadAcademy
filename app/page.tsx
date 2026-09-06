@@ -72,36 +72,42 @@ const gallery = [
     copy: 'Understand the route before choosing preparation.',
     image: '/gallery/learn.png',
     position: 'center',
+    href: '/preparation/learn',
   },
   {
     title: 'Lead',
     copy: 'Practise clear thinking, initiative and responsibility.',
     image: '/gallery/lead.png',
     position: 'center',
+    href: '/preparation/lead',
   },
   {
     title: 'Prepare',
     copy: 'Build a sustainable academic and fitness plan.',
     image: '/gallery/prepare.png',
     position: 'center',
+    href: '/preparation/prepare',
   },
   {
     title: 'Communicate',
     copy: 'Listen carefully and express ideas with clarity.',
     image: '/gallery/communicate.png',
     position: 'center',
+    href: '/preparation/communicate',
   },
   {
     title: 'Train',
     copy: 'Develop consistency, resilience and teamwork.',
     image: '/gallery/train.png',
     position: 'center',
+    href: '/preparation/train',
   },
   {
     title: 'Serve',
     copy: 'Put responsibility and contribution before self.',
     image: '/gallery/serve.png',
     position: 'center',
+    href: '/preparation/serve',
   },
 ];
 
@@ -569,8 +575,9 @@ export default function Home() {
           </div>
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {gallery.map((item, index) => (
-              <figure
+              <a
                 key={item.title}
+                href={item.href}
                 className="group relative aspect-square overflow-hidden bg-[#071f3d]"
               >
                 <img
@@ -589,7 +596,10 @@ export default function Home() {
                     {item.copy}
                   </p>
                 </div>
-              </figure>
+                <span className="sr-only">
+                  Read the {item.title} preparation guide
+                </span>
+              </a>
             ))}
           </div>
         </div>
