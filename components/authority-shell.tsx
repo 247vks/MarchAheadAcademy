@@ -6,7 +6,7 @@ type Source = { label: string; href: string };
 
 export function SiteHeader() {
   return <>
-    <div className="relative bg-[#061a30] px-5 py-2 text-center text-[10px] font-bold tracking-[.15em] text-[#d9e8f2] uppercase"><span className="absolute inset-x-0 top-0 grid h-1 grid-cols-3"><span className="bg-[#4b6228]" /><span className="bg-white" /><span className="bg-[#5aa6cf]" /></span>Independent guidance · Official notification always controls</div>
+    <div className="bg-[#061a30] px-5 py-2 text-center text-[10px] font-bold tracking-[.15em] text-[#d9e8f2] uppercase">Independent guidance · Official notification always controls</div>
     <header className="command-blue border-b border-[#2e6386] text-white"><div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-8">
       <Link href="/" className="flex items-center gap-3"><span className="grid h-10 w-10 place-items-center border border-[#8bc4e0] text-[#9bd1ea]"><Compass size={21} /></span><span><span className="block font-heading tracking-[.07em] uppercase">March Ahead</span><span className="block text-[9px] tracking-[.3em] text-[#9bd1ea] uppercase">Academy</span></span></Link>
       <nav className="hidden gap-6 text-sm text-slate-200 lg:flex"><Link href="/career-paths">Career paths</Link><Link href="/services/army">Forces</Link><Link href="/exams/nda">Exams</Link><Link href="/eligibility">Eligibility</Link><Link href="/selection/ssb">SSB</Link><Link href="/notifications">Notifications</Link></nav>
@@ -15,11 +15,11 @@ export function SiteHeader() {
   </>;
 }
 
-export function AuthorityPage({ eyebrow, title, lede, status = 'Foundation guide', sections, sources, related }: { eyebrow: string; title: string; lede: string; status?: string; sections: Section[]; sources: Source[]; related: { label: string; href: string }[] }) {
+export function AuthorityPage({ eyebrow, title, lede, status = 'Foundation guide', accent = '#2f6f94', sections, sources, related }: { eyebrow: string; title: string; lede: string; status?: string; accent?: string; sections: Section[]; sources: Source[]; related: { label: string; href: string }[] }) {
   return <main className="min-h-screen bg-[#f3f5f2] text-[#0a1e33]">
     <SiteHeader />
-    <section className="command-blue text-white"><div className="mx-auto max-w-5xl px-5 py-16 lg:px-8 lg:py-20">
-      <div className="flex items-center gap-3 text-xs font-bold tracking-[.17em] text-[#9bd1ea] uppercase"><span className="h-px w-8 bg-[#718a45]" />{eyebrow}</div>
+    <section className="command-blue border-t-4 text-white" style={{ borderTopColor: accent }}><div className="mx-auto max-w-5xl px-5 py-16 lg:px-8 lg:py-20">
+      <div className="flex items-center gap-3 text-xs font-bold tracking-[.17em] uppercase" style={{ color: accent }}><span className="h-px w-8" style={{ backgroundColor: accent }} />{eyebrow}</div>
       <h1 className="mt-6 max-w-4xl font-heading text-4xl leading-tight sm:text-6xl">{title}</h1><p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">{lede}</p>
       <div className="mt-8 inline-flex items-center gap-2 border border-[#80a6bd]/50 bg-[#103353] px-4 py-2 text-xs font-semibold text-[#cce7f5]"><ShieldCheck size={15} />{status} · Last reviewed 6 September 2026</div>
     </div></section>

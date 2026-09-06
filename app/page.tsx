@@ -8,16 +8,15 @@ const stages = [
 ];
 
 const services = [
-  { name: 'Indian Army', copy: 'Officer, technical and Agniveer pathways across arms and services.', code: '01', color: '#4b6228', accent: '#c7d6a8', href: '/services/army' },
-  { name: 'Indian Navy', copy: 'Sea-going, aviation, technical and specialist careers.', code: '02', color: '#071f3d', accent: '#b9d5e7', href: '/services/navy' },
-  { name: 'Indian Air Force', copy: 'Flying, ground duty, technical and Agniveervayu routes.', code: '03', color: '#397fa8', accent: '#d9f0fb', href: '/services/air-force' },
+  { name: 'Indian Army', copy: 'Officer, technical and Agniveer pathways across arms and services.', code: '01', color: '#4b6228', accent: '#f8fafb', href: '/services/army' },
+  { name: 'Indian Navy', copy: 'Sea-going, aviation, technical and specialist careers.', code: '02', color: '#071f3d', accent: '#f8fafb', href: '/services/navy' },
+  { name: 'Indian Air Force', copy: 'Flying, ground duty, technical and Agniveervayu routes.', code: '03', color: '#397fa8', accent: '#f8fafb', href: '/services/air-force' },
 ];
 
 export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden bg-[#f3f5f2] text-[#0a1e33]">
-      <div className="relative border-b border-white/10 bg-[#061a30] px-5 py-2 text-center text-[11px] font-medium tracking-[0.14em] text-[#d9e8f2] uppercase">
-        <span className="absolute inset-x-0 top-0 grid h-1 grid-cols-3"><span className="bg-[#4b6228]" /><span className="bg-white" /><span className="bg-[#5aa6cf]" /></span>
+      <div className="border-b border-white/10 bg-[#061a30] px-5 py-2 text-center text-[11px] font-medium tracking-[0.14em] text-[#d9e8f2] uppercase">
         Independent career guidance · Always verify current official notifications
       </div>
       <header className="command-blue relative z-20 border-b border-[#2e6386] text-white">
@@ -70,7 +69,7 @@ export default function Home() {
 
       <section id="services" className="bg-[#e4e9e5] px-5 py-20 lg:px-8 lg:py-24"><div className="mx-auto max-w-7xl">
         <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end"><div><p className="section-kicker">Explore the services</p><h2 className="mt-4 font-heading text-4xl sm:text-5xl">Three forces. Many ways to serve.</h2></div><p className="max-w-md text-sm leading-6 text-[#5f6973]">Clear distinctions, realistic career context and direct links to the official recruitment authorities.</p></div>
-        <div className="mt-10 grid gap-5 lg:grid-cols-3">{services.map((service) => <article key={service.name} className="group relative min-h-72 overflow-hidden p-8 text-white" style={{ backgroundColor: service.color }}><span className="absolute right-6 top-4 font-heading text-7xl text-white/[.07]">{service.code}</span><div className="flex h-full flex-col justify-between"><BadgeCheck style={{ color: service.accent }} size={30} strokeWidth={1.4} /><div><h3 className="font-heading text-3xl">{service.name}</h3><p className="mt-3 leading-6 text-white/75">{service.copy}</p><a href={service.href} className="mt-6 inline-flex items-center gap-2 text-sm font-semibold" style={{ color: service.accent }}>Explore pathways <ArrowRight size={16} className="transition group-hover:translate-x-1" /></a></div></div></article>)}</div>
+        <div className="mt-10 grid gap-5 lg:grid-cols-3">{services.map((service) => <article key={service.name} className="group relative min-h-72 overflow-hidden p-8 text-white" style={{ backgroundColor: service.color }}><span className="absolute right-6 top-4 font-heading text-7xl text-white/[.07]">{service.code}</span><div className="flex h-full flex-col justify-between"><BadgeCheck style={{ color: service.accent }} size={30} strokeWidth={1.4} /><div><h3 className="font-heading text-3xl">{service.name}</h3><p className="mt-3 leading-6 text-[#f8fafb]">{service.copy}</p><a href={service.href} className="mt-6 inline-flex items-center gap-2 text-sm font-semibold" style={{ color: service.accent }}>Explore pathways <ArrowRight size={16} className="transition group-hover:translate-x-1" /></a></div></div></article>)}</div>
       </div></section>
 
       <section id="entries" className="mx-auto grid max-w-7xl gap-6 px-5 py-20 lg:grid-cols-3 lg:px-8 lg:py-24">

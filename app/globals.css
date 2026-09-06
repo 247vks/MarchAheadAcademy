@@ -20,12 +20,12 @@
   --border: #cbd3ce;
   --ring: #5b8f3d;
   --navy: #071f3d;
-  --navy-light: #11375c;
   --command-blue: #123b5d;
   --army: #4b6228;
-  --army-light: #718a45;
   --air-force: #5aa6cf;
-  --air-force-light: #9bd1ea;
+  --air-force-accessible: #2f6f94;
+  --hero-tint: #9bd1ea;
+  --pale-blue: #d9f0fb;
   --service-white: #f8fafb;
   --steel: #566978;
 }
@@ -34,7 +34,7 @@ html { scroll-behavior: smooth; }
 body { margin: 0; background: var(--background); color: var(--foreground); font-family: var(--font-body), Arial, sans-serif; }
 a { text-decoration: none; }
 button, a { outline-offset: 4px; }
-button:focus-visible, a:focus-visible { outline: 2px solid var(--air-force); }
+button:focus-visible, a:focus-visible { outline: 2px solid var(--air-force-accessible); outline-offset: 4px; }
 .font-heading { font-family: var(--font-display), Georgia, serif; }
 .section-kicker { color: var(--army); font-size: .72rem; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
 .command-blue { background: linear-gradient(135deg, #123b5d 0%, #0d304e 58%, #164b6d 100%); }
