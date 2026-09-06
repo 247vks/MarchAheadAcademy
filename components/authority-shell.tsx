@@ -11,6 +11,7 @@ import {
   Users,
 } from 'lucide-react';
 import { ContactBand } from '@/components/contact-band';
+import { ExpertByline } from '@/components/expert-byline';
 import {
   ExpectationPreview,
   type ExpectationPreviewData,
@@ -61,12 +62,12 @@ export function SiteHeader() {
               );
             })}
           </nav>
-          <div className="hidden items-center gap-4 sm:flex">
+          <div className="hidden items-center gap-4 lg:flex">
             <Link
               href="/career-paths"
               className="bg-[#77b9da] px-4 py-3 text-xs font-bold text-[#071f3d] uppercase"
             >
-              Find my path
+              Explore career paths
             </Link>
           </div>
           <details className="relative lg:hidden">
@@ -101,7 +102,7 @@ export function SiteHeader() {
                 href="/career-paths"
                 className="mt-2 bg-[#77b9da] px-4 py-3 text-center text-xs font-bold uppercase"
               >
-                Find my path
+                Explore career paths
               </Link>
             </nav>
           </details>
@@ -113,6 +114,39 @@ export function SiteHeader() {
         </div>
       </header>
     </>
+  );
+}
+
+export function Breadcrumbs({
+  parent,
+  parentHref,
+  current,
+}: {
+  parent?: string;
+  parentHref?: string;
+  current: string;
+}) {
+  return (
+    <nav
+      aria-label="Breadcrumb"
+      className="mb-6 flex flex-wrap items-center gap-2 text-xs font-semibold text-[#cce7f5]"
+    >
+      <Link href="/" className="transition hover:text-white">
+        Home
+      </Link>
+      {parent && parentHref && (
+        <>
+          <span aria-hidden="true">/</span>
+          <Link href={parentHref} className="transition hover:text-white">
+            {parent}
+          </Link>
+        </>
+      )}
+      <span aria-hidden="true">/</span>
+      <span aria-current="page" className="text-white">
+        {current}
+      </span>
+    </nav>
   );
 }
 
@@ -149,6 +183,7 @@ export function AuthorityPage({
   sources,
   related,
   experience,
+  expertContext,
 }: {
   eyebrow: string;
   title: string;
@@ -159,6 +194,7 @@ export function AuthorityPage({
   sources: Source[];
   related: { label: string; href: string }[];
   experience?: ExpectationPreviewData;
+  expertContext?: string;
 }) {
   return (
     <main className="min-h-screen bg-white text-[#0a1e33]">
@@ -168,6 +204,7 @@ export function AuthorityPage({
         style={{ borderTopColor: accent }}
       >
         <div className="mx-auto max-w-5xl px-5 py-16 lg:px-8 lg:py-20">
+          <Breadcrumbs current={eyebrow} />
           <div
             className="flex items-center gap-3 text-xs font-bold tracking-[.17em] uppercase"
             style={{ color: accent }}
@@ -186,12 +223,14 @@ export function AuthorityPage({
               <ShieldCheck size={15} />
               {status} · Last reviewed 6 September 2026
             </span>
-            <Link
-              href="/about"
-              className="inline-flex items-center border border-[#80a6bd]/50 px-4 py-2 transition hover:border-[#9bd1ea]"
-            >
-              Expert perspective · Cdr Sharma
-            </Link>
+            {expertContext && (
+              <Link
+                href="/authors/cdr-sulakshan-kumar-sharma"
+                className="inline-flex items-center border border-[#80a6bd]/50 px-4 py-2 transition hover:border-[#9bd1ea]"
+              >
+                Expert perspective · Cdr Sharma
+              </Link>
+            )}
             <Link
               href="/editorial-standards"
               className="inline-flex items-center border border-[#80a6bd]/50 px-4 py-2 transition hover:border-[#9bd1ea]"
@@ -204,6 +243,23 @@ export function AuthorityPage({
       {experience && <ExpectationPreview data={experience} />}
       <div className="mx-auto grid max-w-5xl gap-10 px-5 py-14 lg:grid-cols-[1fr_260px] lg:px-8 lg:py-20">
         <article className="space-y-12">
+          {expertContext && <ExpertByline context={expertContext} />}
+          <nav
+            aria-label="On this page"
+            className="border-y border-[#d9e3df] py-4"
+          >
+            <p className="text-xs font-bold tracking-[.15em] text-[#397fa8] uppercase">
+              On this page
+            </p>
+            <div className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold">
+              {sections.map((section, index) => (
+                <a key={section.title} href={`#section-${index + 1}`}>
+                  {section.title}
+                </a>
+              ))}
+              <a href="#official-sources">Official sources</a>
+            </div>
+          </nav>
           <div className="border border-[#d9e3df] border-l-4 border-l-[#4b6228] bg-[#f8faf9] p-6">
             <p className="text-sm leading-7">
               <strong>Important:</strong> This guide explains career pathways;
@@ -216,8 +272,9 @@ export function AuthorityPage({
             const sectionAccent = ['#4b6228', '#071f3d', '#397fa8'][index % 3];
             return (
               <section
+                id={`section-${index + 1}`}
                 key={section.title}
-                className="border-l-2 pl-6"
+                className="scroll-mt-6 border-l-2 pl-6"
                 style={{ borderLeftColor: sectionAccent }}
               >
                 <p
@@ -247,7 +304,10 @@ export function AuthorityPage({
               </section>
             );
           })}
-          <section className="border-t border-[#cbd3ce] pt-8">
+          <section
+            id="official-sources"
+            className="scroll-mt-6 border-t border-[#cbd3ce] pt-8"
+          >
             <h2 className="font-heading text-2xl">Official sources</h2>
             <div className="mt-4 grid gap-3">
               {sources.map((source) => (

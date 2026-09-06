@@ -1,10 +1,9 @@
+import Link from 'next/link';
 import {
   Anchor,
   ArrowRight,
   BookOpen,
-  ChevronRight,
   GraduationCap,
-  Menu,
   Mountain,
   Route,
   ShieldCheck,
@@ -12,26 +11,31 @@ import {
   Wind,
 } from 'lucide-react';
 import { ContactBand } from '@/components/contact-band';
+import { SiteFooter, SiteHeader } from '@/components/authority-shell';
 
 const stages = [
   {
     label: 'Class 10',
     detail: 'Build the right academic and fitness foundation',
+    href: '/career-paths',
     icon: BookOpen,
   },
   {
     label: 'Class 12',
     detail: 'Explore NDA, technical and Agniveer entries',
+    href: '/career-paths/after-12th',
     icon: Route,
   },
   {
     label: 'College',
     detail: 'Plan degree-linked and NCC pathways',
+    href: '/career-paths/after-graduation',
     icon: GraduationCap,
   },
   {
     label: 'Graduate',
     detail: 'Compare CDS, AFCAT and direct entries',
+    href: '/career-paths/after-graduation',
     icon: UserCheck,
   },
 ];
@@ -114,120 +118,17 @@ const gallery = [
 export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden bg-white text-[#0a1e33]">
-      <div className="border-b border-white/10 bg-[#061a30] px-5 py-2 text-center text-[11px] font-medium tracking-[0.12em] text-[#d9e8f2] uppercase">
-        Independent guidance · Official notification always controls
-      </div>
-      <header className="relative z-20 border-b border-[#d6ddda] bg-white text-[#071f3d]">
-        <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-8">
-          <a
-            href="#"
-            className="border-l-2 border-[#397fa8] pl-3"
-            aria-label="March Ahead Academy home"
-          >
-            <span className="block font-heading text-lg leading-none tracking-[0.08em] uppercase">
-              March Ahead
-            </span>
-            <span className="mt-1 block text-[10px] tracking-[0.3em] text-[#397fa8] uppercase">
-              Academy
-            </span>
-          </a>
-          <nav
-            className="hidden items-center gap-7 text-sm text-[#33485b] lg:flex"
-            aria-label="Primary navigation"
-          >
-            <a href="/career-paths" className="transition hover:text-[#2f6f94]">
-              Career paths
-            </a>
-            <a href="/services" className="transition hover:text-[#2f6f94]">
-              Forces
-            </a>
-            <a href="/exams" className="transition hover:text-[#2f6f94]">
-              Exams & entries
-            </a>
-            <a href="/eligibility" className="transition hover:text-[#2f6f94]">
-              Eligibility
-            </a>
-            <a
-              href="/notifications"
-              className="transition hover:text-[#2f6f94]"
-            >
-              Notifications
-            </a>
-          </nav>
-          <div className="hidden items-center gap-5 sm:flex">
-            <a
-              href="/career-paths"
-              className="inline-flex items-center gap-2 bg-[#77b9da] px-5 py-3 text-xs font-bold tracking-wide text-[#071f3d] uppercase transition hover:bg-[#a6d7ed]"
-            >
-              Find my path <ArrowRight size={15} />
-            </a>
-          </div>
-          <details className="relative lg:hidden">
-            <summary
-              className="grid h-11 w-11 cursor-pointer list-none place-items-center border border-[#cbd3ce]"
-              aria-label="Open navigation"
-            >
-              <Menu size={21} aria-hidden="true" />
-            </summary>
-            <nav
-              className="absolute right-0 top-[calc(100%+1rem)] z-50 grid min-w-64 border border-[#cbd3ce] bg-white p-2 shadow-xl"
-              aria-label="Mobile navigation"
-            >
-              <a
-                href="/career-paths"
-                className="flex min-h-11 items-center px-3 text-sm font-semibold"
-              >
-                Career paths
-              </a>
-              <a
-                href="/services"
-                className="flex min-h-11 items-center border-t border-[#edf0ee] px-3 text-sm font-semibold"
-              >
-                Forces
-              </a>
-              <a
-                href="/exams"
-                className="flex min-h-11 items-center border-t border-[#edf0ee] px-3 text-sm font-semibold"
-              >
-                Exams & entries
-              </a>
-              <a
-                href="/eligibility"
-                className="flex min-h-11 items-center border-t border-[#edf0ee] px-3 text-sm font-semibold"
-              >
-                Eligibility
-              </a>
-              <a
-                href="/selection/ssb"
-                className="flex min-h-11 items-center border-t border-[#edf0ee] px-3 text-sm font-semibold"
-              >
-                SSB
-              </a>
-              <a
-                href="/notifications"
-                className="flex min-h-11 items-center border-t border-[#edf0ee] px-3 text-sm font-semibold"
-              >
-                Notifications
-              </a>
-            </nav>
-          </details>
-        </div>
-        <div className="tri-service-rule" aria-hidden="true">
-          <span />
-          <span />
-          <span />
-        </div>
-      </header>
+      <SiteHeader />
 
       <section className="command-blue relative text-white">
         <div className="absolute inset-0 opacity-25 [background-image:linear-gradient(rgba(255,255,255,.06)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.06)_1px,transparent_1px)] [background-size:48px_48px]" />
-        <div className="relative mx-auto grid min-h-[640px] max-w-7xl items-center gap-14 px-5 py-20 lg:grid-cols-[1.15fr_.85fr] lg:px-8 lg:py-24">
+        <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 py-14 lg:min-h-[640px] lg:grid-cols-[1.15fr_.85fr] lg:px-8 lg:py-24">
           <div>
             <div className="mb-7 flex items-center gap-3 text-xs font-semibold tracking-[0.18em] text-[#9bd1ea] uppercase">
               <span className="h-px w-10 bg-[#6fae3f]" /> Careers in
               India&apos;s Armed Forces
             </div>
-            <h1 className="max-w-3xl font-heading text-5xl leading-[1.02] tracking-[-0.035em] sm:text-6xl lg:text-7xl">
+            <h1 className="max-w-3xl font-heading text-4xl leading-[1.05] tracking-[-0.035em] sm:text-6xl lg:text-7xl">
               Your clearest path to a career in the Defence Forces.
             </h1>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-300">
@@ -236,22 +137,22 @@ export default function Home() {
               credible guidance at every stage.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <a
+              <Link
                 href="/career-paths"
                 className="inline-flex items-center justify-center gap-2 bg-[#77b9da] px-6 py-4 text-sm font-bold text-[#071f3d] transition hover:bg-[#a6d7ed]"
               >
-                Find my entry route <ArrowRight size={17} />
-              </a>
+                Explore career paths <ArrowRight size={17} />
+              </Link>
               <a
                 href="#services"
                 className="inline-flex items-center justify-center gap-2 border border-white/25 px-6 py-4 text-sm font-semibold transition hover:border-[#8fc05f] hover:text-[#b9d68f]"
               >
-                Explore all careers <ChevronRight size={17} />
+                Compare the three services <ArrowRight size={17} />
               </a>
             </div>
           </div>
           <aside
-            className="border border-white/15 bg-[#103353]/90 p-7 shadow-2xl shadow-black/20 sm:p-9"
+            className="hidden border border-white/15 bg-[#103353]/90 p-7 shadow-2xl shadow-black/20 sm:p-9 lg:block"
             aria-label="Guidance principles"
           >
             <div className="mb-8 flex items-start justify-between border-b border-white/10 pb-6">
@@ -318,6 +219,12 @@ export default function Home() {
               Guidance shaped by Cdr Sharma&apos;s experience across military
               service, teaching, recruitment and SSB psychology.
             </p>
+            <Link
+              href="/authors/cdr-sulakshan-kumar-sharma"
+              className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-[#2f6f94] underline decoration-[#9bc9df] underline-offset-4"
+            >
+              Meet Cdr Sulakshan Kumar Sharma (Retd) <ArrowRight size={14} />
+            </Link>
           </div>
           <dl className="grid gap-px overflow-hidden border border-[#d4ddd8] bg-[#d4ddd8] sm:grid-cols-2 xl:grid-cols-4">
             {[
@@ -372,11 +279,7 @@ export default function Home() {
               return (
                 <a
                   key={stage.label}
-                  href={
-                    index < 2
-                      ? '/career-paths/after-12th'
-                      : '/career-paths/after-graduation'
-                  }
+                  href={stage.href}
                   className="group border-t-4 bg-white p-7 transition hover:bg-[#f8faf9] sm:p-8"
                   style={{ borderTopColor: stageAccent }}
                 >
@@ -480,36 +383,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-white px-5 py-20 lg:px-8">
-        <div
-          className="relative mx-auto min-h-[390px] max-w-7xl overflow-hidden bg-[#071f3d] bg-cover bg-center"
-          style={{
-            backgroundImage:
-              "linear-gradient(90deg, rgba(7,31,61,.97) 0%, rgba(7,31,61,.86) 38%, rgba(7,31,61,.16) 72%), url('/aspirant-guidance-banner.png')",
-          }}
-        >
-          <div className="relative flex min-h-[390px] max-w-2xl flex-col justify-center px-7 py-12 text-white sm:px-12 lg:px-16">
-            <p className="text-xs font-bold tracking-[.18em] text-[#9bd1ea] uppercase">
-              Career decisions start with clarity
-            </p>
-            <h2 className="mt-4 font-heading text-4xl leading-tight sm:text-5xl">
-              Not sure which entry fits your stage?
-            </h2>
-            <p className="mt-5 max-w-xl leading-7 text-slate-200">
-              Use our pathway guides to compare routes before investing time in
-              preparation. We show what to investigate—and what the current
-              official notification must confirm.
-            </p>
-            <a
-              href="/career-paths"
-              className="mt-7 inline-flex w-fit items-center gap-2 bg-white px-5 py-3 text-sm font-bold text-[#071f3d]"
-            >
-              Find my path <ArrowRight size={16} />
-            </a>
-          </div>
-        </div>
-      </section>
-
       <section
         id="entries"
         className="mx-auto grid max-w-7xl gap-6 px-5 py-20 lg:grid-cols-3 lg:px-8 lg:py-24"
@@ -519,7 +392,7 @@ export default function Home() {
             GraduationCap,
             'Exams & entries',
             'NDA, CDS, AFCAT, technical, NCC and notified direct entries.',
-            '/exams/nda',
+            '/exams',
           ],
           [
             ShieldCheck,
@@ -594,7 +467,7 @@ export default function Home() {
               <a
                 key={item.title}
                 href={item.href}
-                className="group relative aspect-square overflow-hidden bg-[#071f3d]"
+                className="group relative aspect-[4/3] overflow-hidden bg-[#071f3d] sm:aspect-square"
               >
                 <img
                   src={item.image}
@@ -622,28 +495,7 @@ export default function Home() {
       </section>
 
       <ContactBand />
-      <footer
-        id="about"
-        className="border-t-4 border-[#4b6228] bg-[#061a30] px-5 py-9 text-slate-300 lg:px-8"
-      >
-        <div className="mx-auto flex max-w-7xl flex-col justify-between gap-5 text-sm sm:flex-row">
-          <div>
-            <p>© {new Date().getFullYear()} March Ahead Academy</p>
-            <p className="mt-2 max-w-xl text-xs leading-5 text-slate-400">
-              Independent guidance. Not affiliated with the Ministry of Defence
-              or the Armed Forces.
-            </p>
-          </div>
-          <nav
-            className="flex flex-wrap gap-x-5 gap-y-2"
-            aria-label="Trust and organisation"
-          >
-            <a href="/about">About</a>
-            <a href="/editorial-standards">Editorial standards</a>
-            <a href="/notifications">Source tracker</a>
-          </nav>
-        </div>
-      </footer>
+      <SiteFooter />
     </main>
   );
 }

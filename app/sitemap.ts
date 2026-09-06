@@ -4,7 +4,7 @@ import { siteUrl } from '@/lib/site';
 export const dynamic = 'force-static';
 
 const routes = [
-  '', '/about', '/career-paths', '/career-paths/after-12th',
+  '', '/about', '/authors/cdr-sulakshan-kumar-sharma', '/career-paths', '/career-paths/after-12th',
   '/career-paths/after-graduation', '/editorial-standards', '/eligibility',
   '/exams', '/exams/afcat', '/exams/cds', '/exams/nda', '/notifications',
   '/preparation/communicate', '/preparation/lead', '/preparation/learn',

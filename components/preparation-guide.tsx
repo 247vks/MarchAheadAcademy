@@ -1,7 +1,11 @@
 import Link from 'next/link';
 import { ArrowRight, CheckCircle2, ShieldCheck } from 'lucide-react';
 import { ContactBand } from '@/components/contact-band';
-import { SiteFooter, SiteHeader } from '@/components/authority-shell';
+import {
+  Breadcrumbs,
+  SiteFooter,
+  SiteHeader,
+} from '@/components/authority-shell';
 import {
   preparationGuides,
   type PreparationGuideData,
@@ -13,13 +17,18 @@ export function PreparationGuide({ guide }: { guide: PreparationGuideData }) {
       <SiteHeader />
       <section className="grid bg-[#071f3d] text-white lg:grid-cols-2">
         <div className="flex flex-col justify-center px-5 py-16 lg:px-[max(2rem,calc((100vw-80rem)/2))] lg:py-20">
+          <Breadcrumbs
+            parent="Preparation"
+            parentHref="/#preparation"
+            current={guide.title}
+          />
           <p
             className="text-xs font-bold tracking-[.18em] uppercase"
             style={{ color: guide.accent }}
           >
             {guide.eyebrow}
           </p>
-          <h1 className="mt-5 font-heading text-5xl leading-tight sm:text-6xl">
+          <h1 className="mt-5 font-heading text-4xl leading-tight sm:text-6xl">
             {guide.title}
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-8 text-slate-300">
@@ -30,7 +39,7 @@ export function PreparationGuide({ guide }: { guide: PreparationGuideData }) {
             <Link href="/about">Expert perspective · Cdr Sharma</Link>
           </div>
         </div>
-        <div className="min-h-[360px]">
+        <div className="min-h-[240px] sm:min-h-[320px] lg:min-h-[360px]">
           <img
             src={guide.image}
             alt={`Indian defence aspirants practising how to ${guide.slug}`}

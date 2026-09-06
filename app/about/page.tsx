@@ -69,10 +69,10 @@ export default function Page() {
                 medical assessment, merit or selection.
               </p>
               <p>
-                Our present website is a foundation-stage knowledge resource.
-                Credentials, results, testimonials and live intake facts will
-                not be published until their supporting evidence and permission
-                are recorded.
+                Our present website is a growing knowledge resource. Expert
+                qualifications and professional history are published selectively;
+                results, testimonials and live intake facts require appropriate
+                evidence, permission and current official verification.
               </p>
             </div>
           </article>
@@ -110,7 +110,15 @@ export default function Page() {
           <div className="grid gap-8 lg:grid-cols-[.7fr_1.3fr]">
             <div>
               <p className="section-kicker">Experience behind the academy</p>
-              <h2 className="mt-3 font-heading text-4xl">Cdr Sharma</h2>
+              <h2 className="mt-3 font-heading text-4xl">Cdr Sulakshan Kumar Sharma (Retd)</h2>
+              <p className="mt-4 max-w-sm text-sm leading-7 text-[#5c6974]">
+                Military educator, psychologist and academy director with
+                experience spanning tri-service cadet education, naval training,
+                education planning and officer selection.
+              </p>
+              <Link href="/authors/cdr-sulakshan-kumar-sharma" className="mt-5 inline-flex items-center gap-2 text-sm font-bold underline decoration-[#9bc9df] underline-offset-4">
+                Full qualifications and experience <ArrowRight size={14} />
+              </Link>
             </div>
             <dl className="grid gap-4 sm:grid-cols-2">
               <div className="border-l-4 border-[#4b6228] bg-[#f8faf9] p-5">

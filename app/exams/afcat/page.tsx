@@ -13,6 +13,7 @@ export default function Page() {
       title="Air Force Common Admission Test"
       lede="AFCAT opens notified officer pathways across Flying and Ground Duty branches, but branch-specific education, age, commission and medical conditions must be checked separately."
       status="Official pattern checked against AFCAT 02/2026"
+      expertContext="Cdr Sharma’s experience in tri-service education and officer selection informs the academy’s focus on branch-aware decisions, disciplined preparation and authentic readiness for the AFSB journey."
       sections={[
         {
           title: 'AFCAT is a family of branch pathways',

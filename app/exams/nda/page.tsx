@@ -13,6 +13,7 @@ export default function Page() {
       title="NDA & Naval Academy examination"
       lede="Understand what the examination leads to, how the selection journey works and which details must always be checked in the current UPSC notification."
       status="Official pattern checked against NDA & NA II 2026"
+      expertContext="Cdr Sharma’s experience teaching Army, Navy and Air Force cadets at the National Defence Academy informs the academy’s emphasis on academic foundations, informed service choice and preparation beyond the written examination."
       sections={[
         {
           title: 'What this examination leads to',
