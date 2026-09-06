@@ -14,13 +14,26 @@
   --radius-lg: 0;
 }
 
-:root { --background: #f6f1e7; --foreground: #0b1f33; --border: #d6cbb7; --ring: #b49356; }
+:root {
+  --background: #f3f5f2;
+  --foreground: #0a1e33;
+  --border: #cbd3ce;
+  --ring: #5b8f3d;
+  --navy: #071f3d;
+  --navy-light: #11375c;
+  --army: #4b6228;
+  --army-light: #718a45;
+  --air-force: #5aa6cf;
+  --air-force-light: #9bd1ea;
+  --service-white: #f8fafb;
+  --steel: #566978;
+}
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { margin: 0; background: var(--background); color: var(--foreground); font-family: var(--font-body), Arial, sans-serif; }
 a { text-decoration: none; }
 button, a { outline-offset: 4px; }
-button:focus-visible, a:focus-visible { outline: 2px solid #c5a76a; }
+button:focus-visible, a:focus-visible { outline: 2px solid var(--air-force); }
 .font-heading { font-family: var(--font-display), Georgia, serif; }
-.section-kicker { color: #8b7447; font-size: .72rem; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.section-kicker { color: var(--army); font-size: .72rem; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: .01ms !important; } }

@@ -14,13 +14,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'March Ahead Academy',
     description: 'Your clearest path to a career in the Defence Forces.',
-    images: [{ url: '/og.png', width: 1733, height: 907, alt: 'March Ahead Academy defence career guidance' }],
+    images: [{ url: '/og-tri-service.png', width: 1733, height: 907, alt: 'March Ahead Academy defence career guidance' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'March Ahead Academy',
     description: 'Your clearest path to a career in the Defence Forces.',
-    images: ['/og.png'],
+    images: ['/og-tri-service.png'],
   },
 };
 
