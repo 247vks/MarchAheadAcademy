@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { ArrowRight, GraduationCap } from 'lucide-react';
 import { ContactBand } from '@/components/contact-band';
 import { SiteFooter, SiteHeader } from '@/components/authority-shell';
+import { ExamComparison } from '@/components/decision-visuals';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/exams' },
@@ -49,6 +50,7 @@ export default function Page() {
           </p>
         </div>
       </section>
+      <ExamComparison />
       <section className="mx-auto grid max-w-6xl gap-5 px-5 py-16 md:grid-cols-3 lg:px-8 lg:py-20">
         {exams.map(([title, copy, href, color], index) => (
           <Link

@@ -18,6 +18,7 @@ import {
   type ExpectationPreviewData,
 } from '@/components/expectation-preview';
 import { siteReviewedAt } from '@/lib/site';
+import type { ReactNode } from 'react';
 
 type Section = { title: string; body: string; points?: string[] };
 type Source = { label: string; href: string };
@@ -202,6 +203,7 @@ export function AuthorityPage({
   related,
   experience,
   expertContext,
+  visual,
 }: {
   eyebrow: string;
   title: string;
@@ -213,6 +215,7 @@ export function AuthorityPage({
   related: { label: string; href: string }[];
   experience?: ExpectationPreviewData;
   expertContext?: string;
+  visual?: ReactNode;
 }) {
   return (
     <main className="min-h-screen bg-white text-[#0a1e33]">
@@ -259,6 +262,7 @@ export function AuthorityPage({
       <div className="mx-auto grid max-w-5xl gap-8 px-5 py-12 lg:grid-cols-[1fr_260px] lg:gap-10 lg:px-8 lg:py-16">
         <article className="space-y-10 lg:space-y-12">
           {expertContext && <ExpertByline context={expertContext} />}
+          {visual}
           <nav
             aria-label="On this page"
             className="border-y border-[#d9e3df] py-4"

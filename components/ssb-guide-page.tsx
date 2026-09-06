@@ -15,6 +15,7 @@ import {
   SiteHeader,
 } from '@/components/authority-shell';
 import { siteReviewedAt } from '@/lib/site';
+import { SsbJourneyMap } from '@/components/decision-visuals';
 
 export type SsbGuideData = {
   currentHref: string;
@@ -84,6 +85,7 @@ export function SsbGuidePage({ guide }: { guide: SsbGuideData }) {
       <div className="mx-auto grid max-w-5xl gap-8 px-5 py-12 lg:grid-cols-[1fr_260px] lg:gap-10 lg:px-8 lg:py-16">
         <article className="space-y-10 lg:space-y-12">
           <ExpertByline context="Cdr Sharma’s three years of SSB psychologist experience and wider work in military education inform March Ahead’s ethical orientation. Official sources control the published process; no confidential selection material is used." />
+          {guide.currentHref === '/selection/ssb' && <SsbJourneyMap />}
           <nav
             aria-label="On this page"
             className="border-y border-[#d9e3df] py-4"
