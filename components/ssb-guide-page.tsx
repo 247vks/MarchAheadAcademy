@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 import { ContactBand } from '@/components/contact-band';
 import { ExpertByline } from '@/components/expert-byline';
+import { ContextualGuidance } from '@/components/contextual-guidance';
 import {
   Breadcrumbs,
   SiteFooter,
@@ -16,6 +17,7 @@ import {
 import { siteReviewedAt } from '@/lib/site';
 
 export type SsbGuideData = {
+  currentHref: string;
   eyebrow: string;
   title: string;
   lede: string;
@@ -103,6 +105,7 @@ export function SsbGuidePage({ guide }: { guide: SsbGuideData }) {
             </p>
             <p className="mt-3 leading-8">{guide.summary}</p>
           </section>
+          <ContextualGuidance topic={guide.title} />
 
           <div id="guide-sections" className="scroll-mt-6 space-y-14">
             {guide.sections.map((section, index) => (
@@ -240,16 +243,18 @@ export function SsbGuidePage({ guide }: { guide: SsbGuideData }) {
               SSB learning path
             </p>
             <nav className="mt-4 grid">
-              {guide.related.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="flex items-center justify-between border-b border-[#dde3df] py-3 text-sm font-semibold"
-                >
-                  {item.label}
-                  <ArrowRight size={14} />
-                </Link>
-              ))}
+              {guide.related
+                .filter((item) => item.href !== guide.currentHref)
+                .map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="flex items-center justify-between border-b border-[#dde3df] py-3 text-sm font-semibold"
+                  >
+                    {item.label}
+                    <ArrowRight size={14} />
+                  </Link>
+                ))}
             </nav>
             <p className="mt-6 text-xs leading-5 text-[#687781]">
               Familiarity can reduce uncertainty. No coaching provider can

@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import { ContactBand } from '@/components/contact-band';
 import { ExpertByline } from '@/components/expert-byline';
+import { ContextualGuidance } from '@/components/contextual-guidance';
 import {
   ExpectationPreview,
   type ExpectationPreviewData,
@@ -288,37 +289,43 @@ export function AuthorityPage({
           {sections.map((section, index) => {
             const sectionAccent = ['#4b6228', '#071f3d', '#397fa8'][index % 3];
             return (
-              <section
-                id={`section-${index + 1}`}
-                key={section.title}
-                className="scroll-mt-6 border-l-2 pl-6"
-                style={{ borderLeftColor: sectionAccent }}
-              >
-                <p
-                  className="text-xs font-bold tracking-[.16em] uppercase"
-                  style={{ color: sectionAccent }}
+              <div key={section.title} className="contents">
+                <section
+                  id={`section-${index + 1}`}
+                  className="scroll-mt-6 border-l-2 pl-6"
+                  style={{ borderLeftColor: sectionAccent }}
                 >
-                  0{index + 1}
-                </p>
-                <h2 className="mt-2 font-heading text-3xl">{section.title}</h2>
-                <p className="mt-4 leading-8 text-[#536371]">{section.body}</p>
-                {section.points && (
-                  <ul className="mt-5 grid gap-3">
-                    {section.points.map((point) => (
-                      <li
-                        key={point}
-                        className="flex gap-3 border border-[#e0e5e2] bg-[#fafcfb] p-4 text-sm leading-6"
-                      >
-                        <span
-                          className="mt-2 h-2 w-2 shrink-0"
-                          style={{ backgroundColor: sectionAccent }}
-                        />
-                        {point}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </section>
+                  <p
+                    className="text-xs font-bold tracking-[.16em] uppercase"
+                    style={{ color: sectionAccent }}
+                  >
+                    0{index + 1}
+                  </p>
+                  <h2 className="mt-2 font-heading text-3xl">
+                    {section.title}
+                  </h2>
+                  <p className="mt-4 leading-8 text-[#536371]">
+                    {section.body}
+                  </p>
+                  {section.points && (
+                    <ul className="mt-5 grid gap-3">
+                      {section.points.map((point) => (
+                        <li
+                          key={point}
+                          className="flex gap-3 border border-[#e0e5e2] bg-[#fafcfb] p-4 text-sm leading-6"
+                        >
+                          <span
+                            className="mt-2 h-2 w-2 shrink-0"
+                            style={{ backgroundColor: sectionAccent }}
+                          />
+                          {point}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </section>
+                {index === 0 && <ContextualGuidance topic={title} />}
+              </div>
             );
           })}
           <section

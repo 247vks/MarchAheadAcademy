@@ -1,6 +1,8 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, CheckCircle2, ShieldCheck } from 'lucide-react';
 import { ContactBand } from '@/components/contact-band';
+import { ContextualGuidance } from '@/components/contextual-guidance';
 import {
   Breadcrumbs,
   SiteFooter,
@@ -40,9 +42,12 @@ export function PreparationGuide({ guide }: { guide: PreparationGuideData }) {
           </div>
         </div>
         <div className="min-h-[240px] sm:min-h-[320px] lg:min-h-[360px]">
-          <img
+          <Image
             src={guide.image}
             alt={`Indian defence aspirants practising how to ${guide.slug}`}
+            width={1200}
+            height={800}
+            unoptimized
             className="h-full w-full object-cover"
           />
         </div>
@@ -50,35 +55,41 @@ export function PreparationGuide({ guide }: { guide: PreparationGuideData }) {
       <div className="mx-auto grid max-w-6xl gap-12 px-5 py-16 lg:grid-cols-[1fr_280px] lg:px-8 lg:py-20">
         <article className="space-y-14">
           {guide.sections.map((section, index) => (
-            <section
-              key={section.title}
-              className="border-l-2 pl-6"
-              style={{ borderLeftColor: guide.accent }}
-            >
-              <p
-                className="text-xs font-bold tracking-[.16em] uppercase"
-                style={{ color: guide.accent }}
+            <div key={section.title} className="contents">
+              <section
+                className="border-l-2 pl-6"
+                style={{ borderLeftColor: guide.accent }}
               >
-                0{index + 1}
-              </p>
-              <h2 className="mt-2 font-heading text-3xl">{section.title}</h2>
-              <p className="mt-4 leading-8 text-[#536371]">{section.body}</p>
-              <ul className="mt-5 grid gap-3">
-                {section.actions.map((action) => (
-                  <li
-                    key={action}
-                    className="flex gap-3 border border-[#e0e5e2] bg-[#fafcfb] p-4 text-sm leading-6"
-                  >
-                    <CheckCircle2
-                      size={17}
-                      className="mt-1 shrink-0"
-                      style={{ color: guide.accent }}
-                    />
-                    {action}
-                  </li>
-                ))}
-              </ul>
-            </section>
+                <p
+                  className="text-xs font-bold tracking-[.16em] uppercase"
+                  style={{ color: guide.accent }}
+                >
+                  0{index + 1}
+                </p>
+                <h2 className="mt-2 font-heading text-3xl">{section.title}</h2>
+                <p className="mt-4 leading-8 text-[#536371]">{section.body}</p>
+                <ul className="mt-5 grid gap-3">
+                  {section.actions.map((action) => (
+                    <li
+                      key={action}
+                      className="flex gap-3 border border-[#e0e5e2] bg-[#fafcfb] p-4 text-sm leading-6"
+                    >
+                      <CheckCircle2
+                        size={17}
+                        className="mt-1 shrink-0"
+                        style={{ color: guide.accent }}
+                      />
+                      {action}
+                    </li>
+                  ))}
+                </ul>
+              </section>
+              {index === 0 && (
+                <ContextualGuidance
+                  topic={`${guide.title.toLowerCase()} preparation`}
+                />
+              )}
+            </div>
           ))}
           <section className="border border-[#d9e3df] bg-[#f8faf9] p-7">
             <p

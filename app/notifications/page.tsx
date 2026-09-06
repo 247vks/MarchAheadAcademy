@@ -5,7 +5,7 @@ import { SiteFooter, SiteHeader } from '@/components/authority-shell';
 import { ContactBand } from '@/components/contact-band';
 export const metadata: Metadata = {
   alternates: { canonical: '/notifications' },
-  title: 'Official Defence Notifications Tracker | March Ahead Academy',
+  title: 'Official Defence Recruitment Sources | March Ahead Academy',
   description:
     'A source-led monitoring hub for Indian Defence career notifications.',
 };
@@ -57,12 +57,13 @@ export default function Page() {
             Source monitoring
           </div>
           <h1 className="mt-5 max-w-4xl font-heading text-5xl sm:text-6xl">
-            Official notification tracker
+            Official recruitment source directory
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200">
-            A transparent ledger of the authorities we monitor. Live intake
-            summaries will appear only after human verification against the
-            controlling notice and corrigenda.
+            Go directly to the authorities that publish and control recruitment
+            information. A maintained live tracker will be introduced only when
+            every entry can be independently checked against notices and
+            corrigenda.
           </p>
         </div>
       </section>
@@ -70,9 +71,10 @@ export default function Page() {
         <div className="mb-8 flex gap-4 border-l-4 border-[#4b6228] bg-white p-5">
           <ShieldAlert className="shrink-0 text-[#4b6228]" />
           <p className="text-sm leading-6">
-            <strong>No unverified live dates are displayed yet.</strong> This is
-            deliberate. The tracker framework is ready; current-cycle records
-            require independent human fact-checking before publication.
+            <strong>
+              This is currently a source directory, not a live intake tracker.
+            </strong>{' '}
+            No unverified dates or application statuses are displayed.
           </p>
         </div>
         <div className="overflow-hidden border border-[#cbd3ce] bg-white">
@@ -110,7 +112,7 @@ export default function Page() {
             href="/career-paths"
             className="border border-[#071f3d] px-5 py-3 text-sm font-bold"
           >
-            Find a career path
+            Explore career paths
           </Link>
         </div>
       </section>
