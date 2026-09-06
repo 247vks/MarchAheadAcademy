@@ -20,7 +20,7 @@ export function ContextualGuidance({ topic }: { topic: string }) {
             Need a second pair of eyes?
           </p>
           <h2 className="mt-2 font-heading text-2xl">
-            Discuss {topic} with March Ahead.
+            Discuss {topic} with March Ahead Academy.
           </h2>
           <p className="mt-2 text-sm leading-6 text-[#596975]">
             We can help you identify what to verify and plan the next sensible

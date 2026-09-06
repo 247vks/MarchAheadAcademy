@@ -159,7 +159,7 @@ export default function Home() {
             <div className="mb-8 flex items-start justify-between border-b border-white/10 pb-6">
               <div>
                 <p className="text-xs font-bold tracking-[0.16em] text-[#9bd1ea] uppercase">
-                  The March Ahead standard
+                  The March Ahead Academy standard
                 </p>
                 <h2 className="mt-2 font-heading text-3xl">
                   Clarity before coaching.

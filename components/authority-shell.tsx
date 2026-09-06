@@ -187,7 +187,7 @@ export function SiteFooter() {
           className="grid content-start gap-2"
           aria-label="Trust and organisation"
         >
-          <strong className="text-white">March Ahead</strong>
+          <strong className="text-white">March Ahead Academy</strong>
           <Link href="/authors/cdr-sulakshan-kumar-sharma">Cdr Sharma</Link>
           <Link href="/about">About</Link>
           <Link href="/editorial-standards">Editorial standards</Link>

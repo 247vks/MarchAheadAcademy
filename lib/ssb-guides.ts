@@ -130,7 +130,7 @@ export const ssbGuides: Record<string, SsbGuideData> = {
       },
       {
         title: 'Keep guidance ethical',
-        body: 'March Ahead will not reproduce confidential material, promise a psychologist-approved answer or claim that one response determines recommendation. Cdr Sharma’s experience informs the academy’s emphasis on authentic reflection; any future signed commentary should remain clearly separate from official rules.',
+        body: 'March Ahead Academy will not reproduce confidential material, promise a psychologist-approved answer or claim that one response determines recommendation. Cdr Sharma’s experience informs the academy’s emphasis on authentic reflection; any future signed commentary should remain clearly separate from official rules.',
       },
     ],
     exercise: {
@@ -296,9 +296,9 @@ export const ssbGuides: Record<string, SsbGuideData> = {
           'There is no official ideal-answer rule. Accurate self-knowledge and honest, proportionate expression are safer preparation principles than forced positivity.',
       },
       {
-        question: 'Can March Ahead predict my interview questions?',
+        question: 'Can March Ahead Academy predict my interview questions?',
         answer:
-          'No. March Ahead can help you review your own history, motivation and communication, but will not present illustrative prompts as official or predictive.',
+          'No. March Ahead Academy can help you review your own history, motivation and communication, but will not present illustrative prompts as official or predictive.',
       },
     ],
     sources: [afsb, selection, nda, cds],

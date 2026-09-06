@@ -45,7 +45,7 @@ export function ExpectationPreview({ data }: { data: ExpectationPreviewData }) {
           </div>
           <p className="inline-flex items-center gap-2 border border-[#d6a44b] bg-[#fff9ed] px-3 py-2 text-xs font-semibold text-[#6f5017]">
             <ShieldCheck size={15} aria-hidden="true" />
-            Created by March Ahead—not an official or recalled question
+            Created by March Ahead Academy—not an official or recalled question
           </p>
         </div>
         <div className="mt-5 grid gap-4 lg:grid-cols-3">

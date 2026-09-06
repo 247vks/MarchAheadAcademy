@@ -181,7 +181,7 @@ export default function Page() {
         <section className="mt-16">
           <p className="section-kicker">Selected professional history</p>
           <h2 className="mt-3 font-heading text-4xl">
-            Roles relevant to March Ahead’s work
+            Roles relevant to March Ahead Academy’s work
           </h2>
           <div className="mt-7 grid gap-px overflow-hidden border border-[#d8e0dc] bg-[#d8e0dc] md:grid-cols-2">
             {roles.map(([title, copy]) => (

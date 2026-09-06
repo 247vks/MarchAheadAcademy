@@ -78,7 +78,7 @@ export function SsbGuidePage({ guide }: { guide: SsbGuideData }) {
               href="/authors/cdr-sulakshan-kumar-sharma"
               className="border border-[#80a6bd]/50 px-4 py-2"
             >
-              March Ahead editorial team · Cdr Sharma perspective
+              March Ahead Academy editorial team · Cdr Sharma perspective
             </Link>
             <Link
               href="/editorial-standards"
@@ -92,7 +92,7 @@ export function SsbGuidePage({ guide }: { guide: SsbGuideData }) {
 
       <div className="mx-auto grid max-w-5xl gap-8 px-5 py-12 lg:grid-cols-[1fr_260px] lg:gap-10 lg:px-8 lg:py-16">
         <article className="space-y-10 lg:space-y-12">
-          <ExpertByline context="Cdr Sharma’s three years of SSB psychologist experience and wider work in military education inform March Ahead’s ethical orientation. Official sources control the published process; no confidential selection material is used." />
+          <ExpertByline context="Cdr Sharma’s three years of SSB psychologist experience and wider work in military education inform March Ahead Academy’s ethical orientation. Official sources control the published process; no confidential selection material is used." />
           {guide.currentHref === '/selection/ssb' && <SsbJourneyMap />}
           <nav
             aria-label="On this page"
@@ -156,7 +156,7 @@ export function SsbGuidePage({ guide }: { guide: SsbGuideData }) {
             className="scroll-mt-6 border border-[#d6a44b] bg-[#fff9ed] p-7"
           >
             <p className="text-xs font-bold tracking-[.15em] text-[#805b19] uppercase">
-              March Ahead illustrative practice
+              March Ahead Academy illustrative practice
             </p>
             <h2 className="mt-3 font-heading text-3xl">
               {guide.exercise.title}

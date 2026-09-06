@@ -44,7 +44,7 @@ const guide: SsbGuideData = {
     },
     {
       title: 'Ethical preparation develops transferable habits',
-      body: 'March Ahead focuses on self-awareness, listening, structured thought, physical readiness, informed motivation and honest communication. Cdr Sharma’s experience informs this orientation; signed first-hand commentary will be added only where it can be attributed accurately and does not disclose confidential assessment material.',
+      body: 'March Ahead Academy focuses on self-awareness, listening, structured thought, physical readiness, informed motivation and honest communication. Cdr Sharma’s experience informs this orientation; signed first-hand commentary will be added only where it can be attributed accurately and does not disclose confidential assessment material.',
     },
   ],
   exercise: {
@@ -93,7 +93,7 @@ const guide: SsbGuideData = {
         'No. Medical fitness, merit relative to vacancies, eligibility and administrative requirements still apply.',
     },
     {
-      question: 'How can March Ahead help responsibly?',
+      question: 'How can March Ahead Academy help responsibly?',
       answer:
         'The academy can explain the process, strengthen reflection and communication, support group and fitness habits, and give feedback without writing a false persona or promising a result.',
     },
