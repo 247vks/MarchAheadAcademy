@@ -238,9 +238,10 @@ export default function Home() {
               Documentary verification is in progress before public launch.
             </p>
           </div>
-          <dl className="grid gap-px overflow-hidden border border-[#d4ddd8] bg-[#d4ddd8] sm:grid-cols-3">
+          <dl className="grid gap-px overflow-hidden border border-[#d4ddd8] bg-[#d4ddd8] sm:grid-cols-2 xl:grid-cols-4">
             {[
               [ShieldCheck, '32 years', 'Military service'],
+              [BookOpen, '57 years', 'Teaching experience'],
               [Route, '4.5 years', 'Independent Army & Navy recruitment'],
               [UserCheck, '3 years', 'SSB psychologist experience'],
             ].map(([Icon, value, label]) => {
