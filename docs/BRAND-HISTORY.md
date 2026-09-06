@@ -42,3 +42,7 @@ The concept at `assets/brand-concepts/iconography-emblem-v2.png` explores a reco
 - Academy: a central compass for credible career guidance.
 
 The attached military-icon screenshots were used only as references for clarity and line weight. No official service insignia or individual reference icon was copied. This is an approval-stage concept and has not replaced the live website identity. A final production mark should be redrawn as a clean SVG after the direction is approved.
+
+### Indian-accent iconography v3 — concept
+
+The concept at `assets/brand-concepts/iconography-indian-accent-v3.png` adds a restrained saffron and green colour rhythm to the tri-service icon system. The colour treatment is intended to provide Indian context without depicting the national flag or using the Ashoka Chakra, government emblems, or official service insignia. It remains an approval-stage raster concept; the visible checkerboard is a generated preview treatment rather than production transparency. If approved, redraw the selected geometry as a genuinely transparent SVG before website use.
