@@ -20,7 +20,7 @@ export default function Home() {
         <span className="absolute inset-x-0 top-0 grid h-1 grid-cols-3"><span className="bg-[#4b6228]" /><span className="bg-white" /><span className="bg-[#5aa6cf]" /></span>
         Independent career guidance · Always verify current official notifications
       </div>
-      <header className="relative z-20 border-b border-[#214665] bg-[#071f3d] text-white">
+      <header className="command-blue relative z-20 border-b border-[#2e6386] text-white">
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-8">
           <a href="#" className="flex items-center gap-3" aria-label="March Ahead Academy home">
             <span className="grid h-11 w-11 place-items-center border border-[#8bc4e0] text-[#9bd1ea]"><Compass size={23} strokeWidth={1.5} /></span>
@@ -34,7 +34,7 @@ export default function Home() {
         </div>
       </header>
 
-      <section className="relative bg-[#071f3d] text-white">
+      <section className="command-blue relative text-white">
         <div className="absolute inset-0 opacity-25 [background-image:linear-gradient(rgba(255,255,255,.06)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.06)_1px,transparent_1px)] [background-size:48px_48px]" />
         <div className="relative mx-auto grid min-h-[640px] max-w-7xl items-center gap-14 px-5 py-20 lg:grid-cols-[1.15fr_.85fr] lg:px-8 lg:py-24">
           <div>

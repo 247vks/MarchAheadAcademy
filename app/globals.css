@@ -21,6 +21,7 @@
   --ring: #5b8f3d;
   --navy: #071f3d;
   --navy-light: #11375c;
+  --command-blue: #123b5d;
   --army: #4b6228;
   --army-light: #718a45;
   --air-force: #5aa6cf;
@@ -36,4 +37,5 @@ button, a { outline-offset: 4px; }
 button:focus-visible, a:focus-visible { outline: 2px solid var(--air-force); }
 .font-heading { font-family: var(--font-display), Georgia, serif; }
 .section-kicker { color: var(--army); font-size: .72rem; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.command-blue { background: linear-gradient(135deg, #123b5d 0%, #0d304e 58%, #164b6d 100%); }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: .01ms !important; } }
