@@ -16,6 +16,7 @@ import {
   ExpectationPreview,
   type ExpectationPreviewData,
 } from '@/components/expectation-preview';
+import { siteReviewedAt } from '@/lib/site';
 
 type Section = { title: string; body: string; points?: string[] };
 type Source = { label: string; href: string };
@@ -153,20 +154,36 @@ export function Breadcrumbs({
 export function SiteFooter() {
   return (
     <footer className="border-t-4 border-[#4b6228] bg-[#061a30] px-5 py-8 text-sm text-slate-300">
-      <div className="mx-auto flex max-w-5xl flex-col justify-between gap-5 sm:flex-row">
+      <div className="mx-auto grid max-w-6xl gap-8 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
         <div>
           <Link href="/">March Ahead Academy</Link>
           <p className="mt-2 text-xs text-slate-400">
             Official notification and recruitment authority always control.
           </p>
         </div>
+        <nav className="grid content-start gap-2" aria-label="Career guidance">
+          <strong className="text-white">Explore</strong>
+          <Link href="/career-paths">Career paths</Link>
+          <Link href="/services">Services</Link>
+          <Link href="/eligibility">Eligibility</Link>
+        </nav>
         <nav
-          className="flex flex-wrap gap-x-5 gap-y-2"
+          className="grid content-start gap-2"
+          aria-label="Selection guidance"
+        >
+          <strong className="text-white">Prepare</strong>
+          <Link href="/exams">Exams</Link>
+          <Link href="/selection/ssb">SSB</Link>
+          <Link href="/notifications">Official sources</Link>
+        </nav>
+        <nav
+          className="grid content-start gap-2"
           aria-label="Trust and organisation"
         >
+          <strong className="text-white">March Ahead</strong>
+          <Link href="/authors/cdr-sulakshan-kumar-sharma">Cdr Sharma</Link>
           <Link href="/about">About</Link>
           <Link href="/editorial-standards">Editorial standards</Link>
-          <Link href="/notifications">Source tracker</Link>
         </nav>
       </div>
     </footer>
@@ -221,7 +238,7 @@ export function AuthorityPage({
           <div className="mt-8 flex flex-wrap gap-2 text-xs font-semibold text-[#cce7f5]">
             <span className="inline-flex items-center gap-2 border border-[#80a6bd]/50 bg-[#103353] px-4 py-2">
               <ShieldCheck size={15} />
-              {status} · Last reviewed 6 September 2026
+              {status} · Last reviewed {siteReviewedAt}
             </span>
             {expertContext && (
               <Link

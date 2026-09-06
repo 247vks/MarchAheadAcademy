@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { SiteFooter, SiteHeader } from '@/components/authority-shell';
 import { ContactBand } from '@/components/contact-band';
+import { CareerPathFinder } from '@/components/career-path-finder';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/career-paths' },
@@ -14,7 +15,7 @@ const paths = [
   [
     'After Class 10',
     'Build the right subject, fitness and activity foundation before entry windows open.',
-    '/career-paths/after-12th',
+    '/career-paths/foundation',
   ],
   [
     'After Class 12',
@@ -51,7 +52,8 @@ export default function CareerPaths() {
         </div>
       </section>
       <section className="mx-auto max-w-6xl px-5 py-16 lg:px-8">
-        <div className="grid gap-5 sm:grid-cols-2">
+        <CareerPathFinder />
+        <div className="mt-10 grid gap-5 sm:grid-cols-2">
           {paths.map(([title, copy, href], i) => (
             <Link
               key={title}

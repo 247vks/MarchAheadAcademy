@@ -13,6 +13,7 @@ import {
   SiteFooter,
   SiteHeader,
 } from '@/components/authority-shell';
+import { siteReviewedAt } from '@/lib/site';
 
 export type SsbGuideData = {
   eyebrow: string;
@@ -60,7 +61,7 @@ export function SsbGuidePage({ guide }: { guide: SsbGuideData }) {
           <div className="mt-8 flex flex-wrap gap-2 text-xs font-semibold text-[#cce7f5]">
             <span className="inline-flex items-center gap-2 border border-[#80a6bd]/50 bg-[#103353] px-4 py-2">
               <ShieldCheck size={15} />
-              Evergreen guide · Reviewed 6 September 2026
+              Evergreen guide · Reviewed {siteReviewedAt}
             </span>
             <Link
               href="/authors/cdr-sulakshan-kumar-sharma"
