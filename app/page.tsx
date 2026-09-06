@@ -66,6 +66,45 @@ const services = [
   },
 ];
 
+const gallery = [
+  {
+    title: 'Learn',
+    copy: 'Understand the route before choosing preparation.',
+    image: '/gallery/learn.png',
+    position: 'center',
+  },
+  {
+    title: 'Lead',
+    copy: 'Practise clear thinking, initiative and responsibility.',
+    image: '/gallery/lead.png',
+    position: 'center',
+  },
+  {
+    title: 'Prepare',
+    copy: 'Build a sustainable academic and fitness plan.',
+    image: '/gallery/prepare.png',
+    position: 'center',
+  },
+  {
+    title: 'Communicate',
+    copy: 'Listen carefully and express ideas with clarity.',
+    image: '/gallery/communicate.png',
+    position: 'center',
+  },
+  {
+    title: 'Train',
+    copy: 'Develop consistency, resilience and teamwork.',
+    image: '/gallery/train.png',
+    position: 'center',
+  },
+  {
+    title: 'Serve',
+    copy: 'Put responsibility and contribution before self.',
+    image: '/gallery/serve.png',
+    position: 'center',
+  },
+];
+
 export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden bg-white text-[#0a1e33]">
@@ -502,6 +541,53 @@ export default function Home() {
             </article>
           );
         })}
+      </section>
+
+      <section
+        className="border-t border-[#e1e6e3] bg-white px-5 py-20 lg:px-8 lg:py-24"
+        aria-labelledby="preparation-heading"
+      >
+        <div className="mx-auto max-w-7xl">
+          <div className="max-w-3xl">
+            <p className="section-kicker">The qualities behind the career</p>
+            <h2
+              id="preparation-heading"
+              className="mt-4 font-heading text-4xl leading-tight sm:text-5xl"
+            >
+              Preparation is more than an examination.
+            </h2>
+            <p className="mt-5 leading-7 text-[#5f6d78]">
+              A defence career asks candidates to learn, lead, communicate,
+              train and serve. Our guidance connects entry information with the
+              habits that support responsible preparation.
+            </p>
+          </div>
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {gallery.map((item, index) => (
+              <figure
+                key={item.title}
+                className="group relative aspect-square overflow-hidden bg-[#071f3d]"
+              >
+                <img
+                  src={item.image}
+                  alt={`Indian defence aspirants: ${item.title.toLowerCase()}`}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.025]"
+                  style={{ objectPosition: item.position }}
+                />
+                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#061a30] via-[#061a30]/85 to-transparent px-6 pb-6 pt-20 text-white">
+                  <span className="text-[10px] font-bold tracking-[.16em] text-[#9bd1ea] uppercase">
+                    0{index + 1}
+                  </span>
+                  <h3 className="mt-1 font-heading text-2xl">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-slate-200">
+                    {item.copy}
+                  </p>
+                </div>
+              </figure>
+            ))}
+          </div>
+        </div>
       </section>
 
       <footer
