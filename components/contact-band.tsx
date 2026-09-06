@@ -60,14 +60,18 @@ export function ContactBand() {
                   href={contact.href}
                   target={external ? '_blank' : undefined}
                   rel={external ? 'noreferrer' : undefined}
-                  className="group flex min-h-32 flex-col justify-between bg-[#30471f]/95 p-5 transition hover:bg-[#3b5727] focus-visible:outline-white sm:p-6"
+                  className="group flex min-h-40 items-start gap-6 bg-[#30471f]/95 p-6 transition hover:bg-[#3b5727] focus-visible:outline-white sm:min-h-48 sm:flex-col sm:justify-between sm:p-8 lg:min-h-52 lg:p-9"
                 >
-                  <Icon size={22} strokeWidth={1.6} aria-hidden="true" />
-                  <span className="mt-4 block text-[10px] font-bold tracking-[.15em] text-[#b9d68f] uppercase">
-                    {contact.label}
+                  <span className="grid h-12 w-12 shrink-0 place-items-center border border-white/30 bg-white/5 transition group-hover:bg-white/10 sm:h-14 sm:w-14">
+                    <Icon size={27} strokeWidth={1.5} aria-hidden="true" />
                   </span>
-                  <span className="mt-1 block break-words text-sm font-bold leading-5">
-                    {contact.value}
+                  <span className="self-center sm:self-auto">
+                    <span className="block text-[11px] font-bold tracking-[.17em] text-[#b9d68f] uppercase">
+                      {contact.label}
+                    </span>
+                    <span className="mt-2 block break-words text-base font-bold leading-6 sm:text-lg">
+                      {contact.value}
+                    </span>
                   </span>
                 </a>
               );
