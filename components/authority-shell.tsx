@@ -25,21 +25,8 @@ export function SiteHeader() {
   ];
   return (
     <>
-      <div className="bg-[#061a30] px-5 py-2 text-[10px] font-bold text-[#d9e8f2]">
-        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-6 gap-y-1 sm:justify-between">
-          <span className="tracking-[.13em] uppercase">
-            Independent guidance · Official notification always controls
-          </span>
-          <a
-            href="tel:+919820096800"
-            className="inline-flex items-center gap-2 border-b border-[#77b9da] py-1 font-semibold text-white transition hover:text-[#9bd1ea]"
-            aria-label="Call March Ahead Academy on plus 91 98200 96800"
-          >
-            <Phone size={13} aria-hidden="true" />
-            <span className="text-[#9bd1ea]">Speak with us</span>
-            <span aria-hidden="true">·</span> +91 98200 96800
-          </a>
-        </div>
+      <div className="bg-[#061a30] px-5 py-2 text-center text-[10px] font-bold tracking-[.13em] text-[#d9e8f2] uppercase">
+        Independent guidance · Official notification always controls
       </div>
       <header className="border-b border-[#d6ddda] bg-white text-[#071f3d]">
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-8">
@@ -69,12 +56,29 @@ export function SiteHeader() {
               );
             })}
           </nav>
-          <Link
-            href="/career-paths"
-            className="bg-[#77b9da] px-4 py-3 text-xs font-bold text-[#071f3d] uppercase"
-          >
-            Find my path
-          </Link>
+          <div className="flex items-center gap-4">
+            <a
+              href="tel:+919820096800"
+              className="hidden items-center gap-2 border-l border-[#d6ddda] pl-4 xl:flex"
+              aria-label="Call March Ahead Academy on plus 91 98200 96800"
+            >
+              <Phone size={16} className="text-[#397fa8]" aria-hidden="true" />
+              <span>
+                <span className="block text-[9px] font-bold tracking-[.13em] text-[#637282] uppercase">
+                  Speak with us
+                </span>
+                <span className="mt-0.5 block text-sm font-bold">
+                  +91 98200 96800
+                </span>
+              </span>
+            </a>
+            <Link
+              href="/career-paths"
+              className="bg-[#77b9da] px-4 py-3 text-xs font-bold text-[#071f3d] uppercase"
+            >
+              Find my path
+            </Link>
+          </div>
         </div>
         <div className="tri-service-rule" aria-hidden="true">
           <span />

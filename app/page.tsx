@@ -69,21 +69,8 @@ const services = [
 export default function Home() {
   return (
     <main className="min-h-screen overflow-hidden bg-white text-[#0a1e33]">
-      <div className="border-b border-white/10 bg-[#061a30] px-5 py-2 text-[11px] font-medium text-[#d9e8f2]">
-        <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-6 gap-y-1 sm:justify-between">
-          <span className="tracking-[0.12em] uppercase">
-            Independent guidance · Official notification always controls
-          </span>
-          <a
-            href="tel:+919820096800"
-            className="inline-flex items-center gap-2 border-b border-[#77b9da] py-1 font-semibold text-white transition hover:text-[#9bd1ea]"
-            aria-label="Call March Ahead Academy on plus 91 98200 96800"
-          >
-            <Phone size={13} aria-hidden="true" />
-            <span className="text-[#9bd1ea]">Speak with us</span>
-            <span aria-hidden="true">·</span> +91 98200 96800
-          </a>
-        </div>
+      <div className="border-b border-white/10 bg-[#061a30] px-5 py-2 text-center text-[11px] font-medium tracking-[0.12em] text-[#d9e8f2] uppercase">
+        Independent guidance · Official notification always controls
       </div>
       <header className="relative z-20 border-b border-[#d6ddda] bg-white text-[#071f3d]">
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-8">
@@ -122,12 +109,29 @@ export default function Home() {
               Notifications
             </a>
           </nav>
-          <a
-            href="/career-paths"
-            className="hidden items-center gap-2 bg-[#77b9da] px-5 py-3 text-xs font-bold tracking-wide text-[#071f3d] uppercase transition hover:bg-[#a6d7ed] sm:flex"
-          >
-            Find my path <ArrowRight size={15} />
-          </a>
+          <div className="hidden items-center gap-5 sm:flex">
+            <a
+              href="tel:+919820096800"
+              className="hidden items-center gap-2 border-l border-[#d6ddda] pl-5 xl:flex"
+              aria-label="Call March Ahead Academy on plus 91 98200 96800"
+            >
+              <Phone size={17} className="text-[#397fa8]" aria-hidden="true" />
+              <span>
+                <span className="block text-[9px] font-bold tracking-[.14em] text-[#637282] uppercase">
+                  Speak with us
+                </span>
+                <span className="mt-0.5 block text-sm font-bold">
+                  +91 98200 96800
+                </span>
+              </span>
+            </a>
+            <a
+              href="/career-paths"
+              className="inline-flex items-center gap-2 bg-[#77b9da] px-5 py-3 text-xs font-bold tracking-wide text-[#071f3d] uppercase transition hover:bg-[#a6d7ed]"
+            >
+              Find my path <ArrowRight size={15} />
+            </a>
+          </div>
           <button className="p-2 lg:hidden" aria-label="Open menu">
             <Menu />
           </button>
