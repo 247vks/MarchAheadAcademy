@@ -95,10 +95,10 @@ export default function Page() {
                 </dd>
               </div>
               <div>
-                <dt className="font-bold">Public expert profiles</dt>
+                <dt className="font-bold">Expert leadership</dt>
                 <dd className="mt-1 text-[#5c6974]">
-                  Pending documentary credential verification and approved
-                  biographies.
+                  Guidance informed by Cdr Sharma&apos;s military, teaching,
+                  recruitment and SSB psychology experience.
                 </dd>
               </div>
             </dl>
@@ -109,10 +109,6 @@ export default function Page() {
             <div>
               <p className="section-kicker">Experience behind the academy</p>
               <h2 className="mt-3 font-heading text-4xl">Cdr Sharma</h2>
-              <p className="mt-3 text-xs leading-5 text-[#697781]">
-                Profile information supplied by March Ahead Academy. Documentary
-                verification is in progress before public launch.
-              </p>
             </div>
             <dl className="grid gap-4 sm:grid-cols-2">
               <div className="border-l-4 border-[#4b6228] bg-[#f8faf9] p-5">

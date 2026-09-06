@@ -1,4 +1,4 @@
-import { MessageCircle } from 'lucide-react';
+import { MessageCircleQuestionMark } from 'lucide-react';
 
 const whatsappUrl =
   'https://wa.me/919820096800?text=Hello%20March%20Ahead%20Academy%2C%20I%20would%20like%20guidance%20about%20a%20career%20in%20the%20Indian%20Defence%20Forces.';
@@ -13,7 +13,11 @@ export function FloatingWhatsApp() {
       aria-label="Connect with March Ahead Academy on WhatsApp"
       title="Connect on WhatsApp"
     >
-      <MessageCircle size={25} strokeWidth={1.9} aria-hidden="true" />
+      <MessageCircleQuestionMark
+        size={27}
+        strokeWidth={1.8}
+        aria-hidden="true"
+      />
     </a>
   );
 }

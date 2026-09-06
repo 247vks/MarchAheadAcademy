@@ -234,9 +234,9 @@ export default function Home() {
             >
               Perspective earned through service and selection.
             </h2>
-            <p className="mt-3 text-xs leading-5 text-[#65717d]">
-              Cdr Sharma profile information supplied by the Academy.
-              Documentary verification is in progress before public launch.
+            <p className="mt-3 text-sm leading-6 text-[#65717d]">
+              Guidance shaped by Cdr Sharma&apos;s experience across military
+              service, teaching, recruitment and SSB psychology.
             </p>
           </div>
           <dl className="grid gap-px overflow-hidden border border-[#d4ddd8] bg-[#d4ddd8] sm:grid-cols-2 xl:grid-cols-4">
