@@ -45,11 +45,8 @@ export function SiteHeader() {
             className="group border-l-[3px] border-[#397fa8] pl-3"
             aria-label="March Ahead Academy home"
           >
-            <span className="block font-heading text-[15px] tracking-[.055em] uppercase transition group-hover:text-[#2f6f94]">
-              March Ahead
-            </span>
-            <span className="block text-[9px] tracking-[.3em] text-[#397fa8] uppercase">
-              Academy
+            <span className="block font-heading text-sm leading-tight tracking-[.045em] uppercase transition group-hover:text-[#2f6f94] sm:text-[15px]">
+              March Ahead Academy
             </span>
           </Link>
           <nav
