@@ -29,7 +29,7 @@ export function AuthorityPage({ eyebrow, title, lede, status = 'Foundation guide
     <section className="command-blue border-t-4 text-white" style={{ borderTopColor: accent }}><div className="mx-auto max-w-5xl px-5 py-16 lg:px-8 lg:py-20">
       <div className="flex items-center gap-3 text-xs font-bold tracking-[.17em] uppercase" style={{ color: accent }}><span className="h-px w-8" style={{ backgroundColor: accent }} />{eyebrow}</div>
       <h1 className="mt-6 max-w-4xl font-heading text-4xl leading-tight sm:text-6xl">{title}</h1><p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">{lede}</p>
-      <div className="mt-8 inline-flex items-center gap-2 border border-[#80a6bd]/50 bg-[#103353] px-4 py-2 text-xs font-semibold text-[#cce7f5]"><ShieldCheck size={15} />{status} · Last reviewed 6 September 2026</div>
+      <div className="mt-8 flex flex-wrap gap-2 text-xs font-semibold text-[#cce7f5]"><span className="inline-flex items-center gap-2 border border-[#80a6bd]/50 bg-[#103353] px-4 py-2"><ShieldCheck size={15} />{status} · Last reviewed 6 September 2026</span><Link href="/editorial-standards" className="inline-flex items-center border border-[#80a6bd]/50 px-4 py-2 transition hover:border-[#9bd1ea]">How we verify this guide</Link></div>
     </div></section>
     <div className="mx-auto grid max-w-5xl gap-10 px-5 py-14 lg:grid-cols-[1fr_260px] lg:px-8 lg:py-20">
       <article className="space-y-12">
@@ -39,6 +39,6 @@ export function AuthorityPage({ eyebrow, title, lede, status = 'Foundation guide
       </article>
       <aside><div className="sticky top-6 border-t-4 border-[#397fa8] bg-white p-5"><p className="text-xs font-bold tracking-[.15em] text-[#397fa8] uppercase">Continue exploring</p><div className="mt-4 grid gap-2">{related.map(item => <Link key={item.href} href={item.href} className="flex items-center justify-between border-b border-[#e2e7e4] py-3 text-sm font-semibold">{item.label}<ArrowRight size={14} /></Link>)}</div><p className="mt-6 text-xs leading-5 text-[#687781]">Independent guidance. No selection guarantee or government affiliation.</p></div></aside>
     </div>
-    <footer className="border-t-4 border-[#4b6228] bg-[#061a30] px-5 py-8 text-sm text-slate-300"><div className="mx-auto flex max-w-5xl flex-col justify-between gap-3 sm:flex-row"><Link href="/">March Ahead Academy</Link><span>Official notification and recruitment authority always control.</span></div></footer>
+    <footer className="border-t-4 border-[#4b6228] bg-[#061a30] px-5 py-8 text-sm text-slate-300"><div className="mx-auto flex max-w-5xl flex-col justify-between gap-5 sm:flex-row"><div><Link href="/">March Ahead Academy</Link><p className="mt-2 text-xs text-slate-400">Official notification and recruitment authority always control.</p></div><nav className="flex flex-wrap gap-x-5 gap-y-2" aria-label="Trust and organisation"><Link href="/about">About</Link><Link href="/editorial-standards">Editorial standards</Link><Link href="/notifications">Source tracker</Link></nav></div></footer>
   </main>;
 }
