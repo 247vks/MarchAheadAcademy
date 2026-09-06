@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { Libre_Baskerville, Manrope } from 'next/font/google';
-import { FloatingWhatsApp } from '@/components/floating-whatsapp';
 import './globals.css';
 
 const bodyFont = Manrope({ variable: '--font-body', subsets: ['latin'] });
@@ -44,7 +43,6 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${bodyFont.variable} ${headingFont.variable}`}>
         {children}
-        <FloatingWhatsApp />
       </body>
     </html>
   );
