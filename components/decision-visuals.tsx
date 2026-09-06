@@ -17,16 +17,18 @@ export function SsbJourneyMap() {
       <h2 className="mt-2 font-heading text-3xl">
         From reporting to the decisions that follow
       </h2>
-      <ol className="mt-6 grid gap-4 md:grid-cols-5">
+      <ol className="mt-6 grid gap-4 md:grid-cols-[repeat(5,minmax(0,1fr))]">
         {steps.map(([title, copy], index) => (
           <li
             key={title}
-            className="relative border-t-4 border-[#397fa8] bg-white p-4"
+            className="relative min-w-0 border-t-4 border-[#397fa8] bg-white px-3 py-4"
           >
             <span className="text-xs font-bold text-[#4b6228]">
               0{index + 1}
             </span>
-            <h3 className="mt-2 font-heading text-xl">{title}</h3>
+            <h3 className="mt-2 break-words font-heading text-base leading-tight lg:text-lg">
+              {title}
+            </h3>
             <p className="mt-2 text-xs leading-5 text-[#60707b]">{copy}</p>
             {index < steps.length - 1 && (
               <ArrowRight
