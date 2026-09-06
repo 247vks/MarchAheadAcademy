@@ -217,10 +217,7 @@ export function AuthorityPage({
   return (
     <main className="min-h-screen bg-white text-[#0a1e33]">
       <SiteHeader />
-      <section
-        className="command-blue border-t-4 text-white"
-        style={{ borderTopColor: accent }}
-      >
+      <section className="command-blue text-white">
         <div className="mx-auto max-w-5xl px-5 py-16 lg:px-8 lg:py-20">
           <Breadcrumbs current={eyebrow} />
           <div

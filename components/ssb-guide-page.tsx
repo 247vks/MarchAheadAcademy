@@ -34,7 +34,7 @@ export function SsbGuidePage({ guide }: { guide: SsbGuideData }) {
   return (
     <main className="min-h-screen bg-white text-[#0a1e33]">
       <SiteHeader />
-      <section className="command-blue border-t-4 border-[#397fa8] text-white">
+      <section className="command-blue text-white">
         <div className="mx-auto max-w-5xl px-5 py-16 lg:px-8 lg:py-20">
           <Breadcrumbs
             parent={
