@@ -71,8 +71,17 @@ export default function Home() {
     <main className="min-h-screen overflow-hidden bg-white text-[#0a1e33]">
       <div className="border-b border-white/10 bg-[#061a30] px-5 py-2 text-[11px] font-medium text-[#d9e8f2]">
         <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-x-6 gap-y-1 sm:justify-between">
-          <span className="tracking-[0.12em] uppercase">Independent guidance · Official notification always controls</span>
-          <a href="tel:+919820096800" className="inline-flex items-center gap-2 bg-[#77b9da] px-3 py-1 font-extrabold tracking-[.06em] text-[#071f3d]" aria-label="Call March Ahead Academy on plus 91 98200 96800"><Phone size={13} aria-hidden="true" />Call +91 98200 96800</a>
+          <span className="tracking-[0.12em] uppercase">
+            Independent guidance · Official notification always controls
+          </span>
+          <a
+            href="tel:+919820096800"
+            className="inline-flex items-center gap-2 bg-[#77b9da] px-3 py-1 font-extrabold tracking-[.06em] text-[#071f3d]"
+            aria-label="Call March Ahead Academy on plus 91 98200 96800"
+          >
+            <Phone size={13} aria-hidden="true" />
+            Call +91 98200 96800
+          </a>
         </div>
       </div>
       <header className="relative z-20 border-b border-[#d6ddda] bg-white text-[#071f3d]">
@@ -212,6 +221,52 @@ export default function Home() {
       </section>
 
       <section
+        className="border-b border-[#dce3df] bg-[#f8faf9] px-5 py-10 lg:px-8"
+        aria-labelledby="experience-heading"
+      >
+        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1.1fr_1.9fr] lg:items-center">
+          <div>
+            <p className="section-kicker">Experience behind the guidance</p>
+            <h2
+              id="experience-heading"
+              className="mt-3 font-heading text-3xl leading-tight"
+            >
+              Perspective earned through service and selection.
+            </h2>
+            <p className="mt-3 text-xs leading-5 text-[#65717d]">
+              Cdr Sharma profile information supplied by the Academy.
+              Documentary verification is in progress before public launch.
+            </p>
+          </div>
+          <dl className="grid gap-px overflow-hidden border border-[#d4ddd8] bg-[#d4ddd8] sm:grid-cols-3">
+            {[
+              [ShieldCheck, '32 years', 'Military service'],
+              [Route, '4.5 years', 'Independent Army & Navy recruitment'],
+              [UserCheck, '3 years', 'SSB psychologist experience'],
+            ].map(([Icon, value, label]) => {
+              const ProofIcon = Icon as typeof ShieldCheck;
+              return (
+                <div key={label as string} className="bg-white p-5">
+                  <ProofIcon
+                    size={21}
+                    strokeWidth={1.5}
+                    className="text-[#397fa8]"
+                    aria-hidden="true"
+                  />
+                  <dt className="mt-4 font-heading text-2xl text-[#071f3d]">
+                    {value as string}
+                  </dt>
+                  <dd className="mt-1 text-xs font-bold leading-5 tracking-[.08em] text-[#566675] uppercase">
+                    {label as string}
+                  </dd>
+                </div>
+              );
+            })}
+          </dl>
+        </div>
+      </section>
+
+      <section
         id="pathways"
         className="mx-auto max-w-7xl px-5 py-20 lg:px-8 lg:py-24"
       >
@@ -237,7 +292,7 @@ export default function Home() {
                       ? '/career-paths/after-12th'
                       : '/career-paths/after-graduation'
                   }
-                className="group bg-white p-7 transition hover:bg-[#f8faf9] sm:p-8"
+                  className="group bg-white p-7 transition hover:bg-[#f8faf9] sm:p-8"
                 >
                   <div className="flex items-center justify-between">
                     <span className="grid h-10 w-10 place-items-center border border-[#b8c7ba] text-[#4b6228]">
@@ -329,7 +384,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-[#4b6228] px-5 py-12 text-white lg:px-8" aria-label="Current authority foundation">
+      <section
+        className="bg-[#4b6228] px-5 py-12 text-white lg:px-8"
+        aria-label="Current authority foundation"
+      >
         <div className="mx-auto grid max-w-7xl gap-px overflow-hidden border border-white/20 bg-white/20 sm:grid-cols-2 lg:grid-cols-4">
           {[
             [ShieldCheck, '3', 'Service career hubs'],
@@ -338,18 +396,50 @@ export default function Home() {
             [UserCheck, '0', 'Unverified live dates published'],
           ].map(([Icon, value, label]) => {
             const EvidenceIcon = Icon as typeof ShieldCheck;
-            return <div key={label as string} className="bg-[#4b6228] p-6 sm:p-7"><EvidenceIcon size={25} strokeWidth={1.5} className="text-[#d9e8f2]" aria-hidden="true" /><p className="mt-5 font-heading text-4xl">{value as string}</p><p className="mt-1 text-xs font-bold tracking-[.12em] text-white/80 uppercase">{label as string}</p></div>;
+            return (
+              <div key={label as string} className="bg-[#4b6228] p-6 sm:p-7">
+                <EvidenceIcon
+                  size={25}
+                  strokeWidth={1.5}
+                  className="text-[#d9e8f2]"
+                  aria-hidden="true"
+                />
+                <p className="mt-5 font-heading text-4xl">{value as string}</p>
+                <p className="mt-1 text-xs font-bold tracking-[.12em] text-white/80 uppercase">
+                  {label as string}
+                </p>
+              </div>
+            );
           })}
         </div>
       </section>
 
       <section className="bg-white px-5 py-20 lg:px-8">
-        <div className="relative mx-auto min-h-[390px] max-w-7xl overflow-hidden bg-[#071f3d] bg-cover bg-center" style={{ backgroundImage: "linear-gradient(90deg, rgba(7,31,61,.97) 0%, rgba(7,31,61,.86) 38%, rgba(7,31,61,.16) 72%), url('/aspirant-guidance-banner.png')" }}>
+        <div
+          className="relative mx-auto min-h-[390px] max-w-7xl overflow-hidden bg-[#071f3d] bg-cover bg-center"
+          style={{
+            backgroundImage:
+              "linear-gradient(90deg, rgba(7,31,61,.97) 0%, rgba(7,31,61,.86) 38%, rgba(7,31,61,.16) 72%), url('/aspirant-guidance-banner.png')",
+          }}
+        >
           <div className="relative flex min-h-[390px] max-w-2xl flex-col justify-center px-7 py-12 text-white sm:px-12 lg:px-16">
-            <p className="text-xs font-bold tracking-[.18em] text-[#9bd1ea] uppercase">Career decisions start with clarity</p>
-            <h2 className="mt-4 font-heading text-4xl leading-tight sm:text-5xl">Not sure which entry fits your stage?</h2>
-            <p className="mt-5 max-w-xl leading-7 text-slate-200">Use our pathway guides to compare routes before investing time in preparation. We show what to investigate—and what the current official notification must confirm.</p>
-            <a href="/career-paths" className="mt-7 inline-flex w-fit items-center gap-2 bg-white px-5 py-3 text-sm font-bold text-[#071f3d]">Find my path <ArrowRight size={16} /></a>
+            <p className="text-xs font-bold tracking-[.18em] text-[#9bd1ea] uppercase">
+              Career decisions start with clarity
+            </p>
+            <h2 className="mt-4 font-heading text-4xl leading-tight sm:text-5xl">
+              Not sure which entry fits your stage?
+            </h2>
+            <p className="mt-5 max-w-xl leading-7 text-slate-200">
+              Use our pathway guides to compare routes before investing time in
+              preparation. We show what to investigate—and what the current
+              official notification must confirm.
+            </p>
+            <a
+              href="/career-paths"
+              className="mt-7 inline-flex w-fit items-center gap-2 bg-white px-5 py-3 text-sm font-bold text-[#071f3d]"
+            >
+              Find my path <ArrowRight size={16} />
+            </a>
           </div>
         </div>
       </section>
@@ -427,7 +517,9 @@ export default function Home() {
             <a href="/about">About</a>
             <a href="/editorial-standards">Editorial standards</a>
             <a href="/notifications">Source tracker</a>
-            <a href="tel:+919820096800" className="font-bold text-white">+91 98200 96800</a>
+            <a href="tel:+919820096800" className="font-bold text-white">
+              +91 98200 96800
+            </a>
           </nav>
         </div>
       </footer>
