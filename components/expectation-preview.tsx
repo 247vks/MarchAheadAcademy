@@ -54,6 +54,10 @@ export function ExpectationPreview({ data }: { data: ExpectationPreviewData }) {
               key={sample.area}
               className="border border-[#d9e3df] bg-white p-6"
             >
+              <p className="mb-4 inline-flex items-center gap-1.5 bg-[#fff4da] px-2 py-1 text-[10px] font-bold tracking-[.08em] text-[#6f5017] uppercase">
+                <ShieldCheck size={12} aria-hidden="true" />
+                Academy-created example · Not official
+              </p>
               <p className="text-xs font-bold tracking-[.14em] text-[#397fa8] uppercase">
                 {sample.area}
               </p>

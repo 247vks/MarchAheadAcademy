@@ -9,7 +9,9 @@ const routes = [
   '/exams', '/exams/afcat', '/exams/cds', '/exams/nda', '/notifications',
   '/preparation/communicate', '/preparation/lead', '/preparation/learn',
   '/preparation/prepare', '/preparation/serve', '/preparation/train',
-  '/selection/ssb', '/services', '/services/air-force', '/services/army',
+  '/selection/ssb', '/selection/ssb/stage-1',
+  '/selection/ssb/psychology-tests', '/selection/ssb/group-testing',
+  '/selection/ssb/personal-interview', '/services', '/services/air-force', '/services/army',
   '/services/navy',
 ] as const;
 

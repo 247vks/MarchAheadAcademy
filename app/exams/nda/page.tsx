@@ -31,6 +31,33 @@ export default function Page() {
             'Use official previous papers; treat predicted cut-offs only as unofficial opinion.',
           ],
         },
+        {
+          title: 'Which route should you investigate?',
+          body: 'Start with the wing or course you hope to enter, then test that intention against the current notice. A Class 12 candidate considering the Army wing should investigate its notified education conditions; a candidate considering the Naval or Air Force wings, or the Naval Academy course, must separately check the specified school subjects and every other condition.',
+          points: [
+            'Identify the exact wing or course before reading an eligibility summary.',
+            'Match your date of birth to the notice’s inclusive date window.',
+            'Use the current notice to check appearing-candidate and certificate deadlines.',
+          ],
+        },
+        {
+          title: 'What to expect on examination day',
+          body: 'Expect two separately timed objective papers and follow the admission certificate and UPSC instructions that apply to your venue and cycle. Plan travel, permitted materials and reporting time from those documents rather than a coaching checklist.',
+          points: [
+            'Practise filling answers carefully under timed conditions.',
+            'Protect accuracy because the notified scheme includes penalties for wrong answers.',
+            'Keep Mathematics and GAT review separate so one score does not hide the other.',
+          ],
+        },
+        {
+          title: 'Common mistakes and quick answers',
+          body: 'The most costly errors happen before preparation: treating “NDA eligible” as one universal category, using approximate age, overlooking wing-specific education and assuming written qualification means selection.',
+          points: [
+            'Is Mathematics a separate NDA paper? Yes, under the current UPSC scheme.',
+            'Are official previous papers available? UPSC publishes previous question papers; use the link below.',
+            'Does clearing the written examination guarantee joining? No. SSB, medical fitness, merit and notified vacancies remain.',
+          ],
+        },
       ]}
       experience={{
         label: 'NDA orientation',

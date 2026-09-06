@@ -201,6 +201,7 @@ export function AuthorityPage({
           </div>
         </div>
       </section>
+      {experience && <ExpectationPreview data={experience} />}
       <div className="mx-auto grid max-w-5xl gap-10 px-5 py-14 lg:grid-cols-[1fr_260px] lg:px-8 lg:py-20">
         <article className="space-y-12">
           <div className="border border-[#d9e3df] border-l-4 border-l-[#4b6228] bg-[#f8faf9] p-6">
@@ -288,7 +289,6 @@ export function AuthorityPage({
           </div>
         </aside>
       </div>
-      {experience && <ExpectationPreview data={experience} />}
       <ContactBand />
       <SiteFooter />
     </main>

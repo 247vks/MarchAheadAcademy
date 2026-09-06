@@ -31,6 +31,33 @@ export default function Page() {
             'Only an authorised medical board determines fitness.',
           ],
         },
+        {
+          title: 'Which AFCAT route should you investigate?',
+          body: 'Choose a branch family before deciding that AFCAT fits. Flying, Ground Duty Technical and Ground Duty Non-Technical branches apply different combinations of age, school subjects, graduation discipline, marks and commission conditions in the controlling notice.',
+          points: [
+            'Trace your Class 12 Physics and Mathematics record where the branch requires it.',
+            'Match your exact degree title and marks to the notified branch conditions.',
+            'Check final-year, backlog and documentary provisions before applying.',
+          ],
+        },
+        {
+          title: 'What to expect on examination day',
+          body: 'AFCAT 02/2026 is notified as an online objective examination spanning English, General Awareness, Numerical Ability, and Reasoning and Military Aptitude. Use the current admit-card and examination instructions for reporting, identity documents and venue rules.',
+          points: [
+            'Practise switching between subject areas without losing accuracy.',
+            'Use the cycle’s marking scheme when reviewing a timed attempt.',
+            'Do not treat an unofficial memory-based paper as the controlling pattern.',
+          ],
+        },
+        {
+          title: 'Common mistakes and quick answers',
+          body: 'A generic “graduate eligible” statement is not enough for AFCAT. Branch conditions differ, and written qualification leads to AFSB rather than directly to training.',
+          points: [
+            'Who goes to AFSB? Candidates called under the applicable entry process after meeting its written or direct-entry conditions.',
+            'Does every candidate take CPSS? No. The official IAF process limits CPSS to the applicable Flying pathway.',
+            'Can a practice score predict selection? No. It is only a preparation diagnostic.',
+          ],
+        },
       ]}
       experience={{
         label: 'AFCAT orientation',

@@ -31,6 +31,33 @@ export default function Page() {
             'Written rank alone does not guarantee academy allocation or joining.',
           ],
         },
+        {
+          title: 'Which CDS route should you investigate?',
+          body: 'Begin with the academy outcome. Graduates considering IMA, INA, AFA or OTA should compare the current educational conditions, date-of-birth window, marital-status provisions and notified course availability before choosing preferences.',
+          points: [
+            'Investigate INA only against the engineering qualification stated in the current notice.',
+            'Check the AFA education conditions, including the relevant Physics and Mathematics history or engineering qualification.',
+            'Treat OTA as a distinct course and written-paper route, not simply an easier version of CDS.',
+          ],
+        },
+        {
+          title: 'What to expect on examination day',
+          body: 'Your academy choices determine whether you sit two papers or three under the current UPSC scheme. Confirm the timetable, venue instructions and permitted materials from UPSC, then rehearse the same paper sequence and duration in practice.',
+          points: [
+            'IMA, INA and AFA candidates prepare for English, General Knowledge and Elementary Mathematics.',
+            'OTA candidates prepare for English and General Knowledge under the current scheme.',
+            'Use objective practice with disciplined answer marking and review.',
+          ],
+        },
+        {
+          title: 'Common mistakes and quick answers',
+          body: 'Candidates often compare CDS as though every academy has the same qualification and papers. Another common error is quoting an old age range or cut-off without naming the cycle and course.',
+          points: [
+            'Are CDS and CDSE the same examination? CDSE is a common abbreviation for the Combined Defence Services Examination, widely called CDS.',
+            'Is Elementary Mathematics taken for OTA? Not under the current UPSC written scheme.',
+            'Does a historical cut-off predict the next one? No. Use released cut-offs only as historical records.',
+          ],
+        },
       ]}
       experience={{
         label: 'CDS (CDSE) orientation',
