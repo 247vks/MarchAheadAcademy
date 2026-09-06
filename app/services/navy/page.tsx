@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { AuthorityPage } from '@/components/authority-shell';
-export const metadata: Metadata = { title: 'Indian Navy Careers | March Ahead Academy', description: 'Explore officer, technical and Agniveer careers in the Indian Navy.' };
+export const metadata: Metadata = { alternates: { canonical: '/services/navy' }, title: 'Indian Navy Careers | March Ahead Academy', description: 'Explore officer, technical and Agniveer careers in the Indian Navy.' };
 export default function Page() { return <AuthorityPage accent="#d9f0fb" eyebrow="Navy careers" title="Careers in the Indian Navy" lede="Explore sea-going, aviation, technical and specialist career families while keeping every qualification and intake condition tied to the current Navy advertisement." sections={[
   { title: 'Officer pathways', body: 'Navy officer routes can include NDA and Naval Academy, 10+2 B.Tech, CDSE/NCC-linked routes and graduate or technical Short Service Commission entries when notified.', points: ['Education and subject requirements differ by branch.', 'Shortlisting method and SSB pathway depend on the entry notice.', 'Commission type and gender availability must be checked intake by intake.'] },
   { title: 'Agniveer pathways', body: 'SSR, MR and any specialist intakes have their own education, date-of-birth, examination, physical-fitness and medical conditions. The named batch advertisement—not an evergreen summary—controls.' },

@@ -11,6 +11,7 @@ import { SiteFooter, SiteHeader } from '@/components/authority-shell';
 import { ContactBand } from '@/components/contact-band';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/editorial-standards' },
   title: 'Editorial Standards and Corrections | March Ahead Academy',
   description:
     'How March Ahead Academy sources, reviews, labels and corrects Indian defence career guidance.',

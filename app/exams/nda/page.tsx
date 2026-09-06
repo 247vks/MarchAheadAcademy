@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
 import { AuthorityPage } from '@/components/authority-shell';
 export const metadata: Metadata = {
-  title: 'NDA & NA Exam Guide | March Ahead Academy',
+  alternates: { canonical: '/exams/nda' },
+  title: 'NDA Exam Guide: Eligibility, Pattern & SSB | March Ahead Academy',
   description:
-    'An official-source-led guide to the NDA and Naval Academy examination and selection pathway.',
+    'Understand NDA and Naval Academy eligibility, the UPSC exam pattern, official previous papers and the journey from written examination to SSB.',
 };
 export default function Page() {
   return (

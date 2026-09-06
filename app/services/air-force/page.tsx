@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { AuthorityPage } from '@/components/authority-shell';
-export const metadata: Metadata = { title: 'Indian Air Force Careers | March Ahead Academy', description: 'Explore Flying, Ground Duty, technical and Agniveervayu pathways.' };
+export const metadata: Metadata = { alternates: { canonical: '/services/air-force' }, title: 'Indian Air Force Careers | March Ahead Academy', description: 'Explore Flying, Ground Duty, technical and Agniveervayu pathways.' };
 export default function Page() { return <AuthorityPage accent="#8bc7e6" eyebrow="Air Force careers" title="Careers in the Indian Air Force" lede="Explore Flying, Ground Duty Technical, Ground Duty Non-Technical and Agniveervayu pathways through current official entry conditions." sections={[
   { title: 'Officer pathways', body: 'Officer routes may include NDA, CDS, AFCAT, NCC Special Entry and other notified methods. Branch eligibility depends on education history, degree, exact date of birth, commission and current vacancies.', points: ['Flying candidates may face additional testing and medical standards.', 'Technical branches require precise subject and qualification checks.', 'AFCAT and NCC availability varies by notification.'] },
   { title: 'Agniveervayu', body: 'Science and non-science subject routes, date-of-birth windows, physical tests, adaptability testing and medical standards are published for each intake through the official portal.' },

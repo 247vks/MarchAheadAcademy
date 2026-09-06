@@ -5,6 +5,7 @@ import { ContactBand } from '@/components/contact-band';
 import { SiteFooter, SiteHeader } from '@/components/authority-shell';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/exams' },
   title: 'Defence Exams and Entries | March Ahead Academy',
   description:
     'Understand NDA, CDS and AFCAT pathways and the official notifications that control each examination.',

@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
 import { AuthorityPage } from '@/components/authority-shell';
 export const metadata: Metadata = {
-  title: 'CDS Exam Guide | March Ahead Academy',
+  alternates: { canonical: '/exams/cds' },
+  title: 'CDS Exam Guide: IMA, INA, AFA & OTA | March Ahead Academy',
   description:
-    'Understand CDS academy choices, eligibility and the selection pathway using official UPSC sources.',
+    'Compare CDS and CDSE routes for IMA, INA, AFA and OTA, including eligibility, written papers, SSB or AFSB and official UPSC sources.',
 };
 export default function Page() {
   return (

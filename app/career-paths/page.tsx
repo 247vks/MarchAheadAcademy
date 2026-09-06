@@ -5,6 +5,7 @@ import { SiteFooter, SiteHeader } from '@/components/authority-shell';
 import { ContactBand } from '@/components/contact-band';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/career-paths' },
   title: 'Defence Career Path Finder | March Ahead Academy',
   description:
     'Explore Indian Army, Navy and Air Force entry routes by your current education stage.',

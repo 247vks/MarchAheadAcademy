@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { AuthorityPage } from '@/components/authority-shell';
-export const metadata: Metadata = { title: 'Indian Army Careers | March Ahead Academy', description: 'Explore officer, technical and Agniveer pathways in the Indian Army.' };
+export const metadata: Metadata = { alternates: { canonical: '/services/army' }, title: 'Indian Army Careers | March Ahead Academy', description: 'Explore officer, technical and Agniveer pathways in the Indian Army.' };
 export default function Page() { return <AuthorityPage accent="#91a96a" eyebrow="Army careers" title="Careers in the Indian Army" lede="Understand the broad families of Army entries, how officer and other-rank careers differ, and where the current official notice must guide every decision." sections={[
   { title: 'Officer pathways', body: 'Army officer routes include UPSC-administered examinations and service-notified direct entries. NDA, CDS, technical, NCC, JAG and other specialist routes each apply distinct education, age, gender, commission and shortlisting conditions.', points: ['UPSC routes: NDA and CDS as notified.', 'Direct routes may include TES, TGC, SSC Technical, NCC Special Entry and JAG.', 'Entry availability and vacancies can change by course.'] },
   { title: 'Agniveer and other notified recruitment', body: 'Army recruitment categories, rally or examination process, physical tests and eligibility must be read from the current recruiting-year notice. We do not treat an older category list as permanent.' },

@@ -4,6 +4,7 @@ import { ExternalLink, Radio, ShieldAlert } from 'lucide-react';
 import { SiteFooter, SiteHeader } from '@/components/authority-shell';
 import { ContactBand } from '@/components/contact-band';
 export const metadata: Metadata = {
+  alternates: { canonical: '/notifications' },
   title: 'Official Defence Notifications Tracker | March Ahead Academy',
   description:
     'A source-led monitoring hub for Indian Defence career notifications.',

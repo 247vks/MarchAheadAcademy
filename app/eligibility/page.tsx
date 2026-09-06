@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { AuthorityPage } from '@/components/authority-shell';
-export const metadata: Metadata = { title: 'Defence Eligibility and Medical Standards | March Ahead Academy', description: 'Learn how age, education, medical and physical requirements should be verified.' };
+export const metadata: Metadata = { alternates: { canonical: '/eligibility' }, title: 'Defence Eligibility and Medical Standards | March Ahead Academy', description: 'Learn how age, education, medical and physical requirements should be verified.' };
 export default function Page() { return <AuthorityPage eyebrow="Eligibility" title="Eligibility is a chain, not a checkbox" lede="A candidate must satisfy every applicable condition for the exact service, entry and intake. Missing information should produce “unable to determine,” not false confidence." sections={[
   { title: 'Identity and status conditions', body: 'Nationality, sex, marital status and exact date-of-birth windows must be checked against the controlling notification. Approximate age calculators can mislead at boundaries.' },
   { title: 'Educational conditions', body: 'Qualification name alone is not enough. Verify subjects studied, marks, recognised institution or degree, final-year rules and documentary deadlines.', points: ['Check Class 12 subject requirements separately from degree requirements.', 'Do not assume equivalent qualifications are accepted unless the notice says so.', 'Do not transfer one branch requirement to another.'] },

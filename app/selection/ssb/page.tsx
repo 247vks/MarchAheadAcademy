@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
 import { AuthorityPage } from '@/components/authority-shell';
 export const metadata: Metadata = {
-  title: 'SSB Interview Guide | March Ahead Academy',
+  alternates: { canonical: '/selection/ssb' },
+  title: 'SSB Interview Process & Ethical Preparation | March Ahead Academy',
   description:
-    'An ethical, expert-led introduction to SSB and AFSB assessment without tricks or guarantees.',
+    'Understand SSB and AFSB Stage I, psychology tests, group tasks, personal interview and conference through ethical, expert-led guidance.',
 };
 export default function Page() {
   return (

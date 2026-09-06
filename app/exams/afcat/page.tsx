@@ -1,9 +1,10 @@
 import type { Metadata } from 'next';
 import { AuthorityPage } from '@/components/authority-shell';
 export const metadata: Metadata = {
-  title: 'AFCAT Guide | March Ahead Academy',
+  alternates: { canonical: '/exams/afcat' },
+  title: 'AFCAT Guide: Eligibility, Pattern & AFSB | March Ahead Academy',
   description:
-    'Understand AFCAT branches, eligibility and the AFSB selection pathway.',
+    'Understand AFCAT branch eligibility, the current written-exam pattern and the journey through AFSB, medical assessment and merit.',
 };
 export default function Page() {
   return (

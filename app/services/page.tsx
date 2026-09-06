@@ -5,6 +5,7 @@ import { ContactBand } from '@/components/contact-band';
 import { SiteFooter, SiteHeader } from '@/components/authority-shell';
 
 export const metadata: Metadata = {
+  alternates: { canonical: '/services' },
   title: 'Indian Armed Forces Career Hubs | March Ahead Academy',
   description:
     'Compare career pathways across the Indian Army, Indian Navy and Indian Air Force.',
