@@ -21,4 +21,4 @@ npm run dev
 - Show the source, review date, reviewer, and caveats for volatile facts.
 - Never imply government affiliation or guarantee selection.
 
-See [docs/PROJECT-CHARTER.md](docs/PROJECT-CHARTER.md) and [docs/TEAM.md](docs/TEAM.md).
+See [docs/PROJECT-CHARTER.md](docs/PROJECT-CHARTER.md), [docs/TEAM.md](docs/TEAM.md), and [docs/BRAND-HISTORY.md](docs/BRAND-HISTORY.md).
