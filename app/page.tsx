@@ -19,13 +19,13 @@ export default function Home() {
       <div className="border-b border-white/10 bg-[#061a30] px-5 py-2 text-center text-[11px] font-medium tracking-[0.14em] text-[#d9e8f2] uppercase">
         Independent career guidance · Always verify current official notifications
       </div>
-      <header className="command-blue relative z-20 border-b border-[#2e6386] text-white">
+      <header className="relative z-20 border-b border-[#d6ddda] bg-white text-[#071f3d]">
         <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-8">
-          <a href="#" className="border-l-2 border-[#77b9da] pl-3" aria-label="March Ahead Academy home">
-            <span className="block font-heading text-lg leading-none tracking-[0.08em] uppercase">March Ahead</span><span className="mt-1 block text-[10px] tracking-[0.3em] text-[#9bd1ea] uppercase">Academy</span>
+          <a href="#" className="border-l-2 border-[#397fa8] pl-3" aria-label="March Ahead Academy home">
+            <span className="block font-heading text-lg leading-none tracking-[0.08em] uppercase">March Ahead</span><span className="mt-1 block text-[10px] tracking-[0.3em] text-[#397fa8] uppercase">Academy</span>
           </a>
-          <nav className="hidden items-center gap-7 text-sm text-slate-200 lg:flex" aria-label="Primary navigation">
-            <a href="/career-paths" className="transition hover:text-[#9bd1ea]">Career paths</a><a href="#services" className="transition hover:text-[#9bd1ea]">Forces</a><a href="/exams/nda" className="transition hover:text-[#9bd1ea]">Exams & entries</a><a href="/eligibility" className="transition hover:text-[#9bd1ea]">Eligibility</a><a href="/notifications" className="transition hover:text-[#9bd1ea]">Notifications</a>
+          <nav className="hidden items-center gap-7 text-sm text-[#33485b] lg:flex" aria-label="Primary navigation">
+            <a href="/career-paths" className="transition hover:text-[#2f6f94]">Career paths</a><a href="#services" className="transition hover:text-[#2f6f94]">Forces</a><a href="/exams/nda" className="transition hover:text-[#2f6f94]">Exams & entries</a><a href="/eligibility" className="transition hover:text-[#2f6f94]">Eligibility</a><a href="/notifications" className="transition hover:text-[#2f6f94]">Notifications</a>
           </nav>
           <a href="/career-paths" className="hidden items-center gap-2 bg-[#77b9da] px-5 py-3 text-xs font-bold tracking-wide text-[#071f3d] uppercase transition hover:bg-[#a6d7ed] sm:flex">Find my path <ArrowRight size={15} /></a>
           <button className="p-2 lg:hidden" aria-label="Open menu"><Menu /></button>

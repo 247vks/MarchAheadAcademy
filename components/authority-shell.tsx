@@ -15,9 +15,9 @@ export function SiteHeader() {
   ];
   return <>
     <div className="bg-[#061a30] px-5 py-2 text-center text-[10px] font-bold tracking-[.15em] text-[#d9e8f2] uppercase">Independent guidance · Official notification always controls</div>
-    <header className="command-blue border-b border-[#2e6386] text-white"><div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-8">
-      <Link href="/" className="border-l-2 border-[#77b9da] pl-3"><span className="block font-heading tracking-[.07em] uppercase">March Ahead</span><span className="block text-[9px] tracking-[.3em] text-[#9bd1ea] uppercase">Academy</span></Link>
-      <nav className="hidden gap-5 text-sm text-slate-200 lg:flex" aria-label="Primary navigation">{navItems.map(item => { const NavIcon = item.icon; return <Link key={item.href} href={item.href} className="flex items-center gap-1.5 transition hover:text-[#9bd1ea]"><NavIcon size={14} strokeWidth={1.7} aria-hidden="true" />{item.label}</Link>; })}</nav>
+    <header className="border-b border-[#d6ddda] bg-white text-[#071f3d]"><div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-8">
+      <Link href="/" className="border-l-2 border-[#397fa8] pl-3"><span className="block font-heading tracking-[.07em] uppercase">March Ahead</span><span className="block text-[9px] tracking-[.3em] text-[#397fa8] uppercase">Academy</span></Link>
+      <nav className="hidden gap-5 text-sm text-[#33485b] lg:flex" aria-label="Primary navigation">{navItems.map(item => { const NavIcon = item.icon; return <Link key={item.href} href={item.href} className="flex items-center gap-1.5 transition hover:text-[#2f6f94]"><NavIcon size={14} strokeWidth={1.7} aria-hidden="true" />{item.label}</Link>; })}</nav>
       <Link href="/career-paths" className="bg-[#77b9da] px-4 py-3 text-xs font-bold text-[#071f3d] uppercase">Find my path</Link>
     </div><div className="tri-service-rule" aria-hidden="true"><span /><span /><span /></div></header>
   </>;
