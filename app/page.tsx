@@ -27,9 +27,9 @@ export default function Home() {
             <span><span className="block font-heading text-lg leading-none tracking-[0.08em] uppercase">March Ahead</span><span className="mt-1 block text-[10px] tracking-[0.3em] text-[#9bd1ea] uppercase">Academy</span></span>
           </a>
           <nav className="hidden items-center gap-7 text-sm text-slate-200 lg:flex" aria-label="Primary navigation">
-            <a href="#pathways" className="transition hover:text-[#9bd1ea]">Career paths</a><a href="#services" className="transition hover:text-[#9bd1ea]">Forces</a><a href="#entries" className="transition hover:text-[#9bd1ea]">Exams & entries</a><a href="#entries" className="transition hover:text-[#9bd1ea]">Eligibility</a><a href="#about" className="transition hover:text-[#9bd1ea]">About</a>
+            <a href="/career-paths" className="transition hover:text-[#9bd1ea]">Career paths</a><a href="#services" className="transition hover:text-[#9bd1ea]">Forces</a><a href="/exams/nda" className="transition hover:text-[#9bd1ea]">Exams & entries</a><a href="/career-paths" className="transition hover:text-[#9bd1ea]">Eligibility</a><a href="#about" className="transition hover:text-[#9bd1ea]">About</a>
           </nav>
-          <a href="#pathways" className="hidden items-center gap-2 bg-[#77b9da] px-5 py-3 text-xs font-bold tracking-wide text-[#071f3d] uppercase transition hover:bg-[#a6d7ed] sm:flex">Find my path <ArrowRight size={15} /></a>
+          <a href="/career-paths" className="hidden items-center gap-2 bg-[#77b9da] px-5 py-3 text-xs font-bold tracking-wide text-[#071f3d] uppercase transition hover:bg-[#a6d7ed] sm:flex">Find my path <ArrowRight size={15} /></a>
           <button className="p-2 lg:hidden" aria-label="Open menu"><Menu /></button>
         </div>
       </header>
@@ -42,7 +42,7 @@ export default function Home() {
             <h1 className="max-w-3xl font-heading text-5xl leading-[1.02] tracking-[-0.035em] sm:text-6xl lg:text-7xl">Your clearest path to a career in the Defence Forces.</h1>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-300">Understand the right entries, verify your eligibility and prepare for written exams, SSB, interviews and physical standards—with credible guidance at every stage.</p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <a href="#pathways" className="inline-flex items-center justify-center gap-2 bg-[#77b9da] px-6 py-4 text-sm font-bold text-[#071f3d] transition hover:bg-[#a6d7ed]">Find my entry route <ArrowRight size={17} /></a>
+              <a href="/career-paths" className="inline-flex items-center justify-center gap-2 bg-[#77b9da] px-6 py-4 text-sm font-bold text-[#071f3d] transition hover:bg-[#a6d7ed]">Find my entry route <ArrowRight size={17} /></a>
               <a href="#services" className="inline-flex items-center justify-center gap-2 border border-white/25 px-6 py-4 text-sm font-semibold transition hover:border-[#8fc05f] hover:text-[#b9d68f]">Explore all careers <ChevronRight size={17} /></a>
             </div>
           </div>
@@ -63,7 +63,7 @@ export default function Home() {
         <div className="grid gap-10 lg:grid-cols-[.7fr_1.3fr]">
           <div><p className="section-kicker">Start where you are</p><h2 className="mt-4 font-heading text-4xl leading-tight sm:text-5xl">Which path is open to you?</h2><p className="mt-5 max-w-md leading-7 text-[#566575]">Choose your current education stage. We&apos;ll help you identify the entries worth investigating—and the details you must verify.</p></div>
           <div className="grid gap-px overflow-hidden border border-[#cbd3ce] bg-[#cbd3ce] sm:grid-cols-2">
-            {stages.map((stage, index) => <a key={stage.label} href="#entries" className="group bg-[#f8faf8] p-7 transition hover:bg-white sm:p-8"><div className="flex items-center justify-between"><span className="text-xs font-bold tracking-widest text-[#4b6228] uppercase">Stage 0{index + 1}</span><ArrowRight size={18} className="text-[#397fa8] transition group-hover:translate-x-1" /></div><h3 className="mt-8 font-heading text-2xl">{stage.label}</h3><p className="mt-2 text-sm leading-6 text-[#65717d]">{stage.detail}</p></a>)}
+            {stages.map((stage, index) => <a key={stage.label} href={index < 2 ? '/career-paths/after-12th' : '/career-paths/after-graduation'} className="group bg-[#f8faf8] p-7 transition hover:bg-white sm:p-8"><div className="flex items-center justify-between"><span className="text-xs font-bold tracking-widest text-[#4b6228] uppercase">Stage 0{index + 1}</span><ArrowRight size={18} className="text-[#397fa8] transition group-hover:translate-x-1" /></div><h3 className="mt-8 font-heading text-2xl">{stage.label}</h3><p className="mt-2 text-sm leading-6 text-[#65717d]">{stage.detail}</p></a>)}
           </div>
         </div>
       </section>
@@ -74,7 +74,7 @@ export default function Home() {
       </div></section>
 
       <section id="entries" className="mx-auto grid max-w-7xl gap-6 px-5 py-20 lg:grid-cols-3 lg:px-8 lg:py-24">
-        {[[GraduationCap, 'Exams & entries', 'NDA, CDS, AFCAT, technical, NCC and notified direct entries.'], [ShieldCheck, 'Eligibility', 'Education, date-of-birth windows, medical and physical standards.'], [BookOpen, 'Selection & SSB', 'Understand every stage from application to final merit and training.']].map(([Icon, title, copy], index) => { const FeatureIcon = Icon as typeof GraduationCap; const accents = ['#4b6228', '#071f3d', '#397fa8']; return <article key={title as string} className="border-t-4 bg-white p-8 shadow-sm" style={{ borderTopColor: accents[index] }}><FeatureIcon style={{ color: accents[index] }} /><h3 className="mt-8 font-heading text-2xl">{title as string}</h3><p className="mt-3 leading-7 text-[#64717c]">{copy as string}</p><a href="#" className="mt-6 inline-flex items-center gap-2 text-sm font-bold">Open guidance <ArrowRight size={15} /></a></article>; })}
+        {[[GraduationCap, 'Exams & entries', 'NDA, CDS, AFCAT, technical, NCC and notified direct entries.', '/exams/nda'], [ShieldCheck, 'Eligibility', 'Education, date-of-birth windows, medical and physical standards.', '/career-paths'], [BookOpen, 'Selection & SSB', 'Understand every stage from application to final merit and training.', '/selection/ssb']].map(([Icon, title, copy, href], index) => { const FeatureIcon = Icon as typeof GraduationCap; const accents = ['#4b6228', '#071f3d', '#397fa8']; return <article key={title as string} className="border-t-4 bg-white p-8 shadow-sm" style={{ borderTopColor: accents[index] }}><FeatureIcon style={{ color: accents[index] }} /><h3 className="mt-8 font-heading text-2xl">{title as string}</h3><p className="mt-3 leading-7 text-[#64717c]">{copy as string}</p><a href={href as string} className="mt-6 inline-flex items-center gap-2 text-sm font-bold">Open guidance <ArrowRight size={15} /></a></article>; })}
       </section>
 
       <footer id="about" className="border-t-4 border-[#4b6228] bg-[#061a30] px-5 py-9 text-slate-300 lg:px-8"><div className="mx-auto flex max-w-7xl flex-col justify-between gap-4 text-sm sm:flex-row"><p>© {new Date().getFullYear()} March Ahead Academy</p><p>Independent guidance. Not affiliated with the Ministry of Defence or the Armed Forces.</p></div></footer>
