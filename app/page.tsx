@@ -76,11 +76,12 @@ export default function Home() {
           </span>
           <a
             href="tel:+919820096800"
-            className="inline-flex items-center gap-2 bg-[#77b9da] px-3 py-1 font-extrabold tracking-[.06em] text-[#071f3d]"
+            className="inline-flex items-center gap-2 border-b border-[#77b9da] py-1 font-semibold text-white transition hover:text-[#9bd1ea]"
             aria-label="Call March Ahead Academy on plus 91 98200 96800"
           >
             <Phone size={13} aria-hidden="true" />
-            Call +91 98200 96800
+            <span className="text-[#9bd1ea]">Speak with us</span>
+            <span aria-hidden="true">·</span> +91 98200 96800
           </a>
         </div>
       </div>
@@ -518,9 +519,6 @@ export default function Home() {
             <a href="/about">About</a>
             <a href="/editorial-standards">Editorial standards</a>
             <a href="/notifications">Source tracker</a>
-            <a href="tel:+919820096800" className="font-bold text-white">
-              +91 98200 96800
-            </a>
           </nav>
         </div>
       </footer>
