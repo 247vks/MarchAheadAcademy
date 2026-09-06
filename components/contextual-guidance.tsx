@@ -30,7 +30,7 @@ export function ContextualGuidance({ topic }: { topic: string }) {
             href={`https://wa.me/919820096800?text=${message}`}
             target="_blank"
             rel="noreferrer"
-            className="mt-4 inline-flex min-h-11 items-center gap-2 bg-[#30471f] px-4 py-3 text-sm font-bold text-white"
+            className="mt-4 inline-flex min-h-11 items-center gap-2 bg-[#30471f] px-4 py-3 text-sm font-bold text-white transition hover:bg-[#3f5b2b] focus-visible:outline-[#397fa8]"
           >
             Start a WhatsApp conversation <ArrowRight size={15} />
           </a>
