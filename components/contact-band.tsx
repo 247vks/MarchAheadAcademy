@@ -24,7 +24,7 @@ const contacts = [
 export function ContactBand() {
   return (
     <section
-      className="bg-white px-5 py-14 lg:px-8"
+      className="bg-white px-5 py-10 sm:py-12 lg:px-8 lg:py-14"
       aria-labelledby="contact-heading"
     >
       <div
@@ -34,7 +34,7 @@ export function ContactBand() {
             "linear-gradient(90deg, rgba(40,63,26,.98), rgba(40,63,26,.9)), url('/aspirant-guidance-banner.png')",
         }}
       >
-        <div className="grid gap-8 px-7 py-10 text-white lg:grid-cols-[.8fr_1.2fr] lg:items-center lg:px-12">
+        <div className="grid gap-7 px-6 py-8 text-white sm:px-7 sm:py-9 lg:grid-cols-[.8fr_1.2fr] lg:items-center lg:px-12">
           <div>
             <p className="text-xs font-bold tracking-[.17em] text-[#d9e8f2] uppercase">
               Speak with March Ahead Academy

@@ -11,7 +11,7 @@ export type ExpectationPreviewData = {
 
 export function ExpectationPreview({ data }: { data: ExpectationPreviewData }) {
   return (
-    <section className="border-y border-[#d9e3df] bg-[#f7faf8] py-14">
+    <section className="border-y border-[#d9e3df] bg-[#f7faf8] py-10 sm:py-12 lg:py-14">
       <div className="mx-auto max-w-5xl px-5 lg:px-8">
         <div className="flex items-center gap-3 text-xs font-bold tracking-[.16em] text-[#397fa8] uppercase">
           <Eye size={17} aria-hidden="true" />
@@ -36,7 +36,7 @@ export function ExpectationPreview({ data }: { data: ExpectationPreviewData }) {
           ))}
         </div>
 
-        <div className="mt-12 flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
+        <div className="mt-9 flex flex-col justify-between gap-3 sm:mt-10 sm:flex-row sm:items-end">
           <div>
             <p className="text-xs font-bold tracking-[.16em] text-[#4b6228] uppercase">
               See the experience
@@ -52,7 +52,7 @@ export function ExpectationPreview({ data }: { data: ExpectationPreviewData }) {
           {data.samples.map((sample) => (
             <article
               key={sample.area}
-              className="border border-[#d9e3df] bg-white p-6"
+              className="border border-[#d9e3df] bg-white p-5 sm:p-6"
             >
               <p className="mb-4 inline-flex items-center gap-1.5 bg-[#fff4da] px-2 py-1 text-[10px] font-bold tracking-[.08em] text-[#6f5017] uppercase">
                 <ShieldCheck size={12} aria-hidden="true" />
@@ -72,7 +72,7 @@ export function ExpectationPreview({ data }: { data: ExpectationPreviewData }) {
           ))}
         </div>
 
-        <div className="mt-12 grid gap-7 bg-[#071f3d] p-7 text-white md:grid-cols-[.75fr_1.25fr] md:p-9">
+        <div className="mt-9 grid gap-6 bg-[#071f3d] p-6 text-white sm:mt-10 md:grid-cols-[.75fr_1.25fr] md:p-8">
           <div>
             <div className="flex items-center gap-2 text-xs font-bold tracking-[.16em] text-[#9bd1ea] uppercase">
               <Compass size={17} aria-hidden="true" />

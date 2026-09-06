@@ -218,7 +218,7 @@ export function AuthorityPage({
     <main className="min-h-screen bg-white text-[#0a1e33]">
       <SiteHeader />
       <section className="command-blue text-white">
-        <div className="mx-auto max-w-5xl px-5 py-16 lg:px-8 lg:py-20">
+        <div className="mx-auto max-w-5xl px-5 py-12 sm:py-14 lg:px-8 lg:py-18">
           <Breadcrumbs current={eyebrow} />
           <div
             className="flex items-center gap-3 text-xs font-bold tracking-[.17em] uppercase"
@@ -256,8 +256,8 @@ export function AuthorityPage({
         </div>
       </section>
       {experience && <ExpectationPreview data={experience} />}
-      <div className="mx-auto grid max-w-5xl gap-10 px-5 py-14 lg:grid-cols-[1fr_260px] lg:px-8 lg:py-20">
-        <article className="space-y-12">
+      <div className="mx-auto grid max-w-5xl gap-8 px-5 py-12 lg:grid-cols-[1fr_260px] lg:gap-10 lg:px-8 lg:py-16">
+        <article className="space-y-10 lg:space-y-12">
           {expertContext && <ExpertByline context={expertContext} />}
           <nav
             aria-label="On this page"

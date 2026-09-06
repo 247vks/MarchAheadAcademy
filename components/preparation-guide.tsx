@@ -18,7 +18,7 @@ export function PreparationGuide({ guide }: { guide: PreparationGuideData }) {
     <main className="min-h-screen bg-white text-[#0a1e33]">
       <SiteHeader />
       <section className="grid bg-[#071f3d] text-white lg:grid-cols-2">
-        <div className="flex flex-col justify-center px-5 py-16 lg:px-[max(2rem,calc((100vw-80rem)/2))] lg:py-20">
+        <div className="flex flex-col justify-center px-5 py-12 sm:py-14 lg:px-[max(2rem,calc((100vw-80rem)/2))] lg:py-18">
           <Breadcrumbs
             parent="Preparation"
             parentHref="/#preparation"
@@ -52,8 +52,8 @@ export function PreparationGuide({ guide }: { guide: PreparationGuideData }) {
           />
         </div>
       </section>
-      <div className="mx-auto grid max-w-6xl gap-12 px-5 py-16 lg:grid-cols-[1fr_280px] lg:px-8 lg:py-20">
-        <article className="space-y-14">
+      <div className="mx-auto grid max-w-6xl gap-8 px-5 py-12 lg:grid-cols-[1fr_280px] lg:gap-10 lg:px-8 lg:py-16">
+        <article className="space-y-10 lg:space-y-12">
           {guide.sections.map((section, index) => (
             <div key={section.title} className="contents">
               <section

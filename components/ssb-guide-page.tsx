@@ -35,7 +35,7 @@ export function SsbGuidePage({ guide }: { guide: SsbGuideData }) {
     <main className="min-h-screen bg-white text-[#0a1e33]">
       <SiteHeader />
       <section className="command-blue text-white">
-        <div className="mx-auto max-w-5xl px-5 py-16 lg:px-8 lg:py-20">
+        <div className="mx-auto max-w-5xl px-5 py-12 sm:py-14 lg:px-8 lg:py-18">
           <Breadcrumbs
             parent={
               guide.eyebrow.startsWith('SSB guide') ? 'SSB guide' : undefined
@@ -81,8 +81,8 @@ export function SsbGuidePage({ guide }: { guide: SsbGuideData }) {
         </div>
       </section>
 
-      <div className="mx-auto grid max-w-5xl gap-10 px-5 py-14 lg:grid-cols-[1fr_260px] lg:px-8 lg:py-20">
-        <article className="space-y-14">
+      <div className="mx-auto grid max-w-5xl gap-8 px-5 py-12 lg:grid-cols-[1fr_260px] lg:gap-10 lg:px-8 lg:py-16">
+        <article className="space-y-10 lg:space-y-12">
           <ExpertByline context="Cdr Sharma’s three years of SSB psychologist experience and wider work in military education inform March Ahead’s ethical orientation. Official sources control the published process; no confidential selection material is used." />
           <nav
             aria-label="On this page"
@@ -107,7 +107,10 @@ export function SsbGuidePage({ guide }: { guide: SsbGuideData }) {
           </section>
           <ContextualGuidance topic={guide.title} />
 
-          <div id="guide-sections" className="scroll-mt-6 space-y-14">
+          <div
+            id="guide-sections"
+            className="scroll-mt-6 space-y-10 lg:space-y-12"
+          >
             {guide.sections.map((section, index) => (
               <section
                 key={section.title}

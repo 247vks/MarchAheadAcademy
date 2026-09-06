@@ -38,7 +38,7 @@ export default function CareerPaths() {
     <main className="min-h-screen bg-white text-[#0a1e33]">
       <SiteHeader />
       <section className="command-blue text-white">
-        <div className="mx-auto max-w-6xl px-5 py-16 lg:px-8">
+        <div className="mx-auto max-w-6xl px-5 py-12 sm:py-14 lg:px-8 lg:py-16">
           <p className="text-xs font-bold tracking-[.17em] text-[#b9e2f5] uppercase">
             Defence Career Path Finder
           </p>
@@ -51,7 +51,7 @@ export default function CareerPaths() {
           </p>
         </div>
       </section>
-      <section className="mx-auto max-w-6xl px-5 py-16 lg:px-8">
+      <section className="mx-auto max-w-6xl px-5 py-12 lg:px-8 lg:py-16">
         <CareerPathFinder />
         <div className="mt-10 grid gap-5 sm:grid-cols-2">
           {paths.map(([title, copy, href], i) => (

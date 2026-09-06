@@ -122,7 +122,7 @@ export default function Home() {
 
       <section className="command-blue relative text-white">
         <div className="absolute inset-0 opacity-25 [background-image:linear-gradient(rgba(255,255,255,.06)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.06)_1px,transparent_1px)] [background-size:48px_48px]" />
-        <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 py-14 lg:min-h-[640px] lg:grid-cols-[1.15fr_.85fr] lg:px-8 lg:py-24">
+        <div className="relative mx-auto grid max-w-7xl items-center gap-10 px-5 py-12 sm:py-14 lg:min-h-[600px] lg:grid-cols-[1.15fr_.85fr] lg:px-8 lg:py-20">
           <div>
             <div className="mb-7 flex items-center gap-3 text-xs font-semibold tracking-[0.18em] text-[#9bd1ea] uppercase">
               <span className="h-px w-10 bg-[#6fae3f]" /> Careers in
@@ -257,7 +257,7 @@ export default function Home() {
 
       <section
         id="pathways"
-        className="mx-auto max-w-7xl px-5 py-20 lg:px-8 lg:py-24"
+        className="mx-auto max-w-7xl px-5 py-14 sm:py-16 lg:px-8 lg:py-20"
       >
         <div className="grid gap-10 lg:grid-cols-[.7fr_1.3fr]">
           <div>
@@ -322,7 +322,7 @@ export default function Home() {
 
       <section
         id="services"
-        className="border-y border-[#e1e6e3] bg-white px-5 py-20 lg:px-8 lg:py-24"
+        className="border-y border-[#e1e6e3] bg-white px-5 py-14 sm:py-16 lg:px-8 lg:py-20"
       >
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
@@ -385,7 +385,7 @@ export default function Home() {
 
       <section
         id="entries"
-        className="mx-auto grid max-w-7xl gap-6 px-5 py-20 lg:grid-cols-3 lg:px-8 lg:py-24"
+        className="mx-auto grid max-w-7xl gap-6 px-5 py-14 sm:py-16 lg:grid-cols-3 lg:px-8 lg:py-20"
       >
         {[
           [
@@ -412,7 +412,7 @@ export default function Home() {
           return (
             <article
               key={title as string}
-              className="border border-[#dfe5e2] border-t-4 bg-white p-8"
+              className="border border-[#dfe5e2] border-t-4 bg-white p-6 sm:p-7"
               style={{ borderTopColor: accents[index] }}
             >
               <span
@@ -444,7 +444,7 @@ export default function Home() {
       </section>
 
       <section
-        className="border-t border-[#e1e6e3] bg-white px-5 py-20 lg:px-8 lg:py-24"
+        className="border-t border-[#e1e6e3] bg-white px-5 py-14 sm:py-16 lg:px-8 lg:py-20"
         aria-labelledby="preparation-heading"
       >
         <div className="mx-auto max-w-7xl">
