@@ -236,7 +236,10 @@ export default function Home() {
             ].map(([Icon, value, label]) => {
               const ProofIcon = Icon as typeof ShieldCheck;
               return (
-                <div key={label as string} className="bg-white p-5">
+                <div
+                  key={label as string}
+                  className="experience-tile bg-white p-5"
+                >
                   <dt className="flex items-center gap-3 font-heading text-2xl text-[#071f3d]">
                     <ProofIcon
                       size={23}
@@ -281,7 +284,7 @@ export default function Home() {
                 <a
                   key={stage.label}
                   href={stage.href}
-                  className="editorial-card group border-t-4 p-7 sm:p-8"
+                  className="editorial-card pathway-tile group border-t-4 p-7 sm:p-8"
                   style={{ borderTopColor: stageAccent }}
                 >
                   <div className="flex items-center justify-between">

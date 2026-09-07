@@ -160,6 +160,34 @@ a:focus-visible {
 .text-balance {
   text-wrap: balance;
 }
+.experience-tile,
+.experience-tile svg,
+.pathway-tile svg {
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease;
+}
+.pathway-tile:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+@media (hover: hover) and (pointer: fine) {
+  .experience-tile:hover {
+    background-color: #f5f9f3;
+  }
+  .experience-tile:hover svg,
+  .pathway-tile:hover svg:first-child {
+    transform: translateY(-2px) rotate(-5deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .editorial-card:hover,
+  .pathway-tile:focus-visible,
+  .experience-tile:hover svg,
+  .pathway-tile:hover svg:first-child {
+    transform: none;
+  }
+}
 ::selection {
   background: #cde8f5;
   color: #071f3d;
