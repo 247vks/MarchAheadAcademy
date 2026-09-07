@@ -156,9 +156,36 @@ export function Breadcrumbs({
   );
 }
 
-export function SiteFooter() {
+export function SiteFooter({
+  showCoachingCta = true,
+}: {
+  showCoachingCta?: boolean;
+}) {
   return (
     <footer className="border-t-4 border-[#4b6228] bg-[#061a30] px-5 py-8 text-sm text-slate-300">
+      {showCoachingCta && (
+        <Link
+          href="/one-on-one-coaching/"
+          className="group mx-auto mb-8 flex max-w-7xl flex-col gap-4 border-b border-white/20 pb-8 text-white sm:flex-row sm:items-center sm:justify-between"
+        >
+          <span>
+            <span className="block text-xs font-bold uppercase tracking-widest text-[#9bd1ea]">
+              Personalised preparation
+            </span>
+            <span className="mt-2 block font-heading text-2xl">
+              Your career deserves more than one-size-fits-all coaching.
+            </span>
+          </span>
+          <span className="inline-flex shrink-0 items-center gap-2 font-bold text-[#9bd1ea] group-hover:underline">
+            Discover one-on-one coaching{' '}
+            <ArrowRight
+              size={20}
+              className="transition-transform group-hover:translate-x-1"
+              aria-hidden="true"
+            />
+          </span>
+        </Link>
+      )}
       <div className="mx-auto grid max-w-6xl gap-8 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
         <div>
           <Link href="/">March Ahead Academy</Link>
