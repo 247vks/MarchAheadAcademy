@@ -3,6 +3,9 @@ import Link from 'next/link';
 import {
   ArrowRight,
   Atom,
+  Anchor,
+  Building2,
+  Presentation,
   Brain,
   ClipboardCheck,
   MessagesSquare,
@@ -64,6 +67,8 @@ const roles = [
     'Taught science, electronics, psychology, communication, ethics and trainer development across naval, academic and professional settings.',
   ],
 ] as const;
+
+const roleIcons = [GraduationCap, Atom, Anchor, Building2, Brain, Presentation];
 
 export default function Page() {
   return (
@@ -205,12 +210,24 @@ export default function Page() {
             Roles relevant to March Ahead Academy’s work
           </h2>
           <div className="mt-7 grid gap-px overflow-hidden border border-[#d8e0dc] bg-[#d8e0dc] md:grid-cols-2">
-            {roles.map(([title, copy]) => (
-              <article key={title} className="bg-white p-6">
-                <h3 className="font-heading text-xl">{title}</h3>
-                <p className="mt-3 text-sm leading-7 text-[#5c6974]">{copy}</p>
-              </article>
-            ))}
+            {roles.map(([title, copy], index) => {
+              const Icon = roleIcons[index];
+              return (
+                <article key={title} className="bg-white p-6">
+                  <div className="flex items-start gap-3">
+                    <Icon
+                      size={23}
+                      aria-hidden="true"
+                      className="mt-0.5 shrink-0 text-[#397fa8]"
+                    />
+                    <h3 className="font-heading text-xl">{title}</h3>
+                  </div>
+                  <p className="mt-3 text-sm leading-7 text-[#5c6974]">
+                    {copy}
+                  </p>
+                </article>
+              );
+            })}
           </div>
         </section>
 
