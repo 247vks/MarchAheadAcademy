@@ -1,4 +1,5 @@
 import { Mail, MessageCircle, Phone } from 'lucide-react';
+import Link from 'next/link';
 
 const contacts = [
   {
@@ -50,6 +51,12 @@ export function ContactBand() {
               and the next sensible step.
             </p>
           </div>
+          <Link
+            href="/consultation"
+            className="mt-5 inline-block font-bold text-white underline underline-offset-4 transition hover:text-[#b9d68f]"
+          >
+            Plan your consultation →
+          </Link>
           <div className="mt-8 grid gap-px overflow-hidden border border-white/25 bg-white/25 sm:grid-cols-3">
             {contacts.map((contact) => {
               const Icon = contact.icon;

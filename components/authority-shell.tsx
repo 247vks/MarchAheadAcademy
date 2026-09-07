@@ -69,10 +69,10 @@ export function SiteHeader() {
           </nav>
           <div className="hidden items-center gap-4 lg:flex">
             <Link
-              href="/career-paths"
+              href="/consultation"
               className="bg-[#77b9da] px-4 py-3 text-xs font-bold tracking-[.04em] text-[#071f3d] uppercase transition hover:bg-[#a6d7ed]"
             >
-              Explore career paths
+              Book a consultation
             </Link>
           </div>
           <details className="relative lg:hidden">
@@ -104,10 +104,10 @@ export function SiteHeader() {
                 );
               })}
               <Link
-                href="/career-paths"
+                href="/consultation"
                 className="mt-2 bg-[#77b9da] px-4 py-3 text-center text-xs font-bold uppercase"
               >
-                Explore career paths
+                Book a consultation
               </Link>
             </nav>
           </details>
@@ -197,6 +197,12 @@ export function SiteFooter() {
           aria-label="Trust and organisation"
         >
           <strong className="text-white">March Ahead Academy</strong>
+          <Link className="text-link dark-text-link" href="/consultation">
+            Book a consultation
+          </Link>
+          <Link className="text-link dark-text-link" href="/resources">
+            Preparation library
+          </Link>
           <Link
             className="text-link dark-text-link"
             href="/authors/cdr-sulakshan-kumar-sharma"

@@ -6,6 +6,8 @@ export const dynamic = 'force-static';
 const routes = [
   '',
   '/about',
+  '/consultation',
+  '/resources',
   '/authors/cdr-sulakshan-kumar-sharma',
   '/career-paths',
   '/career-paths/foundation',
