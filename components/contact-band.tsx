@@ -47,8 +47,9 @@ export function ContactBand() {
               Questions about the right defence career path?
             </h2>
             <p className="mt-4 max-w-4xl text-sm leading-7 text-white/80 sm:text-base">
-              Book a consultation for guidance about career routes, preparation
-              and the next sensible step.
+              One-on-one coaching, personalised to your goals, preparation needs
+              and learning pace. Book a consultation to discuss your defence
+              career path and the next step.
             </p>
           </div>
           <Link

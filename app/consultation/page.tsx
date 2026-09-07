@@ -15,7 +15,7 @@ import { SiteHeader, SiteFooter } from '@/components/authority-shell';
 export const metadata: Metadata = {
   title: 'Book a Defence Career Consultation | March Ahead Academy',
   description:
-    'Discuss defence career routes, SSB preparation and your next steps with March Ahead Academy. Enquire by phone, email or WhatsApp.',
+    'Explore one-on-one defence career and SSB coaching at March Ahead Academy, personalised to your needs and learning pace. Book a consultation.',
   alternates: { canonical: '/consultation/' },
 };
 const whatsapp =
@@ -33,9 +33,10 @@ export default function Page() {
           Book a consultation with March Ahead Academy.
         </h1>
         <p className="mt-6 max-w-3xl text-lg leading-8 text-[#536371]">
-          Bring your questions about career routes, written examination
-          preparation or SSB. Start with an enquiry so we can discuss the
-          guidance you need and arrange a suitable next step.
+          Our coaching is one-on-one, so preparation can be customised to your
+          individual needs and paced to suit your learning. Bring your questions
+          about career routes, written examinations or SSB, and we’ll discuss
+          your goals, current preparation and areas where you need support.
         </p>
         <div className="mt-8 grid gap-3 sm:grid-cols-3">
           <a

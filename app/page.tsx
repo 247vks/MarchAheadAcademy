@@ -133,16 +133,16 @@ export default function Home() {
               Your clearest path to a career in the Defence Forces.
             </h1>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-300">
-              Understand the right entries, verify your eligibility and prepare
-              for written exams, SSB, interviews and physical standards—with
-              credible guidance at every stage.
+              One-on-one coaching, tailored to you. Prepare for written exams
+              and SSB with personalised guidance that adapts to your needs,
+              goals and learning pace.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link
-                href="/career-paths"
+                href="/consultation"
                 className="inline-flex items-center justify-center gap-2 bg-[#77b9da] px-6 py-4 text-sm font-bold text-[#071f3d] transition hover:bg-[#a6d7ed]"
               >
-                Explore career paths <ArrowRight size={17} />
+                Book a consultation <ArrowRight size={17} />
               </Link>
               <a
                 href="#services"
@@ -162,7 +162,7 @@ export default function Home() {
                   The March Ahead Academy standard
                 </p>
                 <h2 className="mt-2 font-heading text-3xl">
-                  Clarity before coaching.
+                  Your goals. Your pace.
                 </h2>
               </div>
               <ShieldCheck
@@ -173,6 +173,10 @@ export default function Home() {
             </div>
             <div className="space-y-6">
               {[
+                [
+                  'One-on-one coaching',
+                  'Individual attention, with preparation customised to your needs and learning pace.',
+                ],
                 [
                   'Official-source led',
                   'Eligibility and dates traced to current notifications.',
