@@ -138,6 +138,50 @@ export function SsbGuidePage({ guide }: { guide: SsbGuideData }) {
               </div>
             </section>
           )}
+          <section aria-labelledby="discussion-interview-heading">
+            <h2
+              id="discussion-interview-heading"
+              className="font-heading text-2xl"
+            >
+              Group discussion and personal interview
+            </h2>
+            <p className="mt-3 text-sm leading-7 text-[#536371]">
+              Practise exchanging ideas with a group and explaining your own
+              experiences in a personal conversation.
+            </p>
+            <div className="mt-5 grid gap-3 sm:grid-cols-2">
+              {[
+                [
+                  'group-discussion',
+                  'Group Discussion (GD)',
+                  'Original topics, listening and constructive contributions',
+                ],
+                [
+                  'personal-interview',
+                  'Personal Interview',
+                  'Practice questions, reflection and career motivation',
+                ],
+              ]
+                .filter(
+                  ([slug]) => guide.currentHref !== `/selection/ssb/${slug}`,
+                )
+                .map(([slug, label, description]) => (
+                  <Link
+                    key={slug}
+                    href={`/selection/ssb/${slug}`}
+                    className="linked-panel block border border-[#d8e1dd] bg-white p-5"
+                  >
+                    <span className="flex items-center justify-between gap-3 font-bold text-[#2f6f94]">
+                      {label}
+                      <ArrowRight size={17} aria-hidden="true" />
+                    </span>
+                    <span className="mt-2 block text-sm leading-6 text-[#536371]">
+                      {description}
+                    </span>
+                  </Link>
+                ))}
+            </div>
+          </section>
           <nav
             aria-label="On this page"
             className="border-y border-[#d9e3df] py-4"

@@ -22,6 +22,7 @@ const cds = {
 };
 
 const path = [
+  { label: 'Group Discussion (GD)', href: '/selection/ssb/group-discussion' },
   { label: 'SSB overview', href: '/selection/ssb' },
   { label: 'Stage I and PP&DT', href: '/selection/ssb/stage-1' },
   { label: 'Psychology tests', href: '/selection/ssb/psychology-tests' },
@@ -238,6 +239,8 @@ export const ssbGuides: Record<string, SsbGuideData> = {
     related: path,
   },
   'personal-interview': {
+    reviewedAt: '7 September 2026',
+    modifiedAt: '2026-09-07',
     currentHref: '/selection/ssb/personal-interview',
     eyebrow: 'SSB guide · Interview',
     title: 'Personal interview: know your life, choices and motivation',
@@ -265,6 +268,22 @@ export const ssbGuides: Record<string, SsbGuideData> = {
       {
         title: 'Use feedback without becoming artificial',
         body: 'A mentor can identify unclear communication, unsupported claims or areas needing reflection. Ethical guidance does not write a candidate’s personality, promise preferred answers or impersonate an official assessor.',
+      },
+      {
+        title: 'Six original personal interview practice questions',
+        body: 'Use these March Ahead Academy prompts for reflection and practice. They are not recalled questions or a prediction of your interview. Answer from your own experience, then consider what a follow-up question might explore.',
+        points: [
+          'Tell me about a responsibility you carried through when it became difficult.',
+          'Why are you considering this service and entry, and what have you learned about the work?',
+          'Describe a disagreement within a team. What did you do?',
+          'What feedback have you acted on recently?',
+          'Describe a setback and what you changed afterwards.',
+          'Which subject or activity interests you, and how have you pursued it beyond the minimum requirement?',
+        ],
+      },
+      {
+        title: 'How March Ahead Academy can help',
+        body: 'Book a consultation to review your preparation and communication. Bring real examples and the questions you find difficult. Guidance can help you organise an answer, explain your role accurately and identify gaps in your knowledge of the career. It does not provide a script or a selection guarantee.',
       },
     ],
     exercise: {

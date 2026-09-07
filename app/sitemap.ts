@@ -32,6 +32,7 @@ const routes = [
   '/selection/ssb/wat',
   '/selection/ssb/self-description',
   '/selection/ssb/group-testing',
+  '/selection/ssb/group-discussion',
   '/selection/ssb/personal-interview',
   '/services',
   '/services/air-force',
