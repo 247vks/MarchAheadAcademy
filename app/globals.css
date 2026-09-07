@@ -107,6 +107,9 @@ a:focus-visible {
 .font-heading {
   font-family: var(--font-display), Georgia, serif;
 }
+.section-spacing {
+  padding-block: clamp(1.75rem, 3vw, 2.75rem);
+}
 .section-kicker {
   display: flex;
   align-items: center;

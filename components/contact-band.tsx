@@ -25,7 +25,7 @@ const contacts = [
 export function ContactBand() {
   return (
     <section
-      className="bg-white px-5 py-10 sm:py-12 lg:px-8 lg:py-14"
+      className="section-spacing bg-white px-5 lg:px-8"
       aria-labelledby="contact-heading"
     >
       <div
