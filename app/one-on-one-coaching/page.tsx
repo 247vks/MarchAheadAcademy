@@ -41,7 +41,7 @@ export default function Page() {
     <main className="min-h-screen bg-white text-[#0a1e33]">
       <SiteHeader />
       <div className="mx-auto max-w-6xl px-5 py-10 lg:px-8">
-        <Breadcrumbs current="One-on-one coaching" />
+        <Breadcrumbs current="One-on-one coaching" tone="light" />
         <p className="section-kicker mt-8">
           One-on-one SSB and defence exam coaching
         </p>

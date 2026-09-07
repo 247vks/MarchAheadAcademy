@@ -128,29 +128,48 @@ export function Breadcrumbs({
   parent,
   parentHref,
   current,
+  tone = 'dark',
 }: {
   parent?: string;
   parentHref?: string;
   current: string;
+  tone?: 'dark' | 'light';
 }) {
   return (
     <nav
       aria-label="Breadcrumb"
-      className="mb-6 flex flex-wrap items-center gap-2 text-xs font-semibold text-[#cce7f5]"
+      className={`mb-6 flex flex-wrap items-center gap-2 text-sm font-semibold ${tone === 'light' ? 'text-[#536371]' : 'text-[#cce7f5]'}`}
     >
-      <Link href="/" className="transition hover:text-white">
+      <Link
+        href="/"
+        className={
+          tone === 'light'
+            ? 'text-link text-[#245f80]'
+            : 'transition hover:text-white'
+        }
+      >
         Home
       </Link>
       {parent && parentHref && (
         <>
           <span aria-hidden="true">/</span>
-          <Link href={parentHref} className="transition hover:text-white">
+          <Link
+            href={parentHref}
+            className={
+              tone === 'light'
+                ? 'text-link text-[#245f80]'
+                : 'transition hover:text-white'
+            }
+          >
             {parent}
           </Link>
         </>
       )}
       <span aria-hidden="true">/</span>
-      <span aria-current="page" className="text-white">
+      <span
+        aria-current="page"
+        className={tone === 'light' ? 'text-[#0a1e33]' : 'text-white'}
+      >
         {current}
       </span>
     </nav>
