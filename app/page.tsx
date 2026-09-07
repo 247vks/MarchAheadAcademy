@@ -237,16 +237,16 @@ export default function Home() {
               const ProofIcon = Icon as typeof ShieldCheck;
               return (
                 <div key={label as string} className="bg-white p-5">
-                  <ProofIcon
-                    size={21}
-                    strokeWidth={1.5}
-                    className="text-[#397fa8]"
-                    aria-hidden="true"
-                  />
-                  <dt className="mt-4 font-heading text-2xl text-[#071f3d]">
+                  <dt className="flex items-center gap-3 font-heading text-2xl text-[#071f3d]">
+                    <ProofIcon
+                      size={23}
+                      strokeWidth={1.5}
+                      className="shrink-0 text-[#397fa8]"
+                      aria-hidden="true"
+                    />
                     {value as string}
                   </dt>
-                  <dd className="mt-1 text-xs font-bold leading-5 tracking-[.08em] text-[#566675] uppercase">
+                  <dd className="mt-3 text-xs font-bold leading-5 tracking-[.08em] text-[#566675] uppercase">
                     {label as string}
                   </dd>
                 </div>
@@ -286,10 +286,8 @@ export default function Home() {
                 >
                   <div className="flex items-center justify-between">
                     <span
-                      className="grid h-11 w-11 place-items-center border"
+                      className="flex items-center gap-3"
                       style={{
-                        borderColor: `${stageAccent}55`,
-                        backgroundColor: `${stageAccent}12`,
                         color: stageAccent,
                       }}
                     >
@@ -298,19 +296,16 @@ export default function Home() {
                         strokeWidth={1.6}
                         aria-hidden="true"
                       />
+                      <span className="text-xs font-bold tracking-widest uppercase">
+                        Stage 0{index + 1}
+                      </span>
                     </span>
                     <ArrowRight
                       size={18}
                       className="text-[#397fa8] transition group-hover:translate-x-1"
                     />
                   </div>
-                  <span
-                    className="mt-7 block text-xs font-bold tracking-widest uppercase"
-                    style={{ color: stageAccent }}
-                  >
-                    Stage 0{index + 1}
-                  </span>
-                  <h3 className="mt-2 font-heading text-2xl">{stage.label}</h3>
+                  <h3 className="mt-5 font-heading text-2xl">{stage.label}</h3>
                   <p className="mt-2 text-sm leading-6 text-[#65717d]">
                     {stage.detail}
                   </p>
