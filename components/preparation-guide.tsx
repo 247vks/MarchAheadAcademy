@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { TopicIcon } from '@/components/topic-icon';
 import Image from 'next/image';
 import { ArrowRight, CheckCircle2, ShieldCheck } from 'lucide-react';
 import { ContactBand } from '@/components/contact-band';
@@ -66,7 +67,10 @@ export function PreparationGuide({ guide }: { guide: PreparationGuideData }) {
                 >
                   0{index + 1}
                 </p>
-                <h2 className="mt-2 font-heading text-3xl">{section.title}</h2>
+                <h2 className="mt-2 flex items-start gap-3 font-heading text-2xl sm:text-3xl">
+                  <TopicIcon topic={section.title} />
+                  <span>{section.title}</span>
+                </h2>
                 <p className="mt-4 leading-8 text-[#536371]">{section.body}</p>
                 <ul className="mt-5 grid gap-3">
                   {section.actions.map((action) => (

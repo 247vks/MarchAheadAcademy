@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { TopicIcon } from '@/components/topic-icon';
 import {
   ArrowRight,
   BellRing,
@@ -357,7 +358,10 @@ export function AuthorityPage({
                     />
                   </div>
                   <h2 className="text-balance mt-2 font-heading text-2xl leading-tight sm:text-3xl">
-                    {section.title}
+                    <span className="flex items-start gap-3">
+                      <TopicIcon topic={section.title} />
+                      <span>{section.title}</span>
+                    </span>
                   </h2>
                   <p className="mt-4 leading-8 text-[#536371]">
                     {section.body}

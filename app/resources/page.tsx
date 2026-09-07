@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Download, ArrowRight } from 'lucide-react';
 import { SiteHeader, SiteFooter } from '@/components/authority-shell';
+import { TopicIcon } from '@/components/topic-icon';
 export const metadata: Metadata = {
   title: 'Free Defence Preparation Worksheets | March Ahead Academy',
   description:
@@ -48,14 +49,28 @@ export default function Page() {
           if useful.
         </p>
         <div className="mt-10 grid gap-6 md:grid-cols-2">
-          {resources.map((item) => (
-            <article key={item.slug} className="border border-[#d8e1dd] p-6">
+          {resources.map((item, index) => (
+            <article
+              key={item.slug}
+              className="flex flex-col border border-[#d8e1dd] border-t-4 bg-white p-6 sm:p-8"
+              style={{
+                borderTopColor: ['#4b6228', '#397fa8', '#071f3d', '#946719'][
+                  index
+                ],
+              }}
+            >
+              <div className="mb-5 flex items-center justify-between">
+                <TopicIcon topic={item.title} />
+                <span className="text-xs font-bold tracking-widest text-[#536371]">
+                  WORKSHEET 0{index + 1}
+                </span>
+              </div>
               <h2 className="font-heading text-2xl">{item.title}</h2>
               <p className="mt-3 leading-7 text-[#536371]">
                 {item.description}
               </p>
               <a
-                className="text-link mt-6 inline-flex min-h-11 items-center gap-2 font-bold"
+                className="mt-6 inline-flex min-h-11 items-center gap-2 border-t border-[#d8e1dd] pt-4 font-bold text-[#2f6f94] underline underline-offset-4 transition hover:text-[#4b6228]"
                 href={`/resources/${item.slug}.txt`}
                 download
               >
@@ -66,8 +81,8 @@ export default function Page() {
           ))}
         </div>
         <section className="mt-12 border-t border-[#d8e1dd] pt-8">
-          <h2 className="font-heading text-2xl">
-            Use one worksheet, then review it.
+          <h2 className="flex items-center gap-4 font-heading text-2xl">
+            <TopicIcon topic="practice" /> Use one worksheet, then review it.
           </h2>
           <p className="mt-4 max-w-3xl leading-8 text-[#536371]">
             Choose the resource that matches your next step. Complete it in your
