@@ -9,12 +9,14 @@ export function GuideStructuredData({
   description,
   section,
   faqs = [],
+  modifiedAt = '2026-09-06',
 }: {
   path: string;
   title: string;
   description: string;
   section: string;
   faqs?: FAQ[];
+  modifiedAt?: string;
 }) {
   const url = `${siteUrl}${path}`;
   const graph: Record<string, unknown>[] = [
@@ -27,7 +29,7 @@ export function GuideStructuredData({
       mainEntityOfPage: { '@type': 'WebPage', '@id': url },
       author: { '@id': `${siteUrl}/#organization` },
       publisher: { '@id': `${siteUrl}/#organization` },
-      dateModified: '2026-09-06',
+      dateModified: modifiedAt,
       articleSection: section,
       inLanguage: 'en-IN',
     },

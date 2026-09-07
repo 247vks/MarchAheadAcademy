@@ -19,6 +19,8 @@ import { SsbJourneyMap } from '@/components/decision-visuals';
 import { GuideStructuredData } from '@/components/guide-structured-data';
 
 export type SsbGuideData = {
+  reviewedAt?: string;
+  modifiedAt?: string;
   currentHref: string;
   eyebrow: string;
   title: string;
@@ -41,6 +43,7 @@ export function SsbGuidePage({ guide }: { guide: SsbGuideData }) {
         description={guide.lede}
         section="SSB selection"
         faqs={guide.faqs}
+        modifiedAt={guide.modifiedAt}
       />
       <SiteHeader />
       <section className="command-blue text-white">
@@ -72,7 +75,7 @@ export function SsbGuidePage({ guide }: { guide: SsbGuideData }) {
           <div className="mt-8 flex flex-wrap gap-2 text-xs font-semibold text-[#cce7f5]">
             <span className="inline-flex items-center gap-2 border border-[#80a6bd]/50 bg-[#103353] px-4 py-2">
               <ShieldCheck size={15} />
-              Evergreen guide · Reviewed {siteReviewedAt}
+              Evergreen guide · Reviewed {guide.reviewedAt ?? siteReviewedAt}
             </span>
             <Link
               href="/authors/cdr-sulakshan-kumar-sharma"
@@ -94,6 +97,47 @@ export function SsbGuidePage({ guide }: { guide: SsbGuideData }) {
         <article className="space-y-10 lg:space-y-12">
           <ExpertByline context="Cdr Sharma’s three years of SSB psychologist experience and wider work in military education inform March Ahead Academy’s ethical orientation. Official sources control the published process; no confidential selection material is used." />
           {guide.currentHref === '/selection/ssb' && <SsbJourneyMap />}
+          {(guide.currentHref === '/selection/ssb' ||
+            guide.currentHref === '/selection/ssb/psychology-tests') && (
+            <section aria-labelledby="psychology-guides-heading">
+              <h2
+                id="psychology-guides-heading"
+                className="font-heading text-2xl"
+              >
+                Explore the psychology tests
+              </h2>
+              <p className="mt-3 text-sm leading-7 text-[#536371]">
+                Understand each exercise, try original practice prompts and
+                learn how to review your preparation.
+              </p>
+              <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                {[
+                  ['srt', 'SRT', 'Situation Reaction Test'],
+                  ['tat', 'TAT', 'Thematic Apperception Test'],
+                  ['wat', 'WAT', 'Word Association Test'],
+                  [
+                    'self-description',
+                    'Self Description',
+                    'Reflect on experience and feedback',
+                  ],
+                ].map(([slug, label, description]) => (
+                  <Link
+                    key={slug}
+                    href={`/selection/ssb/${slug}`}
+                    className="linked-panel block border border-[#d8e1dd] bg-white p-5"
+                  >
+                    <span className="flex items-center justify-between gap-3 font-bold text-[#2f6f94]">
+                      {label}
+                      <ArrowRight size={17} aria-hidden="true" />
+                    </span>
+                    <span className="mt-2 block text-sm leading-6 text-[#536371]">
+                      {description}
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </section>
+          )}
           <nav
             aria-label="On this page"
             className="border-y border-[#d9e3df] py-4"
