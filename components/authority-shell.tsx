@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { CoachingTagline } from '@/components/coaching-tagline';
 import { TopicIcon } from '@/components/topic-icon';
 import {
   ArrowRight,
@@ -173,7 +174,7 @@ export function SiteFooter({
               Personalised preparation
             </span>
             <span className="mt-2 block font-heading text-2xl">
-              Your career deserves more than one-size-fits-all coaching.
+              <CoachingTagline />
             </span>
           </span>
           <span className="inline-flex shrink-0 items-center gap-2 font-bold text-[#9bd1ea] group-hover:underline">
