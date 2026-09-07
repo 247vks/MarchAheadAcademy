@@ -1,5 +1,16 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import {
+  MessageCircle,
+  Phone,
+  Mail,
+  Compass,
+  FileCheck2,
+  CalendarCheck,
+  Users,
+  BookOpen,
+  GraduationCap,
+} from 'lucide-react';
 import { SiteHeader, SiteFooter } from '@/components/authority-shell';
 export const metadata: Metadata = {
   title: 'Book a Defence Career Consultation | March Ahead Academy',
@@ -31,21 +42,32 @@ export default function Page() {
             href={whatsapp}
             target="_blank"
             rel="noreferrer"
-            className="bg-[#30471f] p-5 font-bold text-white transition hover:bg-[#3f5b2b]"
+            className="flex items-center gap-3 bg-[#30471f] p-5 font-bold text-white transition hover:bg-[#3f5b2b]"
           >
-            Enquire on WhatsApp
+            <MessageCircle size={24} className="shrink-0" aria-hidden="true" />
+            <span>Enquire on WhatsApp</span>
           </a>
           <a
             href="tel:+919820096800"
-            className="linked-panel border border-[#d8e1dd] p-5 font-bold"
+            className="linked-panel flex items-center gap-3 border border-[#d8e1dd] p-5 font-bold"
           >
-            Call +91 98200 96800
+            <Phone
+              size={24}
+              className="shrink-0 text-[#397fa8]"
+              aria-hidden="true"
+            />
+            <span>Call +91 98200 96800</span>
           </a>
           <a
             href="mailto:hello@marchaheadacademy.com?subject=Consultation%20enquiry"
-            className="linked-panel break-words border border-[#d8e1dd] p-5 font-bold"
+            className="linked-panel flex items-center gap-3 break-words border border-[#d8e1dd] p-5 font-bold"
           >
-            Email the Academy
+            <Mail
+              size={24}
+              className="shrink-0 text-[#397fa8]"
+              aria-hidden="true"
+            />
+            <span>Email the Academy</span>
           </a>
         </div>
         <p className="mt-4 text-sm leading-6 text-[#536371]">
@@ -59,13 +81,31 @@ export default function Page() {
           </h2>
           <ul className="mt-5 grid gap-4 sm:grid-cols-2">
             {[
-              'Choosing what to explore after school or graduation.',
-              'Understanding the requirements in an official entry notification.',
-              'Planning academic preparation and a realistic routine.',
-              'Preparing for SSB discussions, psychological exercises or a personal interview.',
-            ].map((text) => (
-              <li key={text} className="border border-[#d8e1dd] p-5 leading-7">
-                {text}
+              {
+                icon: Compass,
+                text: 'Choosing what to explore after school or graduation.',
+              },
+              {
+                icon: FileCheck2,
+                text: 'Understanding the requirements in an official entry notification.',
+              },
+              {
+                icon: CalendarCheck,
+                text: 'Planning academic preparation and a realistic routine.',
+              },
+              {
+                icon: Users,
+                text: 'Preparing for SSB discussions, psychological exercises or a personal interview.',
+              },
+            ].map(({ icon: Icon, text }) => (
+              <li
+                key={text}
+                className="flex items-start gap-4 border border-[#d8e1dd] p-5 leading-7"
+              >
+                <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-[#f0f5eb] text-[#4b6228]">
+                  <Icon size={23} strokeWidth={1.7} aria-hidden="true" />
+                </span>
+                <span>{text}</span>
               </li>
             ))}
           </ul>
@@ -101,7 +141,11 @@ export default function Page() {
             documents and sensitive personal records out of your initial
             message.
           </p>
-          <Link className="text-link mt-5 inline-block" href="/resources">
+          <Link
+            className="text-link mt-5 inline-flex items-center gap-2"
+            href="/resources"
+          >
+            <BookOpen size={20} aria-hidden="true" />
             Use the free preparation worksheets
           </Link>
         </section>
@@ -116,9 +160,10 @@ export default function Page() {
             of SSB psychologist experience.
           </p>
           <Link
-            className="text-link mt-4 inline-block"
+            className="text-link mt-4 inline-flex items-center gap-2"
             href="/authors/cdr-sulakshan-kumar-sharma"
           >
+            <GraduationCap size={20} aria-hidden="true" />
             Read Cdr Sharma’s profile
           </Link>
         </section>
