@@ -2,6 +2,10 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import {
   ArrowRight,
+  Atom,
+  Brain,
+  ClipboardCheck,
+  MessagesSquare,
   BookOpenCheck,
   GraduationCap,
   ShieldCheck,
@@ -23,6 +27,15 @@ const qualifications = [
   'MEd and BEd — First Class',
   'MSc Defence Studies — A Grade',
   'MSc Physics/Electronics and BSc Chemistry, Physics and Mathematics — First Class',
+];
+
+const qualificationIcons = [
+  Brain,
+  ClipboardCheck,
+  MessagesSquare,
+  GraduationCap,
+  ShieldCheck,
+  Atom,
 ];
 
 const roles = [
@@ -140,14 +153,22 @@ export default function Page() {
                 </p>
               </div>
               <ul className="mt-5 grid gap-3">
-                {qualifications.map((item) => (
-                  <li
-                    key={item}
-                    className="border border-[#dfe5e2] bg-[#fafcfb] p-4 text-sm leading-6"
-                  >
-                    {item}
-                  </li>
-                ))}
+                {qualifications.map((item, index) => {
+                  const Icon = qualificationIcons[index];
+                  return (
+                    <li
+                      key={item}
+                      className="flex items-start gap-3 border border-[#dfe5e2] bg-white p-4 text-sm leading-6"
+                    >
+                      <Icon
+                        size={21}
+                        aria-hidden="true"
+                        className="mt-0.5 shrink-0 text-[#397fa8]"
+                      />
+                      <span>{item}</span>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
             <div>
