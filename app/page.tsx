@@ -415,7 +415,7 @@ export default function Home() {
           return (
             <article
               key={title as string}
-              className="editorial-card border-t-4 p-6 sm:p-7"
+              className="editorial-card flex h-full flex-col border-t-4 p-6 sm:p-7"
               style={{ borderTopColor: accents[index] }}
             >
               <span
@@ -437,7 +437,7 @@ export default function Home() {
               <p className="mt-3 leading-7 text-[#64717c]">{copy as string}</p>
               <a
                 href={href as string}
-                className="mt-6 inline-flex items-center gap-2 text-sm font-bold"
+                className="mt-auto inline-flex items-center gap-2 self-start pt-6 text-sm font-bold"
               >
                 Open guidance <ArrowRight size={15} />
               </a>
