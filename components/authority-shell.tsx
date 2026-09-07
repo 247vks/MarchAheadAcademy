@@ -315,14 +315,23 @@ export function AuthorityPage({
             <div className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold">
               {sections.map((section, index) => (
                 <a
-                  className="text-link"
+                  className="text-link inline-flex items-center gap-2"
                   key={section.title}
                   href={`#section-${index + 1}`}
                 >
+                  <TopicIcon topic={section.title} compact />
                   {section.title}
                 </a>
               ))}
-              <a className="text-link" href="#official-sources">
+              <a
+                className="text-link inline-flex items-center gap-2"
+                href="#official-sources"
+              >
+                <ShieldCheck
+                  size={17}
+                  aria-hidden="true"
+                  className="shrink-0 text-[#397fa8]"
+                />
                 Official sources
               </a>
             </div>

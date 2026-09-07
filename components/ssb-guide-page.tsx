@@ -191,19 +191,43 @@ export function SsbGuidePage({ guide }: { guide: SsbGuideData }) {
               On this page
             </p>
             <div className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold">
-              <a className="text-link" href="#guide-sections">
+              <a
+                className="text-link inline-flex items-center gap-2"
+                href="#guide-sections"
+              >
+                <TopicIcon topic="study guide" compact />
                 Guide
               </a>
-              <a className="text-link" href="#practice">
+              <a
+                className="text-link inline-flex items-center gap-2"
+                href="#practice"
+              >
+                <TopicIcon topic="practice" compact />
                 Practice
               </a>
-              <a className="text-link" href="#common-mistakes">
+              <a
+                className="text-link inline-flex items-center gap-2"
+                href="#common-mistakes"
+              >
+                <TopicIcon topic="common mistakes" compact />
                 Common mistakes
               </a>
-              <a className="text-link" href="#frequently-asked-questions">
+              <a
+                className="text-link inline-flex items-center gap-2"
+                href="#frequently-asked-questions"
+              >
+                <TopicIcon topic="communication" compact />
                 FAQs
               </a>
-              <a className="text-link" href="#official-sources">
+              <a
+                className="text-link inline-flex items-center gap-2"
+                href="#official-sources"
+              >
+                <ShieldCheck
+                  size={17}
+                  aria-hidden="true"
+                  className="shrink-0 text-[#397fa8]"
+                />
                 Official sources
               </a>
             </div>

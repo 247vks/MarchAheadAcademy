@@ -9,7 +9,13 @@ import {
   Lightbulb,
 } from 'lucide-react';
 
-export function TopicIcon({ topic }: { topic: string }) {
+export function TopicIcon({
+  topic,
+  compact = false,
+}: {
+  topic: string;
+  compact?: boolean;
+}) {
   const Icon = /discuss|group|team/i.test(topic)
     ? Users
     : /interview|communicat|reflect|description/i.test(topic)
@@ -26,8 +32,14 @@ export function TopicIcon({ topic }: { topic: string }) {
                 ? BookOpen
                 : Lightbulb;
   return (
-    <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-[#d8e1dd] bg-white text-[#397fa8]">
-      <Icon size={23} strokeWidth={1.7} aria-hidden="true" />
+    <span
+      className={
+        compact
+          ? 'inline-flex shrink-0 items-center text-[#397fa8]'
+          : 'inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-lg border border-[#d8e1dd] bg-white text-[#397fa8]'
+      }
+    >
+      <Icon size={compact ? 17 : 23} strokeWidth={1.7} aria-hidden="true" />
     </span>
   );
 }
