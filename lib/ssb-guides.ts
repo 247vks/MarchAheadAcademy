@@ -107,14 +107,43 @@ export const ssbGuides: Record<string, SsbGuideData> = {
   'psychology-tests': {
     currentHref: '/selection/ssb/psychology-tests',
     eyebrow: 'SSB guide · Psychology',
-    title: 'Psychology tests: prepare through honest reflection',
-    lede: 'Understand the official place of written psychological testing while avoiding model personalities, answer keys and confidential-material claims.',
+    title: 'SSB psychology preparation: understand, practise and reflect',
+    lede: 'Build a personal preparation routine for SSB psychology with clear writing, honest self-reflection and purposeful practice—not memorised responses.',
     summary:
       'The Indian Air Force describes the psychological tests within AFSB Stage II as written tests conducted by a psychologist. Its public process material does not provide an official answer key, ideal personality template or guaranteed response method.',
     sections: [
       {
         title: 'Know the boundary of official information',
         body: 'Official sources identify psychological testing as one component of Stage II alongside group tests and interview. Any detailed practice offered by an academy must therefore be labelled as illustrative and must not be presented as official or predictive.',
+      },
+      {
+        title: 'How to prepare for SSB psychology tests',
+        body: 'Start by identifying what you need to improve: understanding instructions, expressing a thought clearly, sustaining attention or reflecting on your own experiences. Choose one focus for each practice session. The routine below is an academy-created learning exercise, not an assessment method.',
+        points: [
+          'Read the relevant TAT, WAT, SRT or Self Description guide before choosing an exercise.',
+          'Write your first response independently, without looking at model answers.',
+          'Review whether your meaning is clear and your assumptions are realistic.',
+          'Keep the original draft and note one specific improvement for the next session.',
+          'Use regular, manageable sessions rather than repeatedly polishing the same response.',
+        ],
+      },
+      {
+        title: 'What does an SSB psychologist assess?',
+        body: 'The Indian Air Force describes its selection process as involving intelligence, aptitude and personality assessment, and identifies written psychological tests conducted by a psychologist. These public descriptions do not let us decode a candidate’s result or assign a score to an isolated sentence. For preparation, concentrate on expressing your own thinking clearly rather than guessing what a particular assessor wants to hear.',
+      },
+      {
+        title: 'Psychology preparation for repeaters',
+        body: 'A previous attempt is a starting point for reflection, not proof of a particular personality weakness. Separate what you actually observed from explanations you have assumed. You may remember rushing, misunderstanding an instruction or relying on rehearsed wording; those are preparation habits you can work on without claiming to know why a board reached its decision.',
+        points: [
+          'Record observable difficulties without trying to reconstruct confidential assessment.',
+          'Choose a small number of practical changes instead of reinventing your personality.',
+          'Practise unfamiliar prompts so your routine develops expression rather than recall.',
+          'Discuss your own work and preparation history when seeking individual guidance.',
+        ],
+      },
+      {
+        title: 'Consistency means honesty, not repeating a script',
+        body: 'For your own preparation, reflect on the same real responsibilities and experiences across writing and interview practice. You do not need to force identical themes into every task. A story, a reaction and a conversation are different forms of expression. This is advice about authentic preparation, not a claim about a hidden cross-test scoring formula.',
       },
       {
         title: 'Self-knowledge is more durable than scripting',

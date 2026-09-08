@@ -1,5 +1,26 @@
 import type { Metadata } from 'next';
 import { SsbGuidePage } from '@/components/ssb-guide-page';
 import { getSsbGuide } from '@/lib/ssb-guides';
-export const metadata: Metadata = { alternates: { canonical: '/selection/ssb/psychology-tests' }, title: 'SSB Psychology Tests: Ethical Preparation Guide', description: 'Understand the place of written psychological testing at SSB and AFSB without model personalities, leaked material or answer formulas.' };
-export default function Page() { return <SsbGuidePage guide={getSsbGuide('psychology-tests')} />; }
+const title = 'SSB Psychology Preparation: Practice & Repeater Guidance';
+const description =
+  'Prepare for SSB psychology tests with a practical routine, reflection exercises and guidance for repeaters. Explore TAT, WAT, SRT and Self Description.';
+export const metadata: Metadata = {
+  alternates: { canonical: '/selection/ssb/psychology-tests/' },
+  title,
+  description,
+  openGraph: {
+    title,
+    description,
+    url: '/selection/ssb/psychology-tests/',
+    images: ['/og-tri-service.png'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title,
+    description,
+    images: ['/og-tri-service.png'],
+  },
+};
+export default function Page() {
+  return <SsbGuidePage guide={getSsbGuide('psychology-tests')} />;
+}
