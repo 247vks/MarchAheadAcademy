@@ -12,7 +12,7 @@ const headingFont = Libre_Baskerville({
 });
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: 'March Ahead Academy | Indian Defence Career Guidance',
+  title: 'SSB Coaching & Defence Career Guidance | March Ahead Academy',
   description: siteDescription,
   alternates: { canonical: '/' },
   robots: {

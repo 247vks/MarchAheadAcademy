@@ -4,6 +4,8 @@ import { usePathname } from 'next/navigation';
 
 export const coachingTaglines: Record<string, string> = {
   '/': 'Your career deserves more than one-size-fits-all coaching.',
+  '/ssb-coaching':
+    'Make your SSB preparation personal—not a rehearsed performance.',
   '/about': 'An academy approach centred on one person: you.',
   '/authors/cdr-sulakshan-kumar-sharma':
     'Experienced guidance. Individual attention. Your next step.',

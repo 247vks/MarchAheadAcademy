@@ -126,16 +126,17 @@ export default function Home() {
         <div className="relative mx-auto grid max-w-7xl items-center gap-8 px-5 py-10 sm:py-12 lg:grid-cols-[1.15fr_.85fr] lg:px-8 lg:py-14">
           <div>
             <div className="mb-7 flex items-center gap-3 text-xs font-semibold tracking-[0.18em] text-[#9bd1ea] uppercase">
-              <span className="h-px w-10 bg-[#6fae3f]" /> Careers in
-              India&apos;s Armed Forces
+              <span className="h-px w-10 shrink-0 bg-[#6fae3f]" /> SSB Coaching,
+              Defence Exam Preparation &amp; Career Guidance
             </div>
             <h1 className="text-balance max-w-3xl font-heading text-4xl leading-[1.06] tracking-[-0.04em] sm:text-6xl lg:text-7xl">
               Your clearest path to a career in the Defence Forces.
             </h1>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-300">
-              One-on-one coaching, tailored to you. Prepare for written exams
-              and SSB with personalised guidance that adapts to your needs,
-              goals and learning pace.
+              Personalised one-on-one preparation for NDA, CDS, AFCAT, SSB and
+              AFSB aspirants, guided by Cdr Sulakshan Kumar Sharma (Retd),
+              Indian Navy veteran and former SSB psychologist. Tailored to your
+              needs, goals and learning pace.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link
@@ -145,10 +146,10 @@ export default function Home() {
                 Book a consultation <ArrowRight size={17} />
               </Link>
               <a
-                href="#services"
+                href="/ssb-coaching/"
                 className="inline-flex items-center justify-center gap-2 border border-white/25 px-6 py-4 text-sm font-semibold transition hover:border-[#8fc05f] hover:text-[#b9d68f]"
               >
-                Compare the three services <ArrowRight size={17} />
+                Explore SSB coaching <ArrowRight size={17} />
               </a>
             </div>
           </div>
