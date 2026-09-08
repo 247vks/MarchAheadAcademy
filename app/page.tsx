@@ -130,8 +130,11 @@ export default function Home() {
               Defence Exam Preparation &amp; Career Guidance
             </div>
             <h1 className="text-balance max-w-3xl font-heading text-4xl leading-[1.06] tracking-[-0.04em] sm:text-6xl lg:text-7xl">
-              Your clearest path to a career in the Defence Forces.
+              SSB Coaching &amp; Defence Career Guidance, Personalised to You
             </h1>
+            <p className="mt-6 max-w-2xl font-heading text-xl leading-relaxed text-white sm:text-2xl">
+              Your clearest path to a career in the Defence Forces.
+            </p>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-300">
               Personalised one-on-one preparation for NDA, CDS, AFCAT, SSB and
               AFSB aspirants, guided by Cdr Sulakshan Kumar Sharma (Retd),
