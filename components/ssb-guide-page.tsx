@@ -45,6 +45,11 @@ export function SsbGuidePage({ guide }: { guide: SsbGuideData }) {
         section="SSB selection"
         faqs={guide.faqs}
         modifiedAt={guide.modifiedAt}
+        breadcrumbs={[
+          { name: 'Home', href: '/' },
+          ...(guide.eyebrow.startsWith('SSB guide') ? [{ name: 'SSB guide', href: '/selection/ssb/' }] : []),
+          { name: guide.eyebrow.startsWith('SSB guide') ? guide.eyebrow.replace('SSB guide · ', '') : 'SSB overview', href: guide.currentHref },
+        ]}
       />
       <SiteHeader />
       <section className="command-blue text-white">

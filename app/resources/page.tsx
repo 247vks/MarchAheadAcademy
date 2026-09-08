@@ -3,36 +3,13 @@ import Link from 'next/link';
 import { Download, ArrowRight } from 'lucide-react';
 import { SiteHeader, SiteFooter } from '@/components/authority-shell';
 import { TopicIcon } from '@/components/topic-icon';
+import resources from './worksheets.json';
 export const metadata: Metadata = {
   title: 'Free Defence Preparation Worksheets | March Ahead Academy',
   description:
-    'Download practical study planners, personal reflection worksheets, GD practice sheets and a notification reading checklist.',
+    'Explore free personal interview, Self Description, group discussion and NDA preparation worksheets. Read the guidance, download a branded PDF or print a worksheet.',
   alternates: { canonical: '/resources/' },
 };
-const resources = [
-  {
-    slug: 'weekly-preparation-planner',
-    title: 'Weekly preparation planner',
-    description: 'Turn study goals into a realistic week.',
-  },
-  {
-    slug: 'personal-reflection-worksheet',
-    title: 'Personal reflection worksheet',
-    description:
-      'Prepare real examples for the personal interview and Self Description.',
-  },
-  {
-    slug: 'gd-practice-sheet',
-    title: 'Group discussion practice sheet',
-    description:
-      'Structure a discussion and review listening as well as speaking.',
-  },
-  {
-    slug: 'notification-reading-checklist',
-    title: 'Notification reading checklist',
-    description: 'Record the controlling source before acting on an entry.',
-  },
-];
 export default function Page() {
   return (
     <main className="min-h-screen bg-white text-[#0a1e33]">
@@ -45,8 +22,8 @@ export default function Page() {
         <p className="mt-6 max-w-3xl text-lg leading-8 text-[#536371]">
           Free worksheets from March Ahead Academy to help you organise
           preparation, reflect on experience and ask better questions. Download
-          an editable text file, open it in your preferred editor and print it
-          if useful.
+          a branded PDF or open the worksheet page for practical guidance and a
+          print-friendly version. No sign-up is required.
         </p>
         <div className="mt-10 grid gap-6 md:grid-cols-2">
           {resources.map((item, index) => (
@@ -69,13 +46,20 @@ export default function Page() {
               <p className="mt-3 leading-7 text-[#536371]">
                 {item.description}
               </p>
+              <Link
+                href={`/resources/${item.slug}/`}
+                className="text-link mt-5 inline-flex items-center gap-2"
+              >
+                Open worksheet and guidance{' '}
+                <ArrowRight size={16} aria-hidden="true" />
+              </Link>
               <a
                 className="mt-6 inline-flex min-h-11 items-center gap-2 border-t border-[#d8e1dd] pt-4 font-bold text-[#2f6f94] underline underline-offset-4 transition hover:text-[#4b6228]"
-                href={`/resources/${item.slug}.txt`}
+                href={`/resources/${item.slug}.pdf`}
                 download
               >
                 <Download size={18} aria-hidden="true" />
-                Download worksheet (.txt)
+                Download PDF
               </a>
             </article>
           ))}

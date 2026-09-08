@@ -1,0 +1,94 @@
+[
+  {
+    "slug": "personal-interview-worksheet",
+    "title": "Personal interview worksheet",
+    "description": "Organise real experiences, responsibilities and reasons for your career choice before personal interview practice.",
+    "intro": "A useful interview preparation session begins with understanding your own experiences, not memorising a polished speech. This worksheet helps you collect specific examples and identify questions you still need to explore.",
+    "guide": "/selection/ssb/personal-interview/",
+    "guideLabel": "Personal interview preparation guide",
+    "steps": [
+      "Choose one recent responsibility and write what you actually did, including the outcome.",
+      "Work through the prompts in plain language. Separate facts from what you think you should have done.",
+      "Explain one example aloud to a practice partner. Invite follow-up questions rather than rehearsing a fixed answer."
+    ],
+    "prompts": [
+      "A responsibility I accepted: what was expected and what did I do?",
+      "An outcome I am proud of: what was my own contribution?",
+      "A setback: how did I respond and what changed afterwards?",
+      "A disagreement: what was the other person's perspective?",
+      "Why this service or entry? What have I learned about its work?",
+      "A question I cannot answer yet: how will I research it?"
+    ],
+    "review": "Look for concrete actions, honest limits and lessons you can explain. Replace general labels such as 'hard-working' with a real example. You do not need an extraordinary story; a clear account of everyday responsibility is more useful than an invented achievement.",
+    "next": "Revisit one example after a week and note whether you acted on what you learned. A one-on-one session can help you explore unclear reasoning and practise answering follow-up questions in your own words."
+  },
+  {
+    "slug": "self-description-reflection",
+    "title": "Self Description reflection worksheet",
+    "description": "Reflect on your strengths, feedback and development priorities without copying a model Self Description.",
+    "intro": "Self-reflection is most useful when it connects how you see yourself with everyday behaviour and feedback. Use this private worksheet to explore those connections before reading the Self Description guide.",
+    "guide": "/selection/ssb/self-description/",
+    "guideLabel": "Self Description preparation guide",
+    "steps": [
+      "Choose a recent example for each prompt rather than listing personality adjectives.",
+      "Distinguish feedback you actually received from assumptions about what others think.",
+      "Pick one development action you can practise and review over the next week."
+    ],
+    "prompts": [
+      "A strength I use regularly, and a recent example:",
+      "Feedback I actually received: who said it and in what context?",
+      "A habit that makes working with me easier:",
+      "A habit I need to improve, and its effect on others:",
+      "Where my self-view and feedback differ:",
+      "One realistic action for the next week, and how I will review it:"
+    ],
+    "review": "Read your notes for evidence and balance. Acknowledging a development need does not require harsh self-criticism, and describing a strength does not require exaggeration. This is a reflection aid, not a model test response or a personality score.",
+    "next": "Keep your notes private and share only what you choose. Return to the same action after practice and record what changed. Individual guidance can help turn a broad intention into a manageable habit."
+  },
+  {
+    "slug": "group-discussion-practice",
+    "title": "Group discussion practice worksheet",
+    "description": "Prepare a reasoned contribution and review listening, evidence and teamwork after a practice discussion.",
+    "intro": "Discussion practice should develop listening and useful contributions, not just confidence in speaking. Try the original practice topic: How can colleges encourage meaningful community service? It is an academy exercise, not an official SSB topic.",
+    "guide": "/selection/ssb/group-discussion/",
+    "guideLabel": "Group discussion preparation guide",
+    "steps": [
+      "Write a starting view, one supporting reason and an alternative perspective.",
+      "Discuss with peers. Ask a genuine question and build on another person's contribution.",
+      "Complete the review afterwards, noting what others said as well as what you said."
+    ],
+    "prompts": [
+      "My starting view and the reason behind it:",
+      "An example or fact I can support, with its source:",
+      "A different perspective worth considering:",
+      "A question that could move the discussion forward:",
+      "A point someone else made that changed or developed my thinking:",
+      "One speaking habit and one listening habit to improve:"
+    ],
+    "review": "Check whether you added a relevant point, represented evidence accurately and allowed room for others. Notice interruption, repetition or attempts to dominate without treating this sheet as an official marking scheme. Quality of participation matters more than a self-imposed speaking count.",
+    "next": "Repeat with a fresh topic and focus on one habit from your review. If practising alone, outline two contrasting viewpoints before recording a short explanation; this does not replace the experience of listening and responding to a real group."
+  },
+  {
+    "slug": "nda-preparation-planner",
+    "title": "NDA preparation planner",
+    "description": "Plan a realistic week of NDA study, practice and review around your current learning needs.",
+    "intro": "A preparation plan is useful only if you can follow it and learn from it. This worksheet turns a broad NDA preparation goal into a small set of study tasks, practice sessions and review decisions. It does not prescribe a fixed timetable for every aspirant.",
+    "guide": "/exams/nda/",
+    "guideLabel": "NDA preparation guide",
+    "steps": [
+      "Start with your actual available time and one area where practice showed a gap.",
+      "Assign specific tasks to study blocks, leaving time to review errors and rest.",
+      "Compare planned and completed work at the end of the week, then adjust rather than simply adding more hours."
+    ],
+    "prompts": [
+      "My priority this week, based on a recent practice gap:",
+      "Available study blocks around school, work and other commitments:",
+      "Mathematics: topic, practice task and review time:",
+      "English and general knowledge: topic, task and review time:",
+      "Practice errors I will revisit and the resource I will use:",
+      "End-of-week review: what worked, what did not, and next week's change:"
+    ],
+    "review": "Measure useful work, not just time at a desk. Record a recurring error and what helped you understand it. Use the current official syllabus to select topics; this planner is a study organiser, not an eligibility check or a substitute for the examination notice.",
+    "next": "Bring the completed plan and a few examples of difficult questions to a guidance session. One-on-one coaching can help you prioritise gaps and set a pace that fits your starting point."
+  }
+]

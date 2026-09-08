@@ -126,8 +126,8 @@ export default function Home() {
         <div className="relative mx-auto grid max-w-7xl items-center gap-8 px-5 py-10 sm:py-12 lg:grid-cols-[1.15fr_.85fr] lg:px-8 lg:py-14">
           <div>
             <div className="mb-7 flex items-center gap-3 text-xs font-semibold tracking-[0.18em] text-[#9bd1ea] uppercase">
-              <span className="h-px w-10 shrink-0 bg-[#6fae3f]" /> SSB Coaching,
-              Defence Exam Preparation &amp; Career Guidance
+              <span className="h-px w-10 shrink-0 bg-[#6fae3f]" /> Careers in
+              India&apos;s Armed Forces
             </div>
             <h1 className="text-balance max-w-3xl font-heading text-4xl leading-[1.06] tracking-[-0.04em] sm:text-6xl lg:text-7xl">
               SSB Coaching &amp; Defence Career Guidance, Personalised to You
@@ -137,10 +137,25 @@ export default function Home() {
             </p>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-300">
               Personalised one-on-one preparation for NDA, CDS, AFCAT, SSB and
-              AFSB aspirants, guided by Cdr Sulakshan Kumar Sharma (Retd),
-              Indian Navy veteran and former SSB psychologist. Tailored to your
-              needs, goals and learning pace.
+              AFSB aspirants. Tailored to your needs, goals and learning pace.
             </p>
+            <div className="mt-6 max-w-2xl">
+              <p className="text-base font-semibold leading-7">
+                Guidance shaped by 32 years of Indian Navy service and
+                first-hand SSB psychology experience.
+              </p>
+              <Link
+                href="/authors/cdr-sulakshan-kumar-sharma/"
+                className="mt-2 inline-flex items-center gap-2 text-sm font-semibold text-[#9bd1ea] underline underline-offset-4 transition hover:text-white"
+              >
+                Cdr Sulakshan Kumar Sharma (Retd.)
+                <ArrowRight size={15} aria-hidden="true" />
+              </Link>
+              <p className="mt-1 text-sm leading-6 text-slate-300">
+                Former Senior Service Psychologist, Naval Selection Centre,
+                Bangalore.
+              </p>
+            </div>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/consultation"

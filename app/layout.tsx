@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { Libre_Baskerville, Manrope } from 'next/font/google';
-import Script from 'next/script';
 import { siteDescription, siteName, siteUrl } from '@/lib/site';
 import './globals.css';
 import { CookieConsent } from '@/components/cookie-consent';
@@ -89,10 +88,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${bodyFont.variable} ${headingFont.variable}`}>
         {children}
-        <Script
+        <script
           id="website-structured-data"
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData).replace(/</g, '\\u003c'),
+          }}
         />
         <CookieConsent />
       </body>

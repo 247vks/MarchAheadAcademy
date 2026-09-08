@@ -1,4 +1,7 @@
 @import 'tailwindcss';
+@media print {
+  [aria-label="Cookie consent"], [aria-label="Cookie preferences"], dialog { display: none !important; }
+}
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
 

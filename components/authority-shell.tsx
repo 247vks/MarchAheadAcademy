@@ -312,6 +312,10 @@ export function AuthorityPage({
         title={title}
         description={lede}
         section={eyebrow}
+        breadcrumbs={[
+          { name: 'Home', href: '/' },
+          { name: eyebrow, href: currentHref },
+        ]}
       />
       <SiteHeader />
       <section className="command-blue relative overflow-hidden text-white">

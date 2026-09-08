@@ -1,4 +1,3 @@
-import Script from 'next/script';
 import { siteUrl } from '@/lib/site';
 
 type FAQ = { question: string; answer: string };
@@ -10,6 +9,7 @@ export function GuideStructuredData({
   section,
   faqs = [],
   modifiedAt = '2026-09-06',
+  breadcrumbs,
 }: {
   path: string;
   title: string;
@@ -17,6 +17,7 @@ export function GuideStructuredData({
   section: string;
   faqs?: FAQ[];
   modifiedAt?: string;
+  breadcrumbs?: { name: string; href: string }[];
 }) {
   const url = `${siteUrl}${path}`;
   const graph: Record<string, unknown>[] = [
@@ -36,20 +37,23 @@ export function GuideStructuredData({
     {
       '@type': 'BreadcrumbList',
       '@id': `${url}#breadcrumb`,
-      itemListElement: [
-        {
-          '@type': 'ListItem',
-          position: 1,
-          name: 'Home',
-          item: siteUrl,
-        },
-        {
-          '@type': 'ListItem',
-          position: 2,
-          name: title,
-          item: url,
-        },
-      ],
+      itemListElement: (
+        breadcrumbs ?? [
+          {
+            name: 'Home',
+            href: '/',
+          },
+          {
+            name: title,
+            href: path,
+          },
+        ]
+      ).map((crumb, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        name: crumb.name,
+        item: new URL(crumb.href, siteUrl).href,
+      })),
     },
   ];
 
@@ -66,14 +70,14 @@ export function GuideStructuredData({
   }
 
   return (
-    <Script
+    <script
       id={`guide-structured-data-${path.replaceAll('/', '-') || 'home'}`}
       type="application/ld+json"
       dangerouslySetInnerHTML={{
         __html: JSON.stringify({
           '@context': 'https://schema.org',
           '@graph': graph,
-        }),
+        }).replace(/</g, '\\u003c'),
       }}
     />
   );

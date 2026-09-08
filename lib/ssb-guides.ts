@@ -113,8 +113,8 @@ export const ssbGuides: Record<string, SsbGuideData> = {
       'The Indian Air Force describes the psychological tests within AFSB Stage II as written tests conducted by a psychologist. Its public process material does not provide an official answer key, ideal personality template or guaranteed response method.',
     sections: [
       {
-        title: 'Know the boundary of official information',
-        body: 'Official sources identify psychological testing as one component of Stage II alongside group tests and interview. Any detailed practice offered by an academy must therefore be labelled as illustrative and must not be presented as official or predictive.',
+        title: 'Understand psychology within Stage II',
+        body: 'Psychological testing is one component of Stage II alongside group tests and interview. Prepare for the different ways you will express yourself: writing, working with others and discussing your own experiences.',
       },
       {
         title: 'How to prepare for SSB psychology tests',
@@ -143,7 +143,7 @@ export const ssbGuides: Record<string, SsbGuideData> = {
       },
       {
         title: 'Consistency means honesty, not repeating a script',
-        body: 'For your own preparation, reflect on the same real responsibilities and experiences across writing and interview practice. You do not need to force identical themes into every task. A story, a reaction and a conversation are different forms of expression. This is advice about authentic preparation, not a claim about a hidden cross-test scoring formula.',
+        body: 'Reflect on your real responsibilities and experiences across writing and interview practice. You do not need to force identical themes into every task. A story, a reaction and a conversation are different forms of expression; let each response address the situation in front of you.',
       },
       {
         title: 'Self-knowledge is more durable than scripting',
@@ -159,8 +159,8 @@ export const ssbGuides: Record<string, SsbGuideData> = {
         body: 'Useful preparation can include writing concisely, responding to varied situations and keeping attention steady. The goal is not to reverse-engineer a hidden score but to express genuine thought with clarity.',
       },
       {
-        title: 'Keep guidance ethical',
-        body: 'March Ahead Academy will not reproduce confidential material, promise a psychologist-approved answer or claim that one response determines recommendation. Cdr Sharma’s experience informs the academy’s emphasis on authentic reflection; any future signed commentary should remain clearly separate from official rules.',
+        title: 'Turn reflection into a practical next step',
+        body: 'Choose one aspect of your preparation to discuss with a mentor: a rushed response, an unclear explanation or a responsibility you find difficult to describe. Bring your original work so feedback can focus on your thinking and expression. Cdr Sharma’s SSB psychology experience informs the academy’s emphasis on authentic reflection.',
       },
     ],
     exercise: {
@@ -296,7 +296,7 @@ export const ssbGuides: Record<string, SsbGuideData> = {
       },
       {
         title: 'Use feedback without becoming artificial',
-        body: 'A mentor can identify unclear communication, unsupported claims or areas needing reflection. Ethical guidance does not write a candidate’s personality, promise preferred answers or impersonate an official assessor.',
+        body: 'A mentor can identify unclear communication, unsupported claims or areas needing reflection. Use that feedback to express your own experiences more clearly, rather than borrow someone else’s answers.',
       },
       {
         title: 'Six original personal interview practice questions',
@@ -312,7 +312,7 @@ export const ssbGuides: Record<string, SsbGuideData> = {
       },
       {
         title: 'How March Ahead Academy can help',
-        body: 'Book a consultation to review your preparation and communication. Bring real examples and the questions you find difficult. Guidance can help you organise an answer, explain your role accurately and identify gaps in your knowledge of the career. It does not provide a script or a selection guarantee.',
+        body: 'Book a consultation to review your preparation and communication. Bring real examples and the questions you find difficult. Guidance can help you organise an answer, explain your role accurately and identify gaps in your knowledge of the career.',
       },
     ],
     exercise: {

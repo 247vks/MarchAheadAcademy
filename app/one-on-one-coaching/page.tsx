@@ -16,7 +16,7 @@ import { ContactBand } from '@/components/contact-band';
 
 const title = 'One-on-One SSB & Defence Exam Coaching | March Ahead Academy';
 const description =
-  'Personalised SSB and defence exam coaching tailored to your strengths, preparation needs and learning pace. Discover March Ahead Academy’s one-on-one approach.';
+  'Online one-on-one SSB and defence exam coaching tailored to your needs and pace. In-person visits by appointment. Explore preparation and consultation options.';
 export const metadata: Metadata = {
   title,
   description,
@@ -105,6 +105,57 @@ export default function Page() {
             ))}
           </div>
         </section>
+        <section
+          className="mt-10 border-t border-[#d8e1dd] pt-8"
+          aria-labelledby="coaching-questions"
+        >
+          <h2 id="coaching-questions" className="font-heading text-3xl">
+            Your coaching questions, answered.
+          </h2>
+          <div className="mt-6 grid gap-6 sm:grid-cols-2">
+            {[
+              [
+                'Is coaching online or in person?',
+                'Online one-on-one coaching is available. In-person visits are by prior appointment only; contact the academy to arrange a visit.',
+              ],
+              [
+                'Who is the coaching suitable for?',
+                'First-time and repeat candidates can receive individual guidance. Your education, entry route, previous preparation and areas for improvement shape the support you discuss with us.',
+              ],
+              [
+                'What parts of SSB can I prepare for?',
+                'Preparation covers psychological-test practice, self-awareness, personal interview communication and understanding group participation. Explore TAT, WAT, SRT and Self Description in our SSB guides, then discuss which areas you need to focus on.',
+              ],
+              [
+                'Are written examinations covered?',
+                'The academy offers NDA, CDS and AFCAT written-examination preparation alongside SSB guidance. Discuss your intended examination and subjects so the preparation can focus on your needs.',
+              ],
+              [
+                'How many sessions will I need?',
+                'There is no session count advertised here. Discuss your starting point, goals and available time with the academy before agreeing on the coaching arrangement.',
+              ],
+              [
+                'How much does coaching cost?',
+                'Ask about fees and availability during your consultation. Confirm the scope, session arrangements and cost with the academy before booking coaching.',
+              ],
+            ].map(([question, answer]) => (
+              <article
+                key={question}
+                className="border-t border-[#d8e1dd] pt-5"
+              >
+                <h3 className="flex items-start gap-3 font-heading text-xl">
+                  <MessagesSquare
+                    size={22}
+                    aria-hidden="true"
+                    className="shrink-0 text-[#397fa8]"
+                  />
+                  {question}
+                </h3>
+                <p className="mt-3 leading-7 text-[#536371]">{answer}</p>
+              </article>
+            ))}
+          </div>
+        </section>
         <section className="mt-10 border-t border-[#d8e1dd] pt-8">
           <h2 className="font-heading text-3xl">
             SSB preparation that helps you develop—not perform a personality.
@@ -134,8 +185,10 @@ export default function Page() {
           <p className="mt-4 leading-8 text-[#536371]">
             Tell us which entry you are considering, where you are in your
             preparation and what you find difficult. We can discuss the support
-            you need and a suitable next step. Confirm the coaching format,
-            availability and fees during your consultation.
+            you need and a suitable next step. Bring your intended entry,
+            examination or SSB timeline, and any questions about your
+            preparation. Discuss session arrangements, availability and fees
+            before booking.
           </p>
           <p className="mt-4 leading-8 text-[#536371]">
             This approach is supported by{' '}

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { siteUrl } from '@/lib/site';
 import Link from 'next/link';
 import {
   ArrowRight,
@@ -73,6 +74,39 @@ const roleIcons = [GraduationCap, Atom, Anchor, Building2, Brain, Presentation];
 export default function Page() {
   return (
     <main className="min-h-screen bg-white text-[#0a1e33]">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@graph': [
+              {
+                '@type': 'ProfilePage',
+                '@id': `${siteUrl}/authors/cdr-sulakshan-kumar-sharma/`,
+                mainEntity: { '@id': `${siteUrl}/#cdr-sharma` },
+              },
+              {
+                '@type': 'Person',
+                '@id': `${siteUrl}/#cdr-sharma`,
+                name: 'Sulakshan Kumar Sharma',
+                honorificPrefix: 'Cdr',
+                honorificSuffix: 'Retd.',
+                url: `${siteUrl}/authors/cdr-sulakshan-kumar-sharma/`,
+                jobTitle: 'Director, March Ahead Academy',
+                worksFor: { '@id': `${siteUrl}/#organization` },
+                description:
+                  'Indian Navy veteran, educator and former Senior Service Psychologist at the Naval Selection Centre, Bangalore.',
+                knowsAbout: [
+                  'Defence career guidance',
+                  'SSB preparation',
+                  'Psychology',
+                  'Education',
+                ],
+              },
+            ],
+          }).replace(/</g, '\\u003c'),
+        }}
+      />
       <SiteHeader />
       <section className="command-blue text-white">
         <div className="mx-auto max-w-6xl px-5 py-16 lg:px-8 lg:py-20">
