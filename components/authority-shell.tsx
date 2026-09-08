@@ -245,6 +245,12 @@ export function SiteFooter({
           aria-label="Trust and organisation"
         >
           <strong className="text-white">March Ahead Academy</strong>
+          <Link className="text-link dark-text-link" href="/privacy-policy/">
+            Privacy Policy
+          </Link>
+          <Link className="text-link dark-text-link" href="/cookie-policy/">
+            Cookie Policy
+          </Link>
           <Link className="text-link dark-text-link" href="/consultation">
             Book a consultation
           </Link>

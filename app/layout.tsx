@@ -3,6 +3,7 @@ import { Libre_Baskerville, Manrope } from 'next/font/google';
 import Script from 'next/script';
 import { siteDescription, siteName, siteUrl } from '@/lib/site';
 import './globals.css';
+import { CookieConsent } from '@/components/cookie-consent';
 
 const bodyFont = Manrope({ variable: '--font-body', subsets: ['latin'] });
 const headingFont = Libre_Baskerville({
@@ -93,16 +94,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-PP07C1HDNY"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-PP07C1HDNY');`}
-        </Script>
+        <CookieConsent />
       </body>
     </html>
   );

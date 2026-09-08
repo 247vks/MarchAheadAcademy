@@ -9,6 +9,8 @@ const routes = [
   '/consultation',
   '/one-on-one-coaching',
   '/ssb-coaching',
+  '/privacy-policy',
+  '/cookie-policy',
   '/resources',
   '/authors/cdr-sulakshan-kumar-sharma',
   '/career-paths',
