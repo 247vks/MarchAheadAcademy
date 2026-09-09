@@ -207,7 +207,7 @@ export function SiteFooter({
         <div>
           <Link href="/">March Ahead Academy</Link>
           <p className="mt-2 text-xs text-slate-400">
-            Official notification and recruitment authority always control.
+            For eligibility, dates and selection requirements, refer to the latest official notification.
           </p>
         </div>
         <nav className="grid content-start gap-2" aria-label="Career guidance">
