@@ -219,6 +219,7 @@ export default function Page() {
               </div>
               <ul className="mt-5 grid gap-3 text-sm leading-6">
                 {[
+                  'SSB psychology and candidate preparation',
                   'Defence-career orientation and informed entry choice',
                   'Ethical familiarisation with SSB and AFSB settings',
                   'Psychology-informed self-reflection and candidate development',
