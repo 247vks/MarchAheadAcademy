@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { GraduationCap, ClipboardCheck, Route, ArrowRight } from 'lucide-react';
+import { GraduationCap, ClipboardCheck, Route, ArrowRight, Compass, CircleHelp } from 'lucide-react';
 import {
   Breadcrumbs,
   SiteHeader,
@@ -202,7 +202,8 @@ export default function Page() {
           </p>
         </section>
         <section className="mt-9">
-          <h2 className="font-heading text-3xl">
+          <h2 className="flex items-center gap-3 font-heading text-3xl">
+            <Compass className="shrink-0 text-[#397fa8]" aria-hidden="true" />
             Prepare beyond the certificate
           </h2>
           <p className="mt-4 leading-8 text-[#536371]">
@@ -240,7 +241,8 @@ export default function Page() {
           </p>
         </section>
         <section className="mt-9">
-          <h2 className="font-heading text-3xl">
+          <h2 className="flex items-center gap-3 font-heading text-3xl">
+            <CircleHelp className="shrink-0 text-[#397fa8]" aria-hidden="true" />
             Questions candidates often ask
           </h2>
           <div className="mt-5 space-y-5">
