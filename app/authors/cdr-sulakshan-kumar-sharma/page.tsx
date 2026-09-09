@@ -172,11 +172,8 @@ export default function Page() {
                 Selection Centre in Bangalore.
               </p>
               <p>
-                On this website, official notifications and service sources
-                control eligibility, examination and current-intake facts. Cdr
-                Sharma’s contribution is identified as expert perspective. A
-                page will be described as reviewed by him only after that review
-                is recorded.
+                Explore the academy&apos;s SSB preparation guides to understand
+                the selection stages and develop a purposeful practice routine.
               </p>
             </div>
           </article>

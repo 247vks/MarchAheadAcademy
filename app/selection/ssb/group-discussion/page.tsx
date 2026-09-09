@@ -52,7 +52,7 @@ const guide: SsbGuideData = {
     },
     {
       title: 'How March Ahead Academy can help',
-      body: 'Book a consultation to discuss your preparation. Guidance can focus on organising arguments, listening, clarity and responding to disagreement. Feedback should describe observed behaviour and practical improvements rather than promise selection or assign an outcome from one discussion.',
+      body: 'Book a consultation to discuss your preparation. Guidance can focus on organising arguments, listening, clarity and responding to disagreement. Get specific feedback on how clearly you explain ideas, listen and respond to disagreement.',
     },
   ],
   exercise: {

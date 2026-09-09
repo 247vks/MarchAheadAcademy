@@ -15,7 +15,7 @@ export default function Page() {
       visual={<EligibilityChain />}
       eyebrow="Eligibility guide"
       title="Defence eligibility is a chain, not a checkbox"
-      lede="A candidate must satisfy every applicable condition for the exact service, entry and intake. Missing information should produce “unable to determine,” not false confidence."
+      lede="A candidate must satisfy every applicable condition for the exact service, entry and intake. Check your date of birth, qualifications and the requirements for your chosen entry and intake."
       status="Official-source-led eligibility orientation"
       expertContext="Cdr Sharma’s recruitment and candidate-guidance experience informs the questions this page asks. Current official notices—not academy judgement—control a candidate’s eligibility and medical assessment."
       sections={[

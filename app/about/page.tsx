@@ -69,18 +69,19 @@ export default function Page() {
                 medical assessment, merit or selection.
               </p>
               <p>
-                Our present website is a growing knowledge resource. Expert
-                qualifications and professional history are published selectively;
-                results, testimonials and live intake facts require appropriate
-                evidence, permission and current official verification.
+                Explore practical guidance on defence careers, examinations and
+                SSB preparation, informed by Cdr Sharma&apos;s military,
+                teaching and selection experience.
               </p>
             </div>
           </article>
           <aside className="border-t-4 border-[#4b6228] bg-white p-7">
             <p className="text-xs font-bold tracking-[.16em] text-[#4b6228] uppercase">
-              Current publishing status
+              Explore our guidance
             </p>
-            <h2 className="mt-3 font-heading text-2xl">Foundation library</h2>
+            <h2 className="mt-3 font-heading text-2xl">
+              Careers, examinations and SSB preparation
+            </h2>
             <dl className="mt-6 grid gap-5 text-sm">
               <div>
                 <dt className="font-bold">Coverage</dt>
@@ -92,8 +93,11 @@ export default function Page() {
               <div>
                 <dt className="font-bold">Live notices</dt>
                 <dd className="mt-1 text-[#5c6974]">
-                  Withheld until independently verified against the controlling
-                  notice.
+                  Find current application notices on the{' '}
+                  <Link href="/notifications/" className="text-link">
+                    official recruitment portals
+                  </Link>
+                  .
                 </dd>
               </div>
               <div>
@@ -110,13 +114,18 @@ export default function Page() {
           <div className="grid gap-8 lg:grid-cols-[.7fr_1.3fr]">
             <div>
               <p className="section-kicker">Experience behind the academy</p>
-              <h2 className="mt-3 font-heading text-4xl">Cdr Sulakshan Kumar Sharma (Retd)</h2>
+              <h2 className="mt-3 font-heading text-4xl">
+                Cdr Sulakshan Kumar Sharma (Retd)
+              </h2>
               <p className="mt-4 max-w-sm text-sm leading-7 text-[#5c6974]">
                 Military educator, psychologist and academy director with
                 experience spanning tri-service cadet education, naval training,
                 education planning and officer selection.
               </p>
-              <Link href="/authors/cdr-sulakshan-kumar-sharma" className="mt-5 inline-flex items-center gap-2 text-sm font-bold underline decoration-[#9bc9df] underline-offset-4">
+              <Link
+                href="/authors/cdr-sulakshan-kumar-sharma"
+                className="mt-5 inline-flex items-center gap-2 text-sm font-bold underline decoration-[#9bc9df] underline-offset-4"
+              >
                 Full qualifications and experience <ArrowRight size={14} />
               </Link>
             </div>

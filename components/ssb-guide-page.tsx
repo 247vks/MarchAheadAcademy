@@ -15,7 +15,7 @@ import {
   SiteFooter,
   SiteHeader,
 } from '@/components/authority-shell';
-import { siteReviewedAt } from '@/lib/site';
+import { articleBreadcrumbs } from '@/lib/article-metadata';
 import { SsbJourneyMap } from '@/components/decision-visuals';
 import { GuideStructuredData } from '@/components/guide-structured-data';
 
@@ -44,17 +44,13 @@ export function SsbGuidePage({ guide }: { guide: SsbGuideData }) {
         description={guide.lede}
         section="SSB selection"
         faqs={guide.faqs}
-        modifiedAt={guide.modifiedAt}
-        breadcrumbs={[
-          { name: 'Home', href: '/' },
-          ...(guide.eyebrow.startsWith('SSB guide') ? [{ name: 'SSB guide', href: '/selection/ssb/' }] : []),
-          { name: guide.eyebrow.startsWith('SSB guide') ? guide.eyebrow.replace('SSB guide · ', '') : 'SSB overview', href: guide.currentHref },
-        ]}
+        breadcrumbs={articleBreadcrumbs(guide.currentHref, guide.title)}
       />
       <SiteHeader />
       <section className="command-blue text-white">
         <div className="mx-auto max-w-5xl px-5 py-12 sm:py-14 lg:px-8 lg:py-18">
           <Breadcrumbs
+            items={articleBreadcrumbs(guide.currentHref, guide.title)}
             parent={
               guide.eyebrow.startsWith('SSB guide') ? 'SSB guide' : undefined
             }
@@ -81,13 +77,13 @@ export function SsbGuidePage({ guide }: { guide: SsbGuideData }) {
           <div className="mt-8 flex flex-wrap gap-2 text-xs font-semibold text-[#cce7f5]">
             <span className="inline-flex items-center gap-2 border border-[#80a6bd]/50 bg-[#103353] px-4 py-2">
               <ShieldCheck size={15} />
-              Evergreen guide · Reviewed {guide.reviewedAt ?? siteReviewedAt}
+              SSB preparation guide
             </span>
             <Link
-              href="/authors/cdr-sulakshan-kumar-sharma"
+              href="/about"
               className="border border-[#80a6bd]/50 px-4 py-2"
             >
-              March Ahead Academy editorial team · Cdr Sharma perspective
+              By March Ahead Academy
             </Link>
             <Link
               href="/editorial-standards"
@@ -101,7 +97,7 @@ export function SsbGuidePage({ guide }: { guide: SsbGuideData }) {
 
       <div className="mx-auto grid max-w-5xl gap-8 px-5 py-12 lg:grid-cols-[1fr_260px] lg:gap-10 lg:px-8 lg:py-16">
         <article className="space-y-10 lg:space-y-12">
-          <ExpertByline context="Cdr Sharma’s three years of SSB psychologist experience and wider work in military education inform March Ahead Academy’s ethical orientation. Official sources control the published process; no confidential selection material is used." />
+          <ExpertByline />
           {guide.currentHref === '/selection/ssb' && <SsbJourneyMap />}
           {(guide.currentHref === '/selection/ssb' ||
             guide.currentHref === '/selection/ssb/psychology-tests') && (

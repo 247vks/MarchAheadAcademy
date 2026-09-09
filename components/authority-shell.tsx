@@ -18,7 +18,10 @@ import {
   ExpectationPreview,
   type ExpectationPreviewData,
 } from '@/components/expectation-preview';
-import { siteReviewedAt } from '@/lib/site';
+import {
+  articleBreadcrumbs,
+  type ArticleBreadcrumb,
+} from '@/lib/article-metadata';
 import { GuideStructuredData } from '@/components/guide-structured-data';
 import type { ReactNode } from 'react';
 
@@ -122,16 +125,38 @@ export function SiteHeader() {
 }
 
 export function Breadcrumbs({
+  items,
   parent,
   parentHref,
   current,
   tone = 'dark',
 }: {
+  items?: ArticleBreadcrumb[];
   parent?: string;
   parentHref?: string;
   current: string;
   tone?: 'dark' | 'light';
 }) {
+  if (items)
+    return (
+      <nav
+        aria-label="Breadcrumb"
+        className="mb-6 flex flex-wrap items-center gap-2 text-sm font-semibold"
+      >
+        {items.map((item, index) => (
+          <span key={item.href} className="inline-flex items-center gap-2">
+            {index > 0 && <span aria-hidden="true">/</span>}
+            {index === items.length - 1 ? (
+              <span aria-current="page">{item.name}</span>
+            ) : (
+              <Link className="text-link" href={item.href}>
+                {item.name}
+              </Link>
+            )}
+          </span>
+        ))}
+      </nav>
+    );
   return (
     <nav
       aria-label="Breadcrumb"
@@ -207,7 +232,8 @@ export function SiteFooter({
         <div>
           <Link href="/">March Ahead Academy</Link>
           <p className="mt-2 text-xs text-slate-400">
-            For eligibility, dates and selection requirements, refer to the latest official notification.
+            For eligibility, dates and selection requirements, refer to the
+            latest official notification.
           </p>
         </div>
         <nav className="grid content-start gap-2" aria-label="Career guidance">
@@ -317,17 +343,17 @@ export function AuthorityPage({
         title={title}
         description={lede}
         section={eyebrow}
-        modifiedAt={publishedAt}
-        breadcrumbs={[
-          { name: 'Home', href: '/' },
-          { name: eyebrow, href: currentHref },
-        ]}
+        publishedAt={publishedAt}
+        breadcrumbs={articleBreadcrumbs(currentHref, title)}
       />
       <SiteHeader />
       <section className="command-blue relative overflow-hidden text-white">
         <div className="absolute inset-0 opacity-20 [background-image:linear-gradient(rgba(255,255,255,.055)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.055)_1px,transparent_1px)] [background-size:48px_48px]" />
         <div className="relative mx-auto max-w-5xl px-5 py-11 sm:py-14 lg:px-8 lg:py-16">
-          <Breadcrumbs current={eyebrow} />
+          <Breadcrumbs
+            current={title}
+            items={articleBreadcrumbs(currentHref, title)}
+          />
           <div
             className="flex items-center gap-3 text-xs font-bold tracking-[.17em] uppercase"
             style={{ color: accent }}
@@ -344,14 +370,16 @@ export function AuthorityPage({
           <div className="mt-8 flex flex-wrap gap-2 text-xs font-semibold text-[#cce7f5]">
             <span className="inline-flex items-center gap-2 border border-[#80a6bd]/50 bg-[#103353] px-4 py-2">
               <ShieldCheck size={15} />
-              {status} · {publishedAt ? `Published ${publishedAt}` : `Last reviewed ${siteReviewedAt}`}
+              {status}
+              {publishedAt ? ` · Published ${publishedAt}` : ''} · March Ahead
+              Academy
             </span>
             {expertContext && (
               <Link
                 href="/authors/cdr-sulakshan-kumar-sharma"
                 className="inline-flex items-center border border-[#80a6bd]/50 px-4 py-2 transition hover:border-[#9bd1ea]"
               >
-                Expert perspective · Cdr Sharma
+                Meet Cdr Sharma
               </Link>
             )}
             <Link
@@ -366,7 +394,7 @@ export function AuthorityPage({
       {experience && <ExpectationPreview data={experience} />}
       <div className="mx-auto grid max-w-5xl gap-10 px-5 py-12 lg:grid-cols-[minmax(0,1fr)_250px] lg:gap-14 lg:px-8 lg:py-16">
         <article className="space-y-10 lg:space-y-12">
-          {expertContext && <ExpertByline context={expertContext} />}
+          {expertContext && <ExpertByline />}
           {visual}
           <nav
             aria-label="On this page"

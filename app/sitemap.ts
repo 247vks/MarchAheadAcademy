@@ -26,6 +26,7 @@ const routes = [
   '/career-paths/foundation',
   '/career-paths/after-12th',
   '/career-paths/after-graduation',
+  '/career-paths/ncc-special-entry',
   '/editorial-standards',
   '/eligibility',
   '/exams',

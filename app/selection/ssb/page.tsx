@@ -85,7 +85,7 @@ const guide: SsbGuideData = {
     {
       question: 'Is AFSB identical to every SSB?',
       answer:
-        'No assumption of complete identity should be made. The IAF sources precisely describe AFSB; other services and entries may provide their own instructions.',
+        'SSB and AFSB instructions can differ by service and entry. Follow your own call-up letter; the IAF sources here describe AFSB.',
     },
     {
       question: 'Does recommendation guarantee academy admission?',

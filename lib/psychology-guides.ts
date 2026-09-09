@@ -266,7 +266,7 @@ export const psychologyGuides: Record<string, SsbGuideData> = {
       },
       {
         title: 'How March Ahead Academy can help',
-        body: 'Bring your practice words and first responses. Guidance can help with concise expression and a sustainable practice routine. Feedback should not label one phrase as proof of an officer quality or offer a guaranteed set of winning sentences.',
+        body: 'Bring your practice words and first responses. Guidance can help with concise expression and a sustainable practice routine. Get feedback on clarity and your practice routine, rather than memorising a set of model sentences.',
       },
     ],
     exercise: {

@@ -22,7 +22,7 @@ export default function Page() {
       eyebrow="From the Academy"
       title={title}
       lede={description}
-      status="Academy editorial guidance"
+      status="Preparation guide"
       publishedAt="2026-09-09"
       sections={[
         {

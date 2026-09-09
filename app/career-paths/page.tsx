@@ -46,8 +46,8 @@ export default function CareerPaths() {
             Start with where you are. Find where you can go.
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200">
-            A transparent orientation tool for exploring viable routes—not a
-            definitive eligibility decision.
+            Explore career routes for your education stage, then check the
+            requirements for your chosen entry.
           </p>
         </div>
       </section>
@@ -79,10 +79,9 @@ export default function CareerPaths() {
           ))}
         </div>
         <div className="mt-10 border border-[#dbe3df] border-l-4 border-l-[#4b6228] bg-[#f8faf9] p-6 text-sm leading-7">
-          <strong>Before we call any candidate eligible:</strong> we need the
-          exact date of birth, education details, current intake, and
-          controlling notification. When information is incomplete, the correct
-          result is “unable to determine.”
+          <strong>Before applying:</strong> check your exact date of birth and
+          education against the current entry notification. If a requirement is
+          unclear, seek clarification before submitting your application.
         </div>
       </section>
       <ContactBand />

@@ -1,47 +1,42 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ExternalLink, Radio, ShieldAlert } from 'lucide-react';
+import { ExternalLink, Radio } from 'lucide-react';
 import { SiteFooter, SiteHeader } from '@/components/authority-shell';
 import { ContactBand } from '@/components/contact-band';
 export const metadata: Metadata = {
   alternates: { canonical: '/notifications' },
   title: 'Official Defence Recruitment Sources | March Ahead Academy',
   description:
-    'A source-led monitoring hub for Indian Defence career notifications.',
+    'Find official Indian Defence recruitment portals for current notices, application dates and results.',
 };
 const sources = [
   [
     'UPSC active examinations',
     'NDA/NA and CDS notices, timetables and results',
-    'Daily in active windows',
     'https://www.upsc.gov.in/examinations/active-exams',
     '#071f3d',
   ],
   [
     'Join Indian Army',
     'Army officer direct entries and recruiting notices',
-    'Daily in active windows',
     'https://www.joinindianarmy.nic.in/',
     '#4b6228',
   ],
   [
     'Join Indian Navy',
     'Navy officer and Agniveer advertisements',
-    'Daily in active windows',
     'https://www.joinindiannavy.gov.in/',
     '#071f3d',
   ],
   [
     'IAF notifications',
     'AFCAT and officer-entry notices',
-    'Daily around AFCAT windows',
     'https://www.careerairforce.gov.in/notification',
     '#397fa8',
   ],
   [
     'Agniveervayu',
     'Intake notices, applications and results',
-    'Daily in intake windows',
     'https://agnipathvayu.cdac.in/',
     '#397fa8',
   ],
@@ -54,49 +49,34 @@ export default function Page() {
         <div className="mx-auto max-w-6xl px-5 py-16 lg:px-8">
           <div className="flex items-center gap-3 text-xs font-bold tracking-widest text-[#b9e2f5] uppercase">
             <Radio size={16} />
-            Source monitoring
+            Official sources
           </div>
           <h1 className="mt-5 max-w-4xl font-heading text-5xl sm:text-6xl">
             Official recruitment source directory
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200">
-            Go directly to the authorities that publish and control recruitment
-            information. A maintained live tracker will be introduced only when
-            every entry can be independently checked against notices and
-            corrigenda.
+            Use the official portals below for current notices, application
+            dates and results.
           </p>
         </div>
       </section>
       <section className="mx-auto max-w-6xl px-5 py-16 lg:px-8">
-        <div className="mb-8 flex gap-4 border-l-4 border-[#4b6228] bg-white p-5">
-          <ShieldAlert className="shrink-0 text-[#4b6228]" />
-          <p className="text-sm leading-6">
-            <strong>
-              This is currently a source directory, not a live intake tracker.
-            </strong>{' '}
-            No unverified dates or application statuses are displayed.
-          </p>
-        </div>
         <div className="overflow-hidden border border-[#cbd3ce] bg-white">
-          <div className="hidden grid-cols-[1.1fr_1.6fr_.8fr_40px] gap-4 bg-[#f6f9f7] px-5 py-3 text-xs font-bold uppercase lg:grid">
+          <div className="hidden grid-cols-[1.1fr_1.6fr_40px] gap-4 bg-[#f6f9f7] px-5 py-3 text-xs font-bold uppercase lg:grid">
             <span>Authority</span>
-            <span>What it controls</span>
-            <span>Review cadence</span>
+            <span>What you can find</span>
             <span />
           </div>
-          {sources.map(([name, controls, cadence, href, color]) => (
+          {sources.map(([name, controls, href, color]) => (
             <a
               key={name}
               href={href}
               target="_blank"
               rel="noreferrer"
-              className="grid gap-2 border-t border-[#dde3df] px-5 py-5 lg:grid-cols-[1.1fr_1.6fr_.8fr_40px] lg:items-center"
+              className="grid gap-2 border-t border-[#dde3df] px-5 py-5 lg:grid-cols-[1.1fr_1.6fr_40px] lg:items-center"
             >
               <strong style={{ color }}>{name}</strong>
               <span className="text-sm text-[#526371]">{controls}</span>
-              <span className="text-xs font-semibold text-[#526371]">
-                {cadence}
-              </span>
               <ExternalLink size={15} />
             </a>
           ))}

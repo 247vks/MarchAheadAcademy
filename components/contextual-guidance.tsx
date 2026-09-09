@@ -23,8 +23,8 @@ export function ContextualGuidance({ topic }: { topic: string }) {
             Discuss {topic} with March Ahead Academy.
           </h2>
           <p className="mt-2 text-sm leading-6 text-[#596975]">
-            We can help you identify what to verify and plan the next sensible
-            step. The current official notification always controls.
+            Discuss your questions and identify a practical next step for your
+            preparation.
           </p>
           <a
             href={`https://wa.me/919820096800?text=${message}`}

@@ -70,10 +70,10 @@ export function EligibilityChain() {
   return (
     <section className="border border-[#d8e1dd] bg-[#f8faf9] p-6">
       <p className="text-xs font-bold tracking-[.15em] text-[#4b6228] uppercase">
-        Verification chain
+        Eligibility checklist
       </p>
       <h2 className="mt-2 font-heading text-3xl">
-        Eligibility is only as strong as its weakest check
+        Check each requirement before you apply
       </h2>
       <ol className="mt-6 grid gap-3">
         {checks.map(([title, copy], index) => (

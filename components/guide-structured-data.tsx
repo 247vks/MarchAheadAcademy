@@ -8,7 +8,8 @@ export function GuideStructuredData({
   description,
   section,
   faqs = [],
-  modifiedAt = '2026-09-06',
+  modifiedAt,
+  publishedAt,
   breadcrumbs,
 }: {
   path: string;
@@ -17,6 +18,7 @@ export function GuideStructuredData({
   section: string;
   faqs?: FAQ[];
   modifiedAt?: string;
+  publishedAt?: string;
   breadcrumbs?: { name: string; href: string }[];
 }) {
   const url = `${siteUrl}${path}`;
@@ -31,6 +33,7 @@ export function GuideStructuredData({
       author: { '@id': `${siteUrl}/#organization` },
       publisher: { '@id': `${siteUrl}/#organization` },
       dateModified: modifiedAt,
+      datePublished: publishedAt,
       articleSection: section,
       inLanguage: 'en-IN',
     },

@@ -124,7 +124,7 @@ export const examHubGroups = [
   {
     title: 'Other officer-entry routes',
     description:
-      'NCC Special Entry, TES, TGC, SSC Tech, JAG and notified Navy officer entries need separate route-specific guidance. They are not interchangeable with the written examinations above. Detailed guides will be added after source verification; meanwhile start with the service career hubs.',
+      'NCC Special Entry, TES, TGC, SSC Tech, JAG and notified Navy officer entries need separate route-specific guidance. They are not interchangeable with the written examinations above. Explore the service career guides for these entry routes and check the relevant current notification.',
     links: [
       { label: 'Army careers', href: '/services/army' },
       { label: 'Navy careers', href: '/services/navy' },

@@ -2,14 +2,14 @@ import Link from 'next/link';
 import { GraduationCap } from 'lucide-react';
 
 export function ExpertByline({
-  context = 'This guide draws on Cdr Sharma’s experience in military education, candidate development and SSB psychology. Official notices remain the source for entry rules and current requirements.',
+  context = 'Former Senior Service Psychologist at the Naval Selection Centre, Bangalore, with three years of SSB psychologist experience and 32 years of military service.',
 }: {
   context?: string;
 }) {
   return (
     <aside
       className="border border-[#d9e3df] border-l-4 border-l-[#397fa8] bg-[#f8faf9] p-5 shadow-[0_8px_24px_rgba(7,31,61,.04)] sm:p-6"
-      aria-label="Expert perspective"
+      aria-label="Academy expertise"
     >
       <div className="flex gap-4">
         <GraduationCap
@@ -18,7 +18,7 @@ export function ExpertByline({
         />
         <div>
           <p className="text-xs font-bold tracking-[.15em] text-[#397fa8] uppercase">
-            Expert perspective
+            Academy expertise
           </p>
           <p className="mt-2 font-heading text-xl">
             Cdr Sulakshan Kumar Sharma (Retd)

@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { AuthorityPage } from '@/components/authority-shell';
 const title = 'First SSB Attempt: A Practical Preparation Plan';
 const description =
-  'Prepare for your first SSB with a manageable plan for instructions, reflection, communication and practice. Original March Ahead Academy editorial guidance.';
+  'Prepare for your first SSB with a manageable plan for instructions, reflection, communication and practice.';
 export const metadata: Metadata = {
   title: `${title} | March Ahead Academy`,
   description,
@@ -22,7 +22,7 @@ export default function Page() {
       eyebrow="From the Academy"
       title={title}
       lede={description}
-      status="Academy editorial guidance"
+      status="Preparation guide"
       publishedAt="2026-09-09"
       sections={[
         {

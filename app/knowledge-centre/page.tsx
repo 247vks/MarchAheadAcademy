@@ -46,7 +46,7 @@ const categories = [
     name: 'From the Academy',
     icon: Compass,
     description:
-      'Practical editorial guidance for the decisions around preparation: starting your first attempt, reflecting after a previous attempt and supporting an NDA aspirant as a parent.',
+      'Practical advice for your first attempt, preparing again and supporting an NDA aspirant.',
     links: [
       ['Your first SSB attempt', '/guidance/first-ssb-attempt/'],
       ['Preparing again after SSB', '/guidance/ssb-repeaters/'],
@@ -119,6 +119,7 @@ const categories = [
       'Explore Indian Army career pathways, including officer and other-rank routes. Use the service overview to understand where your education and interests fit.',
     links: [
       ['Indian Army career guide', '/services/army/'],
+      ['Army NCC Special Entry', '/career-paths/ncc-special-entry/'],
       ['Graduate entry pathways', '/career-paths/after-graduation/'],
     ],
   },
@@ -186,9 +187,9 @@ export default function KnowledgeCentrePage() {
           Find your starting point, understand the selection process and build a
           thoughtful preparation routine. Explore expert guidance on SSB
           preparation, SSB psychology, NDA, CDS, AFCAT, defence career pathways,
-          eligibility and careers in the Indian Army, Navy and Air Force.
-          Browse practical guides by subject, or
-          use the free worksheets to put your learning into action.
+          eligibility and careers in the Indian Army, Navy and Air Force. Browse
+          practical guides by subject, or use the free worksheets to put your
+          learning into action.
         </p>
         <nav
           aria-label="Knowledge Centre topics"

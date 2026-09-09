@@ -132,7 +132,7 @@ export default function Page() {
               ],
               [
                 'How many sessions will I need?',
-                'There is no session count advertised here. Discuss your starting point, goals and available time with the academy before agreeing on the coaching arrangement.',
+                'Discuss your preparation needs and available time with us to agree on session arrangements before booking.',
               ],
               [
                 'How much does coaching cost?',

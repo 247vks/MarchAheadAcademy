@@ -80,16 +80,17 @@ export default function Page() {
                   <RefreshCw className="text-[#397fa8]" />
                   <h3 className="mt-4 font-bold">Live facts</h3>
                   <p className="mt-2 text-sm leading-6 text-[#5c6974]">
-                    Applications, deadlines, vacancies, corrigenda and results
-                    require working-day monitoring during active windows.
+                    Check the linked official notice for current application
+                    deadlines, vacancies, corrections and results.
                   </p>
                 </div>
                 <div className="bg-white p-5">
                   <CheckCircle2 className="text-[#4b6228]" />
                   <h3 className="mt-4 font-bold">Evergreen guidance</h3>
                   <p className="mt-2 text-sm leading-6 text-[#5c6974]">
-                    Entry and selection explanations are reviewed at least every
-                    90 days and after relevant official changes.
+                    Use our guides to understand the process, then check the
+                    linked official sources for requirements that may have
+                    changed.
                   </p>
                 </div>
               </div>
@@ -100,10 +101,10 @@ export default function Page() {
                 We correct transparently
               </h2>
               <p className="mt-4 leading-8 text-[#536371]">
-                When a material error is confirmed, we correct the page, update
-                its review date and record what changed. When official sources
-                conflict, we label the issue “verification in progress” rather
-                than presenting a definitive answer.
+                Please report suspected errors with the page address and a
+                supporting source so we can investigate. If official sources
+                conflict, seek clarification from the relevant recruitment
+                authority before relying on the disputed information.
               </p>
               <div className="mt-5 flex gap-3 border-l-4 border-[#e88620] bg-white p-5">
                 <AlertTriangle className="shrink-0 text-[#b96516]" />
@@ -146,14 +147,14 @@ export default function Page() {
                 Inspect the evidence
               </p>
               <p className="mt-3 text-sm leading-6 text-[#5c6974]">
-                See which official authorities are monitored and what each one
-                controls.
+                Find the official recruitment portals for current notices and
+                application information.
               </p>
               <Link
                 href="/notifications"
                 className="mt-5 inline-flex items-center gap-2 text-sm font-bold"
               >
-                Open source tracker <ExternalLink size={14} />
+                Open official sources <ExternalLink size={14} />
               </Link>
               <hr className="my-6 border-[#dde3df]" />
               <p className="text-xs leading-5 text-[#697781]">

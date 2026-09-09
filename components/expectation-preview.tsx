@@ -45,7 +45,8 @@ export function ExpectationPreview({ data }: { data: ExpectationPreviewData }) {
           </div>
           <p className="inline-flex items-center gap-2 border border-[#d6a44b] bg-[#fff9ed] px-3 py-2 text-xs font-semibold text-[#6f5017]">
             <ShieldCheck size={15} aria-hidden="true" />
-            Created by March Ahead Academy—not an official or recalled question
+            Original practice examples from March Ahead Academy; not official
+            test questions
           </p>
         </div>
         <div className="mt-5 grid gap-4 lg:grid-cols-3">
@@ -54,10 +55,6 @@ export function ExpectationPreview({ data }: { data: ExpectationPreviewData }) {
               key={sample.area}
               className="border border-[#d9e3df] bg-white p-5 sm:p-6"
             >
-              <p className="mb-4 inline-flex items-center gap-1.5 bg-[#fff4da] px-2 py-1 text-[10px] font-bold tracking-[.08em] text-[#6f5017] uppercase">
-                <ShieldCheck size={12} aria-hidden="true" />
-                Academy-created example · Not official
-              </p>
               <p className="text-xs font-bold tracking-[.14em] text-[#397fa8] uppercase">
                 {sample.area}
               </p>
