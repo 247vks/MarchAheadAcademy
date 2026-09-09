@@ -184,7 +184,10 @@ export default function KnowledgeCentrePage() {
         </h1>
         <p className="mt-5 max-w-3xl text-lg leading-8 text-[#536371]">
           Find your starting point, understand the selection process and build a
-          thoughtful preparation routine. Browse practical guides by subject, or
+          thoughtful preparation routine. Explore expert guidance on SSB
+          preparation, SSB psychology, NDA, CDS, AFCAT, defence career pathways,
+          eligibility and careers in the Indian Army, Navy and Air Force.
+          Browse practical guides by subject, or
           use the free worksheets to put your learning into action.
         </p>
         <nav
