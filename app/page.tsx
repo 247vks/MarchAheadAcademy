@@ -518,6 +518,65 @@ export default function Home() {
         </div>
       </section>
 
+      <section
+        className="section-spacing border-t border-[#d8e1dd] bg-white px-5 lg:px-8"
+        aria-labelledby="academy-guidance"
+      >
+        <div className="mx-auto max-w-7xl">
+          <p className="section-kicker">From the Academy</p>
+          <div className="mt-3 flex flex-wrap items-end justify-between gap-4">
+            <h2
+              id="academy-guidance"
+              className="font-heading text-3xl sm:text-4xl"
+            >
+              Practical guidance for your next step
+            </h2>
+            <Link className="text-link" href="/knowledge-centre/">
+              Explore the Knowledge Centre →
+            </Link>
+          </div>
+          <div className="mt-6 grid gap-5 md:grid-cols-3">
+            {[
+              {
+                href: '/guidance/first-ssb-attempt/',
+                title: 'First SSB Attempt: What Should You Prepare?',
+                copy: 'Start with a clear routine, your own experiences and an understanding of the journey.',
+              },
+              {
+                href: '/guidance/ssb-repeaters/',
+                title: 'SSB Repeaters: What Should You Do Differently?',
+                copy: 'Reflect on what you can observe and build focused preparation habits for your next attempt.',
+              },
+              {
+                href: '/guidance/parents-nda-aspirants/',
+                title: 'How Parents Can Support an NDA Aspirant',
+                copy: 'Support steady preparation, informed choices and your child’s growing independence.',
+              },
+            ].map((item) => (
+              <article
+                key={item.href}
+                className="editorial-card flex flex-col border-t-4 border-t-[#397fa8] p-6"
+              >
+                <BookOpen
+                  size={25}
+                  className="text-[#397fa8]"
+                  aria-hidden="true"
+                />
+                <h3 className="mt-4 font-heading text-xl">{item.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-[#536371]">
+                  {item.copy}
+                </p>
+                <Link
+                  className="text-link mt-auto self-start pt-5"
+                  href={item.href}
+                >
+                  Read the guide →
+                </Link>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
       <ContactBand />
       <SiteFooter />
     </main>

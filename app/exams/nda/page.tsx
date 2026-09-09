@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { examGuideAdditions } from '@/lib/exam-guide-additions';
 import { AuthorityPage } from '@/components/authority-shell';
 export const metadata: Metadata = {
   alternates: { canonical: '/exams/nda' },
@@ -13,9 +14,10 @@ export default function Page() {
       eyebrow="Exam guide"
       title="NDA & Naval Academy examination"
       lede="Understand what the examination leads to, how the selection journey works and which details must always be checked in the current UPSC notification."
-      status="Official pattern checked against NDA & NA II 2026"
+      status="NDA preparation guide"
       expertContext="Cdr Sharma’s experience teaching Army, Navy and Air Force cadets at the National Defence Academy informs the academy’s emphasis on academic foundations, informed service choice and preparation beyond the written examination."
       sections={[
+        ...examGuideAdditions.nda,
         {
           title: 'What this examination leads to',
           body: 'The UPSC NDA and NA examination is an entry point to notified Army, Navy and Air Force wings and Naval Academy courses. Course availability, vacancies and eligibility must be read from the active cycle.',
@@ -70,12 +72,12 @@ export default function Page() {
           {
             title: 'Mathematics',
             detail:
-              'A 2½-hour objective paper carrying 300 marks in the current UPSC scheme.',
+              'Practise a complete objective Mathematics paper using the duration and marking instructions in your examination notice.',
           },
           {
             title: 'General Ability Test',
             detail:
-              'A 2½-hour objective paper carrying 600 marks, including English and general knowledge areas.',
+              'Prepare English and general knowledge areas, then practise the complete paper under the notified conditions.',
           },
           {
             title: 'Then selection',

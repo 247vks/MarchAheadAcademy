@@ -3,12 +3,11 @@ import { CoachingTagline } from '@/components/coaching-tagline';
 import { TopicIcon } from '@/components/topic-icon';
 import {
   ArrowRight,
-  BellRing,
+  BookOpen,
   ExternalLink,
   GraduationCap,
   Map,
   Menu,
-  Scale,
   ShieldCheck,
   Users,
 } from 'lucide-react';
@@ -29,11 +28,9 @@ type Source = { label: string; href: string };
 export function SiteHeader() {
   const navItems = [
     { label: 'Career paths', href: '/career-paths', icon: Map },
-    { label: 'Forces', href: '/services', icon: ShieldCheck },
+    { label: 'SSB Coaching', href: '/ssb-coaching', icon: Users },
     { label: 'Exams', href: '/exams', icon: GraduationCap },
-    { label: 'Eligibility', href: '/eligibility', icon: Scale },
-    { label: 'SSB', href: '/selection/ssb', icon: Users },
-    { label: 'Notifications', href: '/notifications', icon: BellRing },
+    { label: 'Knowledge Centre', href: '/knowledge-centre', icon: BookOpen },
   ];
   return (
     <>
@@ -230,6 +227,12 @@ export function SiteFooter({
           aria-label="Selection guidance"
         >
           <strong className="text-white">Prepare</strong>
+          <Link className="text-link dark-text-link" href="/knowledge-centre/">
+            Knowledge Centre
+          </Link>
+          <Link className="text-link dark-text-link" href="/ssb-psychology/">
+            SSB Psychology
+          </Link>
           <Link className="text-link dark-text-link" href="/exams">
             Exams
           </Link>
@@ -291,6 +294,7 @@ export function AuthorityPage({
   expertContext,
   visual,
   currentHref,
+  publishedAt,
 }: {
   eyebrow: string;
   title: string;
@@ -304,6 +308,7 @@ export function AuthorityPage({
   expertContext?: string;
   visual?: ReactNode;
   currentHref: string;
+  publishedAt?: string;
 }) {
   return (
     <main className="min-h-screen bg-white text-[#0a1e33]">
@@ -312,6 +317,7 @@ export function AuthorityPage({
         title={title}
         description={lede}
         section={eyebrow}
+        modifiedAt={publishedAt}
         breadcrumbs={[
           { name: 'Home', href: '/' },
           { name: eyebrow, href: currentHref },
@@ -338,7 +344,7 @@ export function AuthorityPage({
           <div className="mt-8 flex flex-wrap gap-2 text-xs font-semibold text-[#cce7f5]">
             <span className="inline-flex items-center gap-2 border border-[#80a6bd]/50 bg-[#103353] px-4 py-2">
               <ShieldCheck size={15} />
-              {status} · Last reviewed {siteReviewedAt}
+              {status} · {publishedAt ? `Published ${publishedAt}` : `Last reviewed ${siteReviewedAt}`}
             </span>
             {expertContext && (
               <Link

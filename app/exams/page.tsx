@@ -4,12 +4,13 @@ import { ArrowRight, GraduationCap } from 'lucide-react';
 import { ContactBand } from '@/components/contact-band';
 import { SiteFooter, SiteHeader } from '@/components/authority-shell';
 import { ExamComparison } from '@/components/decision-visuals';
+import { examHubGroups } from '@/lib/exam-guide-additions';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/exams' },
-  title: 'Defence Exams and Entries | March Ahead Academy',
+  title: 'Indian Defence Exams & Officer Entry Routes: NDA, CDS, AFCAT & More',
   description:
-    'Understand NDA, CDS and AFCAT pathways and the official notifications that control each examination.',
+    'Explore NDA, CDS and AFCAT preparation, distinguish other officer-entry routes and Agniveer pathways, and find official recruitment sources.',
 };
 const exams = [
   [
@@ -42,7 +43,7 @@ export default function Page() {
             Exams and entries
           </div>
           <h1 className="mt-5 font-heading text-5xl sm:text-6xl">
-            Understand the route behind the examination.
+            Indian Defence Exams & Officer Entry Routes
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">
             Compare purpose, education stage and selection pathway before
@@ -70,6 +71,97 @@ export default function Page() {
             </span>
           </Link>
         ))}
+      </section>
+      <section
+        className="mx-auto max-w-6xl px-5 pb-12 lg:px-8"
+        aria-labelledby="entry-route-heading"
+      >
+        <h2 id="entry-route-heading" className="font-heading text-3xl">
+          Choose the career route, then the preparation.
+        </h2>
+        <p className="mt-4 max-w-3xl leading-8 text-[#536371]">
+          An examination is one part of an entry pathway. Start with your
+          education stage and the kind of service career you want, then
+          investigate the relevant selection process. Other officer entries and
+          Agniveer should not be treated as extra versions of NDA, CDS or AFCAT.
+        </p>
+        <div className="mt-7 grid gap-5 md:grid-cols-3">
+          {examHubGroups.map((group) => (
+            <article
+              key={group.title}
+              className="flex flex-col border-t-4 border-[#397fa8] bg-white p-6 shadow-sm"
+            >
+              <GraduationCap
+                size={24}
+                className="text-[#397fa8]"
+                aria-hidden="true"
+              />
+              <h3 className="mt-4 font-heading text-xl">{group.title}</h3>
+              <p className="mt-3 text-sm leading-7 text-[#536371]">
+                {group.description}
+              </p>
+              <div className="mt-auto grid gap-3 pt-6">
+                {group.links.map((link) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className="text-link inline-flex items-center gap-2 text-sm font-bold"
+                  >
+                    {link.label}
+                    <ArrowRight size={15} aria-hidden="true" />
+                  </Link>
+                ))}
+              </div>
+            </article>
+          ))}
+        </div>
+        <section
+          className="mt-10 border-t border-[#dbe2de] pt-7"
+          aria-labelledby="official-entry-sources"
+        >
+          <h2 id="official-entry-sources" className="font-heading text-2xl">
+            Go to the source for the current entry
+          </h2>
+          <p className="mt-3 max-w-3xl text-sm leading-7 text-[#536371]">
+            Use the issuing authority’s current notice for application dates,
+            qualifications, vacancies and selection requirements. A route being
+            listed here does not mean applications are open.
+          </p>
+          <div className="mt-5 flex flex-wrap gap-5 text-sm font-bold">
+            <a
+              className="text-link"
+              href="https://www.upsc.gov.in/exams-related-info/exam-notification"
+              target="_blank"
+              rel="noreferrer"
+            >
+              UPSC notifications
+            </a>
+            <a
+              className="text-link"
+              href="https://joinindianarmy.nic.in/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Join Indian Army
+            </a>
+            <a
+              className="text-link"
+              href="https://www.joinindiannavy.gov.in/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Join Indian Navy
+            </a>
+            <a
+              className="text-link"
+              href="https://www.careerairforce.gov.in/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Indian Air Force careers
+            </a>
+          </div>
+        </section>
       </section>
       <ContactBand />
       <SiteFooter />

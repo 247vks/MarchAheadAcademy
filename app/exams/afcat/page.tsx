@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { examGuideAdditions } from '@/lib/exam-guide-additions';
 import { AuthorityPage } from '@/components/authority-shell';
 export const metadata: Metadata = {
   alternates: { canonical: '/exams/afcat' },
@@ -13,9 +14,10 @@ export default function Page() {
       eyebrow="Exam guide"
       title="Air Force Common Admission Test"
       lede="AFCAT opens notified officer pathways across Flying and Ground Duty branches, but branch-specific education, age, commission and medical conditions must be checked separately."
-      status="Official pattern checked against AFCAT 02/2026"
+      status="AFCAT preparation guide"
       expertContext="Cdr Sharma’s experience in tri-service education and officer selection informs the academy’s focus on branch-aware decisions, disciplined preparation and authentic readiness for the AFSB journey."
       sections={[
+        ...examGuideAdditions.afcat,
         {
           title: 'AFCAT is a family of branch pathways',
           body: 'A single application can involve different branch requirements. Flying, Ground Duty Technical and Ground Duty Non-Technical options should never be reduced to one generic eligibility statement.',
@@ -65,12 +67,12 @@ export default function Page() {
         label: 'AFCAT orientation',
         heading: 'Experience the range before you practise for speed.',
         intro:
-          'The AFCAT 02/2026 notification specifies a two-hour paper of 100 questions for 300 marks across English, General Awareness, Numerical Ability, and Reasoning and Military Aptitude. Future cycles may change.',
+          'Practise English, General Awareness, Numerical Ability, and Reasoning and Military Aptitude together. Use your current notification for the exact duration, question count and marking scheme.',
         format: [
           {
             title: 'Written AFCAT',
             detail:
-              'A mixed, objective online examination. These figures belong specifically to AFCAT 02/2026.',
+              'A mixed, objective online examination. Check the current cycle’s instructions before setting up a timed practice attempt.',
           },
           {
             title: 'AFSB',

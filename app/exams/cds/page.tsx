@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { examGuideAdditions } from '@/lib/exam-guide-additions';
 import { AuthorityPage } from '@/components/authority-shell';
 export const metadata: Metadata = {
   alternates: { canonical: '/exams/cds' },
@@ -13,9 +14,10 @@ export default function Page() {
       eyebrow="Exam guide"
       title="Combined Defence Services examination"
       lede="CDS is not one uniform route. IMA, INA, AFA and OTA have distinct educational conditions, examination papers, service outcomes and notified availability."
-      status="Official pattern checked against CDS II 2026"
+      status="CDS preparation guide"
       expertContext="Cdr Sharma’s military-education and candidate-development experience informs the academy’s approach to comparing academy routes, building subject foundations and connecting written preparation with later selection stages."
       sections={[
+        ...examGuideAdditions.cds,
         {
           title: 'Start with the academy, not only the exam',
           body: 'Your academy preferences shape the required papers, educational qualification and service pathway. Compare IMA, INA, AFA and OTA deliberately before completing an application.',
@@ -37,7 +39,7 @@ export default function Page() {
           title: 'Which CDS route should you investigate?',
           body: 'Begin with the academy outcome. Graduates considering IMA, INA, AFA or OTA should compare the current educational conditions, date-of-birth window, marital-status provisions and notified course availability before choosing preferences.',
           points: [
-            'Investigate INA only against the engineering qualification stated in the current notice.',
+            'Match your qualification to the exact INA education wording in the current notice rather than an older eligibility summary.',
             'Check the AFA education conditions, including the relevant Physics and Mathematics history or engineering qualification.',
             'Treat OTA as a distinct course and written-paper route, not simply an easier version of CDS.',
           ],

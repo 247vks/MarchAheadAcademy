@@ -3,6 +3,14 @@
 import { usePathname } from 'next/navigation';
 
 export const coachingTaglines: Record<string, string> = {
+  '/knowledge-centre': 'Turn useful knowledge into preparation that fits you.',
+  '/ssb-psychology': 'Understand yourself. Prepare with individual guidance.',
+  '/guidance/first-ssb-attempt':
+    'Start your first attempt with a plan built around you.',
+  '/guidance/ssb-repeaters':
+    'Make your next preparation cycle more purposeful.',
+  '/guidance/parents-nda-aspirants':
+    'Support their ambition with guidance shaped around their needs.',
   '/': 'Your career deserves more than one-size-fits-all coaching.',
   '/ssb-coaching':
     'Make your SSB preparation personal—not a rehearsed performance.',
