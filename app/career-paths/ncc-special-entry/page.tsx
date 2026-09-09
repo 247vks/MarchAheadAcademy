@@ -96,7 +96,10 @@ export default function Page() {
           </p>
           <div className="mt-5 grid gap-5 md:grid-cols-2">
             <div className="border border-[#d8e1dd] p-6">
-              <h3 className="font-semibold">Eligibility checks</h3>
+              <h3 className="flex items-center gap-3 font-semibold">
+                <ClipboardCheck className="h-5 w-5 shrink-0 text-[#397fa8]" aria-hidden="true" />
+                Eligibility checks
+              </h3>
               <p className="mt-3 leading-7 text-[#536371]">
                 The notice covers unmarried male graduates and includes a
                 final-year concession with conditions. Its age reference is
@@ -107,7 +110,10 @@ export default function Page() {
               </p>
             </div>
             <div className="border border-[#d8e1dd] p-6">
-              <h3 className="font-semibold">NCC and category checks</h3>
+              <h3 className="flex items-center gap-3 font-semibold">
+                <GraduationCap className="h-5 w-5 shrink-0 text-[#397fa8]" aria-hidden="true" />
+                NCC and category checks
+              </h3>
               <p className="mt-3 leading-7 text-[#536371]">
                 For NCC certificate applicants, the notice requires the
                 applicable two/three years of Senior Division/Wing service and
