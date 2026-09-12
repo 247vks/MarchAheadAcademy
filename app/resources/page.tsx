@@ -47,21 +47,23 @@ export default function Page() {
               <p className="mt-3 leading-7 text-[#536371]">
                 {item.description}
               </p>
-              <Link
-                href={`/resources/${item.slug}/`}
-                className="text-link mt-5 inline-flex items-center gap-2"
-              >
-                Open worksheet and guidance{' '}
-                <ArrowRight size={16} aria-hidden="true" />
-              </Link>
-              <a
-                className="mt-6 inline-flex min-h-11 items-center gap-2 border-t border-[#d8e1dd] pt-4 font-bold text-[#2f6f94] underline underline-offset-4 transition hover:text-[#4b6228]"
-                href={`/resources/${item.slug}.pdf`}
-                download
-              >
-                <Download size={18} aria-hidden="true" />
-                Download PDF
-              </a>
+              <div className="mt-auto pt-5">
+                <Link
+                  href={`/resources/${item.slug}/`}
+                  className="text-link inline-flex items-center gap-2"
+                >
+                  Open worksheet and guidance{' '}
+                  <ArrowRight size={16} aria-hidden="true" />
+                </Link>
+                <a
+                  className="mt-5 flex min-h-11 items-center gap-2 border-t border-[#d8e1dd] pt-4 font-bold text-[#2f6f94] underline underline-offset-4 transition hover:text-[#4b6228]"
+                  href={`/resources/${item.slug}.pdf`}
+                  download
+                >
+                  <Download size={18} aria-hidden="true" />
+                  Download PDF
+                </a>
+              </div>
             </article>
           ))}
         </div>

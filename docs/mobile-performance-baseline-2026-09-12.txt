@@ -1,0 +1,65 @@
+March Ahead Academy: mobile lab baseline, 2026-09-12
+
+Method
+Live www.marchaheadacademy.com, local Playwright headless Chrome/CDP.
+One cold-context sample per route, cache disabled; viewport 390x844, DPR1,
+mobile emulation; CPU throttle 4x; network latency150ms, download200000B/s,
+upload93750B/s. Navigate until networkidle. No scrolling or interaction.
+No analytics consent; consent storage null on every page. Requests matching
+googletagmanager/google-analytics blocked as an additional safeguard.
+PerformanceObserver: buffered largest-contentful-paint and layout-shift
+(excluding hadRecentInput). CDP Network.loadingFinished encodedDataLength
+summed for total wire bytes. Resource Timing transferSize for scripts/assets.
+These are one-run laboratory observations, NOT field/Core Web Vitals or
+percentile results. Machine/CDN/network variability applies. Cookie banner
+is present. Gallery images below viewport may not load until scrolling.
+
+Route                    requests wireBytes JStransfer  TTFBms DCLms loadms LCPms CLS
+/                        23       2095098   119926      342    3192  12553  2600  .00042
+/career-paths/tes/        21       2096728   113743      362    4109  12800  2772  .00041
+/selection/ssb/           22       2104846   113743      370    4286  12870  2848  .02118
+/consultation/            13        208070   106094       75    2746   2751  2144  .00041
+/resources/               20        245525   116225      354    2545   2612  2152  .00048
+
+Image finding
+On home, TES and SSB the CSS background aspirant-guidance-banner.png alone
+transferred 1,836,528 bytes (file size1,836,228). It accounts for about87%
+of each page's measured wire bytes. img-initiator bytes were0 because this
+is a CSS image, not because the page downloaded no images.
+Consultation/resources did not fetch this image in this run.
+
+Highest-value practical optimization
+components/contact-band.tsx:35 sets the large PNG as backgroundImage under
+a 90-98% opaque olive gradient. Re-encode a suitably resized WebP/AVIF
+variant and verify the appearance; use it instead of the PNG or consider
+omitting this nearly-obscured decorative layer. This does not require any
+editorial input. Do not promise LCP improvement: the measured LCP precedes
+the large image completion; strongest demonstrated benefit is transfer
+size and load completion, potentially data/battery cost.
+
+Next optimization
+public/gallery/*.png files are1.72-2.11MB EACH. app/page.tsx:494 and
+components/preparation-guide.tsx:46 use next/Image with unoptimized.
+Generate responsive static WebP/AVIF assets for card and detail sizes;
+retain dimensions and lazy loading. Static export means an automatic
+Next image-optimization server is not present. Existing sizes attribute
+does not itself resize an unoptimized original. Test scrolled/home and
+preparation pages separately before quantifying the benefit.
+
+Other measured costs
+Largest shared JS chunks52,042 and42,865 transferred bytes. Two major fonts
+34,152 and24,876 bytes; CSS30,829 bytes. These are substantially smaller
+than the shared background. Prioritize assets before invasive JS work.
+
+Reproduction settings
+chromium.launch({channel:'chrome',headless:true}); fresh browser context
+for each route; context.route(/googletagmanager|google-analytics/,abort).
+CDP Network.enable, Network.setCacheDisabled({cacheDisabled:true}),
+Network.emulateNetworkConditions({offline:false,latency:150,
+downloadThroughput:200000,uploadThroughput:93750}),
+Emulation.setCPUThrottlingRate({rate:4}).
+Read performance navigation responseStart/domContentLoadedEventEnd/loadEventEnd
+and buffered paint/layout observers after goto({waitUntil:'networkidle'}).
+Repeat at least3 runs and compare medians after asset optimization.
+
+No application files changed. No build or deployment performed.

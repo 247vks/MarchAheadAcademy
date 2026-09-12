@@ -32,7 +32,7 @@ export function ContactBand() {
         className="relative mx-auto max-w-7xl overflow-hidden border border-[#3f5a2b] bg-[#30471f] bg-cover bg-center shadow-[0_18px_50px_rgba(7,31,61,.12)]"
         style={{
           backgroundImage:
-            "linear-gradient(90deg, rgba(40,63,26,.98), rgba(40,63,26,.9)), url('/aspirant-guidance-banner.png')",
+            "linear-gradient(90deg, rgba(40,63,26,.98), rgba(40,63,26,.9)), url('/aspirant-guidance-banner.webp')",
         }}
       >
         <div className="px-6 py-8 text-white sm:px-7 sm:py-9 lg:px-12 lg:py-11">

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { ActiveNavLink } from '@/components/active-nav-link';
 import { CoachingTagline } from '@/components/coaching-tagline';
 import { TopicIcon } from '@/components/topic-icon';
 import {
@@ -65,14 +66,14 @@ export function SiteHeader() {
             {navItems.map((item) => {
               const NavIcon = item.icon;
               return (
-                <Link
+                <ActiveNavLink
                   key={item.href}
                   href={item.href}
                   className="flex min-h-10 items-center gap-1.5 px-2.5 transition hover:bg-[#f3f8fb] hover:text-[#2f6f94]"
                 >
                   <NavIcon size={14} strokeWidth={1.7} aria-hidden="true" />
                   {item.label}
-                </Link>
+                </ActiveNavLink>
               );
             })}
           </nav>
@@ -98,7 +99,7 @@ export function SiteHeader() {
               {navItems.map((item) => {
                 const NavIcon = item.icon;
                 return (
-                  <Link
+                  <ActiveNavLink
                     key={item.href}
                     href={item.href}
                     className="flex min-h-11 items-center gap-3 border-b border-[#edf0ee] px-3 text-sm font-semibold last:border-0"
@@ -109,7 +110,7 @@ export function SiteHeader() {
                       aria-hidden="true"
                     />
                     {item.label}
-                  </Link>
+                  </ActiveNavLink>
                 );
               })}
               <Link
@@ -331,6 +332,7 @@ export function AuthorityPage({
   publishedAt,
   modifiedAt,
   showEntryNotice = true,
+  guidanceAfterSection = 2,
 }: {
   eyebrow: string;
   title: string;
@@ -347,7 +349,27 @@ export function AuthorityPage({
   publishedAt?: string;
   modifiedAt?: string;
   showEntryNotice?: boolean;
+  guidanceAfterSection?: number;
 }) {
+  const contents = (
+    <ul className="mt-3 grid gap-x-5 gap-y-1 text-sm font-semibold lg:grid-cols-2">
+      {sections.map((section, index) => (
+        <li key={section.title}>
+          <a className="text-link flex min-h-11 items-center gap-2 py-2" href={`#section-${index + 1}`}>
+            <TopicIcon topic={section.title} compact />
+            <span>{section.title}</span>
+          </a>
+        </li>
+      ))}
+      <li>
+        <a className="text-link flex min-h-11 items-center gap-2 py-2" href="#official-sources">
+          <ShieldCheck size={17} aria-hidden="true" className="shrink-0 text-[#397fa8]" />
+          <span>Official sources</span>
+        </a>
+      </li>
+    </ul>
+  );
+  const guidanceIndex = Math.min(sections.length, Math.max(2, guidanceAfterSection)) - 1;
   return (
     <main className="min-h-screen bg-white text-[#0a1e33]">
       <GuideStructuredData
@@ -413,31 +435,15 @@ export function AuthorityPage({
             aria-label="On this page"
             className="border-y border-[#d9e3df] py-4"
           >
-            <p className="text-xs font-bold tracking-[.15em] text-[#397fa8] uppercase">
-              On this page
-            </p>
-            <div className="mt-3 flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold">
-              {sections.map((section, index) => (
-                <a
-                  className="text-link inline-flex items-center gap-2"
-                  key={section.title}
-                  href={`#section-${index + 1}`}
-                >
-                  <TopicIcon topic={section.title} compact />
-                  {section.title}
-                </a>
-              ))}
-              <a
-                className="text-link inline-flex items-center gap-2"
-                href="#official-sources"
-              >
-                <ShieldCheck
-                  size={17}
-                  aria-hidden="true"
-                  className="shrink-0 text-[#397fa8]"
-                />
-                Official sources
-              </a>
+            <details className="lg:hidden">
+              <summary className="min-h-11 cursor-pointer py-3 text-sm font-bold text-[#2f6f94] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4">
+                On this page
+              </summary>
+              {contents}
+            </details>
+            <div className="hidden lg:block">
+              <p className="text-xs font-bold tracking-[.15em] text-[#397fa8] uppercase">On this page</p>
+              {contents}
             </div>
           </nav>
           {showEntryNotice && (
@@ -498,7 +504,7 @@ export function AuthorityPage({
                     </ul>
                   )}
                 </section>
-                {index === 0 && <ContextualGuidance topic={title} />}
+                {index === guidanceIndex && <ContextualGuidance topic={title} />}
               </div>
             );
           })}

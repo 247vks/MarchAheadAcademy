@@ -22,6 +22,7 @@ export default function Page() {
       publishedAt="2026-09-12"
       modifiedAt="2026-09-12"
       showEntryNotice={false}
+      guidanceAfterSection={5}
       sections={[
         {
           title: 'What is the Army Technical Entry Scheme?',

@@ -86,6 +86,12 @@ const server = http.createServer((req, res) => {
       for (const width of [375, 768, 1440]) {
         await page.setViewportSize({ width, height: 900 });
         await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+        if (route === '/resources/' && width >= 768) {
+          const actionTops = await page.locator('article a[download]').evaluateAll(nodes => nodes.map(node => node.getBoundingClientRect().top));
+          for (let index = 0; index < actionTops.length; index += 2) {
+            if (Math.abs(actionTops[index] - actionTops[index + 1]) > 1) failures.push(`${route}: paired PDF actions are not aligned at ${width}px`);
+          }
+        }
         if (process.env.QUALITY_SCREENSHOTS && route === '/consultation/' && width === 375) {
           fs.mkdirSync(process.env.QUALITY_SCREENSHOTS, { recursive: true });
           await page.evaluate(() => { document.activeElement?.blur(); window.scrollTo(0, 0); });
@@ -98,6 +104,26 @@ const server = http.createServer((req, res) => {
         }
       }
       const links = await page.locator('a[href^="/"]').evaluateAll(nodes => nodes.map(n => n.getAttribute('href')));
+      if (route === '/career-paths/tes/') {
+        const reject = page.getByRole('button', { name: 'Reject Non-Essential', exact: true });
+        if (await reject.isVisible()) await reject.click();
+        const nav = page.locator('header nav').first();
+        if (await nav.locator('a[href="/career-paths"], a[href="/career-paths/"]').getAttribute('aria-current') !== 'location') failures.push('TES: Career paths must be identified as current section');
+        const prompt = page.locator('aside[aria-label^="Guidance about"]');
+        if (!await prompt.evaluate(node => !!node.parentElement.querySelector('#section-5'))) failures.push('TES: coaching prompt should follow selection section five');
+        await page.setViewportSize({ width: 375, height: 900 });
+        const contents = page.getByRole('navigation', { name: 'On this page', exact: true });
+        const disclosure = contents.locator('details');
+        if (await disclosure.getAttribute('open') !== null) failures.push('TES: mobile contents should start collapsed');
+        await disclosure.locator('summary').focus();
+        await page.keyboard.press('Enter');
+        if (!await disclosure.locator('a').first().isVisible()) failures.push('TES: keyboard must open mobile contents');
+        await disclosure.locator('a').first().click();
+        if (!page.url().endsWith('#section-1')) failures.push('TES: contents must link to existing section');
+      }
+      if (route === '/career-paths/') {
+        if (await page.locator('header nav').first().locator('a[href="/career-paths"], a[href="/career-paths/"]').getAttribute('aria-current') !== 'page') failures.push('Career paths: exact navigation page not marked');
+      }
       for (const link of links) {
         const url = new URL(link, 'http://localhost');
         if (url.hostname !== 'localhost') continue;

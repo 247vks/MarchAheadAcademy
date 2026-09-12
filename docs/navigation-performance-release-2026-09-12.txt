@@ -1,0 +1,24 @@
+March Ahead Academy — navigation and performance release
+
+Changes
+- AuthorityPage contents: native mobile disclosure and expanded desktop list.
+- Current header section highlighted, with aria-current page/location distinction.
+- Guide coaching prompts default after section two; TES follows section five,
+  after eligibility, shortlisting and selection sequence.
+- Resource-card guidance/download actions bottom-aligned within each grid row.
+- Contact background delivered as WebP: 51,278 bytes instead of 1,836,228.
+  Saving: 1,784,950 bytes (97.21%). Original artwork retained in the repository.
+  Rebuild variant with node tests/build-banner-asset.cjs.
+
+Measurement and limits
+See mobile-performance-baseline-2026-09-12.txt for pre-release lab settings.
+Banner screenshot comparisons at390/1440px showed no meaningful degradation.
+This is a demonstrated asset-byte reduction, not a field/LCP ranking claim.
+No gallery conversions, new authored claims or route changes in this batch.
+
+Remaining priorities
+- Responsive delivery variants for the larger gallery images.
+- Repeat mobile measurements after deployment (multiple-run median).
+- Broader document landmark cleanup and longer-guide CTA copy refinement.
+- Email display wrapping in contact cards could be improved separately.
+- Search visibility measurement and external-profile consistency.
