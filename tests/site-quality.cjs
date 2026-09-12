@@ -36,6 +36,14 @@ const server = http.createServer((req, res) => {
       await page.goto(`http://127.0.0.1:${server.address().port}${route}`, { waitUntil: 'load' });
       await page.evaluate(() => document.fonts.ready);
       if (await page.locator('h1').count() !== 1) failures.push(`${route}: expected one H1`);
+      if (route === '/ssb-coaching/') {
+        const summary = page.locator('section[aria-labelledby="coaching-summary"]');
+        if (await summary.locator('dt').count() !== 8) failures.push('Coaching: expected eight service facts');
+        const text = await summary.innerText();
+        for (const phrase of ['One-to-one', 'Online coaching', 'prior appointment only', 'First-time', 'repeaters', 'NDA, CDS and AFCAT', 'Commander Sulakshan Kumar Sharma']) {
+          if (!text.includes(phrase)) failures.push(`Coaching summary missing ${phrase}`);
+        }
+      }
       const metadata = await page.evaluate(() => {
         const canonical = document.querySelector('link[rel="canonical"]')?.href;
         const ogUrl = document.querySelector('meta[property="og:url"]')?.content;
@@ -86,6 +94,12 @@ const server = http.createServer((req, res) => {
       for (const width of [375, 768, 1440]) {
         await page.setViewportSize({ width, height: 900 });
         await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+        if (process.env.QUALITY_SCREENSHOTS && route === '/ssb-coaching/') {
+          const reject = page.getByRole('button', { name: 'Reject Non-Essential', exact: true });
+          if (await reject.isVisible()) await reject.click();
+          fs.mkdirSync(process.env.QUALITY_SCREENSHOTS, { recursive: true });
+          await page.locator('section[aria-labelledby="coaching-summary"]').screenshot({ path: path.join(process.env.QUALITY_SCREENSHOTS, `coaching-summary-${width}.png`) });
+        }
         if (route === '/resources/' && width >= 768) {
           const actionTops = await page.locator('article a[download]').evaluateAll(nodes => nodes.map(node => node.getBoundingClientRect().top));
           for (let index = 0; index < actionTops.length; index += 2) {

@@ -7,6 +7,10 @@ import {
   Users,
   Compass,
   ArrowRight,
+  Monitor,
+  GraduationCap,
+  UserCheck,
+  CalendarDays,
 } from 'lucide-react';
 import {
   Breadcrumbs,
@@ -52,20 +56,93 @@ export default function Page() {
         <p className="mt-6 max-w-4xl text-lg leading-8 text-[#536371]">
           Your experiences, strengths and preparation needs are individual.
           March Ahead Academy’s SSB coaching is one-on-one, with guidance from
-          Commander Sulakshan Kumar Sharma (Retd), an Indian Navy veteran and former
-          Senior Service Psychologist at the Naval Selection Centre, Bangalore.
+          Commander Sulakshan Kumar Sharma (Retd), an Indian Navy veteran and
+          former Senior Service Psychologist at the Naval Selection Centre,
+          Bangalore.
         </p>
         <p className="mt-4 max-w-4xl leading-8 text-[#536371]">
           Build your own abilities, not a model personality. Preparation is
           tailored to where you are now, the areas you need to develop and the
           pace at which you learn.
         </p>
+        <section
+          aria-labelledby="coaching-summary"
+          className="mt-8 border-y border-[#d8e1dd] py-6"
+        >
+          <h2 id="coaching-summary" className="font-heading text-2xl">
+            Your coaching at a glance
+          </h2>
+          <dl className="mt-5 grid gap-x-8 gap-y-5 sm:grid-cols-2">
+            {[
+              {
+                label: 'Format',
+                value: 'One-to-one, tailored to your needs and learning pace.',
+                icon: Users,
+              },
+              {
+                label: 'Availability',
+                value:
+                  'Online coaching. In-person visits by prior appointment only.',
+                icon: Monitor,
+              },
+              {
+                label: 'Suitable for',
+                value: 'First-time SSB candidates and repeaters.',
+                icon: UserCheck,
+              },
+              {
+                label: 'SSB preparation',
+                value:
+                  'Psychology, personal interview, group participation and SSB orientation.',
+                icon: Brain,
+              },
+              {
+                label: 'Written exam coaching',
+                value:
+                  'NDA, CDS and AFCAT preparation, discussed around your priorities.',
+                icon: GraduationCap,
+              },
+              {
+                label: 'Selection preparation',
+                value:
+                  'SSB and AFSB guidance for candidates from NDA, CDS, AFCAT and other relevant officer entries.',
+                icon: Compass,
+              },
+              {
+                label: 'Mentor',
+                value:
+                  'Commander Sulakshan Kumar Sharma (Retd.), former SSB psychologist.',
+                icon: UserCheck,
+              },
+              {
+                label: 'Starting point',
+                value:
+                  'An individual consultation to discuss your goals, current preparation and next step.',
+                icon: CalendarDays,
+              },
+            ].map(({ label, value, icon: Icon }) => (
+              <div key={label}>
+                <dt className="flex items-center gap-2 text-sm font-bold text-[#30471f]">
+                  <Icon size={18} aria-hidden="true" className="shrink-0" />
+                  {label}
+                </dt>
+                <dd className="mt-2 text-sm leading-6 text-[#536371]">
+                  {value}
+                </dd>
+              </div>
+            ))}
+          </dl>
+          <p className="mt-5 text-sm leading-6 text-[#536371]">
+            Session availability and fees are agreed before coaching begins.
+            In-person arrangements are shared privately after an appointment is
+            confirmed.
+          </p>
+        </section>
         <Link
           href="/consultation/"
           className="mt-6 inline-flex items-center gap-2 bg-[#30471f] px-6 py-4 font-bold text-white transition hover:bg-[#3f5b2b]"
         >
-          Discuss your SSB preparation{' '}
-          <ArrowRight size={18} aria-hidden="true" />
+          Book a consultation <ArrowRight size={18} aria-hidden="true" />
         </Link>
 
         <section className="mt-12 border-t border-[#d8e1dd] pt-8">
@@ -73,10 +150,10 @@ export default function Page() {
             Experience that informs the guidance
           </h2>
           <p className="mt-4 leading-8 text-[#536371]">
-            Commander Sharma brings 32 years of military service, 57 years of teaching
-            experience, three years as an SSB psychologist and 4.5 years of
-            independent Indian Navy and Army recruitment experience. His
-            background connects education, candidate development and officer
+            Commander Sharma brings 32 years of military service, 57 years of
+            teaching experience, three years as an SSB psychologist and 4.5
+            years of independent Indian Navy and Army recruitment experience.
+            His background connects education, candidate development and officer
             selection.
           </p>
           <Link
@@ -178,8 +255,8 @@ export default function Page() {
               available preparation time.
             </li>
             <li>
-              Confirm the coaching format, availability and fees before
-              arranging sessions.
+              Choose online coaching or discuss an in-person appointment, then
+              agree session availability and fees before coaching begins.
             </li>
           </ol>
           <p className="mt-4 leading-8 text-[#536371]">
