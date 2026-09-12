@@ -94,6 +94,16 @@ const server = http.createServer((req, res) => {
       for (const width of [375, 768, 1440]) {
         await page.setViewportSize({ width, height: 900 });
         await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+        if (route === '/') {
+          const serviceLayout = await page.locator('#services').evaluate(section => {
+            const heading = section.querySelector('h2');
+            const caption = [...section.querySelectorAll('p')].find(node => node.textContent.includes('Clear distinctions'));
+            const range = document.createRange(); range.selectNodeContents(heading);
+            return { lines: range.getClientRects().length, italic: getComputedStyle(caption).fontStyle === 'italic', below: caption.getBoundingClientRect().top >= Math.max(...[...section.querySelectorAll('article')].map(card => card.getBoundingClientRect().bottom)) };
+          });
+          if (!serviceLayout.italic || !serviceLayout.below) failures.push(`Home: service caption must be italic below all three cards at ${width}px`);
+          if (width === 1440 && serviceLayout.lines !== 1) failures.push('Home: service heading should fit on one desktop line');
+        }
         if (process.env.QUALITY_SCREENSHOTS && route === '/ssb-coaching/') {
           const reject = page.getByRole('button', { name: 'Reject Non-Essential', exact: true });
           if (await reject.isVisible()) await reject.click();

@@ -347,17 +347,11 @@ export default function Home() {
         className="section-spacing border-y border-[#e1e6e3] bg-white px-5 lg:px-8"
       >
         <div className="mx-auto max-w-7xl">
-          <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-end">
-            <div>
-              <p className="section-kicker">Explore the services</p>
-              <h2 className="mt-4 font-heading text-4xl sm:text-5xl">
-                Three forces. Many ways to serve.
-              </h2>
-            </div>
-            <p className="max-w-md text-sm leading-6 text-[#5f6973]">
-              Clear distinctions, realistic career context and direct links to
-              the official recruitment authorities.
-            </p>
+          <div>
+            <p className="section-kicker">Explore the services</p>
+            <h2 className="mt-4 font-heading text-4xl sm:text-5xl">
+              Three forces. Many ways to serve.
+            </h2>
           </div>
           <div className="mt-6 grid gap-5 lg:grid-cols-3">
             {services.map((service) => {
@@ -402,6 +396,10 @@ export default function Home() {
               );
             })}
           </div>
+          <p className="mt-5 text-sm italic leading-6 text-[#5f6973]">
+            Clear distinctions, realistic career context and direct links to
+            the official recruitment authorities.
+          </p>
         </div>
       </section>
 
