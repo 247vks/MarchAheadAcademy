@@ -21,13 +21,13 @@ export const metadata: Metadata = withPageMetadata({
     title,
     description,
     url: '/career-paths/ncc-special-entry/',
-    images: ['/og-tri-service.png'],
+    images: ['/og-tri-service.webp'],
   },
   twitter: {
     card: 'summary_large_image',
     title,
     description,
-    images: ['/og-tri-service.png'],
+    images: ['/og-tri-service.webp'],
   },
 });
 

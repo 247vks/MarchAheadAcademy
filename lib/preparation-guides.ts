@@ -15,7 +15,7 @@ export const preparationGuides: PreparationGuideData[] = [
     title: 'Learn with purpose',
     eyebrow: '01 · Learn',
     lede: 'Build an accurate picture of the career, the entry and the commitment before building an examination plan.',
-    image: '/gallery/learn.png',
+    image: '/gallery/learn.webp',
     accent: '#4b6228',
     practice:
       'Choose one entry. Write a one-page brief covering the role, eligibility source, selection stages, training destination and service commitment. Mark every fact that still needs official verification.',
@@ -54,7 +54,7 @@ export const preparationGuides: PreparationGuideData[] = [
     title: 'Lead before you are given a title',
     eyebrow: '02 · Lead',
     lede: 'Develop the judgement to take responsibility, include others and move a group toward a useful outcome.',
-    image: '/gallery/lead.png',
+    image: '/gallery/lead.webp',
     accent: '#071f3d',
     practice:
       'Lead a 20-minute group task. Clarify the objective, invite two viewpoints, allocate work, watch the time and close with a shared summary. Ask the group what helped and what did not.',
@@ -93,7 +93,7 @@ export const preparationGuides: PreparationGuideData[] = [
     title: 'Prepare as a complete candidate',
     eyebrow: '03 · Prepare',
     lede: 'Create a realistic system for academics, current affairs, communication, fitness and recovery.',
-    image: '/gallery/prepare.png',
+    image: '/gallery/prepare.webp',
     accent: '#397fa8',
     practice:
       'Build a seven-day baseline timetable using your real obligations. Include study blocks, training, sleep and one review period. After the week, adjust it using evidence—not guilt.',
@@ -132,7 +132,7 @@ export const preparationGuides: PreparationGuideData[] = [
     title: 'Communicate with clarity',
     eyebrow: '04 · Communicate',
     lede: 'Learn to listen, structure thought and express a genuine view without rehearsed performance.',
-    image: '/gallery/communicate.png',
+    image: '/gallery/communicate.webp',
     accent: '#4b6228',
     practice:
       'Pick one current issue. Speak for 90 seconds using context, two relevant points and a balanced conclusion. Listen back once and note clarity, evidence and unnecessary repetition.',
@@ -171,7 +171,7 @@ export const preparationGuides: PreparationGuideData[] = [
     title: 'Train with discipline',
     eyebrow: '05 · Train',
     lede: 'Develop fitness progressively, safely and consistently for the demands of preparation and service life.',
-    image: '/gallery/train.png',
+    image: '/gallery/train.webp',
     accent: '#397fa8',
     practice:
       'Record a safe baseline for walking or running duration, basic mobility and bodyweight movements appropriate to you. Build the next four weeks gradually and keep recovery days.',
@@ -210,7 +210,7 @@ export const preparationGuides: PreparationGuideData[] = [
     title: 'Understand what it means to serve',
     eyebrow: '06 · Serve',
     lede: 'Examine motivation, responsibility and contribution before deciding that a defence career is right for you.',
-    image: '/gallery/serve.png',
+    image: '/gallery/serve.webp',
     accent: '#071f3d',
     practice:
       'Write two lists: what you hope to receive from a defence career and what the service may reasonably require from you. Discuss the imbalance, uncertainty and sacrifices with someone who knows you well.',

@@ -22,13 +22,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: article.description,
       url,
       type: 'article',
-      images: ['/og-tri-service.png'],
+      images: ['/og-tri-service.webp'],
     },
     twitter: {
       card: 'summary_large_image',
       title: article.title,
       description: article.description,
-      images: ['/og-tri-service.png'],
+      images: ['/og-tri-service.webp'],
     },
   };
 }

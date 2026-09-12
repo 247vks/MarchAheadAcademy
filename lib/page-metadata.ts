@@ -15,7 +15,7 @@ export function withPageMetadata(metadata: Metadata): Metadata {
       type: 'website',
       siteName,
       locale: 'en_IN',
-      images: ['/og-tri-service.png'],
+      images: ['/og-tri-service.webp'],
       ...metadata.openGraph,
       ...(title ? { title } : {}),
       ...(description ? { description } : {}),
@@ -23,7 +23,7 @@ export function withPageMetadata(metadata: Metadata): Metadata {
     },
     twitter: {
       card: 'summary_large_image',
-      images: ['/og-tri-service.png'],
+      images: ['/og-tri-service.webp'],
       ...metadata.twitter,
       ...(title ? { title } : {}),
       ...(description ? { description } : {}),

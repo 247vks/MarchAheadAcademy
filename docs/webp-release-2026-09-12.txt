@@ -1,0 +1,18 @@
+WebP-only raster delivery — March Ahead Academy
+
+Nine PNG sources converted to WebP, including six preparation/gallery images,
+the contact banner and both social-preview assets. Application image and
+Open Graph/Twitter references now use WebP. SVG icons and PDFs are unchanged.
+
+Original sources moved from public into assets/image-originals for recovery
+and regeneration. They are not part of the exported public website.
+No artwork changes; source dimensions retained except existing1440px banner.
+
+Combined source size:17,684,486 bytes.
+Combined WebP size:949,870 bytes (94.63% smaller).
+This is asset size, not the size of every page or a claimed LCP improvement.
+
+Regenerate: node tests/build-webp-assets.cjs
+Verify export: node tests/webp-assets.cjs
+The export check rejects legacy raster files, decodes every WebP and verifies
+image references in HTML. Page-quality checks cover all55 routes.

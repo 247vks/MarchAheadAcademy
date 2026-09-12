@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/og-tri-service.png',
+        url: '/og-tri-service.webp',
         width: 1733,
         height: 907,
         alt: 'March Ahead Academy defence career guidance',
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'March Ahead Academy',
     description: 'Your clearest path to a career in the Defence Forces.',
-    images: ['/og-tri-service.png'],
+    images: ['/og-tri-service.webp'],
   },
 };
 
