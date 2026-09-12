@@ -1,9 +1,10 @@
+import { withPageMetadata } from '@/lib/page-metadata';
 import type { Metadata } from 'next';
 import { AuthorityPage } from '@/components/authority-shell';
 const title = 'First SSB Attempt: A Practical Preparation Plan';
 const description =
   'Prepare for your first SSB with a manageable plan for instructions, reflection, communication and practice.';
-export const metadata: Metadata = {
+export const metadata: Metadata = withPageMetadata({
   title: `${title} | March Ahead Academy`,
   description,
   alternates: { canonical: '/guidance/first-ssb-attempt/' },
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
     type: 'article',
   },
   twitter: { card: 'summary_large_image', title, description },
-};
+});
 export default function Page() {
   return (
     <AuthorityPage

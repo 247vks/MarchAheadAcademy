@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { withPageMetadata } from '@/lib/page-metadata';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Download, ClipboardList, ArrowRight } from 'lucide-react';
@@ -18,11 +19,11 @@ export async function generateMetadata({
   const { slug } = await params;
   const item = worksheets.find((worksheet) => worksheet.slug === slug);
   if (!item) return {};
-  return {
+  return withPageMetadata({
     title: `${item.title} | Free PDF | March Ahead Academy`,
     description: item.description,
     alternates: { canonical: `/resources/${slug}/` },
-  };
+  });
 }
 export default async function WorksheetPage({
   params,

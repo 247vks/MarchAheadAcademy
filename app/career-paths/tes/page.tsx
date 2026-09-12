@@ -1,14 +1,15 @@
+import { withPageMetadata } from '@/lib/page-metadata';
 import type { Metadata } from 'next';
 import { AuthorityPage } from '@/components/authority-shell';
 
 const title = 'Army TES Entry: Eligibility, JEE Main, SSB & Preparation';
 const description = 'Understand the Indian Army Technical Entry Scheme after Class 12: PCM and JEE Main requirements, shortlisting, SSB, training and practical preparation.';
-export const metadata: Metadata = {
+export const metadata: Metadata = withPageMetadata({
   title,
   description,
   alternates: { canonical: '/career-paths/tes/' },
   openGraph: { title, description, url: '/career-paths/tes/' },
-};
+});
 
 export default function Page() {
   return (

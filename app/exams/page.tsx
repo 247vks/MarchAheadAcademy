@@ -1,3 +1,4 @@
+import { withPageMetadata } from '@/lib/page-metadata';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, GraduationCap } from 'lucide-react';
@@ -6,12 +7,12 @@ import { SiteFooter, SiteHeader } from '@/components/authority-shell';
 import { ExamComparison } from '@/components/decision-visuals';
 import { examHubGroups } from '@/lib/exam-guide-additions';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withPageMetadata({
   alternates: { canonical: '/exams' },
   title: 'Indian Defence Exams & Officer Entry Routes: NDA, CDS, AFCAT & More',
   description:
     'Explore NDA, CDS and AFCAT preparation, distinguish other officer-entry routes and Agniveer pathways, and find official recruitment sources.',
-};
+});
 const exams = [
   [
     'NDA & NA',

@@ -1,7 +1,8 @@
+import { withPageMetadata } from '@/lib/page-metadata';
 import type { Metadata } from 'next';
 import { SsbGuidePage } from '@/components/ssb-guide-page';
 import { psychologyGuides } from '@/lib/psychology-guides';
-export const metadata: Metadata = {
+export const metadata: Metadata = withPageMetadata({
   title:
     'Situation Reaction Test in SSB: Practice & Preparation | March Ahead Academy',
   description:
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
     url: '/selection/ssb/srt/',
     type: 'article',
   },
-};
+});
 export default function Page() {
   return <SsbGuidePage guide={psychologyGuides['srt']} />;
 }

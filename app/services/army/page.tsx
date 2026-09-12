@@ -1,11 +1,12 @@
+import { withPageMetadata } from '@/lib/page-metadata';
 import type { Metadata } from 'next';
 import { AuthorityPage } from '@/components/authority-shell';
-export const metadata: Metadata = {
+export const metadata: Metadata = withPageMetadata({
   alternates: { canonical: '/services/army' },
   title: 'Indian Army Careers | March Ahead Academy',
   description:
     'Explore officer, technical and Agniveer pathways in the Indian Army.',
-};
+});
 export default function Page() {
   return (
     <AuthorityPage

@@ -1,9 +1,10 @@
+import { withPageMetadata } from '@/lib/page-metadata';
 import type { Metadata } from 'next';
 import { AuthorityPage } from '@/components/authority-shell';
 const title = 'A Parent’s Guide to Supporting an NDA Aspirant';
 const description =
   'Support an NDA aspirant with realistic planning, useful questions and space for independent preparation. Practical guidance for parents from March Ahead Academy.';
-export const metadata: Metadata = {
+export const metadata: Metadata = withPageMetadata({
   title: `${title} | March Ahead Academy`,
   description,
   alternates: { canonical: '/guidance/parents-nda-aspirants/' },
@@ -14,7 +15,7 @@ export const metadata: Metadata = {
     type: 'article',
   },
   twitter: { card: 'summary_large_image', title, description },
-};
+});
 export default function Page() {
   return (
     <AuthorityPage

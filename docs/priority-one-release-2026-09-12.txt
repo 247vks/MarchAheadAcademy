@@ -1,0 +1,33 @@
+March Ahead Academy — priority-one audit release, 12 September 2026
+
+Implemented
+- Page-specific social metadata across static guides and worksheet landing pages.
+- Normalised Article URLs to match trailing-slash canonicals without changing routes.
+- Native keyboard skip link in the shared header.
+- Online coaching and appointment-only visits stated beside consultation choices.
+- Psychology FAQ links, distinct illustrative exercises, and profile-to-topic links.
+- Consent validation rejects future/non-finite/expired timestamps; active tabs recheck expiry.
+- Explicit consent-gated pageviews on client navigation and browser back.
+
+GA4 configuration
+In-app browser: MHA website stream 15728730548, property 552955525.
+Enhanced measurement > Page views > advanced > browser-history page changes
+disabled, saved and reopened to confirm on 12 September 2026. Initial config
+uses send_page_view:false; application sends consented page_view events.
+Other enhanced-measurement settings unchanged.
+Stream UI reported no data in the previous 48 hours. Local tests verify queued
+events and network blocking, not receipt in GA reporting. Live collection needs
+an actual consented visit and reporting verification; do not claim it confirmed.
+
+Still pending from the broader audit
+- Long-guide contents/CTA placement, current-section navigation and resource alignment.
+- Landmark restructuring beyond the verified skip-link improvement.
+- Repeatable mobile performance baseline and image transfer optimisation.
+- External profile consistency and sustained search measurement.
+- Commander Sharma's first-hand commentary and article review require his input.
+
+Verification
+Production build passed. Site-quality suite passed all 55 pages for metadata,
+local links, one H1 and overflow at 375/768/1440px, with keyboard bypass checks
+on home, TES and consultation. Psychology-cluster and consent suites passed,
+including client navigation/back, invalid timestamps and active-tab expiry.

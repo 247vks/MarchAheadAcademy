@@ -1,12 +1,13 @@
+import { withPageMetadata } from '@/lib/page-metadata';
 import type { Metadata } from 'next';
 import { AuthorityPage } from '@/components/authority-shell';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withPageMetadata({
   alternates: { canonical: '/career-paths/foundation' },
   title: 'Defence Career Foundation After Class 10 | March Ahead Academy',
   description:
     'Build informed subject, fitness and communication foundations before Indian defence entry windows open.',
-};
+});
 
 export default function FoundationPage() {
   return (

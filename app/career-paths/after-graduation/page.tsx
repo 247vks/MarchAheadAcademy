@@ -1,11 +1,12 @@
+import { withPageMetadata } from '@/lib/page-metadata';
 import type { Metadata } from 'next';
 import { AuthorityPage } from '@/components/authority-shell';
-export const metadata: Metadata = {
+export const metadata: Metadata = withPageMetadata({
   alternates: { canonical: '/career-paths/after-graduation' },
   title: 'Defence Careers After Graduation | March Ahead Academy',
   description:
     'Compare CDS, AFCAT, NCC and degree-linked officer entry routes.',
-};
+});
 export default function Page() {
   return (
     <AuthorityPage

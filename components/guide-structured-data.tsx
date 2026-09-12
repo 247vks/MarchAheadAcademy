@@ -21,7 +21,8 @@ export function GuideStructuredData({
   publishedAt?: string;
   breadcrumbs?: { name: string; href: string }[];
 }) {
-  const url = `${siteUrl}${path}`;
+  const canonicalPath = path === '/' ? '/' : `${path.replace(/\/$/, '')}/`;
+  const url = `${siteUrl}${canonicalPath}`;
   const graph: Record<string, unknown>[] = [
     {
       '@type': 'Article',

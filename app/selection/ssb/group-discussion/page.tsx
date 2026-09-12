@@ -1,12 +1,13 @@
+import { withPageMetadata } from '@/lib/page-metadata';
 import type { Metadata } from 'next';
 import { SsbGuidePage, type SsbGuideData } from '@/components/ssb-guide-page';
-export const metadata: Metadata = {
+export const metadata: Metadata = withPageMetadata({
   title:
     'SSB Group Discussion (GD): Topics & Preparation | March Ahead Academy',
   description:
     'Practise SSB group discussion with original topics, listening exercises, common mistakes and guidance from March Ahead Academy.',
   alternates: { canonical: '/selection/ssb/group-discussion/' },
-};
+});
 const guide: SsbGuideData = {
   currentHref: '/selection/ssb/group-discussion',
   eyebrow: 'SSB guide · Group Discussion',

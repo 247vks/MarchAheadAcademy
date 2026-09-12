@@ -1,15 +1,16 @@
+import { withPageMetadata } from '@/lib/page-metadata';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight, BookOpenCheck, ShieldCheck, Users } from 'lucide-react';
 import { SiteFooter, SiteHeader } from '@/components/authority-shell';
 import { ContactBand } from '@/components/contact-band';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withPageMetadata({
   alternates: { canonical: '/about' },
   title: 'About March Ahead Academy',
   description:
     'Why March Ahead Academy exists and how it approaches independent Indian defence career guidance.',
-};
+});
 
 const principles = [
   [

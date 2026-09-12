@@ -31,7 +31,7 @@ export const psychologyArticles = [
       },
       {
         title: 'A reflection exercise to use this week',
-        body: 'Write a short account of a real decision without consulting examples. Set it aside, then review it using the questions below. This is an academy-created learning exercise, not a test item or scoring tool.',
+        body: 'Make a three-column reflection note: situation, my contribution, and what I learned. Choose a real decision, such as dividing work on a college project or resolving a missed commitment. In the contribution column, separate what you did from what the team did. In the learning column, name one change you have actually made since. Set the note aside and explain the experience aloud later. This academy-created exercise is for reflection, not selection scoring.',
         points: [
           'Which statements describe something I actually did?',
           'Have I separated my contribution from the team’s work?',
@@ -79,6 +79,16 @@ export const psychologyArticles = [
         body: 'Preparation need not occupy every free hour. Take ordinary responsibilities seriously, follow through on commitments and reflect on how you handle disagreement or setbacks. These are worthwhile development goals in their own right, not activities to perform simply to produce an interview story. When discussing progress, use examples of what you changed rather than claiming a quality because you have learnt its definition.',
       },
       {
+        title: 'Try a three-session preparation log',
+        body: 'Use a notebook with four headings: fresh exercise, difficulty observed, next practice focus and what changed. For example, “I introduced a new problem halfway through my story” is an observation you can work with. Keep this log about your practice, not an explanation of a previous selection result.',
+        points: [
+          'Session 1: complete a fresh exercise independently and record one specific difficulty.',
+          'Session 2: use different material while focusing on that difficulty; retain both drafts.',
+          'Session 3: compare the drafts and record what became clearer and what still needs attention.',
+          'Choose the next focus from your own work rather than adding more practice simply to fill the log.',
+        ],
+      },
+      {
         title: 'Bring a specific question to coaching',
         body: 'Bring your preparation history and a small selection of original practice work. A question such as “My stories become unclear halfway through; how can I organise my thinking?” gives a mentor something useful to address. Ask for explanations and a practice priority, not a forecast of recommendation. Online one-on-one guidance at March Ahead Academy can be paced around your needs; in-person visits are by prior appointment.',
       },
@@ -108,7 +118,7 @@ export const psychologyArticles = [
       },
       {
         title: 'Practise the distinction with two separate sessions',
-        body: 'In one session, form an account from an unfamiliar image and discuss alternative interpretations with peers. In another, work independently on a fresh image and review your written sequence. Keep the objectives separate: listening and concise participation in the first; coherent expression in the second. These are learning exercises, not simulations of official test material, timings or scoring.',
+        body: 'Choose two ordinary photographs that you have not practised with before. For the first, write an interpretation independently, then discuss it with a peer. Ask each person to summarise the other’s interpretation before explaining a difference. For the second photograph, work alone and review whether the written sequence connects the situation, actions and outcome. Compare what you had to practise: listening and concise participation in the first session; coherent written expression in the second. These academy exercises illustrate preparation skills rather than official test timings or scoring.',
         points: [
           'Use fresh material rather than recalled selection images.',
           'Do not assume a fixed story opening is required.',
@@ -150,7 +160,7 @@ export const psychologyArticles = [
       },
       {
         title: 'A practical reset for scripted practice',
-        body: 'Choose one fresh prompt and write without consulting your answer collection. Underline anything included mainly because it sounds impressive. Ask whether removing it makes the response clearer. Keep one learning note, then move to new material next time. You are practising attention and expression, not trying to perfect a sentence for reuse.',
+        body: 'Try this academy-created prompt: “You realise you cannot meet a commitment you made to a project partner.” Write your own response before looking at past examples. Underline phrases included mainly because they sound impressive, then ask what practical information is missing: what the commitment involved, who needs to know, and what options remain. Do not treat these questions as a model answer. Repeat with a different everyday situation next time and check whether you address its details rather than reuse the same wording.',
         points: [
           'Does this address the prompt rather than my favourite theme?',
           'Are the actions realistic in the situation described?',

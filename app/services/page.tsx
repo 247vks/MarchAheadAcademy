@@ -1,15 +1,16 @@
+import { withPageMetadata } from '@/lib/page-metadata';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Anchor, ArrowRight, Mountain, Wind } from 'lucide-react';
 import { ContactBand } from '@/components/contact-band';
 import { SiteFooter, SiteHeader } from '@/components/authority-shell';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withPageMetadata({
   alternates: { canonical: '/services' },
   title: 'Indian Armed Forces Career Hubs | March Ahead Academy',
   description:
     'Compare career pathways across the Indian Army, Indian Navy and Indian Air Force.',
-};
+});
 const services = [
   [
     Mountain,

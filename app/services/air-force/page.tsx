@@ -1,11 +1,12 @@
+import { withPageMetadata } from '@/lib/page-metadata';
 import type { Metadata } from 'next';
 import { AuthorityPage } from '@/components/authority-shell';
-export const metadata: Metadata = {
+export const metadata: Metadata = withPageMetadata({
   alternates: { canonical: '/services/air-force' },
   title: 'Indian Air Force Careers | March Ahead Academy',
   description:
     'Explore Flying, Ground Duty, technical and Agniveervayu pathways.',
-};
+});
 export default function Page() {
   return (
     <AuthorityPage

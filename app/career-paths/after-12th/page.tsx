@@ -1,11 +1,12 @@
+import { withPageMetadata } from '@/lib/page-metadata';
 import type { Metadata } from 'next';
 import { AuthorityPage } from '@/components/authority-shell';
-export const metadata: Metadata = {
+export const metadata: Metadata = withPageMetadata({
   alternates: { canonical: '/career-paths/after-12th' },
   title: 'Defence Careers After Class 12 | March Ahead Academy',
   description:
     'Understand officer and other-rank pathways after Class 12 across the Indian Armed Forces.',
-};
+});
 export default function Page() {
   return (
     <AuthorityPage

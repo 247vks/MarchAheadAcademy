@@ -1,12 +1,13 @@
+import { withPageMetadata } from '@/lib/page-metadata';
 import type { Metadata } from 'next';
 import { examGuideAdditions } from '@/lib/exam-guide-additions';
 import { AuthorityPage } from '@/components/authority-shell';
-export const metadata: Metadata = {
+export const metadata: Metadata = withPageMetadata({
   alternates: { canonical: '/exams/nda' },
   title: 'NDA Exam Guide: Eligibility, Pattern & SSB | March Ahead Academy',
   description:
     'Understand NDA and Naval Academy eligibility, the UPSC exam pattern, official previous papers and the journey from written examination to SSB.',
-};
+});
 export default function Page() {
   return (
     <AuthorityPage

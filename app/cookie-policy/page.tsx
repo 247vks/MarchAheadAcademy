@@ -1,12 +1,13 @@
+import { withPageMetadata } from '@/lib/page-metadata';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { SiteHeader, SiteFooter } from '@/components/authority-shell';
-export const metadata: Metadata = {
+export const metadata: Metadata = withPageMetadata({
   title: 'Cookie Policy | March Ahead Academy',
   description:
     'How March Ahead Academy uses essential preference storage and optional Google Analytics, and how to change your choice.',
   alternates: { canonical: '/cookie-policy/' },
-};
+});
 export default function Page() {
   return (
     <main className="bg-white text-[#0a1e33]">

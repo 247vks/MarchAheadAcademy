@@ -1,0 +1,144 @@
+MARCH AHEAD ACADEMY — WEBSITE, VISIBILITY AND CONVERSION AUDIT
+12 September 2026
+
+SCOPE AND EVIDENCE
+Three specialist source reviews cover shared templates, consultation, resources,
+career/exam guides, psychology content, metadata and attribution. Existing tests
+passed on 55 content pages for H1 count, local link targets and overflow at
+375/768/1440px. A separate live crawl found no .md/.txt download links on 55
+sitemap pages. These are not a complete accessibility certification, security
+penetration test or Core Web Vitals measurement. No Lighthouse/mobile network
+benchmark or assistive-technology audit was completed in this review.
+
+Search Console and GA4 were inspected in the in-app browser on 12 September.
+The 28-day Search Console filter contained data for 5–9 September: 2 clicks,
+20 impressions. Only two queries were disclosed, insufficient for a reliable
+branded/non-branded split. Average position 9.3 must not be represented as a
+generic SSB ranking. GA4 last-seven-day baseline: 43 active users, 67 sessions,
+3 organic sessions, 4 consultation views. Not all visitors are prospects.
+Core Web Vitals report had no data. Four new psychology articles had no recorded
+crawl; indexing requests were accepted, not proof of indexing. Sitemap last
+read 11 September, success, 50 discovered pages. Keep this baseline distinct
+from subsequently deployed pages and newly configured contact tracking.
+
+PRIORITY 1 — NEXT IMPLEMENTATION RELEASE
+
+0. Analytics robustness — measurement/frontend specialist.
+   Source audit found no explicit SPA route page-view control/test; collection
+   currently depends on GA enhanced-history settings. Verify actual behaviour,
+   then implement consent-gated navigation tracking with no double counting.
+   Consent timestamp validation accepts future savedAt values, and a long-lived
+   tab lacks a timer/focus expiry check to disable an already loaded GA instance.
+   Add finite/nonfuture validation, expiry synchronisation and regression tests.
+   These are source-confirmed robustness gaps, not proof of current bad traffic.
+
+1. Consultation clarity — conversion/editorial specialist.
+   Evidence: app/consultation/page.tsx reaches contact choices without the
+   confirmed online / appointment-only statement used on one-on-one-coaching.
+   Add it beside contact options; explain the next step in plain language.
+   Do not invent fees, duration, response times or session-provider promises.
+   Acceptance: visible before contact options at 360px; no street address.
+
+2. Keyboard navigation and landmarks — accessibility/frontend specialist.
+   Evidence: shared SiteHeader has no skip link; several templates nest global
+   header/footer inside main. Add first-focus Skip to content with real targets;
+   review landmark structure rather than adding a nonfunctional anchor.
+   Acceptance: keyboard-only traversal on each template, visible focus,
+   no trap, working target and sensible landmarks. Then run automated a11y checks.
+
+3. Canonical/schema/social consistency — technical SEO specialist.
+   Evidence: GuideStructuredData concatenates supplied path; older guides pass
+   slashless paths while canonical metadata uses trailing slashes. Normalise
+   identifiers centrally without renaming URLs. Consultation inherits homepage
+   social metadata; extend per-page checks to every route.
+   Acceptance: one canonical per page, Article mainEntityOfPage matches it,
+   page-specific og:url/title/description, parsed JSON-LD across export.
+   Export audit counted 36 non-home pages inheriting homepage og:url.
+
+4. Psychology connections and usable examples — editorial specialist.
+   Link assessment, PPDT/TAT and repeater FAQ answers directly to their articles.
+   Give each article a distinct tool: practice log, comparison, or relevance
+   review. Label invented exercises illustrative; never imply real client data.
+   Profile should link to academy psychology guidance, not call it his authored
+   work. Remove repetitive editorial self-description, preserve material caveats.
+   Acceptance: contextual links work, exercises differ, attribution remains true.
+
+PRIORITY 2 — SHARED READING AND CONVERSION EXPERIENCE
+
+5. Long-guide navigation — UI/UX + frontend.
+   AuthorityPage renders long wrapping contents links and inserts coaching CTA
+   after section one. Use compact mobile contents, structured desktop list,
+   configurable CTA position after useful eligibility/process information and
+   shorter topic-specific wording. Keep anchor offsets and keyboard operation.
+   TES should begin with a dated closed-intake summary and scannable checks;
+   separate source inconsistencies from the main reading sequence.
+
+6. Navigation state and resources — frontend.
+   Add clear current-section styling with correct aria-current semantics.
+   Bottom-align resource action groups. Retain labelled PDF/HTML options.
+   Acceptance: all templates tested at mobile/tablet/desktop and 200% zoom.
+
+7. Performance and privacy verification — technical QA.
+   Establish repeatable mobile lab measurements for home, TES, SSB, consultation
+   and resources: LCP, CLS, interaction responsiveness, JS and image transfer.
+   No numeric performance verdict yet. Field data is currently insufficient.
+   Asset inventory includes several roughly 1.8–2.1 MB PNGs. Check actual
+   transfer and display sizes; create appropriately sized modern formats where
+   useful rather than assuming every source asset is downloaded on every page.
+   Verify contact_intent delivery after genuine consent without sending test
+   leads; distinguish phone/email/WhatsApp clicks from bookings. Recheck consent
+   withdrawal and query-string handling. Do not bypass consent for measurement.
+
+PRIORITY 3 — DISCOVERY AND AUTHORITY DEVELOPMENT
+
+8. Offer differentiation — strategy/editorial.
+   Competitor-owned pages checked 12 September:
+   https://ssbpsychprep.in/about
+   https://nofrillsacademy.com/
+   Both describe individual guidance; the former explicitly positions a former
+   SSB psychologist and describes concrete deliverables. These are competitors'
+   claims, not independent verification of quality/results/methodology.
+   Therefore one-on-one or ex-psychologist alone is not an exclusive USP.
+   Demonstrate the academy's actual method, relevant experience and candidate
+   usefulness. Do not copy competitor claims or invent reports/course packages.
+
+9. Entry coverage — domain researcher/editor.
+   Existing TES and NCC guides are substantive. TGC, SSC Tech, JAG and Navy
+   entries are named but lack equivalent dedicated depth. Next research one
+   graduate technical-entry guide with current official notices; no thin-page
+   batch. First correct destination wording where overview links imply depth
+   that does not exist. Each new guide must state scope and source date.
+
+10. External entity consistency — owner + outreach specialist.
+    Update-kit ready in docs/external-profile-update-kit.md. Directory edits
+    need owner login or a verified correction channel. Do not publish address,
+    invent hours, delete profiles or claim ownership without authority.
+    Pursue relevant genuine mentions; do not buy/manufacture endorsements.
+
+11. Measurement — SEO/analytics specialist.
+    GA4 and Search Console linked; contact_intent is configured as an interest
+    key event, contact_method as event-scoped dimension. Observe collection
+    and compare subsequent 28-day periods: nonbrand impressions, landing pages,
+    organic sessions and consented contact clicks. Indexing requests are not
+    rankings. Search-result discovery from this research tool is not Google
+    position tracking or an independent AI-recommendation metric.
+
+INPUT-DEPENDENT ITEMS
+- Commander Sharma's real explanations, authored/reviewed approval and dates.
+- Actual session deliverables, duration, fees and provider details.
+- Consented genuine testimonials/case studies and outcome evidence.
+- Directory owner access and any profile-removal decisions.
+- Confirm whether the dark homepage hero is an intentional exception to the
+  earlier white-background preference before a broad colour change.
+
+IMPLEMENTATION ORDER AND COMPLETION RULE
+First release items 0–4; second shared-template release items 5–7; then source-
+verified entry expansion and external work. Keep current architecture/URLs.
+Each release: review diff, build, link/schema/consent tests, visual/keyboard
+checks on affected templates, deployment and live verification. No work is
+called complete solely because a specialist proposed it.
+
+STATUS
+Audit and work plan prepared. Implementation recommendations above are not yet
+applied by this audit. Previously deployed fixes and measurement configuration
+remain in place. No new website deployment or directory changes in this review.

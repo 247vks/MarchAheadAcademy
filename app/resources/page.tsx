@@ -1,15 +1,16 @@
+import { withPageMetadata } from '@/lib/page-metadata';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Download, ArrowRight } from 'lucide-react';
 import { SiteHeader, SiteFooter } from '@/components/authority-shell';
 import { TopicIcon } from '@/components/topic-icon';
 import resources from './worksheets.json';
-export const metadata: Metadata = {
+export const metadata: Metadata = withPageMetadata({
   title: 'Free Defence Preparation Worksheets | March Ahead Academy',
   description:
     'Explore free personal interview, Self Description, group discussion and NDA preparation worksheets. Read the guidance, download a branded PDF or print a worksheet.',
   alternates: { canonical: '/resources/' },
-};
+});
 export default function Page() {
   return (
     <main className="min-h-screen bg-white text-[#0a1e33]">

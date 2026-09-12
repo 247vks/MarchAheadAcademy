@@ -1,14 +1,15 @@
+import { withPageMetadata } from '@/lib/page-metadata';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ExternalLink, Radio } from 'lucide-react';
 import { SiteFooter, SiteHeader } from '@/components/authority-shell';
 import { ContactBand } from '@/components/contact-band';
-export const metadata: Metadata = {
+export const metadata: Metadata = withPageMetadata({
   alternates: { canonical: '/notifications' },
   title: 'Official Defence Recruitment Sources | March Ahead Academy',
   description:
     'Find official Indian Defence recruitment portals for current notices, application dates and results.',
-};
+});
 const sources = [
   [
     'UPSC active examinations',

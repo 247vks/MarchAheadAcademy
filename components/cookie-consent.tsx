@@ -2,11 +2,14 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Cookie, X } from 'lucide-react';
 
 const key = 'maa-cookie-consent-v1';
 const gaId = 'G-PP07C1HDNY';
 let analyticsAllowedUntil = 0;
+const lifetime = 180 * 86400000;
+let lastPage = '';
 type Choice = { analytics: boolean; savedAt: number };
 type AnalyticsWindow = Window & {
   dataLayer?: unknown[];
@@ -20,7 +23,9 @@ function readChoice(): Choice | null {
     return value &&
       typeof value.analytics === 'boolean' &&
       typeof value.savedAt === 'number' &&
-      Date.now() - value.savedAt < 180 * 86400000
+      Number.isFinite(value.savedAt) &&
+      Date.now() >= value.savedAt &&
+      Date.now() - value.savedAt < lifetime
       ? value
       : null;
   } catch {
@@ -30,6 +35,7 @@ function readChoice(): Choice | null {
 
 function disableAnalytics() {
   analyticsAllowedUntil = 0;
+  lastPage = '';
   const w = window as unknown as AnalyticsWindow;
   w[`ga-disable-${gaId}`] = true;
   document.getElementById('maa-ga-loader')?.remove();
@@ -44,10 +50,8 @@ function disableAnalytics() {
   }
 }
 
-function enableAnalytics() {
-  analyticsAllowedUntil = readChoice()?.savedAt
-    ? readChoice()!.savedAt + 180 * 86400000
-    : Date.now() + 180 * 86400000;
+function enableAnalytics(savedAt: number) {
+  analyticsAllowedUntil = savedAt + lifetime;
   const w = window as unknown as AnalyticsWindow;
   w[`ga-disable-${gaId}`] = false;
   if (document.getElementById('maa-ga-loader')) return;
@@ -63,6 +67,9 @@ function enableAnalytics() {
   });
   w.gtag('js', new Date());
   w.gtag('config', gaId, {
+    // GA4 stream enhanced-measurement history pageviews must also be disabled.
+    // Route changes are measured explicitly below, after consent only.
+    send_page_view: false,
     page_location: location.origin + location.pathname,
     allow_google_signals: false,
     allow_ad_personalization_signals: false,
@@ -72,6 +79,14 @@ function enableAnalytics() {
   script.async = true;
   script.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`;
   document.head.appendChild(script);
+}
+
+function trackPageView() {
+  const w = window as unknown as AnalyticsWindow;
+  const url = location.origin + location.pathname;
+  if (Date.now() >= analyticsAllowedUntil || !w.gtag || w[`ga-disable-${gaId}`] || lastPage === url) return;
+  lastPage = url;
+  w.gtag('event', 'page_view', { page_location: url, page_title: document.title });
 }
 
 function trackContactIntent(event: MouseEvent) {
@@ -95,6 +110,7 @@ function trackContactIntent(event: MouseEvent) {
 }
 
 export function CookieConsent() {
+  const pathname = usePathname();
   const [ready, setReady] = useState(false);
   const [choice, setChoice] = useState<Choice | null>(null);
   const [analytics, setAnalytics] = useState(false);
@@ -104,7 +120,7 @@ export function CookieConsent() {
       const stored = readChoice();
       setChoice(stored);
       setAnalytics(stored?.analytics ?? false);
-      if (stored?.analytics) enableAnalytics();
+      if (stored?.analytics) enableAnalytics(stored.savedAt);
       else disableAnalytics();
       setReady(true);
     };
@@ -124,6 +140,30 @@ export function CookieConsent() {
       document.removeEventListener('click', trackContactIntent, true);
     };
   }, []);
+  useEffect(() => {
+    let timer: number;
+    const check = () => {
+      window.clearTimeout(timer);
+      if (!choice) return;
+      if (Date.now() < choice.savedAt || Date.now() - choice.savedAt >= lifetime) {
+        disableAnalytics();
+        setChoice(null);
+        setAnalytics(false);
+      } else {
+        timer = window.setTimeout(check, Math.min(2147483647, choice.savedAt + lifetime - Date.now()));
+      }
+    };
+    // Cap timer delay to avoid the browser's signed 32-bit timeout overflow.
+    check();
+    window.addEventListener('focus', check);
+    document.addEventListener('visibilitychange', check);
+    return () => {
+      window.clearTimeout(timer);
+      window.removeEventListener('focus', check);
+      document.removeEventListener('visibilitychange', check);
+    };
+  }, [choice]);
+  useEffect(() => { if (choice?.analytics) trackPageView(); }, [pathname, choice]);
   function save(allowed: boolean) {
     const next = { analytics: allowed, savedAt: Date.now() };
     try {
@@ -135,7 +175,7 @@ export function CookieConsent() {
     setChoice(next);
     setAnalytics(allowed);
     dialog.current?.close();
-    if (allowed) enableAnalytics();
+    if (allowed) enableAnalytics(next.savedAt);
     else disableAnalytics();
     if (withdrawing) location.reload();
   }

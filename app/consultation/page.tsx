@@ -1,3 +1,4 @@
+import { withPageMetadata } from '@/lib/page-metadata';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import {
@@ -12,12 +13,12 @@ import {
   GraduationCap,
 } from 'lucide-react';
 import { SiteHeader, SiteFooter } from '@/components/authority-shell';
-export const metadata: Metadata = {
+export const metadata: Metadata = withPageMetadata({
   title: 'Book a Defence Career Consultation | March Ahead Academy',
   description:
     'Explore one-on-one defence career and SSB coaching at March Ahead Academy, personalised to your needs and learning pace. Book a consultation.',
   alternates: { canonical: '/consultation/' },
-};
+});
 const whatsapp =
   'https://wa.me/919820096800?text=' +
   encodeURIComponent(
@@ -38,7 +39,11 @@ export default function Page() {
           about career routes, written examinations or SSB, and we’ll discuss
           your goals, current preparation and areas where you need support.
         </p>
-        <div className="mt-8 grid gap-3 sm:grid-cols-3">
+        <p className="mt-5 text-base font-semibold leading-7 text-[#30471f]">
+          Online coaching available. In-person visits are by prior appointment
+          only.
+        </p>
+        <div className="mt-6 grid gap-3 sm:grid-cols-3">
           <a
             href={whatsapp}
             target="_blank"

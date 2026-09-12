@@ -1,12 +1,13 @@
+import { withPageMetadata } from '@/lib/page-metadata';
 import type { Metadata } from 'next';
 import { SsbGuidePage, type SsbGuideData } from '@/components/ssb-guide-page';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withPageMetadata({
   alternates: { canonical: '/selection/ssb' },
   title: 'SSB Interview: Stages, Tests & Ethical Preparation',
   description:
     'Understand SSB and AFSB Stage I, psychology tests, group testing, personal interview, conference, medical examination and ethical preparation.',
-};
+});
 
 const guide: SsbGuideData = {
   currentHref: '/selection/ssb',

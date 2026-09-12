@@ -1,3 +1,4 @@
+import { withPageMetadata } from '@/lib/page-metadata';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import {
@@ -17,7 +18,7 @@ import { ContactBand } from '@/components/contact-band';
 const title = 'One-on-One SSB Coaching by a Former SSB Psychologist';
 const description =
   'Personalised SSB coaching at March Ahead Academy, guided by Commander Sharma, a former SSB psychologist. Develop self-awareness, communication and a focused preparation plan.';
-export const metadata: Metadata = {
+export const metadata: Metadata = withPageMetadata({
   title: `${title} | March Ahead Academy`,
   description,
   alternates: { canonical: '/ssb-coaching/' },
@@ -34,7 +35,7 @@ export const metadata: Metadata = {
     description,
     images: ['/og-tri-service.png'],
   },
-};
+});
 
 export default function Page() {
   return (

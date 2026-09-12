@@ -1,3 +1,4 @@
+import { withPageMetadata } from '@/lib/page-metadata';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { GraduationCap, ClipboardCheck, Route, ArrowRight, Compass, CircleHelp } from 'lucide-react';
@@ -12,7 +13,7 @@ const description =
   'Understand Army NCC Special Entry, how eligibility differs from shortlisting, documents to organise and SSB preparation. Includes a dated 125th course reference.';
 const notice =
   'https://www.joinindianarmy.nic.in/writereaddata/Portal/NotificationPDF/NOTIFICATION_FOR_NCC_SPL_ENTRY_125_MEN_COURSE_APR_2027.pdf';
-export const metadata: Metadata = {
+export const metadata: Metadata = withPageMetadata({
   title,
   description,
   alternates: { canonical: '/career-paths/ncc-special-entry/' },
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
     description,
     images: ['/og-tri-service.png'],
   },
-};
+});
 
 export default function Page() {
   return (

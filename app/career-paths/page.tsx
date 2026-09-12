@@ -1,3 +1,4 @@
+import { withPageMetadata } from '@/lib/page-metadata';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
@@ -5,12 +6,12 @@ import { SiteFooter, SiteHeader } from '@/components/authority-shell';
 import { ContactBand } from '@/components/contact-band';
 import { CareerPathFinder } from '@/components/career-path-finder';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withPageMetadata({
   alternates: { canonical: '/career-paths' },
   title: 'Defence Career Path Finder | March Ahead Academy',
   description:
     'Explore Indian Army, Navy and Air Force entry routes by your current education stage.',
-};
+});
 const paths = [
   [
     'After Class 10',

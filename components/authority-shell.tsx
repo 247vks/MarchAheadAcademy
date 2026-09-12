@@ -37,6 +37,13 @@ export function SiteHeader() {
   ];
   return (
     <>
+      <a
+        href="#page-content"
+        style={{ position: 'fixed' }}
+        className="sr-only fixed left-4 top-4 z-[100] bg-white px-5 py-3 font-bold text-[#071f3d] shadow-lg focus:not-sr-only"
+      >
+        Skip to content
+      </a>
       <div className="bg-[#061a30] px-5 py-2 text-center text-[10px] font-bold tracking-[.15em] text-[#d9e8f2] uppercase">
         Independent guidance · Official notification always controls
       </div>
@@ -120,6 +127,7 @@ export function SiteHeader() {
           <span />
         </div>
       </header>
+      <div id="page-content" tabIndex={-1} className="scroll-mt-24 outline-none" />
     </>
   );
 }

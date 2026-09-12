@@ -1,3 +1,4 @@
+import { withPageMetadata } from '@/lib/page-metadata';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import {
@@ -21,7 +22,7 @@ import {
 const title = 'SSB & Defence Career Knowledge Centre | March Ahead Academy';
 const description =
   'Explore SSB psychology, interview preparation, NDA, CDS, AFCAT, service careers and eligibility. Find practical guides and free preparation worksheets.';
-export const metadata: Metadata = {
+export const metadata: Metadata = withPageMetadata({
   title,
   description,
   alternates: { canonical: '/knowledge-centre/' },
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
     description,
     images: ['/og-tri-service.png'],
   },
-};
+});
 
 const categories = [
   {

@@ -1,13 +1,14 @@
+import { withPageMetadata } from '@/lib/page-metadata';
 import type { Metadata } from 'next';
 import { AuthorityPage } from '@/components/authority-shell';
 import { EligibilityChain } from '@/components/decision-visuals';
-export const metadata: Metadata = {
+export const metadata: Metadata = withPageMetadata({
   alternates: { canonical: '/eligibility' },
   title:
     'Indian Defence Eligibility: Age, Education & Medical Standards | March Ahead Academy',
   description:
     'Learn how to check age, Class 12 subjects, degree, medical and physical conditions for Indian Army, Navy and Air Force entries using official notices.',
-};
+});
 export default function Page() {
   return (
     <AuthorityPage

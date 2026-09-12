@@ -1,3 +1,4 @@
+import { withPageMetadata } from '@/lib/page-metadata';
 import type { Metadata } from 'next';
 import { siteUrl } from '@/lib/site';
 import Link from 'next/link';
@@ -17,12 +18,12 @@ import {
 import { ContactBand } from '@/components/contact-band';
 import { SiteFooter, SiteHeader } from '@/components/authority-shell';
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withPageMetadata({
   alternates: { canonical: '/authors/cdr-sulakshan-kumar-sharma' },
   title: 'Commander Sulakshan Kumar Sharma (Retd) | March Ahead Academy',
   description:
     'Qualifications and professional experience behind Commander Sulakshan Kumar Sharma’s defence-career and SSB guidance at March Ahead Academy.',
-};
+});
 
 const qualifications = [
   'MSc Psychology — First Class',
@@ -265,15 +266,15 @@ export default function Page() {
 
         <section className="mt-16 bg-[#071f3d] p-7 text-white md:p-9">
           <p className="text-xs font-bold tracking-[.15em] text-[#9bd1ea] uppercase">
-            Explore his subject area
+            Explore the academy’s guidance
           </p>
           <h2 className="mt-3 font-heading text-3xl">
             Ethical SSB preparation
           </h2>
           <p className="mt-3 max-w-3xl text-sm leading-7 text-slate-300">
-            The SSB library distinguishes official process information from
-            academy-created illustrative practice and never promises
-            confidential methods or selection.
+            Understand the selection process, explore psychological-test
+            preparation and use practical reflection exercises to identify your
+            next preparation priority.
           </p>
           <Link
             href="/selection/ssb"
@@ -281,6 +282,17 @@ export default function Page() {
           >
             Open the SSB guide <ArrowRight size={15} />
           </Link>
+          <div className="mt-5 flex flex-wrap gap-x-6 gap-y-3">
+            {[
+              ['SSB Psychology', '/ssb-psychology/'],
+              ['Understanding psychological assessment', '/ssb-psychology/what-does-an-ssb-psychologist-assess/'],
+              ['Free preparation worksheets', '/resources/'],
+            ].map(([label, href]) => (
+              <Link key={href} href={href} className="inline-flex items-center gap-2 text-sm font-semibold text-[#9bd1ea] underline decoration-[#9bd1ea]/50 underline-offset-4 hover:text-white">
+                {label} <ArrowRight size={15} aria-hidden="true" />
+              </Link>
+            ))}
+          </div>
         </section>
       </section>
       <ContactBand />

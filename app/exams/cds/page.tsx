@@ -1,12 +1,13 @@
+import { withPageMetadata } from '@/lib/page-metadata';
 import type { Metadata } from 'next';
 import { examGuideAdditions } from '@/lib/exam-guide-additions';
 import { AuthorityPage } from '@/components/authority-shell';
-export const metadata: Metadata = {
+export const metadata: Metadata = withPageMetadata({
   alternates: { canonical: '/exams/cds' },
   title: 'CDS Exam Guide: IMA, INA, AFA & OTA | March Ahead Academy',
   description:
     'Compare CDS and CDSE routes for IMA, INA, AFA and OTA, including eligibility, written papers, SSB or AFSB and official UPSC sources.',
-};
+});
 export default function Page() {
   return (
     <AuthorityPage

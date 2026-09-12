@@ -7,9 +7,9 @@ const root = path.resolve('out');
 const server = http.createServer((req, res) => {
   let file = path.join(root, decodeURIComponent(new URL(req.url, 'http://localhost').pathname));
   if (!file.startsWith(root + path.sep) && file !== root) { res.writeHead(403).end(); return; }
-  if (fs.existsSync(file) && fs.statSync(file).isDirectory()) file = path.join(file, 'index.html');
+  if (fs.existsSync(file) && fs.statSync(file).isDirectory()) file = path.join(file, req.headers.rsc === '1' ? 'index.txt' : 'index.html');
   if (!fs.existsSync(file)) { res.writeHead(404).end(); return; }
-  const type = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css' }[path.extname(file)];
+  const type = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.txt': 'text/x-component' }[path.extname(file)];
   if (type) res.setHeader('Content-Type', type);
   fs.createReadStream(file).pipe(res);
 });
@@ -35,7 +35,7 @@ const server = http.createServer((req, res) => {
         a.firstElementChild.click();
         a.remove();
       }
-      return (window.dataLayer || []).filter(entry => entry[0] === 'event').map(entry => Array.from(entry));
+      return (window.dataLayer || []).filter(entry => entry[0] === 'event' && entry[1] === 'contact_intent').map(entry => Array.from(entry));
     });
     await page.goto(url);
     await page.getByRole('button', { name: 'Accept All', exact: true }).waitFor({ state: 'visible' });
@@ -51,6 +51,16 @@ const server = http.createServer((req, res) => {
     await page.waitForFunction(() => !!document.getElementById('maa-ga-loader'));
     await page.waitForLoadState('networkidle');
     assert.equal(analyticsRequests, 1, 'Analytics loaded only on acceptance');
+    const views = () => page.evaluate(() => (window.dataLayer || []).filter(e => e[0] === 'event' && e[1] === 'page_view').map(e => e[2].page_location));
+    assert.deepEqual(await views(), [url + '/'], 'Exactly one initial consented pageview');
+    await page.locator('a[href="/consultation"], a[href="/consultation/"]').first().click();
+    await page.waitForURL(/\/consultation\/?$/);
+    await page.waitForFunction(() => (window.dataLayer || []).filter(e => e[1] === 'page_view').length === 2);
+    assert.deepEqual(await views(), [url + '/', page.url()]);
+    await page.goBack();
+    await page.waitForURL(url + '/');
+    await page.waitForFunction(() => (window.dataLayer || []).filter(e => e[1] === 'page_view').length === 3);
+    assert.equal(analyticsRequests, 1, 'Client navigation does not reload analytics');
     const events = await exerciseLinks();
     assert.equal(events.length, 3, 'Exactly one event for each contact link, none for internal navigation');
     assert.deepEqual(events.map(e => e[1]), ['contact_intent', 'contact_intent', 'contact_intent']);
@@ -71,6 +81,19 @@ const server = http.createServer((req, res) => {
     assert.ok(box.x >= 0 && box.x + box.width <= 375, 'Dialog fits mobile viewport');
     await page.keyboard.press('Escape');
     assert.equal(await page.getByRole('dialog').isVisible(), false);
+    for (const savedAt of [Date.now() + 86400000, Date.now() - 181 * 86400000, 'not-a-number']) {
+      await page.evaluate(savedAt => localStorage.setItem('maa-cookie-consent-v1', JSON.stringify({ analytics: true, savedAt })), savedAt);
+      await page.reload();
+      await page.getByRole('button', { name: 'Accept All', exact: true }).waitFor();
+      assert.equal(await page.locator('#maa-ga-loader').count(), 0, 'Invalid/future/expired consent does not load GA');
+    }
+    await page.evaluate(() => localStorage.setItem('maa-cookie-consent-v1', JSON.stringify({ analytics: true, savedAt: Date.now() - 180 * 86400000 + 3000 })));
+    await page.reload();
+    await page.waitForFunction(() => !!document.getElementById('maa-ga-loader'));
+    await page.getByRole('button', { name: 'Accept All', exact: true }).waitFor({ timeout: 10000 });
+    assert.equal(await page.locator('#maa-ga-loader').count(), 0, 'Expiry disables analytics without navigation');
+    const beforeExpiredClick = (await exerciseLinks()).length;
+    assert.equal((await exerciseLinks()).length, beforeExpiredClick, 'No contact events after expiry');
     console.log('PASS: initial blocking, rejection persistence, opt-in, withdrawal, cookie deletion, mobile dialog and Escape.');
   } finally { await browser.close(); server.close(); }
 })().catch(e => { console.error(e); server.close(); process.exitCode = 1; });

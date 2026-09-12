@@ -1,12 +1,13 @@
+import { withPageMetadata } from '@/lib/page-metadata';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { SiteHeader, SiteFooter } from '@/components/authority-shell';
-export const metadata: Metadata = {
+export const metadata: Metadata = withPageMetadata({
   title: 'Privacy Policy | March Ahead Academy',
   description:
     'Information about enquiries, optional analytics and privacy choices on the March Ahead Academy website.',
   alternates: { canonical: '/privacy-policy/' },
-};
+});
 export default function Page() {
   return (
     <main className="bg-white text-[#0a1e33]">

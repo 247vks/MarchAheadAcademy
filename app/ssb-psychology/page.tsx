@@ -1,3 +1,4 @@
+import { withPageMetadata } from '@/lib/page-metadata';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { psychologyArticles } from '@/lib/psychology-articles';
@@ -21,7 +22,7 @@ import {
 const title = 'SSB Psychology Tests: TAT, WAT, SRT & Self Description';
 const description =
   'Understand SSB psychology, how it fits into officer selection, and where to start with TAT, WAT, SRT and Self Description. Explore focused preparation guides.';
-export const metadata: Metadata = {
+export const metadata: Metadata = withPageMetadata({
   title,
   description,
   alternates: { canonical: '/ssb-psychology/' },
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
     description,
     images: ['/og-tri-service.png'],
   },
-};
+});
 const tests = [
   {
     title: 'TAT: Thematic Apperception Test',
@@ -72,10 +73,14 @@ const faqs = [
   },
   {
     q: 'What does an SSB psychologist assess?',
+    href: '/ssb-psychology/what-does-an-ssb-psychologist-assess/',
+    linkLabel: 'Understand psychological assessment',
     a: 'The Indian Air Force describes selection as an assessment of officer-like qualities and trainability through the psychologist, interviewing officer and group testing officer. That public description is a useful starting point; it is not a response-by-response scoring key.',
   },
   {
     q: 'Are TAT and PPDT the same?',
+    href: '/ssb-psychology/ppdt-vs-tat/',
+    linkLabel: 'Compare PPDT and TAT preparation',
     a: 'No. Keep the Stage I picture-perception and discussion exercise separate from the TAT psychology guide. Similar-looking picture prompts should not lead you to treat the instructions or purpose of two different activities as interchangeable.',
   },
   {
@@ -84,10 +89,14 @@ const faqs = [
   },
   {
     q: 'Should I memorise answers for psychology tests?',
+    href: '/ssb-psychology/memorised-ssb-psychology-answers/',
+    linkLabel: 'Move beyond memorised responses',
     a: 'Our preparation approach is to understand the exercise and practise expressing your own thinking. Memorised answers can distract you from the actual prompt. We do not offer a set of guaranteed responses or a formula for recommendation.',
   },
   {
     q: 'Where should a first-time candidate or repeater begin?',
+    href: '/ssb-psychology/psychology-preparation-for-repeaters/',
+    linkLabel: 'Plan a preparation reset after an attempt',
     a: 'Start with the overview here, then choose the preparation guide for a routine. First-time candidates can build familiarity one exercise at a time. Repeaters can identify a specific preparation habit to change without assuming they know the board’s reason for an earlier outcome.',
   },
 ];
@@ -272,10 +281,15 @@ export default function Page() {
             Common questions about SSB psychology
           </h2>
           <div className="mt-5 space-y-5">
-            {faqs.map(({ q, a }) => (
+            {faqs.map(({ q, a, href, linkLabel }) => (
               <div key={q} className="border-b border-[#d8e1dd] pb-5">
                 <h3 className="text-lg font-semibold">{q}</h3>
                 <p className="mt-2 leading-8 text-[#536371]">{a}</p>
+                {href && (
+                  <Link href={href} className="text-link mt-3 inline-flex items-center gap-2">
+                    {linkLabel} <ArrowRight size={16} aria-hidden="true" />
+                  </Link>
+                )}
               </div>
             ))}
           </div>
