@@ -283,12 +283,6 @@ export function SiteFooter({
           aria-label="Trust and organisation"
         >
           <strong className="text-white">March Ahead Academy</strong>
-          <Link className="text-link dark-text-link" href="/privacy-policy/">
-            Privacy Policy
-          </Link>
-          <Link className="text-link dark-text-link" href="/cookie-policy/">
-            Cookie Policy
-          </Link>
           <Link className="text-link dark-text-link" href="/consultation">
             Book a consultation
           </Link>
@@ -310,6 +304,13 @@ export function SiteFooter({
           >
             Editorial standards
           </Link>
+        </nav>
+      </div>
+      <div className="mx-auto mt-8 flex max-w-6xl flex-wrap items-center justify-between gap-x-6 gap-y-2 border-t border-white/15 pt-4 text-xs text-slate-300">
+        <p>© {new Date().getFullYear()} March Ahead Academy</p>
+        <nav aria-label="Policies" className="flex flex-wrap items-center gap-x-5 gap-y-2">
+          <Link className="inline-flex min-h-11 items-center underline-offset-4 transition hover:text-white hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white" href="/privacy-policy/">Privacy Policy</Link>
+          <Link className="inline-flex min-h-11 items-center underline-offset-4 transition hover:text-white hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white" href="/cookie-policy/">Cookie Policy</Link>
         </nav>
       </div>
     </footer>

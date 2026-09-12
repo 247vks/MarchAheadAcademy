@@ -36,6 +36,12 @@ const server = http.createServer((req, res) => {
       await page.goto(`http://127.0.0.1:${server.address().port}${route}`, { waitUntil: 'load' });
       await page.evaluate(() => document.fonts.ready);
       if (await page.locator('h1').count() !== 1) failures.push(`${route}: expected one H1`);
+      const footer = page.locator('footer');
+      if (await footer.count()) {
+        const policies = footer.getByRole('navigation', { name: 'Policies', exact: true });
+        if (await policies.locator('a').count() !== 2) failures.push(`${route}: expected two links in the separate policy row`);
+        if (await footer.getByRole('navigation', { name: 'Trust and organisation', exact: true }).locator('a[href*="policy"]').count()) failures.push(`${route}: policy links should not compete with main footer navigation`);
+      }
       if (route === '/ssb-coaching/') {
         const summary = page.locator('section[aria-labelledby="coaching-summary"]');
         if (await summary.locator('dt').count() !== 8) failures.push('Coaching: expected eight service facts');
