@@ -101,6 +101,12 @@ const server = http.createServer((req, res) => {
         await page.setViewportSize({ width, height: 900 });
         await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
         if (route === '/') {
+          const eventFigure = page.locator('section[aria-labelledby="academy-guidance"] figure');
+          if (await eventFigure.locator('time[datetime="2025-07-26"]').count() !== 1) failures.push('Home: guidance photograph needs the confirmed event date');
+          const eventImage = eventFigure.locator('img');
+          if (!(await eventImage.getAttribute('src')).endsWith('.webp')) failures.push('Home: event photograph must use WebP');
+          const frame = await eventImage.boundingBox();
+          if (Math.abs(frame.width / frame.height - 1280 / 960) > 0.01) failures.push(`Home: event photograph must retain its full aspect ratio at ${width}px`);
           const preparationWidth = await page.locator('#preparation-heading').evaluate(heading => {
             const intro = heading.parentElement;
             const section = intro.parentElement;

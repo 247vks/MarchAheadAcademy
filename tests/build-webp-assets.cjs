@@ -2,14 +2,15 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const sharp = require('sharp');
-const files = ['og.png', 'og-tri-service.png', 'aspirant-guidance-banner.png', ...['learn', 'lead', 'prepare', 'communicate', 'train', 'serve'].map(name => `gallery/${name}.png`)];
+const files = ['og.png', 'og-tri-service.png', 'aspirant-guidance-banner.png', ...['learn', 'lead', 'prepare', 'communicate', 'train', 'serve'].map(name => `gallery/${name}.png`), 'events/mumbai-engineering-college-guidance-2025-07-26.jpeg'];
 (async () => {
   let before = 0, after = 0;
   for (const file of files) {
     const archived = path.join('assets/image-originals', file);
     const source = fs.existsSync(archived) ? archived : path.join('public', file);
-    const destination = path.join('public', file.replace(/\.png$/, '.webp'));
-    let pipeline = sharp(source);
+    const destination = path.join('public', file.replace(/\.(png|jpe?g)$/, '.webp'));
+    fs.mkdirSync(path.dirname(destination), { recursive: true });
+    let pipeline = sharp(source).rotate();
     if (file === 'aspirant-guidance-banner.png') pipeline = pipeline.resize({ width: 1440, withoutEnlargement: true });
     await pipeline.webp({ quality: file.startsWith('og') ? 90 : 82, effort: 6 }).toFile(destination);
     const sourceBytes = fs.statSync(source).size, outputBytes = fs.statSync(destination).size;

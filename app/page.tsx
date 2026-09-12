@@ -533,6 +533,23 @@ export default function Home() {
               Explore the Knowledge Centre →
             </Link>
           </div>
+          <figure className="mt-8 grid items-center gap-6 border border-[#d8e1dd] bg-white p-4 sm:p-6 lg:grid-cols-[minmax(0,1.7fr)_minmax(0,1fr)]">
+            <Image
+              src="/events/mumbai-engineering-college-guidance-2025-07-26.webp"
+              alt="Group photograph from a guidance session at an engineering college in Mumbai."
+              width={1280}
+              height={960}
+              unoptimized
+              className="h-auto w-full"
+              sizes="(min-width: 1024px) 60vw, 100vw"
+            />
+            <figcaption>
+              <p className="section-kicker">Guidance in the community</p>
+              <h3 className="mt-3 font-heading text-2xl sm:text-3xl">Career guidance in Mumbai</h3>
+              <p className="mt-4 leading-7 text-[#536371]">Career guidance session at an engineering college in Mumbai.</p>
+              <p className="mt-3 text-sm font-semibold text-[#30471f]"><time dateTime="2025-07-26">26 July 2025</time></p>
+            </figcaption>
+          </figure>
           <div className="mt-6 grid gap-5 md:grid-cols-3">
             {[
               {
