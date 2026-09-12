@@ -196,7 +196,7 @@ export default function Page() {
               href="/authors/cdr-sulakshan-kumar-sharma/"
               className="text-link"
             >
-              Cdr Sharma’s experience in teaching, military service and SSB
+              Commander Sharma’s experience in teaching, military service and SSB
               psychology
             </Link>
             . Individual attention supports preparation; it does not guarantee

@@ -222,7 +222,7 @@ export default function KnowledgeCentrePage() {
             Start with our psychology hub for preparation routines,
             self-reflection and guidance for repeat candidates. Then explore
             TAT, WAT, SRT and Self Description individually. March Ahead
-            Academy’s approach is informed by Cdr Sharma’s first-hand SSB
+            Academy’s approach is informed by Commander Sharma’s first-hand SSB
             psychology experience.
           </p>
           <div className="mt-5 flex flex-wrap gap-x-7 gap-y-4">
@@ -237,7 +237,7 @@ export default function KnowledgeCentrePage() {
               className="text-link"
               href="/authors/cdr-sulakshan-kumar-sharma/"
             >
-              Meet Cdr Sulakshan Kumar Sharma (Retd.)
+              Meet Commander Sulakshan Kumar Sharma (Retd.)
             </Link>
           </div>
         </aside>

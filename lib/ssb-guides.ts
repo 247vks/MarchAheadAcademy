@@ -160,7 +160,7 @@ export const ssbGuides: Record<string, SsbGuideData> = {
       },
       {
         title: 'Turn reflection into a practical next step',
-        body: 'Choose one aspect of your preparation to discuss with a mentor: a rushed response, an unclear explanation or a responsibility you find difficult to describe. Bring your original work so feedback can focus on your thinking and expression. Cdr Sharma’s SSB psychology experience informs the academy’s emphasis on authentic reflection.',
+        body: 'Choose one aspect of your preparation to discuss with a mentor: a rushed response, an unclear explanation or a responsibility you find difficult to describe. Bring your original work so feedback can focus on your thinking and expression. Commander Sharma’s SSB psychology experience informs the academy’s emphasis on authentic reflection.',
       },
     ],
     exercise: {

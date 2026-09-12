@@ -189,7 +189,7 @@ export default function Page() {
             Relevant experience behind the academy
           </h2>
           <p className="mt-4 leading-8 text-[#536371]">
-            March Ahead Academy is led by Cdr Sulakshan Kumar Sharma (Retd), an
+            March Ahead Academy is led by Commander Sulakshan Kumar Sharma (Retd), an
             Indian Navy veteran and former Senior Service Psychologist at the
             Naval Selection Centre, Bangalore. His background includes 32 years
             of military service and 3 years of SSB psychologist experience.
@@ -198,7 +198,7 @@ export default function Page() {
             href="/authors/cdr-sulakshan-kumar-sharma/"
             className="text-link mt-4 inline-block"
           >
-            Explore Cdr Sharma’s professional background
+            Explore Commander Sharma’s professional background
           </Link>
         </aside>
         <section className="mt-9" aria-labelledby="questions-heading">

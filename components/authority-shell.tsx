@@ -290,7 +290,7 @@ export function SiteFooter({
             className="text-link dark-text-link"
             href="/authors/cdr-sulakshan-kumar-sharma"
           >
-            Cdr Sharma
+            Commander Sharma
           </Link>
           <Link className="text-link dark-text-link" href="/about">
             About
@@ -379,7 +379,7 @@ export function AuthorityPage({
                 href="/authors/cdr-sulakshan-kumar-sharma"
                 className="inline-flex items-center border border-[#80a6bd]/50 px-4 py-2 transition hover:border-[#9bd1ea]"
               >
-                Meet Cdr Sharma
+                Meet Commander Sharma
               </Link>
             )}
             <Link

@@ -19,9 +19,9 @@ import { SiteFooter, SiteHeader } from '@/components/authority-shell';
 
 export const metadata: Metadata = {
   alternates: { canonical: '/authors/cdr-sulakshan-kumar-sharma' },
-  title: 'Cdr Sulakshan Kumar Sharma (Retd) | March Ahead Academy',
+  title: 'Commander Sulakshan Kumar Sharma (Retd) | March Ahead Academy',
   description:
-    'Qualifications and professional experience behind Cdr Sulakshan Kumar Sharma’s defence-career and SSB guidance at March Ahead Academy.',
+    'Qualifications and professional experience behind Commander Sulakshan Kumar Sharma’s defence-career and SSB guidance at March Ahead Academy.',
 };
 
 const qualifications = [
@@ -89,7 +89,7 @@ export default function Page() {
                 '@type': 'Person',
                 '@id': `${siteUrl}/#cdr-sharma`,
                 name: 'Sulakshan Kumar Sharma',
-                honorificPrefix: 'Cdr',
+                honorificPrefix: 'Commander',
                 honorificSuffix: 'Retd.',
                 url: `${siteUrl}/authors/cdr-sulakshan-kumar-sharma/`,
                 jobTitle: 'Director, March Ahead Academy',
@@ -114,7 +114,7 @@ export default function Page() {
             Academy director · Expert contributor
           </p>
           <h1 className="mt-5 max-w-4xl font-heading text-5xl leading-tight sm:text-6xl">
-            Cdr Sulakshan Kumar Sharma (Retd)
+            Commander Sulakshan Kumar Sharma (Retd)
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">
             Military educator, psychologist and director of March Ahead Academy,
@@ -157,7 +157,7 @@ export default function Page() {
             </h2>
             <div className="mt-6 space-y-5 leading-8 text-[#536371]">
               <p>
-                Cdr Sharma’s experience connects classroom teaching,
+                Commander Sharma’s experience connects classroom teaching,
                 institutional training, education planning, candidate
                 development and officer selection. That combination informs
                 March Ahead Academy’s emphasis on understanding the career

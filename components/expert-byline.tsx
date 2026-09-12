@@ -21,7 +21,7 @@ export function ExpertByline({
             Academy expertise
           </p>
           <p className="mt-2 font-heading text-xl">
-            Cdr Sulakshan Kumar Sharma (Retd)
+            Commander Sulakshan Kumar Sharma (Retd)
           </p>
           <p className="mt-2 text-sm leading-6 text-[#5c6974]">{context}</p>
           <Link

@@ -15,7 +15,7 @@ export default function Page() {
       title="Combined Defence Services examination"
       lede="CDS is not one uniform route. IMA, INA, AFA and OTA have distinct educational conditions, examination papers, service outcomes and notified availability."
       status="CDS preparation guide"
-      expertContext="Cdr Sharma’s military-education and candidate-development experience informs the academy’s approach to comparing academy routes, building subject foundations and connecting written preparation with later selection stages."
+      expertContext="Commander Sharma’s military-education and candidate-development experience informs the academy’s approach to comparing academy routes, building subject foundations and connecting written preparation with later selection stages."
       sections={[
         ...examGuideAdditions.cds,
         {

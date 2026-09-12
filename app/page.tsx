@@ -148,7 +148,7 @@ export default function Home() {
                 href="/authors/cdr-sulakshan-kumar-sharma/"
                 className="mt-2 inline-flex items-center gap-2 text-sm font-semibold text-[#9bd1ea] underline underline-offset-4 transition hover:text-white"
               >
-                Cdr Sulakshan Kumar Sharma (Retd.)
+                Commander Sulakshan Kumar Sharma (Retd.)
                 <ArrowRight size={15} aria-hidden="true" />
               </Link>
               <p className="mt-1 text-sm leading-6 text-slate-300">
@@ -240,14 +240,14 @@ export default function Home() {
               Perspective earned through service and selection.
             </h2>
             <p className="mt-3 text-sm leading-6 text-[#65717d]">
-              Guidance shaped by Cdr Sharma&apos;s experience across military
+              Guidance shaped by Commander Sharma&apos;s experience across military
               service, teaching, recruitment and SSB psychology.
             </p>
             <Link
               href="/authors/cdr-sulakshan-kumar-sharma"
               className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-[#2f6f94] underline decoration-[#9bc9df] underline-offset-4"
             >
-              Meet Cdr Sulakshan Kumar Sharma (Retd) <ArrowRight size={14} />
+              Meet Commander Sulakshan Kumar Sharma (Retd) <ArrowRight size={14} />
             </Link>
           </div>
           <dl className="grid gap-px overflow-hidden border border-[#d4ddd8] bg-[#d4ddd8] sm:grid-cols-2 xl:grid-cols-4">

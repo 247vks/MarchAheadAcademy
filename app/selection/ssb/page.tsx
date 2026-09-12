@@ -44,7 +44,7 @@ const guide: SsbGuideData = {
     },
     {
       title: 'Ethical preparation develops transferable habits',
-      body: 'March Ahead Academy focuses on self-awareness, listening, structured thought, physical readiness, informed motivation and honest communication. Cdr Sharma’s experience informs this approach to preparation.',
+      body: 'March Ahead Academy focuses on self-awareness, listening, structured thought, physical readiness, informed motivation and honest communication. Commander Sharma’s experience informs this approach to preparation.',
     },
   ],
   exercise: {

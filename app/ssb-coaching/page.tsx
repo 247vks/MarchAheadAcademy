@@ -16,7 +16,7 @@ import { ContactBand } from '@/components/contact-band';
 
 const title = 'One-on-One SSB Coaching by a Former SSB Psychologist';
 const description =
-  'Personalised SSB coaching at March Ahead Academy, guided by Cdr Sharma, a former SSB psychologist. Develop self-awareness, communication and a focused preparation plan.';
+  'Personalised SSB coaching at March Ahead Academy, guided by Commander Sharma, a former SSB psychologist. Develop self-awareness, communication and a focused preparation plan.';
 export const metadata: Metadata = {
   title: `${title} | March Ahead Academy`,
   description,
@@ -51,7 +51,7 @@ export default function Page() {
         <p className="mt-6 max-w-4xl text-lg leading-8 text-[#536371]">
           Your experiences, strengths and preparation needs are individual.
           March Ahead Academy’s SSB coaching is one-on-one, with guidance from
-          Cdr Sulakshan Kumar Sharma (Retd), an Indian Navy veteran and former
+          Commander Sulakshan Kumar Sharma (Retd), an Indian Navy veteran and former
           Senior Service Psychologist at the Naval Selection Centre, Bangalore.
         </p>
         <p className="mt-4 max-w-4xl leading-8 text-[#536371]">
@@ -72,7 +72,7 @@ export default function Page() {
             Experience that informs the guidance
           </h2>
           <p className="mt-4 leading-8 text-[#536371]">
-            Cdr Sharma brings 32 years of military service, 57 years of teaching
+            Commander Sharma brings 32 years of military service, 57 years of teaching
             experience, three years as an SSB psychologist and 4.5 years of
             independent Indian Navy and Army recruitment experience. His
             background connects education, candidate development and officer
@@ -82,7 +82,7 @@ export default function Page() {
             className="text-link mt-4 inline-block"
             href="/authors/cdr-sulakshan-kumar-sharma/"
           >
-            Explore Cdr Sharma’s qualifications and professional history
+            Explore Commander Sharma’s qualifications and professional history
           </Link>
         </section>
 

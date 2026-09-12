@@ -39,7 +39,7 @@ export function PreparationGuide({ guide }: { guide: PreparationGuideData }) {
           </p>
           <div className="mt-7 inline-flex w-fit items-center gap-2 border border-white/20 px-4 py-2 text-xs text-slate-200">
             <ShieldCheck size={15} />
-            <Link href="/about">Expert perspective · Cdr Sharma</Link>
+            <Link href="/about">Expert perspective · Commander Sharma</Link>
           </div>
         </div>
         <div className="min-h-[240px] sm:min-h-[320px] lg:min-h-[360px]">

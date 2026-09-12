@@ -70,7 +70,7 @@ export default function Page() {
               </p>
               <p>
                 Explore practical guidance on defence careers, examinations and
-                SSB preparation, informed by Cdr Sharma&apos;s military,
+                SSB preparation, informed by Commander Sharma&apos;s military,
                 teaching and selection experience.
               </p>
             </div>
@@ -103,7 +103,7 @@ export default function Page() {
               <div>
                 <dt className="font-bold">Expert leadership</dt>
                 <dd className="mt-1 text-[#5c6974]">
-                  Guidance informed by Cdr Sharma&apos;s military, teaching,
+                  Guidance informed by Commander Sharma&apos;s military, teaching,
                   recruitment and SSB psychology experience.
                 </dd>
               </div>
@@ -115,7 +115,7 @@ export default function Page() {
             <div>
               <p className="section-kicker">Experience behind the academy</p>
               <h2 className="mt-3 font-heading text-4xl">
-                Cdr Sulakshan Kumar Sharma (Retd)
+                Commander Sulakshan Kumar Sharma (Retd)
               </h2>
               <p className="mt-4 max-w-sm text-sm leading-7 text-[#5c6974]">
                 Military educator, psychologist and academy director with

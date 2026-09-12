@@ -155,7 +155,7 @@ export default function Page() {
             Experience behind the Academy
           </h2>
           <p className="mt-5 leading-8 text-[#536371]">
-            Cdr Sulakshan Kumar Sharma (Retd) brings 32 years of military
+            Commander Sulakshan Kumar Sharma (Retd) brings 32 years of military
             service, 57 years of teaching experience, 4.5 years of independent
             recruitment experience for the Indian Navy and Army, and three years
             of SSB psychologist experience.
@@ -165,7 +165,7 @@ export default function Page() {
             href="/authors/cdr-sulakshan-kumar-sharma"
           >
             <GraduationCap size={20} aria-hidden="true" />
-            Read Cdr Sharma’s profile
+            Read Commander Sharma’s profile
           </Link>
         </section>
       </div>
