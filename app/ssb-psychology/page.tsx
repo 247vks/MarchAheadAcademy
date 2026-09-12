@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { psychologyArticles } from '@/lib/psychology-articles';
 import {
   Brain,
   Image,
@@ -174,6 +175,66 @@ export default function Page() {
             ))}
           </div>
         </section>
+        <section className="mt-9" aria-labelledby="preparation-heading">
+          <h2
+            id="preparation-heading"
+            className="flex items-center gap-3 font-heading text-3xl"
+          >
+            <Compass className="shrink-0 text-[#397fa8]" aria-hidden="true" />
+            How to Prepare for SSB Psychology Tests
+          </h2>
+          <p className="mt-4 leading-8 text-[#536371]">
+            Prepare the candidate. Don’t manufacture the response. Start by
+            understanding the activity, then practise expressing your own
+            thinking with clarity. Choose unfamiliar prompts, work independently
+            and review one practical habit at a time: following instructions,
+            keeping a story coherent or explaining a realistic action. Reflect
+            on responsibilities and feedback from your own life rather than
+            borrowing a model personality. Consistency means being truthful, not
+            forcing the same theme into every response. If you are returning
+            after an attempt, separate what you observed from what you assume
+            caused the outcome. Use feedback to decide what to practise next,
+            not to predict recommendation. Our preparation guide brings these
+            steps into a manageable routine.
+          </p>
+          <Link
+            className="text-link mt-4 inline-block"
+            href="/selection/ssb/psychology-tests/"
+          >
+            Build your SSB psychology preparation routine
+          </Link>
+        </section>
+        <section className="mt-9" aria-labelledby="deeper-guides">
+          <h2
+            id="deeper-guides"
+            className="flex items-center gap-3 font-heading text-3xl"
+          >
+            <Brain className="shrink-0 text-[#397fa8]" aria-hidden="true" />
+            Understand the assessment. Strengthen your preparation.
+          </h2>
+          <div className="mt-5 grid gap-5 md:grid-cols-2">
+            {psychologyArticles.map((article) => (
+              <Link
+                key={article.slug}
+                href={`/ssb-psychology/${article.slug}/`}
+                className="editorial-card group flex flex-col p-6"
+              >
+                <Brain
+                  className="text-[#397fa8]"
+                  aria-hidden="true"
+                  size={25}
+                />
+                <h3 className="mt-4 font-heading text-2xl">{article.title}</h3>
+                <p className="mt-3 mb-5 leading-7 text-[#536371]">
+                  {article.description}
+                </p>
+                <span className="mt-auto inline-flex items-center gap-2 font-semibold text-[#2f6f94]">
+                  Read the article <ArrowRight size={16} aria-hidden="true" />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </section>
         <aside
           className="mt-9 border-y border-[#d8e1dd] py-7"
           aria-labelledby="experience-heading"
@@ -189,10 +250,11 @@ export default function Page() {
             Relevant experience behind the academy
           </h2>
           <p className="mt-4 leading-8 text-[#536371]">
-            March Ahead Academy is led by Commander Sulakshan Kumar Sharma (Retd), an
-            Indian Navy veteran and former Senior Service Psychologist at the
-            Naval Selection Centre, Bangalore. His background includes 32 years
-            of military service and 3 years of SSB psychologist experience.
+            March Ahead Academy is led by Commander Sulakshan Kumar Sharma
+            (Retd), an Indian Navy veteran and former Senior Service
+            Psychologist at the Naval Selection Centre, Bangalore. His
+            background includes 32 years of military service and 3 years of SSB
+            psychologist experience.
           </p>
           <Link
             href="/authors/cdr-sulakshan-kumar-sharma/"

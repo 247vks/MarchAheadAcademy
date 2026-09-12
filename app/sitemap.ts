@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { siteUrl } from '@/lib/site';
+import { psychologyArticles } from '@/lib/psychology-articles';
 
 export const dynamic = 'force-static';
 
@@ -57,7 +58,10 @@ const routes = [
 ] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return routes.map((route) => ({
+  return [
+    ...routes,
+    ...psychologyArticles.map(({ slug }) => `/ssb-psychology/${slug}`),
+  ].map((route) => ({
     url: route ? `${siteUrl}${route}/` : `${siteUrl}/`,
     changeFrequency:
       route === '/notifications'

@@ -321,6 +321,8 @@ export function AuthorityPage({
   visual,
   currentHref,
   publishedAt,
+  modifiedAt,
+  showEntryNotice = true,
 }: {
   eyebrow: string;
   title: string;
@@ -335,6 +337,8 @@ export function AuthorityPage({
   visual?: ReactNode;
   currentHref: string;
   publishedAt?: string;
+  modifiedAt?: string;
+  showEntryNotice?: boolean;
 }) {
   return (
     <main className="min-h-screen bg-white text-[#0a1e33]">
@@ -344,6 +348,7 @@ export function AuthorityPage({
         description={lede}
         section={eyebrow}
         publishedAt={publishedAt}
+        modifiedAt={modifiedAt}
         breadcrumbs={articleBreadcrumbs(currentHref, title)}
       />
       <SiteHeader />
@@ -427,14 +432,16 @@ export function AuthorityPage({
               </a>
             </div>
           </nav>
-          <div className="border border-[#d9e3df] border-l-4 border-l-[#4b6228] bg-[#f8faf9] p-6">
-            <p className="text-sm leading-7">
-              <strong>Important:</strong> This guide explains career pathways;
-              it does not replace the notification governing a particular
-              examination, entry, or intake. Verify current requirements before
-              acting.
-            </p>
-          </div>
+          {showEntryNotice && (
+            <div className="border border-[#d9e3df] border-l-4 border-l-[#4b6228] bg-[#f8faf9] p-6">
+              <p className="text-sm leading-7">
+                <strong>Important:</strong> This guide explains career pathways;
+                it does not replace the notification governing a particular
+                examination, entry, or intake. Verify current requirements
+                before acting.
+              </p>
+            </div>
+          )}
           {sections.map((section, index) => {
             const sectionAccent = ['#4b6228', '#071f3d', '#397fa8'][index % 3];
             return (

@@ -22,6 +22,7 @@ const cds = {
 };
 
 const path = [
+  { label: 'SSB Psychology hub', href: '/ssb-psychology/' },
   { label: 'Group Discussion (GD)', href: '/selection/ssb/group-discussion' },
   { label: 'SSB overview', href: '/selection/ssb' },
   { label: 'Stage I and PP&DT', href: '/selection/ssb/stage-1' },

@@ -23,6 +23,8 @@ export function articleBreadcrumbs(
         ? { name: 'SSB Psychology', href: '/ssb-psychology/' }
         : { name: 'SSB', href: '/selection/ssb/' },
     );
+  } else if (cleanPath.startsWith('/ssb-psychology/')) {
+    crumbs.push({ name: 'SSB Psychology', href: '/ssb-psychology/' });
   } else if (cleanPath.startsWith('/exams/')) {
     crumbs.push({ name: 'Defence Exams', href: '/exams/' });
   }

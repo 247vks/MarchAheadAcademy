@@ -78,6 +78,19 @@ const categories = [
       'Build self-awareness, clear expression and a sustainable practice routine. Understand the different psychological-test settings without trying to memorise an ideal personality.',
     links: [
       ['SSB Psychology hub', '/ssb-psychology/'],
+      [
+        'What does an SSB psychologist assess?',
+        '/ssb-psychology/what-does-an-ssb-psychologist-assess/',
+      ],
+      [
+        'Psychology preparation for repeaters',
+        '/ssb-psychology/psychology-preparation-for-repeaters/',
+      ],
+      ['PPDT vs TAT', '/ssb-psychology/ppdt-vs-tat/'],
+      [
+        'Moving beyond memorised answers',
+        '/ssb-psychology/memorised-ssb-psychology-answers/',
+      ],
       ['Psychology preparation routine', '/selection/ssb/psychology-tests/'],
       ['Thematic Apperception Test (TAT)', '/selection/ssb/tat/'],
       ['Word Association Test (WAT)', '/selection/ssb/wat/'],
