@@ -49,6 +49,7 @@ export default function Page() {
       related={[
         { label: 'Career Path Finder', href: '/career-paths' },
         { label: 'NDA guide', href: '/exams/nda' },
+        { label: 'Army TES: technical entry after Class 12', href: '/career-paths/tes/' },
         { label: 'SSB guide', href: '/selection/ssb' },
       ]}
     />

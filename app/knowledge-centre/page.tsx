@@ -133,6 +133,7 @@ const categories = [
     links: [
       ['Indian Army career guide', '/services/army/'],
       ['Army NCC Special Entry', '/career-paths/ncc-special-entry/'],
+      ['Army TES after Class 12', '/career-paths/tes/'],
       ['Graduate entry pathways', '/career-paths/after-graduation/'],
     ],
   },

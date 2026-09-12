@@ -14,7 +14,7 @@ const guide: SsbGuideData = {
   title: 'SSB and AFSB: understand the journey, then prepare the person',
   lede: 'A candidate-first guide to screening, psychology, group testing, interview and conference—without scripts, secrets or selection guarantees.',
   summary:
-    'Official Indian Air Force guidance describes AFSB as Stage I screening followed, for candidates who qualify and pass document checks, by Stage II psychological tests, group tests and interview. Assessors confer before a recommendation decision. Other service boards and individual entries can issue their own instructions, so the call-up letter and current official notice always control.',
+    'Official Indian Air Force guidance describes AFSB as Stage I screening followed, for candidates who qualify and pass document checks, by Stage II psychological tests, group tests and interview. Assessors confer before a recommendation decision. Check your call-up letter for the instructions specific to your service board and entry.',
   sections: [
     {
       title: 'Before you arrive: the entry still matters',

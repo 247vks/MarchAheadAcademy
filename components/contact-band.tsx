@@ -68,7 +68,7 @@ export function ContactBand() {
                   href={contact.href}
                   target={external ? '_blank' : undefined}
                   rel={external ? 'noreferrer' : undefined}
-                  className="group flex min-h-36 flex-col justify-between bg-[#30471f]/95 p-6 transition hover:bg-[#3b5727] focus-visible:outline-white sm:min-h-44 sm:p-8 lg:p-9"
+                  className="group flex min-h-36 min-w-0 flex-col justify-between bg-[#30471f]/95 p-6 transition hover:bg-[#3b5727] focus-visible:outline-white sm:min-h-44 sm:p-8 lg:p-9"
                 >
                   <span className="flex items-center gap-3">
                     <span className="grid h-10 w-10 shrink-0 place-items-center border border-white/30 bg-white/5 transition group-hover:bg-white/10">
@@ -78,7 +78,7 @@ export function ContactBand() {
                       {contact.label}
                     </span>
                   </span>
-                  <span className="mt-6 block break-words font-heading text-xl leading-tight tracking-[-.02em] text-white sm:text-2xl lg:text-[1.65rem]">
+                  <span className="mt-6 block min-w-0 break-words font-heading text-xl leading-tight tracking-[-.02em] text-white sm:text-2xl lg:text-[1.65rem]">
                     {contact.value}
                   </span>
                 </a>

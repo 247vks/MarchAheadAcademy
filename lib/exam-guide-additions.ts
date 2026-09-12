@@ -126,6 +126,8 @@ export const examHubGroups = [
     description:
       'NCC Special Entry, TES, TGC, SSC Tech, JAG and notified Navy officer entries need separate route-specific guidance. They are not interchangeable with the written examinations above. Explore the service career guides for these entry routes and check the relevant current notification.',
     links: [
+      { label: 'Army TES: technical entry after Class 12', href: '/career-paths/tes/' },
+      { label: 'Army NCC Special Entry', href: '/career-paths/ncc-special-entry/' },
       { label: 'Army careers', href: '/services/army' },
       { label: 'Navy careers', href: '/services/navy' },
       { label: 'Air Force careers', href: '/services/air-force' },

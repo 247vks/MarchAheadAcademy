@@ -13,7 +13,7 @@ export default function Page() {
       <SiteHeader />
       <article className="mx-auto max-w-4xl px-5 py-12 leading-8">
         <h1 className="font-heading text-4xl">Cookie Policy</h1>
-        <p className="mt-4">Updated 8 September 2026</p>
+        <p className="mt-4">Updated 12 September 2026</p>
         <h2 className="mt-8 font-heading text-2xl">
           Essential preference storage
         </h2>
@@ -38,6 +38,12 @@ export default function Page() {
             Google’s cookie information
           </a>
           .
+        </p>
+        <p className="mt-4">
+          With analytics enabled, we also record whether a visitor clicks a
+          phone, email or WhatsApp contact link. These are contact-intent events,
+          not proof of a booked consultation. Our custom event does not include
+          the destination phone number, email address or message text.
         </p>
         <h2 className="mt-8 font-heading text-2xl">
           Change or withdraw your choice

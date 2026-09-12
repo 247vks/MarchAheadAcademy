@@ -9,6 +9,8 @@ import {
   UserRound,
   ArrowRight,
   ShieldCheck,
+  BookOpen,
+  CircleHelp,
 } from 'lucide-react';
 import {
   Breadcrumbs,
@@ -150,7 +152,8 @@ export default function Page() {
           </p>
         </section>
         <section className="mt-9" aria-labelledby="tests-heading">
-          <h2 id="tests-heading" className="font-heading text-3xl">
+          <h2 id="tests-heading" className="flex items-center gap-3 font-heading text-3xl">
+            <BookOpen className="shrink-0 text-[#397fa8]" aria-hidden="true" />
             Explore the four psychology guides
           </h2>
           <p className="mt-3 leading-7 text-[#536371]">
@@ -264,7 +267,8 @@ export default function Page() {
           </Link>
         </aside>
         <section className="mt-9" aria-labelledby="questions-heading">
-          <h2 id="questions-heading" className="font-heading text-3xl">
+          <h2 id="questions-heading" className="flex items-center gap-3 font-heading text-3xl">
+            <CircleHelp className="shrink-0 text-[#397fa8]" aria-hidden="true" />
             Common questions about SSB psychology
           </h2>
           <div className="mt-5 space-y-5">
@@ -277,7 +281,8 @@ export default function Page() {
           </div>
         </section>
         <section className="mt-9">
-          <h2 className="font-heading text-3xl">
+          <h2 className="flex items-center gap-3 font-heading text-3xl">
+            <Compass className="shrink-0 text-[#397fa8]" aria-hidden="true" />
             Turn understanding into individual preparation
           </h2>
           <p className="mt-4 leading-8 text-[#536371]">

@@ -25,24 +25,45 @@ const server = http.createServer((req, res) => {
     });
     const page = await context.newPage();
     const url = `http://127.0.0.1:${server.address().port}`;
+    const exerciseLinks = () => page.evaluate(() => {
+      for (const href of ['tel:+919820096800', 'mailto:hello@marchaheadacademy.com?body=private', 'https://wa.me/919820096800?text=private', '/resources/']) {
+        const a = document.createElement('a');
+        a.href = href;
+        a.innerHTML = '<span>private visitor text</span>';
+        a.addEventListener('click', e => e.preventDefault());
+        document.body.appendChild(a);
+        a.firstElementChild.click();
+        a.remove();
+      }
+      return (window.dataLayer || []).filter(entry => entry[0] === 'event').map(entry => Array.from(entry));
+    });
     await page.goto(url);
     await page.getByRole('button', { name: 'Accept All', exact: true }).waitFor({ state: 'visible' });
     assert.equal(analyticsRequests, 0, 'No analytics before consent');
+    assert.deepEqual(await exerciseLinks(), [], 'No contact events before consent');
     await page.getByRole('button', { name: 'Reject Non-Essential', exact: true }).click();
     await page.reload();
     await page.getByRole('button', { name: 'Cookie preferences', exact: true }).waitFor();
     assert.equal(analyticsRequests, 0, 'No analytics after persisted rejection');
+    assert.deepEqual(await exerciseLinks(), [], 'No contact events after rejection');
     await page.getByRole('button', { name: 'Cookie preferences', exact: true }).click();
     await page.getByRole('dialog').getByRole('button', { name: 'Accept All', exact: true }).click();
     await page.waitForFunction(() => !!document.getElementById('maa-ga-loader'));
     await page.waitForLoadState('networkidle');
     assert.equal(analyticsRequests, 1, 'Analytics loaded only on acceptance');
+    const events = await exerciseLinks();
+    assert.equal(events.length, 3, 'Exactly one event for each contact link, none for internal navigation');
+    assert.deepEqual(events.map(e => e[1]), ['contact_intent', 'contact_intent', 'contact_intent']);
+    assert.deepEqual(events.map(e => e[2].contact_method), ['phone', 'email', 'whatsapp']);
+    assert.ok(events.every(e => Object.keys(e[2]).sort().join(',') === 'contact_method,page_location,transport_type'));
+    assert.ok(!JSON.stringify(events).includes('private') && !JSON.stringify(events).includes('98200'), 'Contact content and destinations excluded');
     await context.addCookies([{ name: '_ga', value: 'test', url }]);
     await page.getByRole('button', { name: 'Cookie preferences', exact: true }).click();
     await page.getByRole('dialog').getByRole('button', { name: 'Reject Non-Essential', exact: true }).click();
     await page.getByRole('button', { name: 'Cookie preferences', exact: true }).waitFor();
     await page.waitForLoadState('networkidle');
     assert.equal(analyticsRequests, 1, 'No analytics reload after withdrawal');
+    assert.deepEqual(await exerciseLinks(), [], 'No contact events after withdrawal');
     assert.equal((await context.cookies()).some(c => c.name === '_ga'), false, 'GA cookie removed');
     await page.setViewportSize({ width: 375, height: 667 });
     await page.getByRole('button', { name: 'Cookie preferences', exact: true }).click();

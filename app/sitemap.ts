@@ -28,6 +28,7 @@ const routes = [
   '/career-paths/after-12th',
   '/career-paths/after-graduation',
   '/career-paths/ncc-special-entry',
+  '/career-paths/tes',
   '/editorial-standards',
   '/eligibility',
   '/exams',

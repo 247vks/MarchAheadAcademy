@@ -40,8 +40,8 @@ export function SsbJourneyMap() {
         ))}
       </ol>
       <p className="mt-4 text-xs leading-5 text-[#687781]">
-        Service and entry instructions vary. The call-up letter and current
-        official notice always control.
+        Check your call-up letter for the reporting arrangements and
+        instructions for your entry.
       </p>
     </section>
   );
@@ -120,14 +120,14 @@ export function ExamComparison() {
     ],
   ];
   return (
-    <section className="mx-auto max-w-6xl px-5 pt-12 lg:px-8 lg:pt-16">
+    <section className="mx-auto w-full min-w-0 max-w-6xl px-5 pt-12 lg:px-8 lg:pt-16">
       <p className="text-xs font-bold tracking-[.15em] text-[#397fa8] uppercase">
         Quick comparison
       </p>
       <h2 className="mt-3 font-heading text-3xl sm:text-4xl">
         Compare the route—not only the paper
       </h2>
-      <div className="mt-7 overflow-x-auto">
+      <div className="relative mt-7 w-full min-w-0 max-w-full overflow-x-auto" tabIndex={0} role="region" aria-label="Exam route comparison, scroll horizontally to view all columns">
         <table className="w-full min-w-[720px] border-collapse text-left text-sm">
           <thead className="bg-[#071f3d] text-white">
             <tr>

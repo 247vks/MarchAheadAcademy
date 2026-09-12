@@ -6,6 +6,7 @@ import { Cookie, X } from 'lucide-react';
 
 const key = 'maa-cookie-consent-v1';
 const gaId = 'G-PP07C1HDNY';
+let analyticsAllowedUntil = 0;
 type Choice = { analytics: boolean; savedAt: number };
 type AnalyticsWindow = Window & {
   dataLayer?: unknown[];
@@ -28,6 +29,7 @@ function readChoice(): Choice | null {
 }
 
 function disableAnalytics() {
+  analyticsAllowedUntil = 0;
   const w = window as unknown as AnalyticsWindow;
   w[`ga-disable-${gaId}`] = true;
   document.getElementById('maa-ga-loader')?.remove();
@@ -43,6 +45,9 @@ function disableAnalytics() {
 }
 
 function enableAnalytics() {
+  analyticsAllowedUntil = readChoice()?.savedAt
+    ? readChoice()!.savedAt + 180 * 86400000
+    : Date.now() + 180 * 86400000;
   const w = window as unknown as AnalyticsWindow;
   w[`ga-disable-${gaId}`] = false;
   if (document.getElementById('maa-ga-loader')) return;
@@ -58,6 +63,7 @@ function enableAnalytics() {
   });
   w.gtag('js', new Date());
   w.gtag('config', gaId, {
+    page_location: location.origin + location.pathname,
     allow_google_signals: false,
     allow_ad_personalization_signals: false,
   });
@@ -66,6 +72,26 @@ function enableAnalytics() {
   script.async = true;
   script.src = `https://www.googletagmanager.com/gtag/js?id=${gaId}`;
   document.head.appendChild(script);
+}
+
+function trackContactIntent(event: MouseEvent) {
+  if (Date.now() >= analyticsAllowedUntil) return;
+  const anchor = event.target instanceof Element ? event.target.closest('a[href]') : null;
+  if (!(anchor instanceof HTMLAnchorElement)) return;
+  const destination = new URL(anchor.href, location.href);
+  const channel = destination.protocol === 'tel:' ? 'phone'
+    : destination.protocol === 'mailto:' ? 'email'
+    : destination.protocol === 'https:' && ['wa.me', 'api.whatsapp.com', 'web.whatsapp.com'].includes(destination.hostname) ? 'whatsapp'
+    : null;
+  const w = window as unknown as AnalyticsWindow;
+  if (!channel || !w.gtag || w[`ga-disable-${gaId}`]) return;
+  // A click expresses interest, not a completed enquiry. Never include the
+  // destination, message, address, number, query string or visitor-entered text.
+  w.gtag('event', 'contact_intent', {
+    contact_method: channel,
+    page_location: location.origin + location.pathname,
+    transport_type: 'beacon',
+  });
 }
 
 export function CookieConsent() {
@@ -92,7 +118,11 @@ export function CookieConsent() {
       }
     };
     window.addEventListener('storage', onStorage);
-    return () => window.removeEventListener('storage', onStorage);
+    document.addEventListener('click', trackContactIntent, true);
+    return () => {
+      window.removeEventListener('storage', onStorage);
+      document.removeEventListener('click', trackContactIntent, true);
+    };
   }, []);
   function save(allowed: boolean) {
     const next = { analytics: allowed, savedAt: Date.now() };
