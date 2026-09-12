@@ -468,7 +468,7 @@ export default function Home() {
         aria-labelledby="preparation-heading"
       >
         <div className="mx-auto max-w-7xl">
-          <div className="max-w-3xl">
+          <div className="w-full">
             <p className="section-kicker">The qualities behind the career</p>
             <h2
               id="preparation-heading"

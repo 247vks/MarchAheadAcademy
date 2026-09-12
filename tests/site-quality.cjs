@@ -95,6 +95,12 @@ const server = http.createServer((req, res) => {
         await page.setViewportSize({ width, height: 900 });
         await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
         if (route === '/') {
+          const preparationWidth = await page.locator('#preparation-heading').evaluate(heading => {
+            const intro = heading.parentElement;
+            const section = intro.parentElement;
+            return Math.abs(intro.getBoundingClientRect().width - section.getBoundingClientRect().width) < 1;
+          });
+          if (!preparationWidth) failures.push(`Home: preparation introduction should use the full content width at ${width}px`);
           const serviceLayout = await page.locator('#services').evaluate(section => {
             const heading = section.querySelector('h2');
             const caption = [...section.querySelectorAll('p')].find(node => node.textContent.includes('Clear distinctions'));
