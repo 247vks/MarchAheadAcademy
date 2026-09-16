@@ -155,12 +155,9 @@ const server = http.createServer((req, res) => {
         if (!await prompt.evaluate(node => !!node.parentElement.querySelector('#section-5'))) failures.push('TES: coaching prompt should follow selection section five');
         await page.setViewportSize({ width: 375, height: 900 });
         const contents = page.getByRole('navigation', { name: 'On this page', exact: true });
-        const disclosure = contents.locator('details');
-        if (await disclosure.getAttribute('open') !== null) failures.push('TES: mobile contents should start collapsed');
-        await disclosure.locator('summary').focus();
-        await page.keyboard.press('Enter');
-        if (!await disclosure.locator('a').first().isVisible()) failures.push('TES: keyboard must open mobile contents');
-        await disclosure.locator('a').first().click();
+        const firstContentsLink = contents.locator('a').first();
+        if (!await firstContentsLink.isVisible()) failures.push('TES: contents links should be visible');
+        await firstContentsLink.click();
         if (!page.url().endsWith('#section-1')) failures.push('TES: contents must link to existing section');
       }
       if (route === '/career-paths/') {

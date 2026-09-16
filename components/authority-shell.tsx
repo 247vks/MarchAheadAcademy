@@ -436,16 +436,8 @@ export function AuthorityPage({
             aria-label="On this page"
             className="border-y border-[#d9e3df] py-4"
           >
-            <details className="lg:hidden">
-              <summary className="min-h-11 cursor-pointer py-3 text-sm font-bold text-[#2f6f94] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4">
-                On this page
-              </summary>
-              {contents}
-            </details>
-            <div className="hidden lg:block">
-              <p className="text-xs font-bold tracking-[.15em] text-[#397fa8] uppercase">On this page</p>
-              {contents}
-            </div>
+            <p className="text-xs font-bold tracking-[.15em] text-[#397fa8] uppercase">On this page</p>
+            <div className="mt-3">{contents}</div>
           </nav>
           {showEntryNotice && (
             <div className="border border-[#d9e3df] border-l-4 border-l-[#4b6228] bg-[#f8faf9] p-6">
