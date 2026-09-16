@@ -11,6 +11,7 @@ import {
   GraduationCap,
   UserCheck,
   CalendarDays,
+  ClipboardCheck,
 } from 'lucide-react';
 import {
   Breadcrumbs,
@@ -119,6 +120,11 @@ export default function Page() {
                 value:
                   'An individual consultation to discuss your goals, current preparation and next step.',
                 icon: CalendarDays,
+              },
+              {
+                label: 'Programme structure',
+                value: 'Personalised after the initial discussion; session availability and fees are agreed before coaching begins.',
+                icon: ClipboardCheck,
               },
             ].map(({ label, value, icon: Icon }) => (
               <div key={label}>

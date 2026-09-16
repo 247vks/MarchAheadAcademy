@@ -15,6 +15,7 @@ const routes = [
   '/ssb-personal-interview',
   '/ssb-gto',
   '/officer-like-qualities',
+  '/how-to-choose-ssb-coaching',
   '/guidance/first-ssb-attempt',
   '/guidance/ssb-repeaters',
   '/guidance/parents-nda-aspirants',

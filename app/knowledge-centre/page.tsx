@@ -71,6 +71,7 @@ const categories = [
       ['SSB personal interview hub', '/ssb-personal-interview/'],
       ['SSB GTO hub', '/ssb-gto/'],
       ['Officer Like Qualities (OLQs)', '/officer-like-qualities/'],
+      ['How to choose an SSB coaching institute', '/how-to-choose-ssb-coaching/'],
       ['Personal interview', '/selection/ssb/personal-interview/'],
     ],
   },
