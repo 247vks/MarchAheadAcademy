@@ -91,7 +91,7 @@ export default function Page() {
                 icon: UserCheck,
               },
               {
-                label: 'SSB preparation',
+                label: 'Areas',
                 value:
                   'Psychology, personal interview, group participation and SSB orientation.',
                 icon: Brain,
@@ -103,7 +103,7 @@ export default function Page() {
                 icon: GraduationCap,
               },
               {
-                label: 'Selection preparation',
+                label: 'Entry routes',
                 value:
                   'SSB and AFSB guidance for candidates from NDA, CDS, AFCAT and other relevant officer entries.',
                 icon: Compass,
