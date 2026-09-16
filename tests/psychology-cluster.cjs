@@ -4,7 +4,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const assert = require('node:assert/strict');
 const root = path.resolve('out');
-const slugs = ['what-does-an-ssb-psychologist-assess', 'psychology-preparation-for-repeaters', 'ppdt-vs-tat', 'memorised-ssb-psychology-answers'];
+const slugs = ['what-does-an-ssb-psychologist-assess', 'how-to-prepare-for-ssb-psychology-tests', 'psychology-preparation-for-repeaters', 'wat-in-ssb-positive-sentences', 'tat-in-ssb-practise-without-memorising-stories', 'srt-in-ssb-good-preparation', 'ppdt-vs-tat', 'memorised-ssb-psychology-answers'];
 const server = http.createServer((req, res) => {
   let file = path.join(root, new URL(req.url, 'http://localhost').pathname);
   if (!file.startsWith(root + path.sep)) return res.writeHead(403).end();
@@ -27,8 +27,8 @@ const server = http.createServer((req, res) => {
       const graph = await page.locator('script[type="application/ld+json"]').evaluateAll(nodes => nodes.flatMap(n => JSON.parse(n.textContent)['@graph'] || []));
       const article = graph.find(n => n['@type'] === 'Article');
       assert.equal(article.author['@id'], 'https://www.marchaheadacademy.com/#organization');
-      assert.equal(article.datePublished, '2026-09-12');
-      assert.equal(article.dateModified, '2026-09-12');
+      assert.equal(article.datePublished, '2026-09-16');
+      assert.equal(article.dateModified, '2026-09-16');
       assert.equal(article.mainEntityOfPage['@id'], 'https://www.marchaheadacademy.com' + route);
       assert(graph.find(n => n['@type'] === 'BreadcrumbList').itemListElement.some(n => n.name === 'SSB Psychology'));
       assert(!await page.getByText('This guide explains career pathways;', { exact: false }).count());
@@ -43,6 +43,6 @@ const server = http.createServer((req, res) => {
     await page.goto(base + '/ssb-psychology/');
     for (const slug of slugs) assert(await page.locator(`a[href="/ssb-psychology/${slug}/"]`).count());
     assert.equal(await page.getByRole('heading', { name: 'How to Prepare for SSB Psychology Tests', exact: true }).count(), 1);
-    console.log('PASS: four articles, metadata, authorship, dates, breadcrumbs, hub links, sitemap, internal targets and mobile/desktop overflow.');
+    console.log('PASS: psychology authority cluster articles, metadata, authorship, dates, breadcrumbs, hub links, sitemap, internal targets and mobile/desktop overflow.');
   } finally { await browser.close(); server.close(); }
 })().catch(error => { console.error(error); server.close(); process.exitCode = 1; });

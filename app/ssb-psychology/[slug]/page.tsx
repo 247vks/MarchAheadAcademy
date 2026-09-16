@@ -43,8 +43,8 @@ export default async function Page({ params }: Props) {
       title={article.title}
       lede={article.description}
       status="Academy guidance"
-      publishedAt="2026-09-12"
-      modifiedAt="2026-09-12"
+      publishedAt="2026-09-16"
+      modifiedAt="2026-09-16"
       sections={article.sections}
       showEntryNotice={false}
       expertContext="March Ahead Academy is led by Commander Sulakshan Kumar Sharma (Retd.), former Senior Service Psychologist at the Naval Selection Centre, Bangalore. His background includes 32 years of military service and 3 years of SSB psychologist experience."
@@ -73,6 +73,7 @@ export default async function Page({ params }: Props) {
             href: `/ssb-psychology/${item.slug}/`,
           })),
         { label: 'One-on-one SSB coaching', href: '/ssb-coaching/' },
+        { label: 'Commander Sharma profile', href: '/authors/cdr-sulakshan-kumar-sharma/' },
       ]}
     />
   );

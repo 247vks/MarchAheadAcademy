@@ -1,7 +1,7 @@
 export const psychologyArticles = [
   {
     slug: 'what-does-an-ssb-psychologist-assess',
-    title: 'What Does an SSB Psychologist Assess?',
+    title: 'What Does an SSB Psychologist Assess? A Former SSB Psychologist Explains',
     description:
       'Understand the place of psychological assessment in SSB and how to prepare through self-awareness, clear expression and realistic reflection.',
     sections: [
@@ -172,6 +172,54 @@ export const psychologyArticles = [
         title: 'Ask for feedback that explains itself',
         body: 'Individual coaching should help you understand a difficulty and practise independently. Ask why a change is suggested and how you can apply the lesson to unfamiliar material. March Ahead Academy offers personalised preparation around your needs and pace. The goal is to strengthen your own preparation, not supply a set of supposedly guaranteed psychology answers.',
       },
+    ],
+  },
+  {
+    slug: 'how-to-prepare-for-ssb-psychology-tests',
+    title: 'How to Prepare for SSB Psychology Tests: TAT, WAT, SRT & Self Description',
+    description: 'A practical, ethical preparation routine for TAT, WAT, SRT and Self Description that builds attention, self-awareness and clear expression without scripts.',
+    sections: [
+      { title: 'Preparation is practice, not a personality makeover', body: 'SSB psychology preparation can make an unfamiliar format less distracting, but it cannot replace your judgement or provide an ideal personality. The useful goal is to read instructions carefully, respond to the material in front of you and reflect on how you communicate. March Ahead Academy’s philosophy is to prepare the candidate, not manufacture the response.' },
+      { title: 'Build familiarity with each activity', body: 'TAT asks you to develop a coherent account from a picture; WAT asks you to respond to words; SRT presents situations requiring a practical response; Self Description asks for grounded reflection. Learn the purpose and instructions for each activity separately. Do not carry a memorised story, slogan or response pattern from one exercise into another.' },
+      { title: 'A four-part weekly routine', body: 'Use short sessions across the week: one fresh TAT picture, a small set of WAT prompts, several everyday SRT situations and a reflection note for Self Description. Review one feature after each session—relevance, sequence, clarity or realism. Keep the exercise fresh and stop before repetition turns into copying.' , points: ['Read the prompt before deciding what you want to say.', 'Write or speak in ordinary language you can explain.', 'Record one specific observation, not a personality score.', 'Keep interview, group discussion and real responsibilities in your routine too.'] },
+      { title: 'How to use feedback', body: 'Ask feedback to identify a learnable habit: an unexplained action, an unsupported assumption, an unclear sequence or a tendency to exaggerate. Preserve your first attempt so you can see whether the habit changes on new material. No practice response predicts a recommendation, and no external model is an official answer key.' },
+      { title: 'When individual guidance helps', body: 'If you are unsure where to start, bring a small sample of independent work to a one-on-one consultation. Online coaching is available, with in-person visits by appointment. Guidance can be paced around a first attempt, a repeat attempt or a specific psychology activity.' },
+    ],
+  },
+  {
+    slug: 'wat-in-ssb-positive-sentences',
+    title: 'WAT in SSB: Why Memorising “Positive Sentences” Is the Wrong Approach',
+    description: 'Understand WAT as a prompt-led exercise and practise relevant, clear responses instead of collecting memorised positive sentences.',
+    sections: [
+      { title: 'Start with the word, not a slogan', body: 'In WAT, the prompt should guide your thought. A sentence that sounds positive but could follow almost any word does not show that you attended to the exercise. This is not a claim about a hidden marking formula; it is a practical warning that memorised language can pull attention away from the actual prompt.' },
+      { title: 'What useful practice looks like', body: 'Use unfamiliar words and respond in your own words. Afterwards, underline the part that connects your sentence to the prompt and circle any phrase added mainly to sound impressive. Ask whether the thought is clear enough to explain in an ordinary conversation. Practise relevance and concise expression, not a catalogue of approved themes.' },
+      { title: 'Avoid the “always positive” trap', body: 'Real situations contain difficulty, uncertainty and responsibility. A thoughtful response can acknowledge a problem and identify a constructive next step without pretending that every situation is easy. Do not force every word into courage, success or leadership. Grounded thinking is more useful than emotional decoration.' },
+      { title: 'A fresh-prompt exercise', body: 'Choose ten everyday words from a newspaper or conversation. Write one response to each without consulting examples. Then select three and explain what each response means, what assumption it makes and what action it suggests. Repeat with different words later. This Academy exercise develops attention and self-review; it is not an official test simulation or scoring guide.' },
+      { title: 'Connect WAT practice to wider preparation', body: 'WAT is one part of psychology within the wider SSB process. Continue building the experiences and self-awareness you may discuss in interview, and practise listening and contribution for group activities. One-on-one coaching can help you identify a specific habit to work on at your pace.' },
+    ],
+  },
+  {
+    slug: 'tat-in-ssb-practise-without-memorising-stories',
+    title: 'TAT in SSB: How to Practise Without Memorising Stories',
+    description: 'Learn a grounded way to practise TAT: observe the picture, develop a plausible sequence and review your assumptions without using stock stories.',
+    sections: [
+      { title: 'Let the picture lead', body: 'TAT practice begins with careful observation. Note what is visible before deciding what it means. A person near a building does not automatically indicate an emergency, profession or heroic mission. Interpretation is necessary, but noticing the boundary between observation and inference helps keep the account connected to the prompt.' },
+      { title: 'Build a coherent account', body: 'A useful written account has a situation, actions that follow from it and an outcome that makes sense. It need not be dramatic. Ask whether the protagonist has enough information to act, whether the action is realistic and whether the conclusion follows from the earlier steps. Avoid adding an impressive plot simply because it is familiar.' },
+      { title: 'Why memorised stories get in the way', body: 'A stock story can make you search for a way to fit the picture rather than respond to it. That may introduce details the image does not support or leave the actual situation unexplained. Examples are useful for learning what the activity asks; close them before attempting fresh material and never treat them as an answer key.' },
+      { title: 'A three-column TAT exercise', body: 'Use a fresh, ordinary photograph and make three brief notes: visible details, reasonable inferences and the action sequence you propose. Write your account from those notes, then review one unsupported assumption. Repeat with another photograph on a different day. The exercise is for clear thinking, not official timings or score prediction.', points: ['What can I actually see?', 'Which details am I inferring?', 'Does each action address the situation?', 'What outcome follows realistically?', 'Can I explain the account without memorising its wording?'] },
+      { title: 'TAT sits inside the whole selection process', body: 'Psychology is part of a wider officer-selection process alongside interview and group testing. Keep your preparation balanced. If you need help turning a recurring difficulty into a practice plan, discuss it in a one-on-one consultation with March Ahead Academy.' },
+    ],
+  },
+  {
+    slug: 'srt-in-ssb-good-preparation',
+    title: 'SRT in SSB: What Good Preparation Actually Means',
+    description: 'Prepare for SRT by reading situations carefully, choosing practical actions and reviewing your assumptions—not by memorising a list of heroic reactions.',
+    sections: [
+      { title: 'SRT is a situation-led exercise', body: 'A Situation Reaction Test prompt gives you a circumstance to consider. Preparation should improve your ability to notice the problem, identify relevant information and describe a practical next step. There is no responsible basis for promising a guaranteed reaction or publishing a universal list of correct answers.' },
+      { title: 'Practical does not mean passive', body: 'A constructive response may involve taking responsibility, communicating, prioritising, seeking appropriate help or adapting a plan. The best action depends on the information in the situation. An unnecessarily dramatic response can be as unhelpful as ignoring the problem. Explain what you would do and why, in language you can own.' },
+      { title: 'Practise the reasoning behind the action', body: 'Use fresh everyday situations: a missed commitment, a safety concern, conflicting deadlines or a team disagreement. After writing, ask what you assumed, who needs to know and what outcome your action seeks. Keep the focus on the prompt rather than trying to display a preselected quality.' },
+      { title: 'A short SRT review loop', body: 'Write an independent response, identify one unclear step and try a different situation later. Do not rewrite the same response until it sounds polished. Compare whether you are becoming more attentive to information, more specific about action and more realistic about constraints. This is Academy guidance, not a description of official scoring.' },
+      { title: 'Link SRT to self-awareness and interview', body: 'The habits you practise—responsibility, clarity and reflection—also support the wider SSB process. Keep your examples truthful and continue developing them through real commitments. One-on-one coaching can help you work at a pace suited to your starting point.' },
     ],
   },
 ];
