@@ -73,6 +73,10 @@ const categories = [
       ['Officer Like Qualities (OLQs)', '/officer-like-qualities/'],
       ['How to choose an SSB coaching institute', '/how-to-choose-ssb-coaching/'],
       ['Personal interview', '/selection/ssb/personal-interview/'],
+      ['PIQ preparation', '/ssb-personal-interview/piq-preparation/'],
+      ['Education questions', '/ssb-personal-interview/education-questions/'],
+      ['Defence motivation', '/ssb-personal-interview/defence-motivation/'],
+      ['Common interview mistakes', '/ssb-personal-interview/common-interview-mistakes/'],
     ],
   },
   {
@@ -101,6 +105,12 @@ const categories = [
       ['Word Association Test (WAT)', '/selection/ssb/wat/'],
       ['Situation Reaction Test (SRT)', '/selection/ssb/srt/'],
       ['Self Description', '/selection/ssb/self-description/'],
+      ['OLQ: leadership', '/officer-like-qualities/leadership/'],
+      ['OLQ: responsibility', '/officer-like-qualities/responsibility/'],
+      ['OLQ: communication', '/officer-like-qualities/communication/'],
+      ['OLQ: cooperation', '/officer-like-qualities/cooperation/'],
+      ['OLQ: initiative', '/officer-like-qualities/initiative/'],
+      ['OLQ: decision-making', '/officer-like-qualities/decision-making/'],
     ],
   },
   {
