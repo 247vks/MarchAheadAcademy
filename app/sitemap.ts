@@ -19,6 +19,7 @@ const routes = [
   '/officer-like-qualities',
   '/how-to-choose-ssb-coaching',
   '/academy-evidence',
+  '/media-kit',
   '/guidance/first-ssb-attempt',
   '/guidance/ssb-repeaters',
   '/guidance/parents-nda-aspirants',

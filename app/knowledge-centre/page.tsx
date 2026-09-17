@@ -73,6 +73,7 @@ const categories = [
       ['Officer Like Qualities (OLQs)', '/officer-like-qualities/'],
       ['How to choose an SSB coaching institute', '/how-to-choose-ssb-coaching/'],
       ['Academy talks and guidance sessions', '/academy-evidence/'],
+      ['Commander Sharma media kit', '/media-kit/'],
       ['Personal interview', '/selection/ssb/personal-interview/'],
       ['PIQ preparation', '/ssb-personal-interview/piq-preparation/'],
       ['Education questions', '/ssb-personal-interview/education-questions/'],
