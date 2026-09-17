@@ -124,6 +124,11 @@ const categories = [
     links: [
       ['Compare exams and entries', '/exams/'],
       ['NDA & NA', '/exams/nda/'],
+      ['NDA eligibility', '/exams/nda/eligibility/'],
+      ['NDA syllabus and exam pattern', '/exams/nda/syllabus-exam-pattern/'],
+      ['NDA Mathematics preparation', '/exams/nda/mathematics-preparation/'],
+      ['NDA GAT preparation', '/exams/nda/gat-preparation/'],
+      ['NDA written exam to SSB', '/exams/nda/written-exam-to-ssb/'],
       ['CDS', '/exams/cds/'],
       ['AFCAT', '/exams/afcat/'],
     ],

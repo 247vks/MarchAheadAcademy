@@ -3,6 +3,7 @@ import { siteUrl } from '@/lib/site';
 import { psychologyArticles } from '@/lib/psychology-articles';
 import { piArticles } from '@/lib/pi-articles';
 import { olqArticles } from '@/lib/olq-articles';
+import { ndaArticles } from '@/lib/nda-articles';
 
 export const dynamic = 'force-static';
 
@@ -72,6 +73,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...psychologyArticles.map(({ slug }) => `/ssb-psychology/${slug}`),
     ...piArticles.map(([slug]) => `/ssb-personal-interview/${slug}`),
     ...olqArticles.map(([slug]) => `/officer-like-qualities/${slug}`),
+    ...ndaArticles.map(([slug]) => `/exams/nda/${slug}`),
   ].map((route) => ({
     url: route ? `${siteUrl}${route}/` : `${siteUrl}/`,
     changeFrequency:
