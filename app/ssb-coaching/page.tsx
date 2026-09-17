@@ -170,6 +170,24 @@ export default function Page() {
           <p className="mt-5 text-sm leading-6 text-[#536371]">The initial consultation is for understanding fit and priorities. It is not a promise of recommendation or a substitute for the controlling recruitment notification.</p>
         </section>
 
+        <section className="mt-12 border-t border-[#d8e1dd] pt-8" aria-labelledby="how-we-work">
+          <h2 id="how-we-work" className="font-heading text-3xl">How we work with your preparation</h2>
+          <p className="mt-4 max-w-3xl leading-8 text-[#536371]">The examples below describe our working method. They are not a promise of selection, a confidential assessor report or a fixed course package.</p>
+          <div className="mt-6 grid gap-5 sm:grid-cols-2">
+            {[
+              ['Consultation agenda', 'Clarify your entry route, attempt stage, preparation history, available time and the question you most want answered.'],
+              ['Preparation plan', 'Turn that discussion into a small number of priorities, a realistic session rhythm and independent practice between conversations.'],
+              ['Feedback format', 'Review relevance, clarity, assumptions and practical next steps in your own work—not a score prediction or a model personality.'],
+              ['Repeater workflow', 'Separate observable preparation habits from guesses about a previous result, then test one change on fresh material.'],
+            ].map(([heading, copy]) => (
+              <article key={heading} className="border border-[#d8e1dd] bg-[#fbfcfb] p-5">
+                <h3 className="font-heading text-xl text-[#30471f]">{heading}</h3>
+                <p className="mt-2 text-sm leading-6 text-[#536371]">{copy}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
         <section className="mt-12 border-t border-[#d8e1dd] pt-8">
           <h2 className="font-heading text-3xl">
             Experience that informs the guidance
