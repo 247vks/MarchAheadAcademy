@@ -546,7 +546,7 @@ export default function Home() {
             <figcaption>
               <p className="section-kicker">Guidance in the community</p>
               <h3 className="mt-3 font-heading text-2xl sm:text-3xl">Career guidance in Mumbai</h3>
-              <p className="mt-4 leading-7 text-[#536371]">Career guidance session at an engineering college in Mumbai.</p>
+              <p className="mt-4 leading-7 text-[#536371]">Career guidance session at an engineering college in Mumbai, 26 July 2025.</p>
               <p className="mt-3 text-sm font-semibold text-[#30471f]"><time dateTime="2025-07-26">26 July 2025</time></p>
             </figcaption>
           </figure>

@@ -151,6 +151,25 @@ export default function Page() {
           Book a consultation <ArrowRight size={18} aria-hidden="true" />
         </Link>
 
+        <section className="mt-10 border-t border-[#d8e1dd] pt-8" aria-labelledby="what-happens-next">
+          <h2 id="what-happens-next" className="font-heading text-3xl">What happens after you enquire</h2>
+          <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              ['01', 'Share your starting point', 'Tell us your entry route, attempt stage, preparation time and questions.'],
+              ['02', 'Discuss priorities', 'Identify whether psychology, interview, orientation, communication or written exams need attention.'],
+              ['03', 'Shape the programme', 'Agree a practical sequence and session rhythm around your needs and pace.'],
+              ['04', 'Review and continue', 'Work through independent practice, feedback and the next focus with clear expectations.'],
+            ].map(([number, heading, copy]) => (
+              <article key={number} className="border-t-2 border-[#397fa8] p-4">
+                <p className="text-xs font-bold tracking-[.15em] text-[#397fa8]">{number}</p>
+                <h3 className="mt-3 font-heading text-xl">{heading}</h3>
+                <p className="mt-2 text-sm leading-6 text-[#536371]">{copy}</p>
+              </article>
+            ))}
+          </div>
+          <p className="mt-5 text-sm leading-6 text-[#536371]">The initial consultation is for understanding fit and priorities. It is not a promise of recommendation or a substitute for the controlling recruitment notification.</p>
+        </section>
+
         <section className="mt-12 border-t border-[#d8e1dd] pt-8">
           <h2 className="font-heading text-3xl">
             Experience that informs the guidance
