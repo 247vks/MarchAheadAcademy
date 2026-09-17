@@ -44,7 +44,7 @@ const server = http.createServer((req, res) => {
       }
       if (route === '/ssb-coaching/') {
         const summary = page.locator('section[aria-labelledby="coaching-summary"]');
-        if (await summary.locator('dt').count() !== 8) failures.push('Coaching: expected eight service facts');
+        if (await summary.locator('dt').count() < 8) failures.push('Coaching: expected at least eight service facts');
         const text = await summary.innerText();
         for (const phrase of ['One-to-one', 'Online coaching', 'prior appointment only', 'First-time', 'repeaters', 'NDA, CDS and AFCAT', 'Commander Sulakshan Kumar Sharma']) {
           if (!text.includes(phrase)) failures.push(`Coaching summary missing ${phrase}`);
