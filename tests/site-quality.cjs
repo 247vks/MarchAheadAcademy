@@ -69,6 +69,22 @@ const server = http.createServer((req, res) => {
       if (!metadata.canonical || metadata.canonical !== metadata.ogUrl) {
         failures.push(`${route}: canonical ${metadata.canonical} does not match og:url ${metadata.ogUrl}`);
       }
+      const cluster = route.match(/^\/(ssb-personal-interview|officer-like-qualities|ssb-gto|exams\/nda)\/[^/]+\/$/);
+      if (cluster) {
+        if (metadata.articles.length !== 1) failures.push(`${route}: expected one Article schema`);
+        const toc = page.locator('nav[aria-label="On this page"]');
+        if (await toc.count() !== 1) failures.push(`${route}: expected one contents navigation`);
+        const targets = await toc.locator('a').evaluateAll(nodes => nodes.map(node => node.getAttribute('href')));
+        if (new Set(targets).size !== targets.length) failures.push(`${route}: duplicate contents links`);
+        for (const article of metadata.articles) {
+          if (!article.datePublished || !article.dateModified) failures.push(`${route}: missing publication dates`);
+          if (article.author?.['@id'] !== 'https://www.marchaheadacademy.com/#organization') failures.push(`${route}: unapproved expert authorship`);
+        }
+        if (!fs.readFileSync(path.join(root, 'sitemap.xml'), 'utf8').includes(metadata.canonical)) failures.push(`${route}: missing sitemap entry`);
+        const hubPath = `/${cluster[1]}/`;
+        const hubHtml = fs.readFileSync(path.join(root, hubPath, 'index.html'), 'utf8');
+        if (!hubHtml.includes(`href="${route}"`)) failures.push(`${route}: missing link from its hub`);
+      }
       for (const article of metadata.articles) {
         const entity = typeof article.mainEntityOfPage === 'string' ? article.mainEntityOfPage : article.mainEntityOfPage?.['@id'];
         if (article.url !== metadata.canonical || entity !== metadata.canonical) {

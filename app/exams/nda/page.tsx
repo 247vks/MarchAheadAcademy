@@ -2,6 +2,7 @@ import { withPageMetadata } from '@/lib/page-metadata';
 import type { Metadata } from 'next';
 import { examGuideAdditions } from '@/lib/exam-guide-additions';
 import { AuthorityPage } from '@/components/authority-shell';
+import { ndaArticles } from '@/lib/nda-articles';
 export const metadata: Metadata = withPageMetadata({
   alternates: { canonical: '/exams/nda' },
   title: 'NDA Exam Guide: Eligibility, Pattern & SSB | March Ahead Academy',
@@ -127,6 +128,7 @@ export default function Page() {
         },
       ]}
       related={[
+        ...ndaArticles.map(([slug, title]) => ({ label: title, href: `/exams/nda/${slug}/` })),
         { label: 'After Class 12', href: '/career-paths/after-12th' },
         { label: 'SSB guide', href: '/selection/ssb' },
         { label: 'Career Path Finder', href: '/career-paths' },

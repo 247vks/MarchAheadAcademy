@@ -25,8 +25,17 @@ export function articleBreadcrumbs(
     );
   } else if (cleanPath.startsWith('/ssb-psychology/')) {
     crumbs.push({ name: 'SSB Psychology', href: '/ssb-psychology/' });
+  } else if (cleanPath.startsWith('/ssb-personal-interview/')) {
+    crumbs.push({ name: 'SSB Personal Interview', href: '/ssb-personal-interview/' });
+  } else if (cleanPath.startsWith('/ssb-gto/')) {
+    crumbs.push({ name: 'SSB GTO', href: '/ssb-gto/' });
+  } else if (cleanPath.startsWith('/officer-like-qualities/')) {
+    crumbs.push({ name: 'Officer Like Qualities', href: '/officer-like-qualities/' });
   } else if (cleanPath.startsWith('/exams/')) {
     crumbs.push({ name: 'Defence Exams', href: '/exams/' });
+    if (cleanPath.startsWith('/exams/nda/')) {
+      crumbs.push({ name: 'NDA & Naval Academy', href: '/exams/nda/' });
+    }
   }
   crumbs.push({ name: title, href: `${cleanPath}/` });
   return crumbs;

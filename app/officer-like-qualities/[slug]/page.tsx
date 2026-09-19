@@ -1,10 +1,17 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import Link from 'next/link';
-import { Breadcrumbs, SiteFooter, SiteHeader } from '@/components/authority-shell';
+import { AuthorityPage } from '@/components/authority-shell';
 import { withPageMetadata } from '@/lib/page-metadata';
-import { olqArticles } from '@/lib/olq-articles';
+import { olqArticles, olqSections } from '@/lib/olq-articles';
 export const dynamicParams = false;
 export function generateStaticParams() { return olqArticles.map(([slug]) => ({ slug })); }
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> { const { slug } = await params; const a = olqArticles.find(([s]) => s === slug); if (!a) return {}; return withPageMetadata({ title: `${a[1]} | March Ahead Academy`, description: a[2], alternates: { canonical: `/officer-like-qualities/${slug}/` }, openGraph: { title: a[1], description: a[2], url: `/officer-like-qualities/${slug}/`, type: 'article', images: ['/og-tri-service.webp'] } }); }
-export default async function Page({ params }: { params: Promise<{ slug: string }> }) { const { slug } = await params; const a = olqArticles.find(([s]) => s === slug); if (!a) notFound(); return <main className="min-h-screen bg-white text-[#0a1e33]"><SiteHeader /><div className="mx-auto max-w-5xl px-5 py-10 lg:px-8"><Breadcrumbs current={a[1]} tone="light" /><p className="section-kicker">Officer Like Qualities · Academy guidance</p><h1 className="mt-4 max-w-4xl font-heading text-4xl leading-tight sm:text-5xl">{a[1]}</h1><p className="mt-6 max-w-3xl text-lg leading-8 text-[#536371]">{a[2]}</p><article className="mt-10 border-t-2 border-[#4b6228] pt-8"><h2 className="font-heading text-3xl">Turn the idea into development</h2><p className="mt-4 max-w-3xl leading-8 text-[#536371]">{a[3]} OLQs are a public framework for officer development, not a confidential scoring formula. Use them to reflect on behaviour and choices rather than to label yourself or perform a quality on demand.</p><p className="mt-6 max-w-3xl leading-8 text-[#536371]">Continue with the <Link className="text-link" href="/officer-like-qualities/">OLQ hub</Link>, read the <Link className="text-link" href="/selection/ssb/">SSB selection overview</Link>, or <Link className="text-link" href="/ssb-coaching/">discuss individual preparation</Link>.</p></article></div><SiteFooter /></main>; }
+export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const a = olqArticles.find(([s]) => s === slug);
+  if (!a) notFound();
+  return <AuthorityPage currentHref={`/officer-like-qualities/${slug}/`} eyebrow="Officer Like Qualities" title={a[1]} lede={a[2]} status="Academy guidance" publishedAt="2026-09-17" modifiedAt="2026-09-19" showEntryNotice={false}
+    sections={[...olqSections[slug], { title: 'How this relates to officer selection', body: 'The Indian Air Force describes SSB assessment as looking at Officer Like Qualities and trainability through interview, group-testing and psychological techniques. This article develops an everyday preparation theme; these six Academy guides are not an official list of qualities or a method for calculating an SSB result. The exercises are Academy suggestions.' }]}
+    sources={[{ label: 'Indian Air Force: CDSE and officer-selection assessment', href: 'https://careerairforce.gov.in/cdse' }, { label: 'Indian Air Force: AFSB testing', href: 'https://careerairforce.gov.in/air-force-selection-board-afsb-testing' }]}
+    related={[{ label: 'Officer Like Qualities overview', href: '/officer-like-qualities/' }, ...olqArticles.filter(([s]) => s !== slug).map(([s, title]) => ({ label: title, href: `/officer-like-qualities/${s}/` })), { label: 'SSB group testing and GTO', href: '/ssb-gto/' }, { label: 'SSB selection overview', href: '/selection/ssb/' }, { label: 'One-on-one SSB coaching', href: '/ssb-coaching/' }]} />;
+}

@@ -1,24 +1,29 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
-import { ArrowRight, MessagesSquare, UserRound, ClipboardCheck } from 'lucide-react';
 import { withPageMetadata } from '@/lib/page-metadata';
-import { Breadcrumbs, SiteFooter, SiteHeader } from '@/components/authority-shell';
+import { AuthorityPage } from '@/components/authority-shell';
+import { piArticles } from '@/lib/pi-articles';
 
 const title = 'SSB Personal Interview Preparation | March Ahead Academy';
-const description = 'A practical SSB personal interview hub covering PIQ reflection, education, family, hobbies, motivation and preparation for first-time candidates and repeaters.';
-export const metadata: Metadata = withPageMetadata({ title, description, alternates: { canonical: '/ssb-personal-interview/' }, openGraph: { title, description, url: '/ssb-personal-interview/', type: 'website', images: ['/og-tri-service.webp'] } });
+const description = 'Prepare for the SSB personal interview with PIQ reflection, question themes, education, family, current affairs, hobbies, motivation and repeater guidance.';
+export const metadata: Metadata = withPageMetadata({ title, description, alternates: { canonical: '/ssb-personal-interview/' } });
 
-const topics = [
-  ['Personal interview guide', '/selection/ssb/personal-interview/', MessagesSquare, 'Understand the interview as a conversation grounded in your own experiences.'],
-  ['PIQ and self-reflection', '/selection/ssb/self-description/', UserRound, 'Prepare accurate examples about education, family, interests and responsibility.'],
-  ['Interview preparation for repeaters', '/guidance/ssb-repeaters/', ClipboardCheck, 'Review preparation habits without inventing reasons for a previous outcome.'],
-] as const;
-const deepLinks = [
-  ['PIQ preparation', '/ssb-personal-interview/piq-preparation/'],
-  ['Education questions', '/ssb-personal-interview/education-questions/'],
-  ['Family and background', '/ssb-personal-interview/family-background-questions/'],
-  ['Defence motivation', '/ssb-personal-interview/defence-motivation/'],
-  ['Common interview mistakes', '/ssb-personal-interview/common-interview-mistakes/'],
-];
-
-export default function Page() { return <main className="min-h-screen bg-white text-[#0a1e33]"><SiteHeader /><div className="mx-auto max-w-6xl px-5 py-10 lg:px-8"><Breadcrumbs current="SSB personal interview" tone="light" /><p className="section-kicker">SSB knowledge centre · interview</p><h1 className="mt-4 max-w-4xl font-heading text-4xl leading-tight sm:text-5xl">SSB Personal Interview Preparation</h1><p className="mt-6 max-w-3xl text-lg leading-8 text-[#536371]">Prepare for the SSB personal interview through self-knowledge, clear communication and realistic reflection—not perfect answers.</p><section className="mt-10 grid gap-6 md:grid-cols-3">{topics.map(([label, href, Icon, copy]) => <Link key={href} href={href} className="linked-panel border-t-2 border-[#397fa8] p-6"><Icon className="text-[#397fa8]" size={28} aria-hidden="true" /><h2 className="mt-4 font-heading text-2xl">{label}</h2><p className="mt-3 leading-7 text-[#536371]">{copy}</p><span className="mt-5 inline-flex items-center gap-2 font-bold text-[#2f6f94]">Open guide <ArrowRight size={17} aria-hidden="true" /></span></Link>)}</section><section className="mt-12 border-t border-[#d8e1dd] pt-8"><h2 className="font-heading text-3xl">Questions worth preparing for</h2><p className="mt-4 max-w-3xl leading-8 text-[#536371]">Expect questions about your education, family and background, current interests, hobbies, defence motivation, responsibilities and choices. Use these themes to organise truthful examples; do not memorise a script or assume a question has one preferred answer.</p><p className="mt-4 leading-8 text-[#536371]">For individual support, <Link className="text-link" href="/ssb-coaching/">explore one-on-one SSB coaching</Link> or begin with a <Link className="text-link" href="/consultation/">consultation</Link>.</p></section></div><SiteFooter /></main>; }
+export default function Page() {
+  return <AuthorityPage
+    currentHref="/ssb-personal-interview/"
+    eyebrow="SSB knowledge centre · interview"
+    title="SSB Personal Interview Preparation"
+    lede="Prepare through self-knowledge, clear communication and reflection on your actual experiences. Explore practical guides for each part of your preparation."
+    status="Academy guidance"
+    publishedAt="2026-09-16"
+    modifiedAt="2026-09-19"
+    showEntryNotice={false}
+    sections={[
+      { title: 'Understand the interview in context', body: 'The Indian Air Force’s public selection overview places the interview alongside psychological and group tests. Prepare for a conversation within that wider process. Understanding your experiences, listening to questions and explaining choices clearly are useful preparation goals; no question bank can establish a preferred answer for every candidate.' },
+      { title: 'Build your interview preparation around your experiences', body: 'Begin with accurate information about education, responsibilities, interests and your reasons for applying. Use the related guides below to review a theme, try a practical exercise and identify questions you need to investigate further. Each guide offers Academy preparation advice rather than a predicted interview script.' },
+      { title: 'Use practice as a conversation', body: 'Ask a partner to vary the order of questions and use natural follow-ups. Review whether your explanation was relevant and understandable. If you record a practice session, agree this with everyone involved and keep it private. Work on one observable difficulty at a time, such as an unclear project explanation or a habit of missing part of a question.' },
+      { title: 'Preparing online and in person', body: 'An online discussion can support reflection, practice explaining experiences and individual feedback. Check sound and connection so technical difficulties do not interrupt the exercise. Neither an online nor an in-person mock reproduces the board’s assessment or predicts its decision. March Ahead Academy offers one-on-one preparation online and in person by appointment, with the focus discussed during an individual consultation.' },
+    ]}
+    sources={[{ label: 'Indian Air Force: selection process', href: 'https://www.careerairforce.gov.in/selection-process' }]}
+    related={[...piArticles.map(([slug, label]) => ({ label, href: `/ssb-personal-interview/${slug}/` })), { label: 'SSB overview', href: '/selection/ssb/' }, { label: 'SSB Psychology', href: '/ssb-psychology/' }, { label: 'SSB GTO preparation', href: '/ssb-gto/' }, { label: 'One-on-one SSB coaching', href: '/ssb-coaching/' }, { label: 'Book a consultation', href: '/consultation/' }, { label: 'Commander Sharma’s profile', href: '/authors/cdr-sulakshan-kumar-sharma/' }]}
+  />;
+}

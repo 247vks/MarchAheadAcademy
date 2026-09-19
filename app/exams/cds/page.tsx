@@ -16,8 +16,33 @@ export default function Page() {
       title="Combined Defence Services examination"
       lede="CDS is not one uniform route. IMA, INA, AFA and OTA have distinct educational conditions, examination papers, service outcomes and notified availability."
       status="CDS preparation guide"
+      modifiedAt="2026-09-19"
       expertContext="Commander Sharma’s military-education and candidate-development experience informs the academy’s approach to comparing academy routes, building subject foundations and connecting written preparation with later selection stages."
       sections={[
+        {
+          title: 'Compare IMA, INA, AFA and OTA',
+          body: 'Read the academy name as a career choice as well as an examination preference. IMA and OTA lead into Army officer training, INA into Navy training and AFA into Air Force training. Compare the commission, course and eligibility provisions in the notice before ranking preferences. Passing a paper combination does not make every academy available to you.',
+          points: [
+            'IMA: investigate the Army route, its degree requirement and notified personal eligibility conditions.',
+            'INA: check the precise engineering qualification provision and Navy service expectations.',
+            'AFA: check education and school-subject conditions as well as the Air Force selection requirements.',
+            'OTA: examine the notified Short Service Commission course and the English-plus-General-Knowledge written route.',
+          ],
+        },
+        {
+          title: 'Build a CDS syllabus checklist',
+          body: 'Keep the UPSC syllabus beside your paper review. For English, separate comprehension, grammar and vocabulary difficulties. For General Knowledge, group topics such as history, geography, science and current events. Where Elementary Mathematics applies, organise arithmetic, algebra, trigonometry, geometry, mensuration and statistics. Use this as a checklist to study systematically, not as a prediction of the next paper.',
+          points: [
+            'Mark each topic as unfamiliar, learning, practising or ready for timed review.',
+            'Connect every practice error to a topic and an action.',
+            'Revisit an older topic each week so earlier learning is retained.',
+            'Check your official paper instructions before calculating a mock score.',
+          ],
+        },
+        {
+          title: 'Move from the written result to SSB or AFSB',
+          body: 'Read the result notice and follow the service-specific registration and call-up instructions. Keep application details, academic records and contact information ready. While waiting, review your projects, employment, responsibilities and reasons for choosing the service. Use real examples in interview preparation and practise listening as well as speaking during group discussion. For an Air Force preference, familiarise yourself with the IAF’s published AFSB process and any additional applicable requirements.',
+        },
         ...examGuideAdditions.cds,
         {
           title: 'Start with the academy, not only the exam',
@@ -117,6 +142,8 @@ export default function Page() {
         ],
       }}
       sources={[
+        { label: 'UPSC CDS II 2026 examination page', href: 'https://www.upsc.gov.in/examinations/Combined%20Defence%20Services%20Examination%20%28II%29%2C%202026' },
+        { label: 'UPSC previous question papers', href: 'https://www.upsc.gov.in/examinations/previous-question-papers' },
         {
           label: 'UPSC CDS II 2026 notification',
           href: 'https://www.upsc.gov.in/sites/default/files/Notif-CDS-II-2026-Engl-200526.pdf',
@@ -131,6 +158,8 @@ export default function Page() {
         },
       ]}
       related={[
+        { label: 'Personal Interview preparation', href: '/ssb-personal-interview/' },
+        { label: 'One-on-one coaching', href: '/ssb-coaching/' },
         { label: 'After graduation', href: '/career-paths/after-graduation' },
         { label: 'SSB guide', href: '/selection/ssb' },
         { label: 'NDA guide', href: '/exams/nda' },

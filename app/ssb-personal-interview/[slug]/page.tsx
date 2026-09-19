@@ -1,10 +1,40 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import Link from 'next/link';
-import { Breadcrumbs, SiteFooter, SiteHeader } from '@/components/authority-shell';
+import { AuthorityPage } from '@/components/authority-shell';
 import { withPageMetadata } from '@/lib/page-metadata';
-import { piArticles } from '@/lib/pi-articles';
+import { piArticles, piSections } from '@/lib/pi-articles';
+
 export const dynamicParams = false;
 export function generateStaticParams() { return piArticles.map(([slug]) => ({ slug })); }
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> { const { slug } = await params; const a = piArticles.find(([s]) => s === slug); if (!a) return {}; return withPageMetadata({ title: `${a[1]} | March Ahead Academy`, description: a[2], alternates: { canonical: `/ssb-personal-interview/${slug}/` }, openGraph: { title: a[1], description: a[2], url: `/ssb-personal-interview/${slug}/`, type: 'article', images: ['/og-tri-service.webp'] } }); }
-export default async function Page({ params }: { params: Promise<{ slug: string }> }) { const { slug } = await params; const a = piArticles.find(([s]) => s === slug); if (!a) notFound(); return <main className="min-h-screen bg-white text-[#0a1e33]"><SiteHeader /><div className="mx-auto max-w-5xl px-5 py-10 lg:px-8"><Breadcrumbs current={a[1]} tone="light" /><p className="section-kicker">SSB personal interview · Academy guidance</p><h1 className="mt-4 max-w-4xl font-heading text-4xl leading-tight sm:text-5xl">{a[1]}</h1><p className="mt-6 max-w-3xl text-lg leading-8 text-[#536371]">{a[2]}</p><article className="mt-10 border-t-2 border-[#397fa8] pt-8"><h2 className="font-heading text-3xl">A grounded preparation approach</h2><p className="mt-4 max-w-3xl leading-8 text-[#536371]">{a[3]} The personal interview is a conversation within the wider SSB process. No answer bank can replace accurate self-knowledge, careful listening and the ability to explain your experiences naturally.</p><h2 className="mt-10 font-heading text-3xl">Keep preparation honest and specific</h2><p className="mt-4 max-w-3xl leading-8 text-[#536371]">Use examples you can describe accurately, distinguish fact from interpretation and treat feedback as a chance to develop a habit. March Ahead Academy does not promise a recommendation or teach scripts intended to manufacture a personality.</p><p className="mt-8 leading-8 text-[#536371]"><Link className="text-link" href="/ssb-personal-interview/">Return to the Personal Interview hub</Link> · <Link className="text-link" href="/ssb-coaching/">Explore one-on-one coaching</Link> · <Link className="text-link" href="/authors/cdr-sulakshan-kumar-sharma/">Meet Commander Sharma</Link></p></article></div><SiteFooter /></main>; }
+type Props = { params: Promise<{ slug: string }> };
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { slug } = await params;
+  const article = piArticles.find(([item]) => item === slug);
+  if (!article) return {};
+  return withPageMetadata({ title: `${article[1]} | March Ahead Academy`, description: article[2], alternates: { canonical: `/ssb-personal-interview/${slug}/` }, openGraph: { title: article[1], description: article[2], url: `/ssb-personal-interview/${slug}/`, type: 'article', images: ['/og-tri-service.webp'] } });
+}
+export default async function Page({ params }: Props) {
+  const { slug } = await params;
+  const article = piArticles.find(([item]) => item === slug);
+  if (!article) notFound();
+  const original = piArticles.slice(0, 5).some(([item]) => item === slug);
+  return <AuthorityPage
+    currentHref={`/ssb-personal-interview/${slug}/`}
+    eyebrow="SSB personal interview"
+    title={article[1]}
+    lede={article[2]}
+    status="Academy guidance"
+    publishedAt={original ? '2026-09-17' : '2026-09-19'}
+    modifiedAt="2026-09-19"
+    showEntryNotice={false}
+    sections={[{ title: 'Your starting point', body: article[3] }, ...piSections[slug]]}
+    sources={[{ label: 'Indian Air Force: the interview within the selection process', href: 'https://www.careerairforce.gov.in/selection-process' }]}
+    related={[
+      { label: 'Personal Interview preparation hub', href: '/ssb-personal-interview/' },
+      { label: 'The interview in the wider SSB process', href: '/selection/ssb/personal-interview/' },
+      ...piArticles.filter(([item]) => item !== slug).map(([item, title]) => ({ label: title, href: `/ssb-personal-interview/${item}/` })),
+      { label: 'One-on-one SSB coaching', href: '/ssb-coaching/' },
+      { label: 'Commander Sharma’s profile', href: '/authors/cdr-sulakshan-kumar-sharma/' },
+    ]}
+  />;
+}

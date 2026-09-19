@@ -16,8 +16,33 @@ export default function Page() {
       title="Air Force Common Admission Test"
       lede="AFCAT opens notified officer pathways across Flying and Ground Duty branches, but branch-specific education, age, commission and medical conditions must be checked separately."
       status="AFCAT preparation guide"
+      modifiedAt="2026-09-19"
       expertContext="Commander Sharma’s experience in tri-service education and officer selection informs the academy’s focus on branch-aware decisions, disciplined preparation and authentic readiness for the AFSB journey."
       sections={[
+        {
+          title: 'Compare Flying, Technical and Non-Technical branches',
+          body: 'The branch determines the work you are seeking to do and the education record you must check. Flying, Ground Duty Technical and Ground Duty Non-Technical are not interchangeable preferences. The official IAF entry page explains the branch families; use the current notification to match your exact qualification, marks, school subjects and personal eligibility conditions.',
+          points: [
+            'Flying: investigate the role and the applicable education, medical and selection requirements.',
+            'Ground Duty Technical: match your engineering discipline to the notified list rather than relying on “engineering graduate” alone.',
+            'Ground Duty Non-Technical: check the individual branch, because Administration, Logistics, Accounts and other notified options can require different qualifications.',
+            'Record commission type and branch availability separately from examination preparation.',
+          ],
+        },
+        {
+          title: 'Turn the AFCAT syllabus into four practice streams',
+          body: 'Organise English, General Awareness, Numerical Ability, and Reasoning and Military Aptitude separately before combining them in a mock. For each stream, identify whether your difficulty is knowledge, interpretation or execution under time pressure. A mixed score can hide a recurring weakness in one area.',
+          points: [
+            'English: explain why an answer fits the meaning and grammar of its context.',
+            'General Awareness: revise connected topics and verify changing facts.',
+            'Numerical Ability: practise methods, estimation and careful calculation.',
+            'Reasoning: state the rule you used and test it against all the information.',
+          ],
+        },
+        {
+          title: 'Prepare a practical AFSB transition checklist',
+          body: 'After written qualification, follow the official instructions for selection-board arrangements and documents. Learn the Stage I and Stage II sequence from the IAF material and review your education, work, interests and responsibilities. Online preparation can help with reflection, interview discussion and familiarity with formats. Physical group-task practice needs suitable facilities and supervision. CPSS, where applicable, is an official selection requirement; commercial exercises cannot certify that you will pass it.',
+        },
         ...examGuideAdditions.afcat,
         {
           title: 'AFCAT is a family of branch pathways',
@@ -116,6 +141,7 @@ export default function Page() {
         ],
       }}
       sources={[
+        { label: 'Indian Air Force: AFCAT entry and branch qualifications', href: 'https://www.careerairforce.gov.in/afcat-entry' },
         {
           label: 'AFCAT 02/2026 official notification',
           href: 'https://careerairforce.gov.in/sites/default/files/2026-05/AFCAT-Cycle-02-2026-Notification.pdf',
@@ -130,6 +156,9 @@ export default function Page() {
         },
       ]}
       related={[
+        { label: 'Personal Interview preparation', href: '/ssb-personal-interview/' },
+        { label: 'SSB Psychology', href: '/ssb-psychology/' },
+        { label: 'One-on-one coaching', href: '/ssb-coaching/' },
         { label: 'Air Force careers', href: '/services/air-force' },
         { label: 'After graduation', href: '/career-paths/after-graduation' },
         { label: 'SSB and AFSB guide', href: '/selection/ssb' },

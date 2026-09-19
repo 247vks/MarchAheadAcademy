@@ -1,7 +1,7 @@
 export const psychologyArticles = [
   {
     slug: 'what-does-an-ssb-psychologist-assess',
-    title: 'What Does an SSB Psychologist Assess? A Former SSB Psychologist Explains',
+    title: 'What Does an SSB Psychologist Assess?',
     description:
       'Understand the place of psychological assessment in SSB and how to prepare through self-awareness, clear expression and realistic reflection.',
     sections: [

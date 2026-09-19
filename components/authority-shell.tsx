@@ -409,6 +409,7 @@ export function AuthorityPage({
               {status}
               {publishedAt ? ` · Published ${publishedAt}` : ''} · March Ahead
               Academy
+              {modifiedAt && modifiedAt !== publishedAt ? ` · Updated ${modifiedAt}` : ''}
             </span>
             {expertContext && (
               <Link
@@ -430,7 +431,7 @@ export function AuthorityPage({
       {experience && <ExpectationPreview data={experience} />}
       <div className="mx-auto grid max-w-5xl gap-10 px-5 py-12 lg:grid-cols-[minmax(0,1fr)_250px] lg:gap-14 lg:px-8 lg:py-16">
         <article className="space-y-10 lg:space-y-12">
-          {expertContext && <ExpertByline />}
+          {expertContext && <ExpertByline context={expertContext} />}
           {visual}
           <nav
             aria-label="On this page"

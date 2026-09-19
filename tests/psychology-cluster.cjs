@@ -27,8 +27,9 @@ const server = http.createServer((req, res) => {
       const graph = await page.locator('script[type="application/ld+json"]').evaluateAll(nodes => nodes.flatMap(n => JSON.parse(n.textContent)['@graph'] || []));
       const article = graph.find(n => n['@type'] === 'Article');
       assert.equal(article.author['@id'], 'https://www.marchaheadacademy.com/#organization');
-      assert.equal(article.datePublished, '2026-09-16');
-      assert.equal(article.dateModified, '2026-09-16');
+      assert.match(article.datePublished, /^\d{4}-\d{2}-\d{2}$/);
+      assert.match(article.dateModified, /^\d{4}-\d{2}-\d{2}$/);
+      assert(article.dateModified >= article.datePublished);
       assert.equal(article.mainEntityOfPage['@id'], 'https://www.marchaheadacademy.com' + route);
       assert(graph.find(n => n['@type'] === 'BreadcrumbList').itemListElement.some(n => n.name === 'SSB Psychology'));
       assert(!await page.getByText('This guide explains career pathways;', { exact: false }).count());

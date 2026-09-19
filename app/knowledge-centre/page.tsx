@@ -1,6 +1,9 @@
 import { withPageMetadata } from '@/lib/page-metadata';
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { piArticles } from '@/lib/pi-articles';
+import { olqArticles } from '@/lib/olq-articles';
+import { ndaArticles } from '@/lib/nda-articles';
 import {
   ArrowRight,
   Brain,
@@ -50,6 +53,8 @@ const categories = [
       'Practical advice for your first attempt, preparing again and supporting an NDA aspirant.',
     links: [
       ['Your first SSB attempt', '/guidance/first-ssb-attempt/'],
+      ['Academy talks and guidance sessions', '/academy-evidence/'],
+      ['Commander Sharma media kit', '/media-kit/'],
       ['Preparing again after SSB', '/guidance/ssb-repeaters/'],
       [
         'A parent’s guide to NDA preparation',
@@ -72,14 +77,22 @@ const categories = [
       ['SSB GTO hub', '/ssb-gto/'],
       ['Officer Like Qualities (OLQs)', '/officer-like-qualities/'],
       ['How to choose an SSB coaching institute', '/how-to-choose-ssb-coaching/'],
-      ['Academy talks and guidance sessions', '/academy-evidence/'],
-      ['Commander Sharma media kit', '/media-kit/'],
       ['Personal interview', '/selection/ssb/personal-interview/'],
-      ['PIQ preparation', '/ssb-personal-interview/piq-preparation/'],
-      ['Education questions', '/ssb-personal-interview/education-questions/'],
-      ['Defence motivation', '/ssb-personal-interview/defence-motivation/'],
-      ['Common interview mistakes', '/ssb-personal-interview/common-interview-mistakes/'],
     ],
+  },
+  {
+    id: 'personal-interview',
+    name: 'Personal Interview',
+    icon: BookOpen,
+    description: 'Prepare accurate personal examples, reflect on your choices and practise a clear conversation about your experiences.',
+    links: piArticles.map(([slug, title]) => [title, `/ssb-personal-interview/${slug}/`]),
+  },
+  {
+    id: 'officer-development',
+    name: 'Officer Like Qualities',
+    icon: Compass,
+    description: 'Explore leadership, responsibility and everyday development through practical reflection exercises.',
+    links: olqArticles.map(([slug, title]) => [title, `/officer-like-qualities/${slug}/`]),
   },
   {
     id: 'psychology',
@@ -107,12 +120,6 @@ const categories = [
       ['Word Association Test (WAT)', '/selection/ssb/wat/'],
       ['Situation Reaction Test (SRT)', '/selection/ssb/srt/'],
       ['Self Description', '/selection/ssb/self-description/'],
-      ['OLQ: leadership', '/officer-like-qualities/leadership/'],
-      ['OLQ: responsibility', '/officer-like-qualities/responsibility/'],
-      ['OLQ: communication', '/officer-like-qualities/communication/'],
-      ['OLQ: cooperation', '/officer-like-qualities/cooperation/'],
-      ['OLQ: initiative', '/officer-like-qualities/initiative/'],
-      ['OLQ: decision-making', '/officer-like-qualities/decision-making/'],
     ],
   },
   {
@@ -124,11 +131,7 @@ const categories = [
     links: [
       ['Compare exams and entries', '/exams/'],
       ['NDA & NA', '/exams/nda/'],
-      ['NDA eligibility', '/exams/nda/eligibility/'],
-      ['NDA syllabus and exam pattern', '/exams/nda/syllabus-exam-pattern/'],
-      ['NDA Mathematics preparation', '/exams/nda/mathematics-preparation/'],
-      ['NDA GAT preparation', '/exams/nda/gat-preparation/'],
-      ['NDA written exam to SSB', '/exams/nda/written-exam-to-ssb/'],
+      ...ndaArticles.map(([slug, title]) => [title, `/exams/nda/${slug}/`]),
       ['CDS', '/exams/cds/'],
       ['AFCAT', '/exams/afcat/'],
     ],
@@ -144,6 +147,7 @@ const categories = [
       ['Build foundations', '/career-paths/foundation/'],
       ['After Class 12', '/career-paths/after-12th/'],
       ['After graduation', '/career-paths/after-graduation/'],
+      ['TGC, SSC Tech, JAG and Navy officer entries', '/career-paths/graduate-officer-entries/'],
     ],
   },
   {

@@ -53,6 +53,11 @@ export default function Page() {
         </div>
       </section>
       <ExamComparison />
+      <div className="mx-auto max-w-6xl px-5 pt-6 lg:px-8">
+        <Link className="text-link inline-flex items-center gap-2 font-bold" href="/career-paths/graduate-officer-entries/">
+          Compare TGC, SSC Tech, JAG and Navy graduate officer entries <ArrowRight size={16} aria-hidden="true" />
+        </Link>
+      </div>
       <section className="mx-auto grid max-w-6xl gap-5 px-5 py-16 md:grid-cols-3 lg:px-8 lg:py-20">
         {exams.map(([title, copy, href, color], index) => (
           <Link
