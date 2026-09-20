@@ -156,6 +156,8 @@ export default function Page() {
         },
       ]}
       related={[
+        { label: 'AFCAT eligibility: branch, education and age checks', href: '/exams/afcat/eligibility/' },
+        { label: 'AFCAT syllabus and subject preparation', href: '/exams/afcat/syllabus/' },
         { label: 'AFCAT study plan and AFSB transition', href: '/exams/afcat/preparation-plan/' },
         { label: 'Personal Interview preparation', href: '/ssb-personal-interview/' },
         { label: 'SSB Psychology', href: '/ssb-psychology/' },

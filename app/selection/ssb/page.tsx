@@ -122,6 +122,10 @@ const guide: SsbGuideData = {
     },
   ],
   related: [
+    { label: 'SSB psychology hub', href: '/ssb-psychology/' },
+    { label: 'GTO task preparation hub', href: '/ssb-gto/' },
+    { label: 'Personal Interview preparation hub', href: '/ssb-personal-interview/' },
+    { label: 'Officer Like Qualities', href: '/officer-like-qualities/' },
     { label: 'Stage I and PP&DT', href: '/selection/ssb/stage-1' },
     { label: 'Psychology tests', href: '/selection/ssb/psychology-tests' },
     { label: 'Group testing', href: '/selection/ssb/group-testing' },

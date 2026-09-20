@@ -1,3 +1,5 @@
+import { outdoorGtoGuides } from '@/lib/outdoor-gto-guides';
+import { examDetailGuides } from '@/lib/exam-detail-guides';
 export type ClusterGuide = {
   path: string; title: string; description: string; parent: string; parentTitle: string;
   sections: { title: string; body: string; points?: string[] }[];
@@ -5,6 +7,8 @@ export type ClusterGuide = {
 };
 const afsb = { label: 'Indian Air Force: AFSB testing', href: 'https://careerairforce.gov.in/air-force-selection-board-afsb-testing' };
 export const nextClusterGuides: ClusterGuide[] = [
+  ...outdoorGtoGuides,
+  ...examDetailGuides,
   {
     path: '/ssb-gto/group-planning-exercise/', parent: '/ssb-gto/', parentTitle: 'SSB GTO preparation',
     title: 'SSB Group Planning Exercise: Reasoning, Priorities and Teamwork',

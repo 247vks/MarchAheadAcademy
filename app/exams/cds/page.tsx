@@ -158,6 +158,8 @@ export default function Page() {
         },
       ]}
       related={[
+        { label: 'CDS eligibility: academy, education and age checks', href: '/exams/cds/eligibility/' },
+        { label: 'CDS syllabus and paper combinations', href: '/exams/cds/syllabus/' },
         { label: 'CDS study plan: English, GK and Mathematics', href: '/exams/cds/preparation-plan/' },
         { label: 'Personal Interview preparation', href: '/ssb-personal-interview/' },
         { label: 'One-on-one coaching', href: '/ssb-coaching/' },
