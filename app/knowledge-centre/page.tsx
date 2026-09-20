@@ -75,6 +75,8 @@ const categories = [
       ['Group discussion', '/selection/ssb/group-discussion/'],
       ['SSB personal interview hub', '/ssb-personal-interview/'],
       ['SSB GTO hub', '/ssb-gto/'],
+      ['Group Planning Exercise: practical reasoning', '/ssb-gto/group-planning-exercise/'],
+      ['Lecturette: organise a clear short talk', '/ssb-gto/lecturette/'],
       ['Officer Like Qualities (OLQs)', '/officer-like-qualities/'],
       ['How to choose an SSB coaching institute', '/how-to-choose-ssb-coaching/'],
       ['Personal interview', '/selection/ssb/personal-interview/'],
@@ -133,7 +135,9 @@ const categories = [
       ['NDA & NA', '/exams/nda/'],
       ...ndaArticles.map(([slug, title]) => [title, `/exams/nda/${slug}/`]),
       ['CDS', '/exams/cds/'],
+      ['CDS preparation plan', '/exams/cds/preparation-plan/'],
       ['AFCAT', '/exams/afcat/'],
+      ['AFCAT preparation plan', '/exams/afcat/preparation-plan/'],
     ],
   },
   {

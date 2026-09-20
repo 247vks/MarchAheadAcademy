@@ -69,7 +69,7 @@ const server = http.createServer((req, res) => {
       if (!metadata.canonical || metadata.canonical !== metadata.ogUrl) {
         failures.push(`${route}: canonical ${metadata.canonical} does not match og:url ${metadata.ogUrl}`);
       }
-      const cluster = route.match(/^\/(ssb-personal-interview|officer-like-qualities|ssb-gto|exams\/nda)\/[^/]+\/$/);
+      const cluster = route.match(/^\/(ssb-personal-interview|officer-like-qualities|ssb-gto|exams\/nda|exams\/cds|exams\/afcat)\/[^/]+\/$/);
       if (cluster) {
         if (metadata.articles.length !== 1) failures.push(`${route}: expected one Article schema`);
         const toc = page.locator('nav[aria-label="On this page"]');

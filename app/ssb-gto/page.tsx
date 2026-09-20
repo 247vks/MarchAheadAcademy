@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { AuthorityPage } from '@/components/authority-shell';
 import { withPageMetadata } from '@/lib/page-metadata';
+import { nextClusterGuides } from '@/lib/next-cluster-guides';
 const title = 'SSB GTO Tasks: GD, GPE, PGT, HGT & Preparation';
 const description = 'Understand SSB GTO tasks, from GD and GPE to command task and lecturette, with practical preparation and clear limits on online training.';
 export const metadata: Metadata = withPageMetadata({ title, description, alternates: { canonical: '/ssb-gto/' } });
@@ -23,5 +24,5 @@ export default function Page() {
       { label: 'Territorial Army: SSB testing overview', href: 'https://territorialarmy.in/page/1126' },
       { label: 'Sainik School Kazhakootam: public school diary and SSB task overview', href: 'https://www.sainikschooltvm.edu.in/uploads/ckupload/School%20Diary%202025_26_1751955274.pdf' },
     ]}
-    related={[{ label: 'Group discussion practice guide', href: '/selection/ssb/group-discussion/' }, { label: 'Group testing overview', href: '/selection/ssb/group-testing/' }, { label: 'Officer Like Qualities', href: '/officer-like-qualities/' }, { label: 'SSB personal interview', href: '/ssb-personal-interview/' }, { label: 'SSB selection overview', href: '/selection/ssb/' }, { label: 'One-on-one SSB coaching', href: '/ssb-coaching/' }]} />;
+    related={[...nextClusterGuides.filter(guide => guide.parent === '/ssb-gto/').map(guide => ({ label: guide.title, href: guide.path })), { label: 'Group discussion practice guide', href: '/selection/ssb/group-discussion/' }, { label: 'Group testing overview', href: '/selection/ssb/group-testing/' }, { label: 'Officer Like Qualities', href: '/officer-like-qualities/' }, { label: 'SSB personal interview', href: '/ssb-personal-interview/' }, { label: 'SSB selection overview', href: '/selection/ssb/' }, { label: 'One-on-one SSB coaching', href: '/ssb-coaching/' }]} />;
 }

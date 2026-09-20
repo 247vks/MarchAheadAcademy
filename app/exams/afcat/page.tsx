@@ -156,6 +156,7 @@ export default function Page() {
         },
       ]}
       related={[
+        { label: 'AFCAT study plan and AFSB transition', href: '/exams/afcat/preparation-plan/' },
         { label: 'Personal Interview preparation', href: '/ssb-personal-interview/' },
         { label: 'SSB Psychology', href: '/ssb-psychology/' },
         { label: 'One-on-one coaching', href: '/ssb-coaching/' },

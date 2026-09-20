@@ -36,6 +36,12 @@ export function articleBreadcrumbs(
     if (cleanPath.startsWith('/exams/nda/')) {
       crumbs.push({ name: 'NDA & Naval Academy', href: '/exams/nda/' });
     }
+    if (cleanPath.startsWith('/exams/cds/')) {
+      crumbs.push({ name: 'CDS', href: '/exams/cds/' });
+    }
+    if (cleanPath.startsWith('/exams/afcat/')) {
+      crumbs.push({ name: 'AFCAT', href: '/exams/afcat/' });
+    }
   }
   crumbs.push({ name: title, href: `${cleanPath}/` });
   return crumbs;

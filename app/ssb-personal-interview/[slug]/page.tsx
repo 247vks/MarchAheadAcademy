@@ -17,15 +17,16 @@ export default async function Page({ params }: Props) {
   const { slug } = await params;
   const article = piArticles.find(([item]) => item === slug);
   if (!article) notFound();
-  const original = piArticles.slice(0, 5).some(([item]) => item === slug);
+  const original = ['piq-preparation', 'education-questions', 'family-background-questions', 'defence-motivation', 'common-interview-mistakes'].includes(slug);
+  const addedToday = ['communication', 'preparation-plan'].includes(slug);
   return <AuthorityPage
     currentHref={`/ssb-personal-interview/${slug}/`}
     eyebrow="SSB personal interview"
     title={article[1]}
     lede={article[2]}
     status="Academy guidance"
-    publishedAt={original ? '2026-09-17' : '2026-09-19'}
-    modifiedAt="2026-09-19"
+    publishedAt={addedToday ? '2026-09-20' : original ? '2026-09-17' : '2026-09-19'}
+    modifiedAt={addedToday ? '2026-09-20' : '2026-09-19'}
     showEntryNotice={false}
     sections={[{ title: 'Your starting point', body: article[3] }, ...piSections[slug]]}
     sources={[{ label: 'Indian Air Force: the interview within the selection process', href: 'https://www.careerairforce.gov.in/selection-process' }]}

@@ -4,6 +4,7 @@ import { psychologyArticles } from '@/lib/psychology-articles';
 import { piArticles } from '@/lib/pi-articles';
 import { olqArticles } from '@/lib/olq-articles';
 import { ndaArticles } from '@/lib/nda-articles';
+import { nextClusterGuides } from '@/lib/next-cluster-guides';
 
 export const dynamic = 'force-static';
 
@@ -71,6 +72,7 @@ const routes = [
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...routes,
+    ...nextClusterGuides.map(({ path }) => path.replace(/\/$/, '')),
     ...psychologyArticles.map(({ slug }) => `/ssb-psychology/${slug}`),
     ...piArticles.map(([slug]) => `/ssb-personal-interview/${slug}`),
     ...olqArticles.map(([slug]) => `/officer-like-qualities/${slug}`),

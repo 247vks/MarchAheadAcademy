@@ -158,6 +158,7 @@ export default function Page() {
         },
       ]}
       related={[
+        { label: 'CDS study plan: English, GK and Mathematics', href: '/exams/cds/preparation-plan/' },
         { label: 'Personal Interview preparation', href: '/ssb-personal-interview/' },
         { label: 'One-on-one coaching', href: '/ssb-coaching/' },
         { label: 'After graduation', href: '/career-paths/after-graduation' },
