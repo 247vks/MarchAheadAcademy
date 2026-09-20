@@ -133,7 +133,11 @@ export default function Page() {
               ],
               [
                 'How many sessions will I need?',
-                'Discuss your preparation needs and available time with us to agree on session arrangements before booking.',
+                'SSB psychology coaching runs for one hour daily. The overall programme length and scheduling are personalised after your initial discussion; agree these arrangements before booking.',
+              ],
+              [
+                'How does SSB psychology practice and feedback work?',
+                'Submit exercises before sessions and complete further exercises, including timed practice, during coaching. Receive written and verbal feedback immediately or within 24 hours, as applicable, followed by an individual preparation plan. Practice covers TAT, WAT, SRT and Self Description.',
               ],
               [
                 'How much does coaching cost?',
