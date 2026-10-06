@@ -48,6 +48,7 @@ export default function Page() {
                 {item.description}
               </p>
               <div className="mt-auto pt-5">
+                {item.slug === 'self-description-reflection' && <Link href="/resources/self-description-reflection/#online-workspace" className="text-link mb-4 flex min-h-11 items-center gap-2">Use the online workspace <ArrowRight size={16} aria-hidden="true" /></Link>}
                 <Link
                   href={`/resources/${item.slug}/`}
                   className="text-link inline-flex items-center gap-2"

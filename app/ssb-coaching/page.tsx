@@ -67,6 +67,66 @@ export default function Page() {
           pace at which you learn.
         </p>
         <section
+          className="mt-8 border-t-2 border-[#397fa8] pt-6"
+          aria-labelledby="coaching-process"
+        >
+          <h2
+            id="coaching-process"
+            className="flex items-center gap-3 font-heading text-2xl"
+          >
+            <ClipboardCheck
+              className="shrink-0 text-[#397fa8]"
+              aria-hidden="true"
+            />
+            Your psychology coaching, step by step
+          </h2>
+          <ol className="mt-5 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              [
+                'Share exercises',
+                'Submit your own work before sessions so there is a concrete starting point.',
+              ],
+              [
+                'Practise together',
+                'Work through further exercises and timed practice in daily one-hour, one-to-one coaching sessions.',
+              ],
+              [
+                'Receive feedback',
+                'Discuss your work individually, with written or verbal feedback immediately or within 24 hours, as applicable.',
+              ],
+              [
+                'Follow your plan',
+                'Use your individual follow-up plan to focus the next round of preparation.',
+              ],
+            ].map(([heading, copy], index) => (
+              <li key={heading} className="border-l-2 border-[#d8e1dd] pl-4">
+                <span className="text-sm font-bold text-[#397fa8]">
+                  0{index + 1}
+                </span>
+                <h3 className="mt-2 font-heading text-xl">{heading}</h3>
+                <p className="mt-2 text-sm leading-6 text-[#536371]">{copy}</p>
+              </li>
+            ))}
+          </ol>
+          <p className="mt-5 text-sm leading-7 text-[#536371]">
+            One hour describes coaching sessions, not the initial consultation.
+            Confirm consultation duration and any fee when booking. The feedback
+            window applies to coaching exercises, not enquiry replies; agree
+            session scheduling and programme length before starting.
+          </p>
+          <div className="mt-5 flex flex-wrap gap-5">
+            <Link href="/consultation/" className="text-link">
+              Book a consultation
+            </Link>
+            <Link
+              href="/resources/self-description-reflection/#online-workspace"
+              className="text-link"
+            >
+              Try the Self Description workspace
+            </Link>
+          </div>
+        </section>
+        <section
           aria-labelledby="coaching-summary"
           className="mt-8 border-y border-[#d8e1dd] py-6"
         >
@@ -123,7 +183,8 @@ export default function Page() {
               },
               {
                 label: 'Programme structure',
-                value: 'Personalised after the initial discussion; session availability and fees are agreed before coaching begins.',
+                value:
+                  'Personalised after the initial discussion; session availability and fees are agreed before coaching begins.',
                 icon: ClipboardCheck,
               },
             ].map(({ label, value, icon: Icon }) => (
@@ -151,64 +212,161 @@ export default function Page() {
           Book a consultation <ArrowRight size={18} aria-hidden="true" />
         </Link>
 
-        <section className="mt-10 border-t border-[#d8e1dd] pt-8" aria-labelledby="psychology-coaching">
-          <h2 id="psychology-coaching" className="flex items-center gap-3 font-heading text-3xl">
-            <Brain size={28} className="shrink-0 text-[#30471f]" aria-hidden="true" />
+        <section
+          className="mt-10 border-t border-[#d8e1dd] pt-8"
+          aria-labelledby="psychology-coaching"
+        >
+          <h2
+            id="psychology-coaching"
+            className="flex items-center gap-3 font-heading text-3xl"
+          >
+            <Brain
+              size={28}
+              className="shrink-0 text-[#30471f]"
+              aria-hidden="true"
+            />
             One-to-One SSB Psychology Preparation
           </h2>
           <p className="mt-4 max-w-4xl leading-8 text-[#536371]">
-            Prepare for TAT, WAT, SRT and Self Description with Commander Sulakshan Kumar Sharma (Retd.),
-            former SSB psychologist. Coaching is available online or in person by appointment,
-            for both first-time and repeat candidates.
+            Prepare for TAT, WAT, SRT and Self Description with Commander
+            Sulakshan Kumar Sharma (Retd.), former SSB psychologist. Coaching is
+            available online or in person by appointment, for both first-time
+            and repeat candidates.
           </p>
           <dl className="mt-6 grid gap-6 sm:grid-cols-2">
             {[
-              { label: 'One hour daily', value: 'Individual coaching sessions lasting one hour each day. Agree scheduling and programme length during your initial consultation.', icon: CalendarDays },
-              { label: 'Exercises before and during coaching', value: 'Submit exercises before your sessions and work on further exercises during coaching, including timed practice.', icon: ClipboardCheck },
-              { label: 'Written and verbal feedback', value: 'Receive individual feedback immediately or within 24 hours, as applicable to the exercise and feedback format.', icon: MessagesSquare },
-              { label: 'Your follow-up plan', value: 'Continue with an individual preparation plan that identifies what to practise and work on next.', icon: Compass },
+              {
+                label: 'One hour daily',
+                value:
+                  'Individual coaching sessions lasting one hour each day. Agree scheduling and programme length during your initial consultation.',
+                icon: CalendarDays,
+              },
+              {
+                label: 'Exercises before and during coaching',
+                value:
+                  'Submit exercises before your sessions and work on further exercises during coaching, including timed practice.',
+                icon: ClipboardCheck,
+              },
+              {
+                label: 'Written and verbal feedback',
+                value:
+                  'Receive individual feedback immediately or within 24 hours, as applicable to the exercise and feedback format.',
+                icon: MessagesSquare,
+              },
+              {
+                label: 'Your follow-up plan',
+                value:
+                  'Continue with an individual preparation plan that identifies what to practise and work on next.',
+                icon: Compass,
+              },
             ].map(({ label, value, icon: Icon }) => (
               <div key={label} className="border-t-2 border-[#397fa8] pt-4">
-                <dt className="flex items-center gap-2 font-bold text-[#30471f]"><Icon size={20} className="shrink-0" aria-hidden="true" />{label}</dt>
+                <dt className="flex items-center gap-2 font-bold text-[#30471f]">
+                  <Icon size={20} className="shrink-0" aria-hidden="true" />
+                  {label}
+                </dt>
                 <dd className="mt-3 leading-7 text-[#536371]">{value}</dd>
               </div>
             ))}
           </dl>
-          <p className="mt-5 text-sm leading-7 text-[#536371]">Programme length, scheduling and fees are agreed before coaching begins. Preparation develops your own responses and abilities; it does not promise selection.</p>
-          <Link href="/consultation/" className="text-link mt-5 inline-flex items-center gap-2 font-bold">Discuss your psychology preparation <ArrowRight size={18} aria-hidden="true" /></Link>
+          <p className="mt-5 text-sm leading-7 text-[#536371]">
+            Programme length, scheduling and fees are agreed before coaching
+            begins. Preparation develops your own responses and abilities; it
+            does not promise selection.
+          </p>
+          <Link
+            href="/consultation/"
+            className="text-link mt-5 inline-flex items-center gap-2 font-bold"
+          >
+            Discuss your psychology preparation{' '}
+            <ArrowRight size={18} aria-hidden="true" />
+          </Link>
         </section>
 
-        <section className="mt-10 border-t border-[#d8e1dd] pt-8" aria-labelledby="what-happens-next">
-          <h2 id="what-happens-next" className="font-heading text-3xl">What happens after you enquire</h2>
+        <section
+          className="mt-10 border-t border-[#d8e1dd] pt-8"
+          aria-labelledby="what-happens-next"
+        >
+          <h2 id="what-happens-next" className="font-heading text-3xl">
+            What happens after you enquire
+          </h2>
           <div className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              ['01', 'Share your starting point', 'Tell us your entry route, attempt stage, preparation time and questions.'],
-              ['02', 'Discuss priorities', 'Identify whether psychology, interview, orientation, communication or written exams need attention.'],
-              ['03', 'Shape the programme', 'Agree a practical sequence and session rhythm around your needs and pace.'],
-              ['04', 'Review and continue', 'Work through independent practice, feedback and the next focus with clear expectations.'],
+              [
+                '01',
+                'Share your starting point',
+                'Tell us your entry route, attempt stage, preparation time and questions.',
+              ],
+              [
+                '02',
+                'Discuss priorities',
+                'Identify whether psychology, interview, orientation, communication or written exams need attention.',
+              ],
+              [
+                '03',
+                'Shape the programme',
+                'Agree a practical sequence and session rhythm around your needs and pace.',
+              ],
+              [
+                '04',
+                'Review and continue',
+                'Work through independent practice, feedback and the next focus with clear expectations.',
+              ],
             ].map(([number, heading, copy]) => (
               <article key={number} className="border-t-2 border-[#397fa8] p-4">
-                <p className="text-xs font-bold tracking-[.15em] text-[#397fa8]">{number}</p>
+                <p className="text-xs font-bold tracking-[.15em] text-[#397fa8]">
+                  {number}
+                </p>
                 <h3 className="mt-3 font-heading text-xl">{heading}</h3>
                 <p className="mt-2 text-sm leading-6 text-[#536371]">{copy}</p>
               </article>
             ))}
           </div>
-          <p className="mt-5 text-sm leading-6 text-[#536371]">The initial consultation is for understanding fit and priorities. It is not a promise of recommendation or a substitute for the controlling recruitment notification.</p>
+          <p className="mt-5 text-sm leading-6 text-[#536371]">
+            The initial consultation is for understanding fit and priorities. It
+            is not a promise of recommendation or a substitute for the
+            controlling recruitment notification.
+          </p>
         </section>
 
-        <section className="mt-12 border-t border-[#d8e1dd] pt-8" aria-labelledby="how-we-work">
-          <h2 id="how-we-work" className="font-heading text-3xl">How we work with your preparation</h2>
-          <p className="mt-4 max-w-3xl leading-8 text-[#536371]">The examples below describe our working method. They are not a promise of selection, a confidential assessor report or a fixed course package.</p>
+        <section
+          className="mt-12 border-t border-[#d8e1dd] pt-8"
+          aria-labelledby="how-we-work"
+        >
+          <h2 id="how-we-work" className="font-heading text-3xl">
+            How we work with your preparation
+          </h2>
+          <p className="mt-4 max-w-3xl leading-8 text-[#536371]">
+            The examples below describe our working method. They are not a
+            promise of selection, a confidential assessor report or a fixed
+            course package.
+          </p>
           <div className="mt-6 grid gap-5 sm:grid-cols-2">
             {[
-              ['Consultation agenda', 'Clarify your entry route, attempt stage, preparation history, available time and the question you most want answered.'],
-              ['Preparation plan', 'Turn that discussion into a small number of priorities, a realistic session rhythm and independent practice between conversations.'],
-              ['Feedback format', 'Review relevance, clarity, assumptions and practical next steps in your own work—not a score prediction or a model personality.'],
-              ['Repeater workflow', 'Separate observable preparation habits from guesses about a previous result, then test one change on fresh material.'],
+              [
+                'Consultation agenda',
+                'Clarify your entry route, attempt stage, preparation history, available time and the question you most want answered.',
+              ],
+              [
+                'Preparation plan',
+                'Turn that discussion into a small number of priorities, a realistic session rhythm and independent practice between conversations.',
+              ],
+              [
+                'Feedback format',
+                'Review relevance, clarity, assumptions and practical next steps in your own work—not a score prediction or a model personality.',
+              ],
+              [
+                'Repeater workflow',
+                'Separate observable preparation habits from guesses about a previous result, then test one change on fresh material.',
+              ],
             ].map(([heading, copy]) => (
-              <article key={heading} className="border border-[#d8e1dd] bg-[#fbfcfb] p-5">
-                <h3 className="font-heading text-xl text-[#30471f]">{heading}</h3>
+              <article
+                key={heading}
+                className="border border-[#d8e1dd] bg-[#fbfcfb] p-5"
+              >
+                <h3 className="font-heading text-xl text-[#30471f]">
+                  {heading}
+                </h3>
                 <p className="mt-2 text-sm leading-6 text-[#536371]">{copy}</p>
               </article>
             ))}

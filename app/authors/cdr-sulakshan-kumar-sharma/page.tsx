@@ -1,4 +1,5 @@
 import { withPageMetadata } from '@/lib/page-metadata';
+import { ExpertContributions } from '@/components/expert-contributions';
 import type { Metadata } from 'next';
 import { siteUrl } from '@/lib/site';
 import Link from 'next/link';
@@ -163,7 +164,7 @@ export default function Page() {
                 development and officer selection. That combination informs
                 March Ahead Academy’s emphasis on understanding the career
                 before choosing an examination and developing the person rather
-                than rehearsing a performance.
+                than memorising stock responses. Practising your own responses can build awareness and confidence.
               </p>
               <p>
                 His historical roles include teaching tri-service cadets at the
@@ -180,6 +181,7 @@ export default function Page() {
           </article>
         </div>
 
+        <ExpertContributions />
         <section className="mt-16 border-y border-[#d8e0dc] py-12">
           <div className="grid gap-9 lg:grid-cols-2">
             <div>

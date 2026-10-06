@@ -13,7 +13,7 @@ export const coachingTaglines: Record<string, string> = {
     'Support their ambition with guidance shaped around their needs.',
   '/': 'Your career deserves more than one-size-fits-all coaching.',
   '/ssb-coaching':
-    'Make your SSB preparation personal—not a rehearsed performance.',
+    'Practise your own responses—not someone else’s script.',
   '/about': 'An academy approach centred on one person: you.',
   '/authors/cdr-sulakshan-kumar-sharma':
     'Experienced guidance. Individual attention. Your next step.',
@@ -56,7 +56,7 @@ export const coachingTaglines: Record<string, string> = {
   '/selection/ssb/psychology-tests':
     'Develop self-awareness—not a model personality.',
   '/selection/ssb/srt':
-    'Work on your judgement, not a bank of rehearsed reactions.',
+    'Work on your judgement, not a bank of memorised reactions.',
   '/selection/ssb/tat':
     'Develop clearer expression without borrowing someone else’s story.',
   '/selection/ssb/wat':

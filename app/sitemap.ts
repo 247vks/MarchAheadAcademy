@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next';
+import { contentUpdates } from '@/lib/content-updates';
 import { siteUrl } from '@/lib/site';
 import { psychologyArticles } from '@/lib/psychology-articles';
 import { piArticles } from '@/lib/pi-articles';
@@ -79,6 +80,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...ndaArticles.map(([slug]) => `/exams/nda/${slug}`),
   ].map((route) => ({
     url: route ? `${siteUrl}${route}/` : `${siteUrl}/`,
+    ...(contentUpdates[route] ? { lastModified: contentUpdates[route] } : {}),
     changeFrequency:
       route === '/notifications'
         ? 'daily'

@@ -2,6 +2,7 @@ import { withPageMetadata } from '@/lib/page-metadata';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { psychologyArticles } from '@/lib/psychology-articles';
+import { ExpertContributions } from '@/components/expert-contributions';
 import {
   Brain,
   Image,
@@ -160,6 +161,7 @@ export default function Page() {
             .
           </p>
         </section>
+        <ExpertContributions />
         <section className="mt-9" aria-labelledby="tests-heading">
           <h2 id="tests-heading" className="flex items-center gap-3 font-heading text-3xl">
             <BookOpen className="shrink-0 text-[#397fa8]" aria-hidden="true" />

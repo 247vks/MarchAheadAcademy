@@ -14,7 +14,7 @@ function walk(dir) {
 }
 walk(root);
 const server = http.createServer((req, res) => {
-  let file = path.resolve(root, '.' + new URL(req.url, 'http://localhost').pathname);
+  let file = path.resolve(root, '.' + decodeURIComponent(new URL(req.url, 'http://localhost').pathname));
   if (file !== root && !file.startsWith(root + path.sep)) return res.writeHead(403).end();
   if (fs.existsSync(file) && fs.statSync(file).isDirectory()) file = path.join(file, 'index.html');
   if (!fs.existsSync(file)) return res.writeHead(404).end();

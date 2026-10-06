@@ -1,4 +1,5 @@
 import { siteUrl } from '@/lib/site';
+import { contentUpdates } from '@/lib/content-updates';
 import { getApprovedExpertInsight } from '@/lib/approved-expert-insights';
 
 type FAQ = { question: string; answer: string };
@@ -34,7 +35,7 @@ export function GuideStructuredData({
       mainEntityOfPage: { '@type': 'WebPage', '@id': url },
       author: { '@id': `${siteUrl}/#organization` },
       publisher: { '@id': `${siteUrl}/#organization` },
-      dateModified: getApprovedExpertInsight(path) ? '2026-10-07' : modifiedAt,
+      dateModified: contentUpdates[path.replace(/\/$/, '')] ?? modifiedAt,
       ...(getApprovedExpertInsight(path) ? { contributor: { '@id': `${siteUrl}/#cdr-sharma`, '@type': 'Person', name: 'Commander Sulakshan Kumar Sharma (Retd.)', url: `${siteUrl}/authors/cdr-sulakshan-kumar-sharma/` } } : {}),
       datePublished: publishedAt,
       articleSection: section,

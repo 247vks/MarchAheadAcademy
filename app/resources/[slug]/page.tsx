@@ -6,6 +6,7 @@ import { Download, ClipboardList, ArrowRight } from 'lucide-react';
 import { SiteHeader, SiteFooter } from '@/components/authority-shell';
 import worksheets from '../worksheets.json';
 import { PrintButton } from '../print-button';
+import { ReflectionWorkspace } from '@/components/reflection-workspace';
 
 export function generateStaticParams() {
   return worksheets.map(({ slug }) => ({ slug }));
@@ -63,6 +64,7 @@ export default async function WorksheetPage({
             <Download size={18} aria-hidden="true" /> Download PDF
           </a>
           <PrintButton />
+          {slug === 'self-description-reflection' && <a href="#online-workspace" className="text-link inline-flex min-h-11 items-center px-3">Use online</a>}
         </div>
         <section className="worksheet-screen-only mt-9 border-t border-[#d8e1dd] pt-7">
           <h2 className="font-heading text-2xl">How to use this worksheet</h2>
@@ -72,7 +74,8 @@ export default async function WorksheetPage({
             ))}
           </ol>
         </section>
-        <section className="worksheet-prompts mt-9">
+        {slug === 'self-description-reflection' && <ReflectionWorkspace prompts={item.prompts} />}
+        {slug !== 'self-description-reflection' && <section className="worksheet-prompts mt-9">
           <h2 className="flex items-center gap-3 font-heading text-2xl">
             <ClipboardList className="text-[#397fa8]" aria-hidden="true" /> Your
             working notes
@@ -99,6 +102,7 @@ export default async function WorksheetPage({
             ))}
           </div>
         </section>
+        }
         <section className="worksheet-screen-only mt-9">
           <h2 className="font-heading text-2xl">Review your practice</h2>
           <p className="mt-4 leading-8 text-[#536371]">{item.review}</p>

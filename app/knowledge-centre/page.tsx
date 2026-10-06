@@ -1,4 +1,5 @@
 import { withPageMetadata } from '@/lib/page-metadata';
+import { ExpertContributions } from '@/components/expert-contributions';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { piArticles } from '@/lib/pi-articles';
@@ -243,6 +244,7 @@ export default function KnowledgeCentrePage() {
           practical guides by subject, or use the free worksheets to put your
           learning into action.
         </p>
+        <ExpertContributions />
         <nav
           aria-label="Knowledge Centre topics"
           className="mt-7 flex flex-wrap gap-3"

@@ -1,9 +1,9 @@
 export const psychologyArticles = [
   {
     slug: 'what-does-an-ssb-psychologist-assess',
-    title: 'What Does an SSB Psychologist Assess?',
+    title: 'What Does an SSB Psychologist Assess? Insights from a Former SSB Psychologist',
     description:
-      'Understand the place of psychological assessment in SSB and how to prepare through self-awareness, clear expression and realistic reflection.',
+      'Explore SSB psychological assessment with insights from Commander Sharma, a former SSB psychologist, on original responses, awareness and preparation.',
     sections: [
       {
         title: 'The short answer',
@@ -26,7 +26,7 @@ export const psychologyArticles = [
         body: 'Being yourself does not mean disregarding instructions or writing the first words that come to mind without understanding the prompt. Read or listen carefully, address what is presented and express the thought as clearly as you can. During practice, review where you introduced unsupported assumptions or left an action unexplained. Clarity can be practised without replacing your perspective with someone else’s preferred personality.',
       },
       {
-        title: 'Why rehearsed responses can become a distraction',
+        title: 'Why memorised stock responses can become a distraction',
         body: 'Suppose you have memorised a story about organising a rescue. When an unrelated everyday picture appears, searching for a way to insert that story can draw attention away from the scene. The problem is the mismatch, not a secret list of forbidden themes. The same risk appears when a stock slogan replaces a meaningful word response or an unrealistic heroic action replaces a practical reaction. Use unfamiliar prompts to check whether you are responding to the material or retrieving a script.',
       },
       {
