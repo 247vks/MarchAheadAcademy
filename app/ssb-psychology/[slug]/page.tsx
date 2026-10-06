@@ -65,6 +65,11 @@ export default async function Page({ params }: Props) {
           href: '/selection/ssb/psychology-tests/',
         },
         { label: 'TAT guide', href: '/selection/ssb/tat/' },
+        { label: 'WAT guide', href: '/selection/ssb/wat/' },
+        { label: 'SRT guide', href: '/selection/ssb/srt/' },
+        { label: 'Self Description guide', href: '/selection/ssb/self-description/' },
+        { label: 'SSB selection overview', href: '/selection/ssb/' },
+        { label: 'Build a preparation plan', href: '/resources/ssb-preparation-planner/' },
         { label: 'Stage I and PPDT', href: '/selection/ssb/stage-1/' },
         ...psychologyArticles
           .filter((item) => item.slug !== slug)

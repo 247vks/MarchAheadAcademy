@@ -14,6 +14,16 @@ export const psychologyArticles = [
         body: 'A polished sentence taken out of context cannot explain a selection outcome. Nor can a coaching exercise tell you what the board concluded about you. The public process involves different activities and assessors; preparation that concentrates only on writing impressive lines neglects conversation, teamwork and personal understanding. Learn the format so unfamiliarity does not dominate your attention, while keeping your wider preparation active.',
       },
       {
+        title: 'Connect TAT, WAT, SRT and Self Description preparation',
+        body: 'Use the individual guides to understand each setting, then practise responding to the prompt in front of you. The Academy’s preparation approach changes with the activity rather than applying one impressive story or phrase everywhere.',
+        points: [
+          'TAT practice: observe the picture before developing an interpretation. Commander Sharma’s contribution in our TAT guide explains why a prepared story should not be forced onto a new image.',
+          'WAT practice: attend to the word and express your own thought rather than search a bank of positive slogans.',
+          'SRT practice: read the situation, consider the immediate need and explain a realistic action within your ability.',
+          'Self Description preparation: reflect on real experiences and feedback, distinguishing what others actually said from your assumptions.',
+        ],
+      },
+      {
         title: 'What self-awareness looks like in preparation',
         body: 'Our advice is to begin with experiences you can describe accurately. Choose a responsibility at home, in education, at work or in a team. What did people need from you? What did you actually do? What was difficult? What would you change? An ordinary example explored honestly is more useful for reflection than an invented achievement. You need not turn every event into a leadership triumph. Recognising limits and identifying a practical next step gives your preparation something concrete to work on.',
       },
@@ -43,6 +53,19 @@ export const psychologyArticles = [
       {
         title: 'Use feedback to develop, not predict',
         body: 'Useful feedback identifies something you can work on: an unclear sequence, an assumption, an incomplete explanation or a habit of exaggeration. Ask for the reason behind a suggestion rather than simply replacing your response. No isolated practice answer provides a dependable recommendation forecast. March Ahead Academy’s approach is to prepare the candidate, not manufacture the response. One-on-one coaching can help organise that work around your starting point and pace.',
+      },
+      {
+        title: 'Returning after a previous attempt',
+        body: 'Start with what you observed: unfamiliar instructions, rushed practice, vague explanations or dependence on memorised material. These are things you can investigate. They do not establish why the board reached a decision. Choose one change, practise on fresh material and review it honestly. Keep ordinary responsibilities, learning and group participation in view rather than narrowing preparation to written exercises alone.',
+      },
+      {
+        title: 'Questions candidates ask about psychological preparation',
+        body: 'Can you prepare? Yes: Commander Sharma describes preparation as a way to build awareness and reduce fear of the unknown. Does that mean memorising responses? No: his distinction is between practising your own responses and reproducing someone else’s material.',
+        points: [
+          'Can one response explain a recommendation? Commander Sharma emphasises considering responses together. An isolated practice answer is not a dependable forecast.',
+          'Must every response look alike? No. Staying truthful is different from forcing the same theme into different prompts.',
+          'Is practice feedback an official assessment? No. Academy feedback helps you identify what to work on; it does not reproduce a board decision or confidential scoring method.',
+        ],
       },
     ],
   },

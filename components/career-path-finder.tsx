@@ -2,7 +2,8 @@
 
 import Link from 'next/link';
 import { ArrowRight, Compass, ShieldCheck } from 'lucide-react';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
+import { trackTool } from '@/lib/engagement';
 
 const results = {
   class10: {
@@ -43,6 +44,7 @@ type Stage = keyof typeof results;
 
 export function CareerPathFinder() {
   const [stage, setStage] = useState<Stage | null>(null);
+  const started = useRef(false);
   return (
     <section
       className="border border-[#ccd8d3] bg-[#f8faf9] p-6 sm:p-8"
@@ -70,7 +72,7 @@ export function CareerPathFinder() {
           <button
             key={value}
             type="button"
-            onClick={() => setStage(value)}
+            onClick={() => { if (!started.current) { trackTool('start', 'entry_finder'); started.current = true; } setStage(value); trackTool('complete', 'entry_finder'); }}
             aria-pressed={stage === value}
             className={`min-h-12 border px-4 py-3 text-left text-sm font-bold transition ${stage === value ? 'border-[#071f3d] bg-[#071f3d] text-white' : 'border-[#cbd3ce] bg-white hover:border-[#397fa8]'}`}
           >
@@ -109,9 +111,9 @@ export function CareerPathFinder() {
             ))}
           </div>
           <p className="mt-5 text-xs leading-5 text-[#687781]">
-            Confirm your exact date of birth, education, subjects and the
-            current controlling notification before acting.
+            Based on the information entered, these routes may be worth investigating. Always verify eligibility against the current official notification.
           </p>
+          <Link href="/notifications/" className="text-link mt-3 inline-flex min-h-11 items-center">Open official recruitment and notification sources</Link>
         </div>
       )}
     </section>

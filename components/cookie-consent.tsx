@@ -57,6 +57,8 @@ function enableAnalytics(savedAt: number) {
   if (document.getElementById('maa-ga-loader')) return;
   w.dataLayer = w.dataLayer || [];
   w.gtag = function () {
+    // Preserve Google's documented gtag queue format (an Arguments object).
+    // eslint-disable-next-line prefer-rest-params
     w.dataLayer!.push(arguments);
   };
   w.gtag('consent', 'default', {
@@ -109,6 +111,37 @@ function trackContactIntent(event: MouseEvent) {
   });
 }
 
+function trackEngagement(name: string, category: string) {
+  const w = window as unknown as AnalyticsWindow;
+  if (Date.now() >= analyticsAllowedUntil || !w.gtag || w[`ga-disable-${gaId}`]) return;
+  w.gtag('event', name, { content_group: category, page_location: location.origin + location.pathname, transport_type: 'beacon' });
+}
+
+function trackToolEvent(event: Event) {
+  if (!(event instanceof CustomEvent)) return;
+  const { action, tool } = event.detail ?? {};
+  if (!['start', 'complete', 'print'].includes(action) || !['ssb_planner', 'entry_finder', 'self_description'].includes(tool)) return;
+  trackEngagement(`preparation_tool_${action}`, tool);
+}
+
+function trackContentClick(event: MouseEvent) {
+  const anchor = event.target instanceof Element ? event.target.closest('a[href]') : null;
+  if (!(anchor instanceof HTMLAnchorElement)) return;
+  const destination = new URL(anchor.href, location.href);
+  if (destination.origin !== location.origin) return;
+  const path = destination.pathname.replace(/\/$/, '');
+  const service = anchor.dataset.maaService;
+  if (['preparation-consultation', 'psychology-preparation-review', 'personal-ssb-mentoring'].includes(service ?? '')) {
+    trackEngagement('service_interest', service!);
+  } else if (path === '/consultation') {
+    trackEngagement('consultation_cta', 'consultation');
+  } else if (['/ssb-coaching', '/one-on-one-coaching'].includes(path)) {
+    trackEngagement('article_to_service', 'ssb_coaching');
+  } else if (/^\/resources\/(personal-interview-worksheet|self-description-reflection|group-discussion-practice|nda-preparation-planner)\.pdf$/.test(path)) {
+    trackEngagement('resource_download', path.split('/').pop()!.replace('.pdf', ''));
+  }
+}
+
 export function CookieConsent() {
   const pathname = usePathname();
   const [ready, setReady] = useState(false);
@@ -135,9 +168,13 @@ export function CookieConsent() {
     };
     window.addEventListener('storage', onStorage);
     document.addEventListener('click', trackContactIntent, true);
+    document.addEventListener('click', trackContentClick, true);
+    window.addEventListener('maa-tool-engagement', trackToolEvent);
     return () => {
       window.removeEventListener('storage', onStorage);
       document.removeEventListener('click', trackContactIntent, true);
+      document.removeEventListener('click', trackContentClick, true);
+      window.removeEventListener('maa-tool-engagement', trackToolEvent);
     };
   }, []);
   useEffect(() => {
@@ -263,8 +300,9 @@ export function CookieConsent() {
             pages. It is not used for advertising.
           </p>
         </div>
-        <label className="mt-5 flex items-start gap-3 border-t border-[#d8e1dd] pt-4">
+        <label htmlFor="maa-analytics-choice" aria-label="Analytics (optional)" className="mt-5 flex items-start gap-3 border-t border-[#d8e1dd] pt-4">
           <input
+            id="maa-analytics-choice"
             type="checkbox"
             className="mt-1 h-5 w-5 accent-[#30471f]"
             checked={analytics}

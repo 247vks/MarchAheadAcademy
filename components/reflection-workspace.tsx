@@ -1,11 +1,13 @@
 'use client';
 
-import { useState } from 'react';
+import { useRef, useState } from 'react';
+import { trackTool } from '@/lib/engagement';
 import { NotebookPen, Printer, Trash2 } from 'lucide-react';
 
 export function ReflectionWorkspace({ prompts }: { prompts: string[] }) {
   const [notes, setNotes] = useState<string[]>(() => prompts.map(() => ''));
   const [confirmClear, setConfirmClear] = useState(false);
+  const started = useRef(false);
   return (
     <section
       id="online-workspace"
@@ -42,6 +44,7 @@ export function ReflectionWorkspace({ prompts }: { prompts: string[] }) {
               id={`reflection-${index}`}
               value={notes[index]}
               onChange={(event) => {
+                if (!started.current) { trackTool('start', 'self_description'); started.current = true; }
                 const value = event.target.value;
                 setNotes((current) =>
                   current.map((note, i) => (i === index ? value : note)),
@@ -62,7 +65,7 @@ export function ReflectionWorkspace({ prompts }: { prompts: string[] }) {
       <div className="worksheet-screen-only mt-6 flex flex-wrap items-center gap-4">
         <button
           type="button"
-          onClick={() => window.print()}
+          onClick={() => { trackTool('print', 'self_description'); window.print(); }}
           className="inline-flex min-h-11 items-center gap-2 bg-[#30471f] px-5 py-3 font-bold text-white hover:bg-[#3f5b2b]"
         >
           <Printer size={18} aria-hidden="true" />

@@ -82,6 +82,11 @@ export default function Page() {
           booking.
         </p>
         <section className="mt-12">
+          <h2 className="font-heading text-3xl">Your starting point, not a fixed package</h2>
+          <p className="mt-4 leading-8 text-[#536371]">An SSB Preparation Consultation helps clarify your priorities and whether individual mentoring is suitable. Psychology exercises and an Individual Preparation Review can form part of coaching; they are not an official assessment or selection forecast.</p>
+          <Link href="/ssb-coaching/#service-options" className="text-link mt-4 inline-flex min-h-11 items-center">Compare consultation, preparation review and mentoring</Link>
+        </section>
+        <section className="mt-12">
           <h2 className="font-heading text-3xl">
             What would you like to discuss?
           </h2>

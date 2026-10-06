@@ -29,6 +29,7 @@ const routes = [
   '/privacy-policy',
   '/cookie-policy',
   '/resources',
+  '/resources/ssb-preparation-planner',
   '/resources/personal-interview-worksheet',
   '/resources/self-description-reflection',
   '/resources/group-discussion-practice',

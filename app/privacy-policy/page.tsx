@@ -14,7 +14,10 @@ export default function Page() {
       <SiteHeader />
       <article className="mx-auto max-w-4xl px-5 py-12 leading-8">
         <h1 className="font-heading text-4xl">Privacy Policy</h1>
-        <p className="mt-4">Updated 8 September 2026</p>
+        <p className="mt-4">Updated 7 October 2026</p>
+        <h2 className="mt-8 font-heading text-2xl">Preparation tools and worksheets</h2>
+        <p>The online preparation planner and Self Description workspace process your choices or notes in the open page. They do not upload or persist those inputs. Refreshing or closing the page clears them. Printing or saving a PDF creates a copy under your control. Keep that copy private.</p>
+        <p>If you accept analytics, we measure fixed engagement categories such as tool use, worksheet downloads and links to coaching or consultation. We do not include your notes, responses, planning time inputs or enquiry messages in these custom events. Clicks indicate interest, not completed bookings or coaching outcomes.</p>
         <h2 className="mt-8 font-heading text-2xl">Contact and enquiries</h2>
         <p>
           March Ahead Academy uses information you choose to share by email,

@@ -19,6 +19,7 @@ import {
   SiteFooter,
 } from '@/components/authority-shell';
 import { ContactBand } from '@/components/contact-band';
+import { CoachingServices } from '@/components/coaching-services';
 
 const title = 'One-on-One SSB Coaching by a Former SSB Psychologist';
 const description =
@@ -126,6 +127,7 @@ export default function Page() {
             </Link>
           </div>
         </section>
+        <CoachingServices />
         <section
           aria-labelledby="coaching-summary"
           className="mt-8 border-y border-[#d8e1dd] py-6"

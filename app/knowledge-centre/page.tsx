@@ -222,6 +222,7 @@ const categories = [
       ['Leadership and responsibility', '/preparation/lead/'],
       ['Training habits', '/preparation/train/'],
       ['Free worksheets and PDFs', '/resources/'],
+      ['Build your SSB preparation plan', '/resources/ssb-preparation-planner/'],
     ],
   },
 ];
