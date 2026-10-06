@@ -57,3 +57,7 @@ Run production build, existing consent/cluster/authority tests, planner and enga
 - Targeted lint passes. Visual review of generated mobile planner and desktop service presentation completed.
 - Shared first-load JS remains 103 kB in the build report; no new third-party script or image dependency. This is not a field Core Web Vitals measurement.
 - No claims of Search Console indexing, Google rich-result approval, completed bookings or ranking changes.
+
+## Production verification
+
+AWS Amplify deployment 85 succeeded on 7 October 2026, publishing the build for code commit `43054cc`. `tests/live-brief-release.cjs` passed against the public domain: service choices, planner, expanded assessment article, planner generation/print, sitemap inclusion and all 106 sitemap URLs returning HTTP 200 without a noindex response header. Local full-document checks separately verified robots meta tags. Existing untracked research/draft files were preserved and excluded from the release.
