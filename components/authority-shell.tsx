@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { GtoScope } from '@/components/gto-scope';
 import { ActiveNavLink } from '@/components/active-nav-link';
 import { CoachingTagline } from '@/components/coaching-tagline';
 import { TopicIcon } from '@/components/topic-icon';
@@ -434,6 +435,7 @@ export function AuthorityPage({
         <article className="space-y-10 lg:space-y-12">
           {expertContext && <ExpertByline context={expertContext} />}
           <ApprovedExpertInsight path={currentHref} />
+          <GtoScope path={currentHref} />
           {visual}
           <nav
             aria-label="On this page"

@@ -10,6 +10,9 @@ import {
   ShieldCheck,
   UserCheck,
   Wind,
+  Brain,
+  MessagesSquare,
+  Users,
 } from 'lucide-react';
 import { ContactBand } from '@/components/contact-band';
 import { SiteFooter, SiteHeader } from '@/components/authority-shell';
@@ -463,6 +466,20 @@ export default function Home() {
         })}
       </section>
 
+      <section aria-labelledby="ssb-preparation-heading" className="section-spacing border-t border-[#e1e6e3] bg-white px-5 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <p className="section-kicker">Understand the whole selection journey</p>
+          <h2 id="ssb-preparation-heading" className="mt-4 font-heading text-3xl sm:text-4xl">Prepare for SSB</h2>
+          <div className="mt-7 grid gap-6 md:grid-cols-3">
+            {[
+              { title: 'Psychology', icon: Brain, href: '/ssb-psychology/', copy: 'Understand TAT, WAT, SRT and Self Description. Practise your own responses with awareness and reflection.' },
+              { title: 'Personal Interview', icon: MessagesSquare, href: '/ssb-personal-interview/', copy: 'Prepare to discuss your experiences, education and motivation clearly, without memorising perfect answers.' },
+              { title: 'GTO guidance', icon: Users, href: '/ssb-gto/', copy: 'Explore discussion, planning, lecturette and outdoor task formats. Understand what individual guidance can—and cannot—replace.' },
+            ].map(({ title, icon: Icon, href, copy }) => <Link href={href} key={href} className="editorial-card flex flex-col p-6"><Icon size={28} className="text-[#397fa8]" aria-hidden="true" /><h3 className="mt-4 font-heading text-2xl">{title}</h3><p className="mt-3 leading-7 text-[#536371]">{copy}</p><span className="mt-auto inline-flex items-center gap-2 pt-5 font-semibold text-[#2f6f94]">Explore guidance <ArrowRight size={17} aria-hidden="true" /></span></Link>)}
+          </div>
+          <p className="mt-5 text-sm leading-7 text-[#536371]">March Ahead Academy does not provide outdoor GTO training. Our GTO content is educational guidance; one-to-one coaching does not replace live group practice.</p>
+        </div>
+      </section>
       <section
         className="section-spacing border-t border-[#e1e6e3] bg-white px-5 lg:px-8"
         aria-labelledby="preparation-heading"

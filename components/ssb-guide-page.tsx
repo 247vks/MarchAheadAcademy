@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { GtoScope } from '@/components/gto-scope';
 import { TopicIcon } from '@/components/topic-icon';
 import {
   ArrowRight,
@@ -242,6 +243,7 @@ export function SsbGuidePage({ guide }: { guide: SsbGuideData }) {
           </section>
           <ContextualGuidance topic={guide.title} />
           <ApprovedExpertInsight path={guide.currentHref} />
+          <GtoScope path={guide.currentHref} />
 
           <div
             id="guide-sections"

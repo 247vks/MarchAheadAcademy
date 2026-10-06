@@ -39,6 +39,6 @@ export const coachingServices = [
     outcome:
       'A preparation routine adapted to your starting point, learning pace and areas for development.',
     limits:
-      'Programme length, scheduling and fees are agreed individually. One-to-one online work cannot replace live group interaction or supervised outdoor task practice. No selection is promised.',
+      'Programme length, scheduling and fees are agreed individually. March Ahead Academy does not provide outdoor GTO training. One-to-one guidance cannot replace live group practice. No selection is promised.',
   },
 ] as const;

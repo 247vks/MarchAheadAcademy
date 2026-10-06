@@ -1,28 +1,183 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
+import { MessagesSquare, Mountain, Mic } from 'lucide-react';
 import { AuthorityPage } from '@/components/authority-shell';
 import { withPageMetadata } from '@/lib/page-metadata';
 import { nextClusterGuides } from '@/lib/next-cluster-guides';
 const title = 'SSB GTO Tasks: GD, GPE, PGT, HGT & Preparation';
-const description = 'Understand SSB GTO tasks, from GD and GPE to command task and lecturette, with practical preparation and clear limits on online training.';
-export const metadata: Metadata = withPageMetadata({ title, description, alternates: { canonical: '/ssb-gto/' } });
+const description =
+  'Understand SSB GTO tasks, from GD and GPE to command task and lecturette, with practical preparation and clear limits on online training.';
+export const metadata: Metadata = withPageMetadata({
+  title,
+  description,
+  alternates: { canonical: '/ssb-gto/' },
+});
 export default function Page() {
-  return <AuthorityPage currentHref="/ssb-gto/" eyebrow="SSB group testing" title={title} lede={description} status="Academy guidance" publishedAt="2026-09-16" modifiedAt="2026-09-19" showEntryNotice={false}
-    sections={[
-      { title: 'What group testing involves', body: 'GTO means Group Testing Officer. The Indian Air Force describes group tests as interactive indoor and outdoor activities combining mental and physical work. They sit within the wider selection process alongside psychological assessment and the interview. Understand each task’s purpose and instructions, then concentrate on contributing to the activity in front of you. The suggestions below are Academy preparation exercises; task instructions at the board take precedence.' },
-      { title: 'Group discussion (GD)', body: 'GD involves exchanging ideas with other candidates. Build familiarity with social and current-affairs topics, distinguish evidence from opinion and practise following an evolving conversation. Useful participation includes explaining a relevant point, hearing a different view and helping the discussion progress.', points: ['Practise with several people so you respond to ideas you did not prepare.', 'Ask an observer to note relevance, interruptions and listening rather than award an unofficial SSB score.', 'Afterwards, identify one argument you could support more accurately.'] },
-      { title: 'Group planning exercise (GPE)', body: 'GPE involves considering a practical situation and reaching a group plan. Practise reading the problem carefully, separating facts from assumptions, identifying priorities and checking whether time and resources support the proposal. A confident presentation cannot make an impossible journey or missing resource work.', points: ['Use a simple original scenario: organise an event with competing deadlines, limited transport and fixed roles.', 'Write an individual plan before comparing alternatives with others.', 'Change one constraint and explain how the group should adapt.'] },
-      { title: 'Progressive group task (PGT) and half group task (HGT)', body: 'These are outdoor group tasks involving obstacles, available material and rules explained by the GTO. HGT uses a smaller group. Familiarity with the broad format can reduce uncertainty, but diagrams cannot reproduce handling equipment, physical coordination or working with others under live instructions. In ordinary team activities, practise explaining an idea clearly, checking others understand and helping implement an agreed approach. Use a properly supervised facility for physical task practice; improvised raised structures are unsuitable.' },
-      { title: 'Command task', body: 'The command task gives a candidate responsibility for directing a task with assistance. Preparation can focus on understanding an objective, explaining a plan, listening to relevant information and adjusting when something does not work. In a safe everyday exercise, ask a peer to organise a simple team activity and then exchange roles. Review whether instructions were understandable and whether the plan remained within the stated constraints. This exercise develops habits rather than reproducing an official task.' },
-      { title: 'Lecturette', body: 'A lecturette is a short individual talk. Practise organising an opening idea, two or three supporting points and a conclusion. Choose familiar topics initially, then broaden your reading. Set a practice time limit and record yourself occasionally to identify unclear reasoning, repetition and unsupported facts. At the board, follow the topic choice and timing instructions given there.', points: ['Give a brief explanation of a subject you actually understand.', 'Ask a listener what they remember and where they lost the thread.', 'Practise a new topic rather than memorising a speech for every possible prompt.'] },
-      { title: 'Individual obstacles', body: 'Individual obstacles involve physical participation under the board’s instructions. An online explanation can provide orientation but cannot evaluate your readiness for a particular obstacle or replace supervised practice. Develop physical readiness progressively through appropriate activity and learn correct technique from a qualified instructor. Follow the instructions for the course and report an injury or difficulty to the responsible staff.' },
-      { title: 'Group obstacle race and final group task', body: 'The group obstacle race and final group task are also named in public SSB preparation material. They add further opportunities for group participation in outdoor activities. Practical preparation includes attending to instructions, coordinating with others and sustaining effort without treating a teammate as an obstacle to your own performance. Exact conduct and rules come from the board.' },
-      { title: 'What you can prepare online', body: 'Online sessions can support discussion, lecturette practice, planning exercises and review of communication. A live group is needed to practise interacting with several people; a one-to-one session can help review your approach but does not create that group experience. Outdoor tasks need physical space, suitable equipment and supervision. Ask a provider which of these it actually offers before enrolling.' },
-      { title: 'A practical weekly preparation routine', body: 'Combine one group discussion, one planning exercise and two short talks with real shared activities and appropriate physical preparation. Keep a brief log of one helpful contribution, one difficulty and one adjustment for the next week. The routine is an Academy example to adapt around study or work, not a prescribed SSB training schedule. Individual coaching can help identify the part of your preparation that needs more attention.' },
-    ]}
-    sources={[
-      { label: 'Indian Air Force: AFSB testing and group activities', href: 'https://careerairforce.gov.in/air-force-selection-board-afsb-testing' },
-      { label: 'Territorial Army: SSB testing overview', href: 'https://territorialarmy.in/page/1126' },
-      { label: 'Sainik School Kazhakootam: public school diary and SSB task overview', href: 'https://www.sainikschooltvm.edu.in/uploads/ckupload/School%20Diary%202025_26_1751955274.pdf' },
-    ]}
-    related={[...nextClusterGuides.filter(guide => guide.parent === '/ssb-gto/').map(guide => ({ label: guide.title, href: guide.path })), { label: 'Group discussion practice guide', href: '/selection/ssb/group-discussion/' }, { label: 'Group testing overview', href: '/selection/ssb/group-testing/' }, { label: 'Officer Like Qualities', href: '/officer-like-qualities/' }, { label: 'SSB personal interview', href: '/ssb-personal-interview/' }, { label: 'SSB selection overview', href: '/selection/ssb/' }, { label: 'One-on-one SSB coaching', href: '/ssb-coaching/' }]} />;
+  return (
+    <AuthorityPage
+      currentHref="/ssb-gto/"
+      eyebrow="SSB group testing"
+      title={title}
+      lede={description}
+      status="Academy guidance"
+      publishedAt="2026-09-16"
+      modifiedAt="2026-09-19"
+      showEntryNotice={false}
+      visual={
+        <section aria-labelledby="gto-guide-groups">
+          <h2 id="gto-guide-groups" className="font-heading text-2xl">
+            Find the guidance you need
+          </h2>
+          <div className="mt-5 grid gap-5">
+            {[
+              {
+                title: 'Discussion and planning',
+                icon: MessagesSquare,
+                links: [
+                  ['Group discussion', '/selection/ssb/group-discussion/'],
+                  [
+                    'Group Planning Exercise',
+                    '/ssb-gto/group-planning-exercise/',
+                  ],
+                ],
+              },
+              {
+                title: 'Speaking and communication',
+                icon: Mic,
+                links: [
+                  ['Lecturette', '/ssb-gto/lecturette/'],
+                  ['Communication preparation', '/preparation/communicate/'],
+                ],
+              },
+              {
+                title: 'Outdoor tasks: understand the format',
+                icon: Mountain,
+                links: [
+                  [
+                    'Progressive Group Task',
+                    '/ssb-gto/progressive-group-task/',
+                  ],
+                  ['Half Group Task', '/ssb-gto/half-group-task/'],
+                  ['Command task', '/ssb-gto/command-task/'],
+                  ['Individual obstacles', '/ssb-gto/individual-obstacles/'],
+                ],
+              },
+            ].map(({ title, icon: Icon, links }) => (
+              <div key={title} className="border-t border-[#d8e1dd] pt-4">
+                <h3 className="flex items-start gap-3 font-heading text-xl">
+                  <Icon
+                    size={22}
+                    className="shrink-0 text-[#397fa8]"
+                    aria-hidden="true"
+                  />
+                  {title}
+                </h3>
+                <ul className="mt-3 grid gap-2 sm:grid-cols-2">
+                  {links.map(([label, href]) => (
+                    <li key={href}>
+                      <Link
+                        className="text-link inline-flex min-h-11 items-center"
+                        href={href}
+                      >
+                        {label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </section>
+      }
+      sections={[
+        {
+          title: 'What group testing involves',
+          body: 'GTO means Group Testing Officer. The Indian Air Force describes group tests as interactive indoor and outdoor activities combining mental and physical work. They sit within the wider selection process alongside psychological assessment and the interview. Understand each task’s purpose and instructions, then concentrate on contributing to the activity in front of you. The suggestions below are Academy preparation exercises; task instructions at the board take precedence.',
+        },
+        {
+          title: 'Group discussion (GD)',
+          body: 'GD involves exchanging ideas with other candidates. Build familiarity with social and current-affairs topics, distinguish evidence from opinion and practise following an evolving conversation. Useful participation includes explaining a relevant point, hearing a different view and helping the discussion progress.',
+          points: [
+            'Practise with several people so you respond to ideas you did not prepare.',
+            'Ask an observer to note relevance, interruptions and listening rather than award an unofficial SSB score.',
+            'Afterwards, identify one argument you could support more accurately.',
+          ],
+        },
+        {
+          title: 'Group planning exercise (GPE)',
+          body: 'GPE involves considering a practical situation and reaching a group plan. Practise reading the problem carefully, separating facts from assumptions, identifying priorities and checking whether time and resources support the proposal. A confident presentation cannot make an impossible journey or missing resource work.',
+          points: [
+            'Use a simple original scenario: organise an event with competing deadlines, limited transport and fixed roles.',
+            'Write an individual plan before comparing alternatives with others.',
+            'Change one constraint and explain how the group should adapt.',
+          ],
+        },
+        {
+          title: 'Progressive group task (PGT) and half group task (HGT)',
+          body: 'These are outdoor group tasks involving obstacles, available material and rules explained by the GTO. HGT uses a smaller group. Familiarity with the broad format can reduce uncertainty, but diagrams cannot reproduce handling equipment, physical coordination or working with others under live instructions. In ordinary team activities, practise explaining an idea clearly, checking others understand and helping implement an agreed approach. Use a properly supervised facility for physical task practice; improvised raised structures are unsuitable.',
+        },
+        {
+          title: 'Command task',
+          body: 'The command task gives a candidate responsibility for directing a task with assistance. Preparation can focus on understanding an objective, explaining a plan, listening to relevant information and adjusting when something does not work. In a safe everyday exercise, ask a peer to organise a simple team activity and then exchange roles. Review whether instructions were understandable and whether the plan remained within the stated constraints. This exercise develops habits rather than reproducing an official task.',
+        },
+        {
+          title: 'Lecturette',
+          body: 'A lecturette is a short individual talk. Practise organising an opening idea, two or three supporting points and a conclusion. Choose familiar topics initially, then broaden your reading. Set a practice time limit and record yourself occasionally to identify unclear reasoning, repetition and unsupported facts. At the board, follow the topic choice and timing instructions given there.',
+          points: [
+            'Give a brief explanation of a subject you actually understand.',
+            'Ask a listener what they remember and where they lost the thread.',
+            'Practise a new topic rather than memorising a speech for every possible prompt.',
+          ],
+        },
+        {
+          title: 'Individual obstacles',
+          body: 'Individual obstacles involve physical participation under the board’s instructions. An online explanation can provide orientation but cannot evaluate your readiness for a particular obstacle or replace supervised practice. Develop physical readiness progressively through appropriate activity and learn correct technique from a qualified instructor. Follow the instructions for the course and report an injury or difficulty to the responsible staff.',
+        },
+        {
+          title: 'Group obstacle race and final group task',
+          body: 'The group obstacle race and final group task are also named in public SSB preparation material. They add further opportunities for group participation in outdoor activities. Practical preparation includes attending to instructions, coordinating with others and sustaining effort without treating a teammate as an obstacle to your own performance. Exact conduct and rules come from the board.',
+        },
+        {
+          title: 'What you can prepare online',
+          body: 'Online sessions can support discussion, lecturette practice, planning exercises and review of communication. A live group is needed to practise interacting with several people; a one-to-one session can help review your approach but does not create that group experience. Outdoor tasks need physical space, suitable equipment and supervision. Ask a provider which of these it actually offers before enrolling.',
+        },
+        {
+          title: 'A practical weekly preparation routine',
+          body: 'Combine one group discussion, one planning exercise and two short talks with real shared activities and appropriate physical preparation. Keep a brief log of one helpful contribution, one difficulty and one adjustment for the next week. The routine is an Academy example to adapt around study or work, not a prescribed SSB training schedule. Individual coaching can help identify the part of your preparation that needs more attention.',
+        },
+      ]}
+      sources={[
+        {
+          label: 'Indian Air Force: AFSB testing and group activities',
+          href: 'https://careerairforce.gov.in/air-force-selection-board-afsb-testing',
+        },
+        {
+          label: 'Territorial Army: SSB testing overview',
+          href: 'https://territorialarmy.in/page/1126',
+        },
+        {
+          label:
+            'Sainik School Kazhakootam: public school diary and SSB task overview',
+          href: 'https://www.sainikschooltvm.edu.in/uploads/ckupload/School%20Diary%202025_26_1751955274.pdf',
+        },
+      ]}
+      related={[
+        ...nextClusterGuides
+          .filter((guide) => guide.parent === '/ssb-gto/')
+          .map((guide) => ({ label: guide.title, href: guide.path })),
+        {
+          label: 'Group discussion practice guide',
+          href: '/selection/ssb/group-discussion/',
+        },
+        {
+          label: 'Group testing overview',
+          href: '/selection/ssb/group-testing/',
+        },
+        { label: 'Officer Like Qualities', href: '/officer-like-qualities/' },
+        { label: 'SSB personal interview', href: '/ssb-personal-interview/' },
+        { label: 'SSB selection overview', href: '/selection/ssb/' },
+        { label: 'One-on-one SSB coaching', href: '/ssb-coaching/' },
+      ]}
+    />
+  );
 }

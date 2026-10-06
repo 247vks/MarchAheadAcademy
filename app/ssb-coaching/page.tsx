@@ -414,9 +414,9 @@ export default function Page() {
               },
               {
                 icon: Users,
-                title: 'Group participation',
-                copy: 'Explore listening, discussion and responsible contribution. Individual guidance can help you reflect on your approach; it does not replace practising cooperation with other people.',
-                href: '/selection/ssb/group-testing/',
+                title: 'GTO orientation and communication',
+                copy: 'Explore listening, discussion, planning and responsible contribution. March Ahead Academy does not provide outdoor GTO training. Individual guidance does not replace live group practice.',
+                href: '/ssb-gto/',
               },
               {
                 icon: Compass,

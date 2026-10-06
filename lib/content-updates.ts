@@ -1,6 +1,16 @@
 // Dates record substantive content changes, not builds or sitemap generation.
 // Omit unverified dates rather than assigning today's date to every page.
 export const contentUpdates: Record<string, string> = {
+  '': '2026-10-07',
+  '/ssb-gto': '2026-10-07',
+  '/ssb-gto/group-planning-exercise': '2026-10-07',
+  '/ssb-gto/lecturette': '2026-10-07',
+  '/ssb-gto/progressive-group-task': '2026-10-07',
+  '/ssb-gto/half-group-task': '2026-10-07',
+  '/ssb-gto/command-task': '2026-10-07',
+  '/ssb-gto/individual-obstacles': '2026-10-07',
+  '/selection/ssb/group-testing': '2026-10-07',
+  '/selection/ssb/group-discussion': '2026-10-07',
   '/ssb-psychology/what-does-an-ssb-psychologist-assess': '2026-10-07',
   '/selection/ssb/psychology-tests': '2026-10-07',
   '/selection/ssb/tat': '2026-10-07',
