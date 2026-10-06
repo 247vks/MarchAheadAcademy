@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 import { ContactBand } from '@/components/contact-band';
 import { ExpertByline } from '@/components/expert-byline';
+import { ApprovedExpertInsight } from '@/components/approved-expert-insight';
 import { ContextualGuidance } from '@/components/contextual-guidance';
 import {
   ExpectationPreview,
@@ -432,6 +433,7 @@ export function AuthorityPage({
       <div className="mx-auto grid max-w-5xl gap-10 px-5 py-12 lg:grid-cols-[minmax(0,1fr)_250px] lg:gap-14 lg:px-8 lg:py-16">
         <article className="space-y-10 lg:space-y-12">
           {expertContext && <ExpertByline context={expertContext} />}
+          <ApprovedExpertInsight path={currentHref} />
           {visual}
           <nav
             aria-label="On this page"

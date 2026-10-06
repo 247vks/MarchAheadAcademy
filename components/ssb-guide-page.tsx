@@ -9,6 +9,7 @@ import {
 } from 'lucide-react';
 import { ContactBand } from '@/components/contact-band';
 import { ExpertByline } from '@/components/expert-byline';
+import { ApprovedExpertInsight } from '@/components/approved-expert-insight';
 import { ContextualGuidance } from '@/components/contextual-guidance';
 import {
   Breadcrumbs,
@@ -240,6 +241,7 @@ export function SsbGuidePage({ guide }: { guide: SsbGuideData }) {
             <p className="mt-3 leading-8">{guide.summary}</p>
           </section>
           <ContextualGuidance topic={guide.title} />
+          <ApprovedExpertInsight path={guide.currentHref} />
 
           <div
             id="guide-sections"
