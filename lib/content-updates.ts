@@ -17,7 +17,7 @@ export const contentUpdates: Record<string, string> = {
   '/knowledge-centre': '2026-10-07',
   '/ssb-psychology': '2026-10-07',
   '/authors/cdr-sulakshan-kumar-sharma': '2026-10-07',
-  '/ssb-coaching': '2026-10-07',
+  '/ssb-coaching': '2026-10-16',
   '/resources/self-description-reflection': '2026-10-07',
   '/resources': '2026-10-07',
   '/resources/ssb-preparation-planner': '2026-10-07',

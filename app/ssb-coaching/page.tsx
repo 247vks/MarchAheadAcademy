@@ -23,7 +23,7 @@ import { CoachingServices } from '@/components/coaching-services';
 
 const title = 'One-on-One SSB Coaching by a Former SSB Psychologist';
 const description =
-  'Personalised SSB coaching at March Ahead Academy, guided by Commander Sharma, a former SSB psychologist. Develop self-awareness, communication and a focused preparation plan.';
+  'One-to-one SSB coaching online and in Mumbai by appointment with former SSB psychologist Commander Sharma. Psychology, interview preparation and individual feedback.';
 export const metadata: Metadata = withPageMetadata({
   title: `${title} | March Ahead Academy`,
   description,
@@ -67,6 +67,28 @@ export default function Page() {
           tailored to where you are now, the areas you need to develop and the
           pace at which you learn.
         </p>
+        <section aria-labelledby="coaching-mode" className="mt-8 border-t border-[#d8e1dd] pt-6">
+          <h2 id="coaching-mode" className="flex items-center gap-3 font-heading text-2xl">
+            <Monitor className="shrink-0 text-[#397fa8]" aria-hidden="true" />
+            SSB coaching online and in Mumbai by appointment
+          </h2>
+          <p className="mt-4 max-w-4xl leading-8 text-[#536371]">
+            Work directly with Commander Sharma through personalised online coaching,
+            or arrange an in-person appointment in Mumbai. Both first-time and repeat
+            candidates can discuss psychology, personal interview, communication and
+            SSB orientation. In-person meeting details are shared privately once your
+            appointment is confirmed; please arrange your visit before travelling.
+          </p>
+          <p className="mt-3 max-w-4xl leading-8 text-[#536371]">
+            Online sessions support individual discussion, exercise review and timed
+            practice. They do not recreate outdoor group tasks. March Ahead Academy
+            does not provide outdoor GTO training.
+          </p>
+          <div className="mt-5 flex flex-wrap gap-5">
+            <Link href="/consultation/" className="text-link">Discuss your coaching needs</Link>
+            <Link href="/how-to-choose-ssb-coaching/" className="text-link">Compare coaching options thoughtfully</Link>
+          </div>
+        </section>
         <section
           className="mt-8 border-t-2 border-[#397fa8] pt-6"
           aria-labelledby="coaching-process"
@@ -505,6 +527,22 @@ export default function Page() {
           </h2>
           {[
             [
+              'Can I prepare for SSB without coaching?',
+              'Coaching is a preparation choice, not a guarantee of recommendation. Begin with the selection process, your own experiences and a realistic practice routine. Individual guidance may help when you need feedback, clearer priorities or support expressing your thoughts. Choose it for a specific need rather than fear of missing out.',
+            ],
+            [
+              'Which SSB coaching is right for me?',
+              'Check who will actually teach you, their relevant experience, how individual feedback works, the programme scope and the fees. Decide whether you need one-to-one guidance, live group practice or both. Ask directly about outdoor facilities instead of assuming every provider offers them. No provider can promise selection.',
+            ],
+            [
+              'How long are sessions and how much does SSB coaching cost?',
+              'Coaching sessions are one hour daily, with scheduling and total programme length agreed around your needs. Fees are discussed before coaching begins. The initial consultation has its own agreed duration and any applicable fee; it is not automatically a one-hour coaching session.',
+            ],
+            [
+              'What should I prepare before the first consultation?',
+              'Bring your intended entry route, attempt history, available preparation time and the questions you want help with. If you already practise psychology exercises or interview reflection, describe what you find difficult. You do not need polished or memorised answers to start the discussion.',
+            ],
+            [
               'Is SSB coaching about learning ideal answers?',
               'No. Our approach focuses on self-awareness, expression and preparation habits. We do not provide scripts intended to manufacture a personality.',
             ],
@@ -522,6 +560,10 @@ export default function Page() {
               <p className="mt-2 leading-7 text-[#536371]">{answer}</p>
             </div>
           ))}
+          <div className="mt-6 flex flex-wrap gap-5">
+            <Link href="/resources/ssb-preparation-planner/" className="text-link">Build a starting preparation plan</Link>
+            <Link href="/how-to-choose-ssb-coaching/" className="text-link">Use the coaching evaluation checklist</Link>
+          </div>
         </section>
       </div>
       <ContactBand />
