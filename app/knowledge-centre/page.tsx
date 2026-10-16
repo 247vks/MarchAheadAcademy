@@ -53,6 +53,8 @@ const categories = [
     description:
       'Practical advice for your first attempt, preparing again and supporting an NDA aspirant.',
     links: [
+      ['Can you prepare for SSB without coaching?', '/guidance/ssb-without-coaching/'],
+      ['Online SSB coaching: possibilities and limits', '/guidance/online-ssb-coaching-scope/'],
       ['Your first SSB attempt', '/guidance/first-ssb-attempt/'],
       ['Academy talks and guidance sessions', '/academy-evidence/'],
       ['Commander Sharma media kit', '/media-kit/'],

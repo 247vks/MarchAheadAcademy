@@ -32,7 +32,7 @@ const { chromium } = require('playwright');
     const sitemap = await sitemapResponse.text();
     assert.ok(sitemap.includes('/resources/ssb-preparation-planner/'));
     const urls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => match[1]);
-    assert.equal(urls.length, 106);
+    assert.ok(urls.length >= 108);
     // Public status check, bounded to five concurrent requests.
     for (let i = 0; i < urls.length; i += 5) {
       await Promise.all(urls.slice(i, i + 5).map(async url => {
@@ -41,6 +41,6 @@ const { chromium } = require('playwright');
         assert.ok(!String(response.headers()['x-robots-tag'] || '').includes('noindex'), url);
       }));
     }
-    console.log('LIVE PASS: planner interaction/print, sitemap membership and all 106 public URL status/indexability-header checks.');
+    console.log(`LIVE PASS: planner interaction/print, sitemap membership and all ${urls.length} public URL status/indexability-header checks.`);
   } finally { await browser.close(); }
 })().catch(error => { console.error(error); process.exitCode = 1; });

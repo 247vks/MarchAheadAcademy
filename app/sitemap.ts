@@ -24,6 +24,8 @@ const routes = [
   '/academy-evidence',
   '/media-kit',
   '/guidance/first-ssb-attempt',
+  '/guidance/ssb-without-coaching',
+  '/guidance/online-ssb-coaching-scope',
   '/guidance/ssb-repeaters',
   '/guidance/parents-nda-aspirants',
   '/privacy-policy',
