@@ -561,6 +561,7 @@ export default function Page() {
             </div>
           ))}
           <div className="mt-6 flex flex-wrap gap-5">
+            <Link href="/guidance/review-ssb-practice-feedback/" className="text-link">Turn practice feedback into a next step</Link>
             <Link href="/guidance/ssb-without-coaching/" className="text-link">Read the SSB self-preparation guide</Link>
             <Link href="/guidance/online-ssb-coaching-scope/" className="text-link">What online coaching can—and cannot—cover</Link>
             <Link href="/resources/ssb-preparation-planner/" className="text-link">Build a starting preparation plan</Link>

@@ -25,6 +25,8 @@ const routes = [
   '/media-kit',
   '/guidance/first-ssb-attempt',
   '/guidance/ssb-without-coaching',
+  '/guidance/nda-written-exam-vs-ssb',
+  '/guidance/review-ssb-practice-feedback',
   '/guidance/online-ssb-coaching-scope',
   '/guidance/ssb-repeaters',
   '/guidance/parents-nda-aspirants',

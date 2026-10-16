@@ -21,13 +21,13 @@ export default async function Page({ params }: Props) {
   const { slug } = await params;
   const guide = coachingDecisionGuides.find((item) => item.slug === slug);
   if (!guide) notFound();
-  const other = coachingDecisionGuides.find((item) => item.slug !== slug)!;
   return <AuthorityPage currentHref={`/guidance/${slug}`} eyebrow="From the Academy" title={guide.title}
     lede={guide.description} status="Preparation decision guide" publishedAt="2026-10-16" modifiedAt="2026-10-16"
     showEntryNotice={false} guidanceAfterSection={6} sections={guide.sections}
-    sources={[{ label: 'Indian Air Force: AFSB testing and group activities', href: 'https://careerairforce.gov.in/air-force-selection-board-afsb-testing' }]}
+    sources={guide.sources ?? [{ label: 'Indian Air Force: AFSB testing and group activities', href: 'https://careerairforce.gov.in/air-force-selection-board-afsb-testing' }]}
     related={[
-      { label: other.title, href: `/guidance/${other.slug}/` },
+      ...(guide.related ?? []),
+      ...coachingDecisionGuides.filter((item) => item.slug !== slug).map((item) => ({ label: item.title, href: `/guidance/${item.slug}/` })),
       { label: 'First SSB attempt', href: '/guidance/first-ssb-attempt/' },
       { label: 'Preparing again after SSB', href: '/guidance/ssb-repeaters/' },
       { label: 'SSB preparation planner', href: '/resources/ssb-preparation-planner/' },

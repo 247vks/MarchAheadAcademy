@@ -53,6 +53,8 @@ const categories = [
     description:
       'Practical advice for your first attempt, preparing again and supporting an NDA aspirant.',
     links: [
+      ['NDA written exam vs SSB: preparation differences', '/guidance/nda-written-exam-vs-ssb/'],
+      ['How to review SSB practice after feedback', '/guidance/review-ssb-practice-feedback/'],
       ['Can you prepare for SSB without coaching?', '/guidance/ssb-without-coaching/'],
       ['Online SSB coaching: possibilities and limits', '/guidance/online-ssb-coaching-scope/'],
       ['Your first SSB attempt', '/guidance/first-ssb-attempt/'],

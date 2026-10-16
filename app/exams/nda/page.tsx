@@ -128,6 +128,7 @@ export default function Page() {
         },
       ]}
       related={[
+        { label: 'NDA written exam vs SSB: how preparation differs', href: '/guidance/nda-written-exam-vs-ssb/' },
         ...ndaArticles.map(([slug, title]) => ({ label: title, href: `/exams/nda/${slug}/` })),
         { label: 'After Class 12', href: '/career-paths/after-12th' },
         { label: 'SSB guide', href: '/selection/ssb' },
