@@ -28,6 +28,8 @@ export default function Page() {
         </p>
         <section className="mt-8 border-y border-[#d8e1dd] py-6"><h2 className="font-heading text-2xl">Build a plan around your available time</h2><p className="mt-3 leading-7 text-[#536371]">Our free SSB Preparation Planner turns your focus, attempt stage and available time into a flexible practice plan. No account needed.</p><Link href="/resources/ssb-preparation-planner/" className="text-link mt-4 inline-flex min-h-11 items-center gap-2">Use the SSB Preparation Planner <ArrowRight size={16} aria-hidden="true" /></Link></section>
         <div className="mt-10 grid gap-6 md:grid-cols-2">
+          <article className="border-t-4 border-[#397fa8] p-6"><h2 className="font-heading text-2xl">Speaking practice</h2><p className="mt-3 leading-7">Original prompts, optional timers and private printable reflection notes. No recording or automated score.</p><Link className="text-link mt-4 inline-block" href="/resources/speaking-practice/">Use the speaking-practice tool</Link></article>
+          <article className="border-t-4 border-[#4b6228] p-6"><h2 className="font-heading text-2xl">Sample preparation feedback pack</h2><p className="mt-3 leading-7">An illustrative review, follow-up plan and blank printable log—not a psychological assessment.</p><Link className="text-link mt-4 inline-block" href="/resources/sample-feedback-pack/">Explore the sample and download PDF</Link></article>
           {resources.map((item, index) => (
             <article
               key={item.slug}

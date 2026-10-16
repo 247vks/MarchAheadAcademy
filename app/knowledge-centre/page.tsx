@@ -53,6 +53,9 @@ const categories = [
     description:
       'Practical advice for your first attempt, preparing again and supporting an NDA aspirant.',
     links: [
+      ['SSB preparation alongside college or work', '/guidance/ssb-preparation-college-full-time-job/'],
+      ['Free speaking practice', '/resources/speaking-practice/'],
+      ['Sample feedback pack', '/resources/sample-feedback-pack/'],
       ['NDA written exam vs SSB: preparation differences', '/guidance/nda-written-exam-vs-ssb/'],
       ['How to review SSB practice after feedback', '/guidance/review-ssb-practice-feedback/'],
       ['Can you prepare for SSB without coaching?', '/guidance/ssb-without-coaching/'],

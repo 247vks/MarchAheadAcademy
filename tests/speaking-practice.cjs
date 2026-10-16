@@ -1,0 +1,57 @@
+const { chromium } = require('playwright');
+const http = require('node:http');
+const fs = require('node:fs');
+const path = require('node:path');
+const assert = require('node:assert/strict');
+const root = path.resolve('out');
+const server = http.createServer((req,res) => {
+  let file = path.resolve(root, '.' + decodeURIComponent(new URL(req.url, 'http://localhost').pathname));
+  if (!file.startsWith(root + path.sep)) return res.writeHead(403).end();
+  if (fs.existsSync(file) && fs.statSync(file).isDirectory()) file=path.join(file,'index.html');
+  if (!fs.existsSync(file)) return res.writeHead(404).end();
+  res.setHeader('Content-Type', {'.html':'text/html','.js':'text/javascript','.css':'text/css','.pdf':'application/pdf'}[path.extname(file)] || 'application/octet-stream');
+  fs.createReadStream(file).pipe(res);
+});
+(async () => {
+  await new Promise(resolve => server.listen(0,'127.0.0.1',resolve));
+  const browser = await chromium.launch({headless:true,channel:'chrome'});
+  try {
+    const page = await browser.newPage({viewport:{width:390,height:844}});
+    await page.goto(`http://127.0.0.1:${server.address().port}/resources/speaking-practice/`);
+    const reject = page.getByRole('button',{name:'Reject Non-Essential',exact:true});
+    if(await reject.count()) await reject.click();
+    await page.clock.install();
+    await page.getByLabel('Optional timer length').selectOption('60');
+    await page.getByRole('button',{name:'Start / resume'}).click();
+    await page.clock.fastForward(5000);
+    await page.getByRole('button',{name:'Pause',exact:true}).click();
+    const paused = await page.getByLabel('Preparation time remaining').innerText();
+    await page.clock.fastForward(5000);
+    assert.equal(await page.getByLabel('Preparation time remaining').innerText(),paused);
+    await page.getByRole('button',{name:'Start / resume'}).click();
+    await page.clock.fastForward(60000);
+    assert.ok((await page.getByRole('status').allTextContents()).some(text=>text.includes('Time complete')));
+    await page.getByRole('button',{name:'Reset timer'}).click();
+    assert.ok((await page.getByLabel('Preparation time remaining').innerText()).includes('1:00'));
+    await page.getByLabel('Your reflection on this prompt').fill('PRIVATE_TEST_NOTE');
+    await page.getByLabel('Practice prompt',{exact:true}).selectOption({index:1});
+    assert.equal(await page.getByLabel('Your reflection on this prompt').inputValue(),'');
+    await page.getByLabel('Practice prompt',{exact:true}).selectOption({index:0});
+    assert.equal(await page.getByLabel('Your reflection on this prompt').inputValue(),'PRIVATE_TEST_NOTE');
+    assert.equal(await page.evaluate(()=>JSON.stringify(localStorage).includes('PRIVATE_TEST_NOTE')),false);
+    assert.equal(await page.evaluate(()=>JSON.stringify(sessionStorage).includes('PRIVATE_TEST_NOTE')),false);
+    await page.emulateMedia({media:'print'});
+    assert.ok(await page.locator('.speaking-print').isVisible());
+    assert.ok((await page.locator('.speaking-print').innerText()).includes('PRIVATE_TEST_NOTE'));
+    assert.equal(await page.locator('#speaking-prompt').isVisible(),false);
+    await page.emulateMedia({media:'screen'});
+    assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth));
+    fs.mkdirSync('work/speaking-qa',{recursive:true});
+    await page.screenshot({path:'work/speaking-qa/mobile.png',fullPage:true});
+    await page.reload();
+    assert.equal(await page.getByLabel('Your reflection on this prompt').inputValue(),'');
+    const pdf=fs.readFileSync('out/resources/sample-feedback-pack.pdf');
+    assert.equal(pdf.subarray(0,4).toString(),'%PDF');
+    console.log('PASS: timer start/pause/resume/completion/reset, per-prompt notes, no browser storage, print, reload clearing, mobile width and PDF.');
+  } finally { await browser.close(); server.close(); }
+})().catch(error=>{console.error(error);server.close();process.exitCode=1;});

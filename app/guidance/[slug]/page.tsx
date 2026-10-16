@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { AuthorityPage } from '@/components/authority-shell';
 import { withPageMetadata } from '@/lib/page-metadata';
 import { coachingDecisionGuides } from '@/lib/coaching-decision-guides';
+import Link from 'next/link';
 
 export const dynamicParams = false;
 export function generateStaticParams() {
@@ -24,6 +25,7 @@ export default async function Page({ params }: Props) {
   return <AuthorityPage currentHref={`/guidance/${slug}`} eyebrow="From the Academy" title={guide.title}
     lede={guide.description} status="Preparation decision guide" publishedAt="2026-10-16" modifiedAt="2026-10-16"
     showEntryNotice={false} guidanceAfterSection={6} sections={guide.sections}
+    visual={slug === 'review-ssb-practice-feedback' ? <aside className="border-t-2 border-[#397fa8] py-6"><h2 className="font-heading text-2xl">See a completed illustrative review</h2><p className="mt-3 leading-7">Explore an original communication-practice example and download the printable follow-up plan and blank review log.</p><Link className="text-link mt-4 inline-block" href="/resources/sample-feedback-pack/">Open the sample feedback pack</Link></aside> : undefined}
     sources={guide.sources ?? [{ label: 'Indian Air Force: AFSB testing and group activities', href: 'https://careerairforce.gov.in/air-force-selection-board-afsb-testing' }]}
     related={[
       ...(guide.related ?? []),

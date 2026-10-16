@@ -32,7 +32,7 @@ const { chromium } = require('playwright');
     const sitemap = await sitemapResponse.text();
     assert.ok(sitemap.includes('/resources/ssb-preparation-planner/'));
     const urls = [...sitemap.matchAll(/<loc>(.*?)<\/loc>/g)].map(match => match[1]);
-    assert.ok(urls.length >= 110);
+    assert.ok(urls.length >= 113);
     // Public status check, bounded to five concurrent requests.
     for (let i = 0; i < urls.length; i += 5) {
       await Promise.all(urls.slice(i, i + 5).map(async url => {

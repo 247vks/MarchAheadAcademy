@@ -1,6 +1,9 @@
 // Dates record substantive content changes, not builds or sitemap generation.
 // Omit unverified dates rather than assigning today's date to every page.
 export const contentUpdates: Record<string, string> = {
+  '/resources/speaking-practice': '2026-10-16',
+  '/resources/sample-feedback-pack': '2026-10-16',
+  '/guidance/ssb-preparation-college-full-time-job': '2026-10-16',
   '': '2026-10-07',
   '/ssb-gto': '2026-10-07',
   '/ssb-gto/group-planning-exercise': '2026-10-07',
@@ -24,7 +27,7 @@ export const contentUpdates: Record<string, string> = {
   '/authors/cdr-sulakshan-kumar-sharma': '2026-10-07',
   '/ssb-coaching': '2026-10-16',
   '/resources/self-description-reflection': '2026-10-07',
-  '/resources': '2026-10-07',
+  '/resources': '2026-10-16',
   '/resources/ssb-preparation-planner': '2026-10-07',
   '/consultation': '2026-10-07',
   '/career-paths': '2026-10-07',
